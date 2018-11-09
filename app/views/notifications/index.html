@@ -2,20 +2,163 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Prisoner money intelligence - manage email notifications
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-xl">
-        Email notifications
-      </h1>{{releaseVersion | log }}
-      <p class="govuk-body-l">You don't have any notifications set up yet.</p>
+        Manage email notifications
+      </h1>
+
+
+      <h2 class="govuk-heading-l">What do you want to be notified about?</h2>
+
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "monitoredTransactions",
+        name: "monitoredTransactions",
+        fieldset: {
+          legend: {
+            text: "Monitored transactions",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "allTransactions",
+            text: "All transactions you're monitoring – prisoners, debit cards, bank accounts"
+          }
+        ]
+      }) }}
+      {# Should selecting all transactions select all of the transactions below? #}
+
+      {{ govukCheckboxes({
+        idPrefix: "amounts",
+        name: "amounts",
+        fieldset: {
+          legend: {
+            text: "Amounts",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "creditsOrDisbursementsThatAreNotAWholeNumber",
+            text: "Credits or disbursements that are not a whole number"
+          },
+          {
+            value: "creditsOrDisbursementsOver200",
+            text: "Credits or disbursements over £200"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "frequencyOfTransactions",
+        name: "frequencyOfTransactions",
+        fieldset: {
+          legend: {
+            text: "Frequency of transactions",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "moreThan10CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks",
+            text: "More than 10 credits from the same debit card or bank account to any prisoner within 4 weeks"
+          },
+          {
+            value: "moreThan10DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks",
+            text: "More than 10 disbursements from any prisoner to the same bank account within 4 weeks"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "aPrisoner",
+        name: "aPrisoner",
+        fieldset: {
+          legend: {
+            text: "A prisoner",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "aPrisonerGettingMoneyFromMoreThan10DebitCardsOrBankAccountsWithin4Weeks",
+            text: "A prisoner getting money from more than 10 debit cards or bank accounts within 4 weeks"
+          },
+          {
+            value: "aPrisonerSendingMoneyToMoreThan10BankAccountsWithin4Weeks",
+            text: "A prisoner sending money to more than 10 bank accounts within 4 weeks"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "aDebitCardOrBankAccount",
+        name: "aDebitCardOrBankAccount",
+        fieldset: {
+          legend: {
+            text: "A debit card or bank account",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "aDebitCardOrBankAccountSendingMoneyToMoreThan10PrisonersWithin4Weeks",
+            text: "A debit card or bank account sending money to more than 10 prisoners within 4 weeks"
+          },
+          {
+            value: "aBankAccountGettingMoneyFromMoreThan10PrisonersWithin4Weeks",
+            text: "A bank account getting money from more than 10 prisoners within 4 weeks"
+          }
+        ]
+      }) }}
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "howOftenDoYouWantEmails",
+        name: "howOftenDoYouWantEmails",
+        fieldset: {
+          legend: {
+            text: "How often do you want emails?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "onceADay",
+            text: "Once a day"
+          },
+          {
+            value: "onceAWeek",
+            text: "Once a week"
+          },
+          {
+            value: "onceAMonth",
+            text: "Once a month"
+          },
+          {
+            value: "never",
+            text: "Never"
+          }
+        ]
+      }) }}
 
       {{ govukButton({
-          html: 'Setup notifications'
+          html: 'Save notifications'
       }) }}
 
     </div>
