@@ -1,0 +1,166 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Frequency of transactions
+    </h1>
+
+    <p class="govuk-body-l">
+      Do we need to explain what these transactions are?
+    </p>
+
+    <h2 class="govuk-heading-l">
+      Would you like to recieve notifications for:
+    </h2>
+
+    {% set sameDebitCardOrBankAccount %}
+    {% from "select/macro.njk" import govukSelect %}
+
+    {{ govukSelect({
+      id: "sameDebitCardOrBankAccount",
+      name: "sameDebitCardOrBankAccount",
+      label: {
+        text: "More than"
+      },
+      items: [
+        {
+          value: "5",
+          text: "5"
+        },
+        {
+          value: "10",
+          text: "10",
+          selected: true
+        },
+        {
+          value: "15",
+          text: "15"
+        },
+        {
+          value: "20",
+          text: "20"
+        }
+      ]
+    }) }}
+    {{ govukSelect({
+      id: "sameDebitCardOrBankAccount",
+      name: "sameDebitCardOrBankAccount",
+      label: {
+        text: "Within"
+      },
+      items: [
+        {
+          value: "1 weeks",
+          text: "1 weeks"
+        },
+        {
+          value: "2 weeks",
+          text: "2 weeks"
+        },
+        {
+          value: "3 weeks",
+          text: "3 weeks"
+        },
+        {
+          value: "4 weeks",
+          text: "4 weeks",
+          selected: true
+        }
+      ]
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+        idPrefix: "sameDebitCardOrBankAccount",
+        name: "sameDebitCardOrBankAccount",
+        fieldset: {
+          legend: {
+            text: "Credits from the same debit card or bank account to any prisoner?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "If you select Yes you will be able to configure the amount and frequency."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: sameDebitCardOrBankAccount
+            }
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {% set disbursmentSameDebitCardOrBankAccount %}
+    {{ govukInput({
+          id: "disbursmentSameDebitCardOrBankAccount",
+          name: "disbursmentSameDebitCardOrBankAccount",
+          type: "text",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Enter the number of transactions"
+          }
+        }) }}
+    {{ govukInput({
+            id: "disbursmentSameDebitCardOrBankAccount",
+            name: "disbursmentSameDebitCardOrBankAccount",
+            type: "text",
+            classes: "govuk-!-width-one-third",
+            label: {
+              text: "Enter the frequency in weeks"
+            }
+          }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+          idPrefix: "disbursmentSameDebitCardOrBankAccount",
+          name: "disbursmentSameDebitCardOrBankAccount",
+          fieldset: {
+            legend: {
+              text: "Disbursments from any prisoner to the same bank account?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "If you select Yes you will be able to configure the amount and frequency."
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: disbursmentSameDebitCardOrBankAccount
+              }
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+    <form class="form" method="post">
+      {{ govukButton({
+          html: 'Continue'
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

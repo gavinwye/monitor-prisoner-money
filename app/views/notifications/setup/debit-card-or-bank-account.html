@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Debit cards or bank accounts
+    </h1>
+
+    <p class="govuk-body-l">
+      Do we need to explain what these transactions are?
+    </p>
+
+    <h2 class="govuk-heading-l">
+      Would you like to recieve notifications for:
+    </h2>
+
+    {% set sameDebitCardOrBankAccount %}
+    {{ govukInput({
+        id: "sameDebitCardOrBankAccount",
+        name: "sameDebitCardOrBankAccount",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Enter the number of transactions"
+        }
+      }) }}
+    {{ govukInput({
+          id: "sameDebitCardOrBankAccount",
+          name: "sameDebitCardOrBankAccount",
+          type: "text",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Enter the frequency in weeks"
+          }
+        }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+        idPrefix: "sameDebitCardOrBankAccount",
+        name: "sameDebitCardOrBankAccount",
+        fieldset: {
+          legend: {
+            text: "Getting money from a number of debit cards or bank acounts within a preiod of time?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "If you select Yes you will be able to configure the amount and frequency."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: sameDebitCardOrBankAccount
+            }
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {% set disbursmentSameDebitCardOrBankAccount %}
+    {{ govukInput({
+          id: "disbursmentSameDebitCardOrBankAccount",
+          name: "disbursmentSameDebitCardOrBankAccount",
+          type: "text",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Enter the number of transactions"
+          }
+        }) }}
+    {{ govukInput({
+            id: "disbursmentSameDebitCardOrBankAccount",
+            name: "disbursmentSameDebitCardOrBankAccount",
+            type: "text",
+            classes: "govuk-!-width-one-third",
+            label: {
+              text: "Enter the frequency in weeks"
+            }
+          }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+          idPrefix: "disbursmentSameDebitCardOrBankAccount",
+          name: "disbursmentSameDebitCardOrBankAccount",
+          fieldset: {
+            legend: {
+              text: "Sending money from a number of debit cards or bank acounts within a preiod of time?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "If you select Yes you will be able to configure the amount and frequency."
+          },
+          items: [
+            {
+              value: "Yes",
+              text: "Yes",
+              conditional: {
+                html: disbursmentSameDebitCardOrBankAccount
+              }
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+    <form class="form" method="post">
+      {{ govukButton({
+          html: 'Continue'
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

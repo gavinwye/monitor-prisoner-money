@@ -1,0 +1,52 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Monitored transactions
+      </h1>
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "monitoredTransactions",
+        name: "monitoredTransactions",
+        fieldset: {
+          legend: {
+            text: "Would you like to recieve notifications for all transactions you're monitoring?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "This includes prisoners, debit cards, bank accounts."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <form class="form" method="post">
+      {{ govukButton({
+          html: 'Continue'
+      }) }}
+      </form>
+
+    </div>
+</div>
+
+{% endblock %}

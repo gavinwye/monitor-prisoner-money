@@ -1,0 +1,96 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<!-- @todo need to get the reveal for the yes working with inline buttons -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Credits and disbursments
+    </h1>
+    {% from "radios/macro.njk" import govukRadios %}
+
+    {{ govukRadios({
+        idPrefix: "wholeNumber",
+        name: "wholeNumber",
+        fieldset: {
+          legend: {
+            text: "Would you like to recieve notifications for credits or disbursements that are not a whole number?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    {% from "radios/macro.njk" import govukRadios %}
+    {% from "input/macro.njk" import govukInput %}
+
+    {% set amount %}
+    {{ govukInput({
+        id: "creditOrDisbursmentAmount",
+        name: "creditOrDisbursmentAmount",
+        type: "email",
+        classes: "govuk-!-width-one-third",
+        hint: {
+          text: "£250 is the debit card maximum"
+        },
+        label: {
+          text: "Enter the amount"
+        }
+      }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "how-contacted-conditional",
+        name: "how-contacted",
+        fieldset: {
+          legend: {
+            text: "Credits or disbursements over a spesific amount",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "If you select Yes you will be able to define the amount."
+        },
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            conditional: {
+              html: amount
+            }
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+    <form class="form" method="post">
+      {{ govukButton({
+          html: 'Continue'
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
