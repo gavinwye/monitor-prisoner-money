@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<!-- @todo need to get the reveal for the yes working with inline buttons -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Email notifications
+    </h1>
+
+    {{ govukRadios({
+        idPrefix: "wholeNumber",
+        name: "wholeNumber",
+        fieldset: {
+          legend: {
+            text: "How often do you want email notifications?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "Once a day",
+            text: "Once a day"
+          },
+          {
+            value: "Once a week",
+            text: "Once a week"
+          },
+          {
+          value: "Never",
+          text: "Never"
+        }
+        ]
+      }) }}
+
+    <form class="form" method="post">
+      {{ govukButton({
+          html: 'Continue'
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

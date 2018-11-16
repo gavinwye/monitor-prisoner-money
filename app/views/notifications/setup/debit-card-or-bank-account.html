@@ -20,28 +20,8 @@ GOV.UK Prototype Kit
       Would you like to recieve notifications for:
     </h2>
 
-    {% set sameDebitCardOrBankAccount %}
-    {{ govukInput({
-        id: "sameDebitCardOrBankAccount",
-        name: "sameDebitCardOrBankAccount",
-        type: "text",
-        classes: "govuk-!-width-one-third",
-        label: {
-          text: "Enter the number of transactions"
-        }
-      }) }}
-    {{ govukInput({
-          id: "sameDebitCardOrBankAccount",
-          name: "sameDebitCardOrBankAccount",
-          type: "text",
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Enter the frequency in weeks"
-          }
-        }) }}
-    {% endset -%}
-
     {{ govukRadios({
+        classes: "govuk-radios--inline",
         idPrefix: "sameDebitCardOrBankAccount",
         name: "sameDebitCardOrBankAccount",
         fieldset: {
@@ -51,16 +31,10 @@ GOV.UK Prototype Kit
             classes: "govuk-fieldset__legend--m"
           }
         },
-        hint: {
-          text: "If you select Yes you will be able to configure the amount and frequency."
-        },
         items: [
           {
             value: "Yes",
-            text: "Yes",
-            conditional: {
-              html: sameDebitCardOrBankAccount
-            }
+            text: "Yes"
           },
           {
             value: "No",
@@ -69,28 +43,8 @@ GOV.UK Prototype Kit
         ]
       }) }}
 
-    {% set disbursmentSameDebitCardOrBankAccount %}
-    {{ govukInput({
-          id: "disbursmentSameDebitCardOrBankAccount",
-          name: "disbursmentSameDebitCardOrBankAccount",
-          type: "text",
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Enter the number of transactions"
-          }
-        }) }}
-    {{ govukInput({
-            id: "disbursmentSameDebitCardOrBankAccount",
-            name: "disbursmentSameDebitCardOrBankAccount",
-            type: "text",
-            classes: "govuk-!-width-one-third",
-            label: {
-              text: "Enter the frequency in weeks"
-            }
-          }) }}
-    {% endset -%}
-
     {{ govukRadios({
+          classes: "govuk-radios--inline",
           idPrefix: "disbursmentSameDebitCardOrBankAccount",
           name: "disbursmentSameDebitCardOrBankAccount",
           fieldset: {
@@ -100,16 +54,10 @@ GOV.UK Prototype Kit
               classes: "govuk-fieldset__legend--m"
             }
           },
-          hint: {
-            text: "If you select Yes you will be able to configure the amount and frequency."
-          },
           items: [
             {
               value: "Yes",
-              text: "Yes",
-              conditional: {
-                html: disbursmentSameDebitCardOrBankAccount
-              }
+              text: "Yes"
             },
             {
               value: "No",

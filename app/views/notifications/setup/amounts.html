@@ -13,17 +13,23 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">
       Credits and disbursments
     </h1>
+
+    <h2 class="govuk-heading-l">Would you like to recieve notifications for:</h2>
     {% from "radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
+        classes: "govuk-radios--inline",
         idPrefix: "wholeNumber",
         name: "wholeNumber",
         fieldset: {
           legend: {
-            text: "Would you like to recieve notifications for credits or disbursements that are not a whole number?",
+            text: "Credits or disbursements that are not a whole number?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+          text: "For example £25.19."
         },
         items: [
           {
@@ -37,45 +43,21 @@ GOV.UK Prototype Kit
         ]
       }) }}
 
-    {% from "radios/macro.njk" import govukRadios %}
-    {% from "input/macro.njk" import govukInput %}
-
-    {% set amount %}
-    {{ govukInput({
-        id: "creditOrDisbursmentAmount",
-        name: "creditOrDisbursmentAmount",
-        type: "email",
-        classes: "govuk-!-width-one-third",
-        hint: {
-          text: "£250 is the debit card maximum"
-        },
-        label: {
-          text: "Enter the amount"
-        }
-      }) }}
-    {% endset -%}
-
     {{ govukRadios({
         classes: "govuk-radios--inline",
         idPrefix: "how-contacted-conditional",
         name: "how-contacted",
         fieldset: {
           legend: {
-            text: "Credits or disbursements over a spesific amount",
+            text: "Credits or disbursements over £200",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
-        hint: {
-          text: "If you select Yes you will be able to define the amount."
-        },
         items: [
           {
             value: "Yes",
-            text: "Yes",
-            conditional: {
-              html: amount
-            }
+            text: "Yes"
           },
           {
             value: "No",
