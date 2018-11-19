@@ -11,10 +11,10 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Credits and disbursments
+      {{creditsAndDisbursmentsHeadingOne}}
     </h1>
 
-    <h2 class="govuk-heading-l">Would you like to recieve notifications for:</h2>
+    <h2 class="govuk-heading-l">{{creditsAndDisbursmentsHeadingTwo}}</h2>
     {% from "radios/macro.njk" import govukRadios %}
 
     {{ govukRadios({
@@ -23,13 +23,13 @@ GOV.UK Prototype Kit
         name: "wholeNumber",
         fieldset: {
           legend: {
-            text: "Credits or disbursements that are not a whole number?",
+            text: creditsAndDisbursmentsQuestionOne,
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "For example £25.19."
+          text: creditsAndDisbursmentsHintOne
         },
         items: [
           {
@@ -49,7 +49,7 @@ GOV.UK Prototype Kit
         name: "how-contacted",
         fieldset: {
           legend: {
-            text: "Credits or disbursements over £200",
+            text: creditsAndDisbursmentsQuestionTwo,
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }

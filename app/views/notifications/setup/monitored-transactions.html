@@ -9,7 +9,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Monitored transactions
+      {{monitoredTransactionsHeadingOne}}
     </h1>
     {% from "radios/macro.njk" import govukRadios %}
 
@@ -20,7 +20,7 @@ GOV.UK Prototype Kit
         fieldset: {
           legend: {
             text: "Would you like to recieve notifications for all transactions you're  currently monitoring?",
-            isPageHeading: flase,
+            isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },

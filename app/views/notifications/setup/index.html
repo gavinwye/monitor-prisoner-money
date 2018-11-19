@@ -9,26 +9,27 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Global monitoring
+      {{ notificationsHeadingOne }}
     </h1>
 
-    <p class="govuk-body-l">On the next few screens we'll guide you through the process of setting up your global monitors.</p>
+    <p class="govuk-body-l">{{ notificationsLedeParagraph }}</p>
 
-    <p class="govuk-body">You can monitor:</p>
+    <p class="govuk-body">{{notificationsBulletHeading}}</p>
     {# Remove 'govuk-list--bullet' class for standard list #}
     <ul class="govuk-list govuk-list--bullet">
-      <li>credits and disbursments</li>
-      <li>frequency of transactions</li>
-      <li>a prisoner</li>
-      <li>a debit card / bank account</li>
-      <li>and how often you want to recieve emails</li>
+      {{notificationsBulletList}}
+      <li>{{notificationsBulletListItem1}}</li>
+      <li>{{notificationsBulletListItem2}}</li>
+      <li>{{notificationsBulletListItem3}}</li>
+      <li>{{notificationsBulletListItem4}}</li>
+      <li>{{notificationsBulletListItem5}}</li>
     </ul>
 
-    <p class="govuk-body">At the end of the process you'll be able to set how often you want to be emaild about these notifications.</p>
+    <p class="govuk-body">{{notificationsParagraph2}}</p>
 
-    <p class="govuk-body">The process will only take a short time.</p>
+    <p class="govuk-body">{{notificationsParagraph3}}</p>
 
-    <a class="govuk-button govuk-!-mt-r2 govuk-!-mb-r8" href="/notifications/setup/monitored-transactions" role="button">Setup notifications</a>
+    <a class="govuk-button govuk-!-mt-r2 govuk-!-mb-r8" href="/notifications/setup/monitored-transactions" role="button">{{notificationsButtonText}}</a>
 
   </div>
 </div>

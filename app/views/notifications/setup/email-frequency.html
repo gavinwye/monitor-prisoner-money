@@ -11,7 +11,7 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Email notifications
+      {{emailFrequencyHeadingOne}}
     </h1>
 
     {{ govukRadios({
@@ -19,23 +19,23 @@ GOV.UK Prototype Kit
         name: "wholeNumber",
         fieldset: {
           legend: {
-            text: "How often do you want email notifications?",
+            text: emailFrequencyQuestion,
             isPageHeading: false,
             classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
           {
-            value: "Once a day",
-            text: "Once a day"
+            value: "emailFrequencyValueOne",
+            text: emailFrequencyValueOne
           },
           {
-            value: "Once a week",
-            text: "Once a week"
+            value: "emailFrequencyValueTwo",
+            text: emailFrequencyValueTwo
           },
           {
-          value: "Never",
-          text: "Never"
+          value: "emailFrequencyValueThree",
+          text: emailFrequencyValueThree
         }
         ]
       }) }}

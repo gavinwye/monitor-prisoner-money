@@ -9,15 +9,15 @@ GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Debit cards or bank accounts
+      {{debitCardOrBankAccountHeadingOne}}
     </h1>
 
     <p class="govuk-body-l">
-      Do we need to explain what these transactions are?
+      {{debitCardOrBankAccountLedeParagraph}}
     </p>
 
     <h2 class="govuk-heading-l">
-      Would you like to recieve notifications for:
+      {{debitCardOrBankAccountHeadingTwo}}
     </h2>
 
     {{ govukRadios({
@@ -26,7 +26,7 @@ GOV.UK Prototype Kit
         name: "sameDebitCardOrBankAccount",
         fieldset: {
           legend: {
-            text: "Getting money from a number of debit cards or bank acounts within a preiod of time?",
+            text: debitCardOrBankAccountQuestionOne,
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
@@ -49,7 +49,7 @@ GOV.UK Prototype Kit
           name: "disbursmentSameDebitCardOrBankAccount",
           fieldset: {
             legend: {
-              text: "Sending money from a number of debit cards or bank acounts within a preiod of time?",
+              text: debitCardOrBankAccountQuestionTwo,
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
