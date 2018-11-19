@@ -3,7 +3,7 @@
 	module.exports = {
 		// add key/pairs like the line below
 		// variable: 'content',
-		notificationsHeadingOne: 'Notifications...',
+		notificationsHeadingOne: 'Notifications',
 		notificationsLedeParagraph: 'On the next few screens we\'ll guide you through the process of setting up your global monitors.',
 		notificationsBulletHeading: 'You can monitor:',
 		notificationsBulletListItem1: 'credits and disbursments',
