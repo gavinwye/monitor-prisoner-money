@@ -14,7 +14,7 @@
 		notificationsParagraph2: 'You can also choose to get notifications by email and, if so, how often.',
 		notificationsButtonText: 'Set up notifications',
 		monitoredTransactionsHeadingOne: 'Monitored transactions',
-		monitoredTransactionsQuestion: 'Get notifications for the transactions you\'re  currently monitoring?',
+		monitoredTransactionsQuestion: 'Get notifications for the transactions you\'re  currently monitoring.',
 		monitoredTransactionsHint: 'This includes prisoners, debit cards and bank accounts.',
 		creditsAndDisbursmentsHeadingOne: 'Credits and disbursements',
 		creditsAndDisbursmentsHeadingTwo: 'Get notifications for amounts of money sent in as credits and sent out as disbursements. Amounts that are:',
