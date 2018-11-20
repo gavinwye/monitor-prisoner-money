@@ -4,7 +4,7 @@
 		// add key/pairs like the line below
 		// variable: 'content',
 		notificationsHeadingOne: 'Manage notifications',
-		notificationsLedeParagraph: 'All intelligence is available on the tool but you can be notified about specific transactions.',
+		notificationsLedeParagraph: 'All intelligence is available on the tool but you can be notified about specific transactions you want to monitor.',
 		notificationsBulletHeading: 'You can monitor:',
 		notificationsBulletListItem1: 'credits and disbursements',
 		notificationsBulletListItem2: 'frequency of transactions',
