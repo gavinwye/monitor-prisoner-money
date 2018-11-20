@@ -30,7 +30,7 @@
 		frequencyOfTransactionsQuestionTwo: 'Many disbursements from the same debit card or bank account to any prisoner?',
 		frequencyOfTransactionsQuestionTwoHint: 'If you select Yes, you can determine the amount and frequency.',
 		prisonersHeadingOne: 'Frequent use by prisoners',
-		prisonersLedeParagraph: 'When a prisoner is sent or sends out more money than usual, get notifications when: ',
+		prisonersLedeParagraph: 'If a prisoner is sent or sends out more money than usual, get notifications when: ',
 		prisonersHeadingTwo: '',
 		prisonersQuestionOne: 'That prisoner is sent money from many debit cards or bank acounts within a specific time?',
 		prisonersQuestionTwo: 'That prisoner sends out money from many debit cards or bank acounts within a specific time?',
