@@ -12,7 +12,6 @@
 		notificationsBulletListItem4: 'a debit card / bank account',
 		notificationsBulletListItem5: 'how often you want to receive emails',
 		notificationsParagraph2: 'Choose also whether you want to get emails about these notifications, and if so, how often.',
-
 		notificationsButtonText: 'Set up notifications',
 		monitoredTransactionsHeadingOne: 'Monitored transactions',
 		monitoredTransactionsQuestion: 'Get notifications for the transactions you\'re  currently monitoring?',
@@ -25,14 +24,14 @@
 		creditsAndDisbursmentsHintTwo: '',
 		frequencyOfTransactionsHeadingOne: 'Frequency of transactions',
 		frequencyOfTransactionsLedeParagraph: 'When money is credited or disbursed more often that usual, get notifications for:',
-		frequencyOfTransactionsHeadingTwo: 
+		frequencyOfTransactionsHeadingTwo: '',
 		frequencyOfTransactionsQuestionOne: 'Many credits from the same debit card or bank account to any prisoner?',
 		frequencyOfTransactionsQuestionOneHint: 'If you select Yes, you can determine the amount and frequency.',
 		frequencyOfTransactionsQuestionTwo: 'Many disbursements from the same debit card or bank account to any prisoner?',
 		frequencyOfTransactionsQuestionTwoHint: 'If you select Yes, you can determine the amount and frequency.',
 		prisonersHeadingOne: 'Frequent use by prisoners',
 		prisonersLedeParagraph: 'When a prisoner is sent or sends out more money than usual, get notifications when: ',
-		prisonersHeadingTwo: 
+		prisonersHeadingTwo: '',
 		prisonersQuestionOne: 'That prisoner is sent money from many debit cards or bank acounts within a specific time?',
 		prisonersQuestionTwo: 'That prisoner sends out money from many debit cards or bank acounts within a specific time?',
 		debitCardOrBankAccountHeadingOne: 'Debit cards or bank accounts',
