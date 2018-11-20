@@ -17,7 +17,7 @@
 		monitoredTransactionsLedeParagraph: 'Get notifications for the transactions you\'re  currently monitoring.',
 		monitoredTransactionsHint: 'This includes prisoners, debit cards and bank accounts.',
 		creditsAndDisbursmentsHeadingOne: 'Credits and disbursements',
-		creditsAndDisbursmentsLedeParagraph:'Get notifications for amounts of money sent in as credits and sent out as disbursements. Amounts that are:',
+		creditsAndDisbursmentsBulletHeading:'Get notifications for amounts of money sent in as credits and sent out as disbursements. Amounts that are:',
 		creditsAndDisbursmentsQuestionOne: 'Not a whole number?',
 		creditsAndDisbursmentsHintOne: 'Eg, £25.19',
 		creditsAndDisbursmentsQuestionTwo: 'Over £200?',
