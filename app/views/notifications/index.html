@@ -1,24 +1,27 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Prisoner money intelligence - manage email notifications
+Prisoner money intelligence - manage email notifications
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-xl">
-        Manage email notifications
-      </h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Manage email notifications
+    </h1>
+
+    <p class="govuk-body-l">
+      All intelligence is available on the tool but you can be notified about specific transactions you want to monitor.
+    </p>
 
 
-      <h2 class="govuk-heading-l">What do you want to be notified about?</h2>
+    <h2 class="govuk-heading-l">What do you want to be notified about?</h2>
 
-      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+    {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
-      {{ govukCheckboxes({
+    {{ govukCheckboxes({
         idPrefix: "monitoredTransactions",
         name: "monitoredTransactions",
         fieldset: {
@@ -31,35 +34,37 @@
         items: [
           {
             value: "allTransactions",
-            text: "All transactions you're monitoring – prisoners, debit cards, bank accounts"
+            text: "All transactions you’re currently following, eg prisoners, debit cards, bank accounts"
           }
         ]
       }) }}
-      {# Should selecting all transactions select all of the transactions below? #}
 
-      {{ govukCheckboxes({
+    {{ govukCheckboxes({
         idPrefix: "amounts",
         name: "amounts",
         fieldset: {
           legend: {
-            text: "Amounts",
+            text: "Credits and disbursements",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          html: "Money sent in and sent out that is:"
+        },
         items: [
           {
             value: "creditsOrDisbursementsThatAreNotAWholeNumber",
-            text: "Credits or disbursements that are not a whole number"
+            text: "Not a whole number, eg £25.19"
           },
           {
             value: "creditsOrDisbursementsOver200",
-            text: "Credits or disbursements over £200"
+            text: "Over the debit card maximum of £200"
           }
         ]
       }) }}
 
-      {{ govukCheckboxes({
+    {{ govukCheckboxes({
         idPrefix: "frequencyOfTransactions",
         name: "frequencyOfTransactions",
         fieldset: {
@@ -69,19 +74,22 @@
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          html: "Money sent in or out more often than usual, so:"
+        },
         items: [
           {
             value: "moreThan10CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks",
-            text: "More than 10 credits from the same debit card or bank account to any prisoner within 4 weeks"
+            text: "More than 10 credits from the same debit card or bank account to any prisoner within 2 weeks"
           },
           {
             value: "moreThan10DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks",
-            text: "More than 10 disbursements from any prisoner to the same bank account within 4 weeks"
+            text: "More than 10 disbursements from any prisoner to the same bank account within 2 weeks"
           }
         ]
       }) }}
 
-      {{ govukCheckboxes({
+    {{ govukCheckboxes({
         idPrefix: "aPrisoner",
         name: "aPrisoner",
         fieldset: {
@@ -91,19 +99,22 @@
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          html: "Prisoner is sent or sends out more money than usual, so when:"
+        },
         items: [
           {
             value: "aPrisonerGettingMoneyFromMoreThan10DebitCardsOrBankAccountsWithin4Weeks",
-            text: "A prisoner getting money from more than 10 debit cards or bank accounts within 4 weeks"
+            text: "That prisoner is sent money from more than 10 debit cards or bank accounts within 2 weeks"
           },
           {
             value: "aPrisonerSendingMoneyToMoreThan10BankAccountsWithin4Weeks",
-            text: "A prisoner sending money to more than 10 bank accounts within 4 weeks"
+            text: "That prisoner sends out money to more than 10 bank accounts within 2 weeks"
           }
         ]
       }) }}
 
-      {{ govukCheckboxes({
+    {{ govukCheckboxes({
         idPrefix: "aDebitCardOrBankAccount",
         name: "aDebitCardOrBankAccount",
         fieldset: {
@@ -113,21 +124,24 @@
             classes: "govuk-fieldset__legend--m"
           }
         },
+        hint: {
+          html: "Money coming in from or going out to many debit cards to bank accounts, so:"
+        },
         items: [
           {
             value: "aDebitCardOrBankAccountSendingMoneyToMoreThan10PrisonersWithin4Weeks",
-            text: "A debit card or bank account sending money to more than 10 prisoners within 4 weeks"
+            text: "Money coming in from 10 debit cards or bank accounts within 2 weeks"
           },
           {
             value: "aBankAccountGettingMoneyFromMoreThan10PrisonersWithin4Weeks",
-            text: "A bank account getting money from more than 10 prisoners within 4 weeks"
+            text: "Money going out from 10 debit cards or bank accounts within 2 weeks"
           }
         ]
       }) }}
 
-      {% from "radios/macro.njk" import govukRadios %}
+    {% from "radios/macro.njk" import govukRadios %}
 
-      {{ govukRadios({
+    {{ govukRadios({
         idPrefix: "howOftenDoYouWantEmails",
         name: "howOftenDoYouWantEmails",
         fieldset: {
@@ -136,6 +150,9 @@
             isPageHeading: false,
             classes: "govuk-fieldset__legend--l"
           }
+        },
+        hint: {
+          html: "We group your notifications and can email you them:"
         },
         items: [
           {
@@ -148,20 +165,16 @@
           },
           {
             value: "onceAMonth",
-            text: "Once a month"
-          },
-          {
-            value: "never",
-            text: "Never"
+            text: "I don’t want email notifications"
           }
         ]
       }) }}
 
-      {{ govukButton({
+    {{ govukButton({
           html: 'Save notifications'
       }) }}
 
-    </div>
+  </div>
 </div>
 
 {% endblock %}
