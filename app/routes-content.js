@@ -10,7 +10,6 @@
 		notificationsBulletListItem2: 'frequency of transactions',
 		notificationsBulletListItem3: 'a prisoner',
 		notificationsBulletListItem4: 'a debit card / bank account',
-		notificationsBulletListItem5: '',
 		notificationsParagraph2: 'You can also choose to get notifications by email.',
 		notificationsButtonText: 'Set up notifications',
 		monitoredTransactionsHeadingOne: 'Monitored transactions',
