@@ -19,9 +19,11 @@ Prisoner money intelligence - manage email notifications
 
     <h2 class="govuk-heading-l">What do you want to be notified about?</h2>
 
-    {% from "checkboxes/macro.njk" import govukCheckboxes %}
+    <form class="form" method="post">
 
-    {{ govukCheckboxes({
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
         idPrefix: "monitoredTransactions",
         name: "monitoredTransactions",
         fieldset: {
@@ -39,7 +41,7 @@ Prisoner money intelligence - manage email notifications
         ]
       }) }}
 
-    {{ govukCheckboxes({
+      {{ govukCheckboxes({
         idPrefix: "amounts",
         name: "amounts",
         fieldset: {
@@ -64,7 +66,7 @@ Prisoner money intelligence - manage email notifications
         ]
       }) }}
 
-    {{ govukCheckboxes({
+      {{ govukCheckboxes({
         idPrefix: "frequencyOfTransactions",
         name: "frequencyOfTransactions",
         fieldset: {
@@ -89,7 +91,7 @@ Prisoner money intelligence - manage email notifications
         ]
       }) }}
 
-    {{ govukCheckboxes({
+      {{ govukCheckboxes({
         idPrefix: "aPrisoner",
         name: "aPrisoner",
         fieldset: {
@@ -114,7 +116,7 @@ Prisoner money intelligence - manage email notifications
         ]
       }) }}
 
-    {{ govukCheckboxes({
+      {{ govukCheckboxes({
         idPrefix: "aDebitCardOrBankAccount",
         name: "aDebitCardOrBankAccount",
         fieldset: {
@@ -139,9 +141,9 @@ Prisoner money intelligence - manage email notifications
         ]
       }) }}
 
-    {% from "radios/macro.njk" import govukRadios %}
+      {% from "radios/macro.njk" import govukRadios %}
 
-    {{ govukRadios({
+      {{ govukRadios({
         idPrefix: "howOftenDoYouWantEmails",
         name: "howOftenDoYouWantEmails",
         fieldset: {
@@ -170,10 +172,10 @@ Prisoner money intelligence - manage email notifications
         ]
       }) }}
 
-    {{ govukButton({
+      {{ govukButton({
           html: 'Save notifications'
       }) }}
-
+    </form>
   </div>
 </div>
 
