@@ -14,14 +14,18 @@ GOV.UK Prototype Kit
       {{emailFrequencyHeadingOne}}
     </h1>
 
+    <p class="govuk-body-l">
+      {{emailFrequencyLedeParagraph}}
+    </p>
+
     {{ govukRadios({
         idPrefix: "wholeNumber",
         name: "wholeNumber",
         fieldset: {
           legend: {
-            text: emailFrequencyQuestion,
+            text: emailFrequencyLedeParagraph,
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--l"
+            classes: "govuk-fieldset__legend--m govuk-visually-hidden"
           }
         },
         items: [

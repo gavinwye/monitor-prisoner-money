@@ -13,6 +13,13 @@ GOV.UK Prototype Kit
     <h1 class="govuk-heading-xl">
       {{creditsAndDisbursmentsHeadingOne}}
     </h1>
+    <p class="govuk-body-l">
+      {{creditsAndDisbursmentsLedeParagraph}}
+    </p>
+
+    <p class="govuk-heading-m">
+      {{creditsAndDisbursmentsBulletHeading}}
+    </p>
 
     <h2 class="govuk-heading-l">{{creditsAndDisbursmentsHeadingTwo}}</h2>
     {% from "radios/macro.njk" import govukRadios %}
@@ -25,7 +32,7 @@ GOV.UK Prototype Kit
           legend: {
             text: creditsAndDisbursmentsQuestionOne,
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
@@ -51,7 +58,7 @@ GOV.UK Prototype Kit
           legend: {
             text: creditsAndDisbursmentsQuestionTwo,
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--s"
           }
         },
         items: [
