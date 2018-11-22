@@ -4,7 +4,7 @@ module.exports = {
 	// add key/pairs like the line below
 	// variable: 'content',
 	notificationsHeadingOne: 'Set up notifications',
-	notificationsLedeParagraph: 'All intelligence is available on the tool but you can be notified about specific transactions you want to monitor.',
+	notificationsLedeParagraph: 'All intelligence is available on the tool but you can be notified about specific transactions you want to monitor or are already monitoring.',
 	notificationsBulletHeading: 'You can be notified about:',
 	notificationsBulletListItem1: 'credits and disbursements',
 	notificationsBulletListItem2: 'frequency of transactions',

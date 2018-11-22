@@ -1,8 +1,16 @@
-module.exports = function (router) {
+module.exports = function (router, content) {
 
 
   router.post('/notifications/email', function (req, res) {
     res.redirect('/notifications/start')
+  })
+
+  router.post('/notifications/start', function (req, res) {
+    res.redirect('/notifications/prisons')
+  })
+
+  router.post('/notifications/prisons', function (req, res) {
+    res.redirect('/notifications/index')
   })
 
   router.post('/notifications/index', function (req, res) {
@@ -10,10 +18,9 @@ module.exports = function (router) {
   })
 
   // Pass the content in to the page
-  router.get('/notifications/setup/', function (req, res) {
-    res.render('notifications/setup/index', content)
+  router.get('/notifications/start/', function (req, res) {
+    res.render('notifications/start', content)
   })
-
 
   // END__######################################################################################################
 }

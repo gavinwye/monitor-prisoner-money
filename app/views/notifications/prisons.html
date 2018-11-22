@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Manage email notifications - Prisoner money intelligence
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Which prisons do you want notifications for?
+    </h1>
+
+    <p class="govuk-body govuk-!-font-size-27">Your home prison is Brixton <a href="#">change</a>.</p>
+
+    <p class="govuk-body">Would you like to add some more prisons?</p>
+
+    {% from "input/macro.njk" import govukInput %}
+
+    {{ govukInput({
+      label: {
+        text: "Prison name"
+      },
+      id: "name",
+      name: "name"
+      }) }}
+    <p class="govuk-body"><a href="#">Add another</a></p>
+
+    <form class="form" method="post">
+
+
+      {{ govukButton({
+          html: 'Save notifications'
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
