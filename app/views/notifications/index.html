@@ -41,16 +41,14 @@ Manage email notifications - Prisoner money intelligence
         ]
       }) }}
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-padding-top-4">Credits and disbursements</h2>
-
       {{ govukCheckboxes({
         idPrefix: "amounts",
         name: "amounts",
         fieldset: {
           legend: {
-            text: "Money sent in and sent out that is:",
+            text: "Credits and disbursements",
             isPageHeading: false,
-            classes: "govuk-body-l govuk-!-margin-bottom-4"
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
           }
         },
         items: [
@@ -65,17 +63,14 @@ Manage email notifications - Prisoner money intelligence
         ]
       }) }}
 
-
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-padding-top-4">Frequency of transactions</h2>
-
       {{ govukCheckboxes({
         idPrefix: "frequencyOfTransactions",
         name: "frequencyOfTransactions",
         fieldset: {
           legend: {
-            text: "",
+            text: "Frequency of transactions",
             isPageHeading: false,
-            classes: "govuk-body-l govuk-!-margin-bottom-4 "
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
           }
         },
         items: [
@@ -90,7 +85,7 @@ Manage email notifications - Prisoner money intelligence
         ]
       }) }}
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-padding-top-4">Prisoner accounts</h2>
+
       {{ govukCheckboxes({
         idPrefix: "aPrisoner",
         name: "aPrisoner",
@@ -98,7 +93,7 @@ Manage email notifications - Prisoner money intelligence
           legend: {
             text: "Prisoner receives or sends:",
             isPageHeading: false,
-            classes: "govuk-body-l govuk-!-margin-bottom-4"
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
           }
         },
         items: [
@@ -113,15 +108,14 @@ Manage email notifications - Prisoner money intelligence
         ]
       }) }}
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-padding-top-4">A debit card or bank account</h2>
       {{ govukCheckboxes({
         idPrefix: "aDebitCardOrBankAccount",
         name: "aDebitCardOrBankAccount",
         fieldset: {
           legend: {
-            text: "",
+            text: "A debit card or bank account",
             isPageHeading: false,
-            classes: "govuk-body-l govuk-!-margin-bottom-4"
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
           }
         },
 
@@ -132,7 +126,7 @@ Manage email notifications - Prisoner money intelligence
           },
           {
             value: "aBankAccountGettingMoneyFromMoreThan4PrisonersWithin4Weeks",
-            text: "Money going out from 4 or more debit cards or bank accounts within 2 weeks"
+            text: "Money going out to 4 or more bank accounts within 2 weeks"
           }
         ]
       }) }}
@@ -146,7 +140,7 @@ Manage email notifications - Prisoner money intelligence
           legend: {
             text: "How often do you want emails?",
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2 govuk-!-padding-top-4"
           }
         },
         hint: {
