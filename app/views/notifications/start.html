@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+{{ notificationsHeadingOne }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      {{ notificationsHeadingOne }}
+    </h1>
+
+    <p class="govuk-body-l">{{ notificationsLedeParagraph }}</p>
+
+    <p class="govuk-body">{{notificationsBulletHeading}}</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      {{notificationsBulletList}}
+      <li>{{notificationsBulletListItem1}}</li>
+      <li>{{notificationsBulletListItem2}}</li>
+      <li>{{notificationsBulletListItem3}}</li>
+      <li>{{notificationsBulletListItem4}}</li>
+    </ul>
+
+    <p class="govuk-body">{{notificationsParagraph2}}</p>
+
+    <p class="govuk-body">{{notificationsParagraph3}}</p>
+
+    <a class="govuk-button govuk-!-mt-r2 govuk-!-mb-r8" href="/notifications/setup/monitored-transactions" role="button">{{notificationsButtonText}}</a>
+
+  </div>
+</div>
+
+{% endblock %}
