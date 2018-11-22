@@ -9,11 +9,11 @@ Confirmation page - Prisoner money intelligence
 
 {% block content %}
 
-<div class="govuk-grid-row">
+<!-- <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Email notifications</h1>
   </div>
-</div>
+</div> -->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -22,10 +22,14 @@ Confirmation page - Prisoner money intelligence
       <h1 class="govuk-headign-s govuk-!-margin-bottom-0 govuk-!-margin-top-0">Your notifications have been saved</h1>
     </div>
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-6">What happens next</h2>
-    <p class="govuk-body-l">You can view your notifications on the <a href="#">notifications page</a>.</p>
-    <p>We've also sent you the first notification email to <span class="govuk-!-font-weight-bold">name@hmpps.gov.uk</span>. You'll recieve your next notification email every Monday. You can stop recieving these notifications at any time by changing
-      your settings on the <a href="#">manage notifications</a> page </p>
+    <p class="govuk-body-l govuk-!-margin-top-6">We've sent the first notification email to <span class="govuk-!-font-weight-bold">name@hmpps.gov.uk</span>.
+    </p>
+
+    {% from "button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "View notifications"
+    }) }}
   </div>
 </div>
 
