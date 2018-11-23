@@ -20,18 +20,21 @@ Manage email notifications - Prisoner money intelligence
 
     {{ govukInput({
       label: {
-        text: "Prison name"
+        text: "Prison name",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
       },
       id: "name",
       name: "name"
       }) }}
+
     <p class="govuk-body"><a href="#">Add another</a></p>
 
     <form class="form" method="post">
 
 
       {{ govukButton({
-          html: 'Save notifications'
+          html: 'Continue'
       }) }}
     </form>
   </div>
