@@ -1,24 +1,603 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Email notifications
-      </h1>{{releaseVersion | log }}
-      <p class="govuk-body-l">You don't have any notifications set up yet.</p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+      Notifications
+    </h1>
+  </div>
+</div>
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body"><a href="#">Edit notifications</a></p>
+  </div>
 
-      {{ govukButton({
-          html: 'Setup notifications'
-      }) }}
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body" style="float:right;"><a href="#">Print</a> <a href="#">Export</a></p>
+  </div>
+</div> -->
+<!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible govuk-body govuk-!-margin-top-0"> -->
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li>12/10/2018</li>
+      <li class="govuk-!-font-weight-bold">£35.17 credit</li>
+      <li>Card ending 9876 (“Mick Myers”) to <a href="#">Adam Douglas</a> (A1619FY)</li>
+      <li class="govuk-inset-text govuk-!-margin-top-0">Card is on monitored list</li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body" style="float:right;"><a href="#">View</a></p>
+  </div>
+</div> -->
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-body govuk-!-margin-top-0"> -->
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li>12/10/2018</li>
+      <li class="govuk-!-font-weight-bold">£35.17 credit</li>
+      <li>Card ending 9876 (“Mick Myers”) to <a href="#">Adam Douglas</a> (A1619FY)</li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body" style="float:right;"><a href="#">View</a></p>
+  </div>
+</div> -->
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-body govuk-!-margin-top-0"> -->
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li>12/10/2018</li>
+      <li class="govuk-!-font-weight-bold">£35.17 credit</li>
+      <li>Card ending 9876 (“Mick Myers”) to <a href="#">Adam Douglas</a> (A1619FY)</li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body" style="float:right;"><a href="#">View</a></p>
+  </div>
+</div> -->
+<!-- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-body govuk-!-margin-top-0"> -->
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <ul class="govuk-list">
+      <li>12/10/2018</li>
+      <li class="govuk-!-font-weight-bold">£35.17 credit</li>
+      <li>Card ending 9876 (“Mick Myers”) to <a href="#">Adam Douglas</a> (A1619FY)</li>
+    </ul>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body" style="float:right;"><a href="#">View</a></p>
+  </div>
+</div> -->
 
-    </div>
+<!-- <hr class="govuk-section-break govuk-section-break--m  govuk-body govuk-!-margin-top-0">-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: #dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: ##dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: #dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: #dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: #dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: #dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: #dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; background-color: #dee0e2; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4" style="padding: 10px; width: 98%;">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-bold">
+          Prisoner
+        </dt>
+        <dd class="app-check-your-answers__answer govuk-!-font-weight-bold">
+          <a href="#">Adam Douglas</a> (A1619FY)
+        </dd>
+        <dd class="app-check-your-answers__change govuk-!-font-weight-bold">
+          <a href="#">View</a> <a href="#">Archive</a>
+          <!-- <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring card</span> -->
+          <a href="#">
+            <!-- View<span class="govuk-visually-hidden"> name</span> -->
+
+          </a>
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          Credit
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          £35.17
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <!-- <a href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a> -->
+        </dd>
+      </div>
+
+      <div class="app-check-your-answers__contents" style="border-bottom: 0;">
+        <dt class="app-check-your-answers__question govuk-!-font-weight-regular" style="border-bottom: 0;">
+          From
+        </dt>
+        <dd class="app-check-your-answers__answer" style="border-bottom: 0;">
+          Card ending 9876 <br> (Mick Myers)
+        </dd>
+        <dd class="app-check-your-answers__change" style="border-bottom: 0;">
+          <span class="govuk-!-font-weight-bold" style="color: red;">Monitoring</span> <br>
+          <a class="govuk-body-s" href="#">Stop monitoring</a>
+        </dd>
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+
 </div>
 
 {% endblock %}
