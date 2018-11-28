@@ -8,7 +8,7 @@ module.exports = {
 	notificationsBulletHeading: 'You can be notified about:',
 	notificationsBulletListItem1: 'credits and disbursements',
 	notificationsBulletListItem2: 'frequency of transactions',
-	notificationsBulletListItem3: 'a prisoner',
+	notificationsBulletListItem3: 'what a prisoner sends or receives',
 	notificationsBulletListItem4: 'a debit card / bank account',
 	notificationsParagraph2: 'You can also choose to get notifications by email.',
 	notificationsButtonText: 'Set up notifications',
