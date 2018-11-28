@@ -11,9 +11,7 @@ Manage email notifications - Prisoner money intelligence
     <h1 class="govuk-heading-xl">
       What do you want to be notified about?
     </h1>
-    hint: {
-      html: "All intelligence is available on the tool at all times but you can set up notifications for specific transactions. "
-    },
+
     <form class="form" method="post">
 
       {% from "checkboxes/macro.njk" import govukCheckboxes %}
@@ -149,7 +147,7 @@ Manage email notifications - Prisoner money intelligence
           },
           {
             value: "onceAMonth",
-            text: "No, I don’t want my notifications by email"
+            text: "No, I/'ll check the notifications' page"
           }
         ]
       }) }}
