@@ -11,9 +11,7 @@ Manage email notifications - Prisoner money intelligence
     <h1 class="govuk-heading-xl">
       What do you want to be notified about?
     </h1>
-    hint: {
-      html: "All intelligence is available on the tool at all times but you can set up notifications for specific transactions. "
-    },
+
     <form class="form" method="post">
 
       {% from "checkboxes/macro.njk" import govukCheckboxes %}
@@ -53,7 +51,7 @@ Manage email notifications - Prisoner money intelligence
           },
           {
             value: "creditsOrDisbursementsOver200",
-            text: "Over the debit card maximum of £200"
+            text: "Over £120"
           }
         ]
       }) }}
@@ -71,11 +69,11 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "moreThan4CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks",
-            text: "4 or more credits to any prisoner in last 4 weeks"
+            text: "4 or more credits sent by a single debit card or bank account in last 4 weeks"
           },
           {
             value: "moreThan4DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks",
-            text: "4 or more disbursements in last 4 weeks"
+            text: "4 or more disbursements sent to a single bank account in last 4 weeks"
           }
         ]
       }) }}
@@ -94,11 +92,11 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "aPrisonerGettingMoneyFromMoreThan4DebitCardsOrBankAccountsWithin4Weeks",
-            text: "Money from 4 or more debit cards or bank accounts in last 2 weeks"
+            text: "Money from 4 or more debit cards or bank accounts in last 4 weeks"
           },
           {
             value: "aPrisonerSendingMoneyToMoreThan4BankAccountsWithin4Weeks",
-            text: "Money to 4 or more bank accounts in last 2 weeks"
+            text: "Money to 4 or more bank accounts in last 4 weeks"
           }
         ]
       }) }}
@@ -117,11 +115,11 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "aDebitCardOrBankAccountSendingMoneyToMoreThan4PrisonersWithin4Weeks",
-            text: "Money coming in from 4 or more debit cards or bank accounts in last 2 weeks"
+            text: "Money from a debit card or bank account to more than 4 prisoners in last 4 weeks"
           },
           {
             value: "aBankAccountGettingMoneyFromMoreThan4PrisonersWithin4Weeks",
-            text: "Money going out to 4 or more bank accounts in last 2 weeks"
+            text: "Money sent to a bank account by more than 4 prisoners in last 4 weeks"
           }
         ]
       }) }}
@@ -133,26 +131,23 @@ Manage email notifications - Prisoner money intelligence
         name: "howOftenDoYouWantEmails",
         fieldset: {
           legend: {
-            text: "How often do you want emails?",
+            text: "Do you want your new notifications by email?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2 govuk-!-padding-top-4"
           }
         },
-        hint: {
-          html: "We group your notifications and can email you them:"
-        },
         items: [
           {
             value: "onceADay",
-            text: "Once a day"
+            text: "Yes, once a day"
           },
           {
             value: "onceAWeek",
-            text: "Once a week"
+            text: "Yes, once a week"
           },
           {
             value: "onceAMonth",
-            text: "I don’t want email notifications"
+            text: "No, I can check the notifications' page"
           }
         ]
       }) }}
