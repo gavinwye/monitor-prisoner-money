@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+<!-- Adds a class to increase vertical spacing for pages without a back button -->
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block pageTitle %}
+Confirmation page - Prisoner money intelligence
+{% endblock %}
+
+{% block content %}
+
+<!-- <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">Email notifications</h1>
+  </div>
+</div> -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-panel govuk-panel--confirmation ">
+      <h1 class="govuk-headign-s govuk-!-margin-bottom-0 govuk-!-margin-top-0">Your notification choices have been saved</h1>
+    </div>
+
+    <p class="govuk-body-l govuk-!-margin-top-6">We've sent your first notification email to <span class="govuk-!-font-weight-bold">name@hmpps.gov.uk</span>.
+    </p>
+
+    {% from "button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "View notifications"
+    }) }}
+  </div>
+</div>
+
+{% endblock %}
