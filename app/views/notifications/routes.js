@@ -2,6 +2,10 @@ module.exports = function (router, content) {
 
 
   router.post('/notifications/email', function (req, res) {
+    res.redirect('/sign-in/')
+  })
+
+  router.post('/sign-in/', function (req, res) {
     res.redirect('/notifications/start')
   })
 

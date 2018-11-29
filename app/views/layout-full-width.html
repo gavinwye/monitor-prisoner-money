@@ -44,12 +44,16 @@
 {% endblock %}
 
 {% block main %}
-  <div class="app-pane__body">
-    {% block beforeContent %}{% endblock %}
-    <main class="" role="main">
+<div class="app-pane">
+  <div class="app-pane__content">
+    <main class="main-content" role="main">
+      <div class="app-masthead">
+        {% block beforeContent %}{% endblock %}
+      </div>
       {% block content %}{% endblock %}
     </main>
   </div>
+</div>
 {% endblock %}
 
 {% if useAutoStoreData %}

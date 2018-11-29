@@ -1,55 +1,67 @@
-{% extends "layout.html" %}
+{% extends "layout-full-width.html" %}
 
 {% block pageTitle %}
   Sign in - Prisoner money intelligence
 {% endblock %}
 
+{% block beforeContent %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl app-masthead__title">
+        Monitor prisoner money
+      </h1>
+      <p class="app-masthead__description" style="color: #fff;">Use this tool to monitor and investigate money sent using the Send money to someone in prison service. The tool also gives insight into the digital movement of money, not only in your prison, but in all other public sector prisons in England and Wales.</p>
+      <br><br><br>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <img alt="Prisoner money intelligence" src="/assets/images/landing-noms-ops.png">
+    </div>
+  </div>
+</div>
+{% endblock %}
+
 {% block content %}
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
-      Monitor prisoner money
-    </h1>
-    <p class="govuk-body">Use this tool to monitor and investigate money sent using the Send money to someone in prison service. The tool also gives insight into the digital movement of money, not only in your prison, but in all other public sector prisons in England and Wales.</p>
-  </div>
-</div>
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-m">
-      How to get access
-    </h2>
-    <p class="govuk-body">Your head of security can set up an account for you if you don’t have access already.</p>
-    <p class="govuk-body"><a href="#">Need more help?</a></p>
-    <h2 class="govuk-heading-m">
-      What’s new?
-    </h2>
-    <p class="govuk-body">You can see more details about incoming credits.</p>
-    <p class="govuk-body"><a href="#">Tell us how we can improve this tool</a></p>
-  </div>
-  <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-m">
-      Sign in
-    </h2>
-    <form action="#">
-      <div class="govuk-form-group">
-  <label class="govuk-label govuk-!-width-two-thirds" for="name">
-    Username
-  </label>
-  <input class="govuk-input govuk-!-width-two-thirds" id="name" name="name" type="text">
-</div>
-<div class="govuk-form-group">
-  <label class="govuk-label govuk-!-width-two-thirds" for="name">
-    Password
-  </label>
-  <input class="govuk-input govuk-!-width-two-thirds" id="name" name="name" type="text">
-</div>
-<button type="submit" class="govuk-button">
-  Sign in
-</button>
-<p class="govuk-body"><a href="#">Forgotten your password?</a></p>
-    </form>
+<div class="govuk-width-container">
+  <div class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">
+          How to get access
+        </h2>
+        <p class="govuk-body govuk-!-width-three-quarters">Your head of security can set up an account for you if you don’t have access already.</p>
+        <p class="govuk-body"><a href="#">Need more help?</a></p>
+        <h2 class="govuk-heading-m">
+          What’s new?
+        </h2>
+        <p class="govuk-body govuk-!-width-three-quarters">You can see more details about incoming credits.</p>
+        <p class="govuk-body"><a href="#">Tell us how we can improve this tool</a></p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">
+          Sign in
+        </h2>
+        <form class="form" method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-width-two-thirds" for="name">
+              Username
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="name" name="name" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-width-two-thirds" for="name">
+              Password
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="name" name="name" type="text">
+          </div>
+          {% from "button/macro.njk" import govukButton %}
+          {{ govukButton({
+            html: 'Sign in'
+          }) }}
+          <p class="govuk-body"><a href="#">Forgotten your password?</a></p>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
 
