@@ -22,7 +22,7 @@ module.exports = function (router, content) {
   })
 
   router.post('/notifications/confirmation', function (req, res) {
-    res.redirect('/notifications/notifications-page')
+    res.redirect('/')
   })
 
   // Pass the content in to the page

@@ -9,32 +9,65 @@ Manage email notifications - Prisoner money intelligence
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Which prisons do you want notifications for?
+      Your prisons
     </h1>
 
-    <p class="govuk-body govuk-!-font-size-27">You're based at Brixton prison.</p>
-    <p class="govuk-body"><a href="#">Change</a> <span class="govuk-visually-hidden">your prison</span></p>
-    <h2 class="govuk-heading-l">Add more prisons?</h2>
 
-    {% from "input/macro.njk" import govukInput %}
+    <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-4">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Brixton
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="#">
+            Remove<span class="govuk-visually-hidden"> Brixton prison</span>
+          </a>
+        </dd>
+      </div>
 
-    {{ govukInput({
-      label: {
-        text: "Prison name",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-      },
-      id: "name",
-      name: "name"
-      }) }}
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+          Wandsworth
+        </dt>
+        <dd class="app-check-your-answers__change">
+          <a href="#">
+            Remove<span class="govuk-visually-hidden"> Wandsworth prison</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+    <p class="govuk-body-l">You'll get notifications for these prisons</p>
 
-    <p class="govuk-body"><a href="#">Add another</a></p>
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Are there more prisons you need to add?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <h2 class="govuk-heading-m">Add more prisons</h2>
 
-    <form class="form" method="post">
+        {% from "input/macro.njk" import govukInput %}
 
+        {{ govukInput({
+          label: {
+            text: "Prison name",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          },
+          id: "name",
+          name: "name"
+        }) }}
+
+        <p class="govuk-body"><a href="#">Add another prison</a></p>
+<!-- @todo make the auto complete work -->
+<!-- @todo make the add another work -->
+        <form class="form" method="post">
+        </div>
+      </details>
 
       {{ govukButton({
-          html: 'Save and continue'
+        html: 'Save and continue'
       }) }}
     </form>
   </div>

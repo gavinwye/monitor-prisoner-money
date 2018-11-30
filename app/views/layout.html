@@ -37,9 +37,31 @@
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: serviceName,
+    productName: "Monitor prisoner money",
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: "govuk-width-container",
+      navigation: [
+    {
+      href: "#1",
+      text: "Credits"
+    },
+    {
+      href: "#2",
+      text: "Payment sources"
+    },
+    {
+      href: "#3",
+      text: "Prisoners"
+    },
+    {
+      href: "/notifications/start",
+      text: "Notifications"
+    },
+    {
+      href: "#4",
+      text: "Get help"
+    }
+  ]
   }) }}
 {% endblock %}
 

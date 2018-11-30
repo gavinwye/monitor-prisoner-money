@@ -37,22 +37,23 @@
   {# Set serviceName in config.js. #}
   {{ govukHeader({
     homepageUrl: "/",
-    serviceName: serviceName,
+    productName: "Monitor prisoner money",
     serviceUrl: "/",
-    containerClasses: "govuk-width-container"
+    containerClasses: "govuk-width-container",
+    classes: "header-full-width"
   }) }}
 {% endblock %}
 
 {% block main %}
 <div class="app-pane">
-  <div class="app-pane__content">
-    <main class="main-content" role="main">
-      <div class="app-masthead">
-        {% block beforeContent %}{% endblock %}
-      </div>
-      {% block content %}{% endblock %}
-    </main>
-  </div>
+<div class="app-pane__content">
+  <main class="main-content" role="main">
+    <div class="app-masthead">
+      {% block beforeContent %}{% endblock %}
+    </div>
+    {% block content %}{% endblock %}
+  </main>
+</div>
 </div>
 {% endblock %}
 

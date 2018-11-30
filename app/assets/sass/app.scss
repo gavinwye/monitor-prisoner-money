@@ -65,3 +65,22 @@
         line-height: 1.15
     }
 }
+
+.govuk-header__logo {
+  width: 50%;
+}
+
+.header-full-width {
+  border-bottom: 10px solid #005ea5;
+  // This adds the border to the bottom of the header and makes it appear full width when there is a full page blue background
+}
+
+.mtp-box a {
+    display: block;
+    background: #005ea5;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em;
+    height: 6em;
+    font-size: 1.2em;
+}
