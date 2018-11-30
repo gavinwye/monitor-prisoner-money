@@ -1,5 +1,23 @@
 {% extends "layout.html" %}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#btn2").click(function(){
+        $("#prisonInput").append(
+                                 '<div id="prisonInput">' +
+  '<div class="govuk-form-group">' +
+    '<label class="govuk-label" for="name">' +
+      'Prison name' +
+    '</label>' +
+    '<input class="govuk-input" id="name" name="name" type="text">' +
+  '</div>' +
+'</div>'
+                                 );
+    });
+});
+</script>
+
 {% block pageTitle %}
 Manage email notifications - Prisoner money intelligence
 {% endblock %}
@@ -46,22 +64,19 @@ Manage email notifications - Prisoner money intelligence
       </summary>
       <div class="govuk-details__text">
         <h2 class="govuk-heading-m">Add more prisons</h2>
+        <div id="prisonInput">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="name">
+              Prison name
+            </label>
+            <input class="govuk-input" id="name" name="name" type="text">
+          </div>
+        </div>
+        <a href="#" id="btn2">Add another</a>
 
-        {% from "input/macro.njk" import govukInput %}
-
-        {{ govukInput({
-          label: {
-            text: "Prison name",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          },
-          id: "name",
-          name: "name"
-        }) }}
-
-        <p class="govuk-body"><a href="#">Add another prison</a></p>
-<!-- @todo make the auto complete work -->
-<!-- @todo make the add another work -->
+        <!-- <input type="button" id="add-button" class="button button-secondary add-list-item" value="Add another prison"> -->
+        <!-- @todo make the auto complete work -->
+        <!-- @todo make the add another work -->
         <form class="form" method="post">
         </div>
       </details>

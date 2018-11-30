@@ -10,10 +10,10 @@ module.exports = function (router, content) {
   })
 
   router.post('/notifications/start', function (req, res) {
-    res.redirect('/notifications/prisons')
+    res.redirect('/notifications/setup/prisons/')
   })
 
-  router.post('/notifications/prisons', function (req, res) {
+  router.post('/notifications/setup/prisons/', function (req, res) {
     res.redirect('/notifications/index')
   })
 
