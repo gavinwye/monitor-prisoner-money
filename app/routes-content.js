@@ -39,7 +39,7 @@
 		debitCardOrBankAccountQuestionOne: 'Money from a debit card or bank account to more than 4 prisoners in last 4 weeks',
 		debitCardOrBankAccountQuestionTwo: 'Money sent to a bank account by more than 4 prisoners in last 4 weeks',
 		emailFrequencyHeadingOne: 'Do you want your new notifications by email? ',
-		emailFrequencyLedeParagraph: ''
+		emailFrequencyLedeParagraph: '',
 		emailFrequencyValueOne: 'Yes, once a day',
 		emailFrequencyValueTwo: 'Yes, once a week',
 		emailFrequencyValueThree: 'No, I can check the notifications page',
