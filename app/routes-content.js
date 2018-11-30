@@ -41,7 +41,7 @@
 		emailFrequencyHeadingOne: 'Do you want your new notifications by email? ',
 		emailFrequencyValueOne: 'Yes, once a day',
 		emailFrequencyValueTwo: 'Yes, once a week',
-		emailFrequencyValueThree: 'No, I can check the notifications page,
+		emailFrequencyValueThree: 'No, I can check the notifications page',
 		checkYourAnswersHeadingOne: 'Notifications',
 		checkYourAnswersLedeParagraph: 'All intelligence is available on the tool at all times but you can set up email notifications for specific transactions.',
 		checkYourAnswersHeadingTwo: 'Notifications',
