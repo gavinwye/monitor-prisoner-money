@@ -10,16 +10,24 @@ $(document).ready(function () {
 
 // This adds another of the compoent defined after the id of the same thing
   $("#addAnother").click(function(){
-    $("#prisonInput").append(
-      '<div id="prisonInput">' +
-      '<div class="govuk-form-group">' +
-      '<label class="govuk-label" for="name">' +
-      'Prison name' +
-      '</label>' +
-      '<input class="govuk-input" id="name" name="name" type="text">' +
-      '</div>' +
+    $("#prisonRow").after(
+      '<div class="app-check-your-answers__contents list-item-row">' +
+        '<dt class="app-check-your-answers__question">' +
+          '{{ data[\'prison\'] }}' +
+        '</dt>' +
+        '<dd class="app-check-your-answers__change">' +
+          '<a href="#" class="remove-list-item">' +
+            'Remove<span class="govuk-visually-hidden"> Wandsworth prison</span>' +
+          '</a>' +
+        '</dd>' +
       '</div>'
     );
   });
 
+  // remove a prisons
+  $(document).on('click', '.remove-list-item', function (e) {
+    e.preventDefault();
+    $(this).parents('.list-item-row').remove();
+    sortParentFields();
+  });
 })
