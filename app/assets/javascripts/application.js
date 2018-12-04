@@ -9,11 +9,12 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
 // This adds another of the compoent defined after the id of the same thing
-  $("#addAnother").click(function(){
-    $("#prisonRow").after(
+  $(".addAnother").click(function(e){
+    e.preventDefault();
+    $("#prisonRow:last").after(
       '<div class="app-check-your-answers__contents list-item-row">' +
         '<dt class="app-check-your-answers__question">' +
-          '{{ data[\'prison\'] }}' +
+          '{{data[\'prison\']}}' +
         '</dt>' +
         '<dd class="app-check-your-answers__change">' +
           '<a href="#" class="remove-list-item">' +
