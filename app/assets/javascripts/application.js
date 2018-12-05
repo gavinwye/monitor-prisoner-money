@@ -14,11 +14,11 @@ $(document).ready(function () {
     $("#prisonRow:last").after(
       '<div class="app-check-your-answers__contents list-item-row">' +
         '<dt class="app-check-your-answers__question">' +
-          '{{data[\'prison\']}}' +
+          $('#prison').val() +
         '</dt>' +
         '<dd class="app-check-your-answers__change">' +
           '<a href="#" class="remove-list-item">' +
-            'Remove<span class="govuk-visually-hidden"> Wandsworth prison</span>' +
+            'Remove<span class="govuk-visually-hidden"> {{data[\'prison\']}}</span>' +
           '</a>' +
         '</dd>' +
       '</div>'
