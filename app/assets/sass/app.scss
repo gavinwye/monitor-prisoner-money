@@ -1,0 +1,99 @@
+@media (min-width: 1200px) {
+    .app-site-width-container {
+        max-width: 1100px
+    }
+}
+
+.app-masthead {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    background-color: #005ea5
+}
+
+@media (min-width: 40.0625em) {
+    .app-masthead {
+        padding-top: 30px
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .app-masthead {
+        padding-bottom: 30px
+    }
+}
+
+.app-masthead__title {
+    color: #fff;
+    margin-bottom: 20px
+}
+
+@media (min-width: 40.0625em) {
+    .app-masthead__title {
+        margin-bottom: 30px
+    }
+}
+
+.app-masthead__description {
+    font-family: "nta", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 18px;
+    font-size: 1.125rem;
+    line-height: 1.11111;
+    margin-bottom: 0
+}
+
+@media print {
+    .app-masthead__description {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .app-masthead__description {
+        font-size: 24px;
+        font-size: 1.5rem;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .app-masthead__description {
+        font-size: 18pt;
+        line-height: 1.15
+    }
+}
+
+.govuk-header__logo {
+  width: 50%;
+}
+
+.header-full-width {
+  border-bottom: 10px solid #005ea5;
+  // This adds the border to the bottom of the header and makes it appear full width when there is a full page blue background
+}
+
+.mtp-box a {
+    display: block;
+    background: #005ea5;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em;
+    height: 6em;
+    font-size: 1.2em;
+}
+
+.hack-admin-nav{
+  float: right;
+  list-style: none;
+  color: #fff;
+}
+
+.header-proposition {
+    float: right;
+    margin-top: -10px;
+    padding-right: 5px;
+    font-weight: 400;
+}

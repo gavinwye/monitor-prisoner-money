@@ -4,6 +4,10 @@
 {{ notificationsHeadingOne }}
 {% endblock %}
 
+{%block beforeContent%}
+{% include "includes/pilot-banner.html" %}
+{% endblock%}
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -28,7 +32,14 @@
 
     <p class="govuk-body">{{notificationsParagraph3}}</p>
 
-    <a class="govuk-button govuk-!-mt-r2 govuk-!-mb-r8" href="/notifications/setup/monitored-transactions" role="button">{{notificationsButtonText}}</a>
+    <form class="form" method="post">
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: notificationsButtonText
+      }) }}
+    </form>
+
+
 
   </div>
 </div>

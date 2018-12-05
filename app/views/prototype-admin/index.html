@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Prototype admin
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Use this page to set things for testing
+    </h1>
+
+    <form class="form" method="post">
+
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        hint: {
+          text: "Will be displayed in the top right"
+          },
+        id: "userName",
+        name: "userName"
+      }) }}
+
+      {{ govukButton({
+        html: 'Save user'
+      }) }}
+
+    </form>
+  </div>
+</div>
+
+{% endblock %}

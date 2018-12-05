@@ -1,24 +1,166 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+Manage email notifications - Prisoner money intelligence
 {% endblock %}
+
+{%block beforeContent%}
+{% include "includes/pilot-banner.html" %}
+{% endblock%}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Email notifications
-      </h1>{{releaseVersion | log }}
-      <p class="govuk-body-l">You don't have any notifications set up yet.</p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      What do you want to be notified about?
+    </h1>
 
-      {{ govukButton({
-          html: 'Setup notifications'
+    <form class="form" method="post">
+
+      {% from "checkboxes/macro.njk" import govukCheckboxes %}
+
+      {{ govukCheckboxes({
+        idPrefix: "monitoredTransactions",
+        name: "monitoredTransactions",
+        fieldset: {
+          legend: {
+            text: "Monitored transactions",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+          }
+        },
+        items: [
+          {
+            value: "allTransactions",
+            text: "All transactions you’re already following - prisoners, debit cards, bank accounts"
+          }
+        ]
       }) }}
 
-    </div>
+      {{ govukCheckboxes({
+        idPrefix: "amounts",
+        name: "amounts",
+        fieldset: {
+          legend: {
+            text: "Credits and disbursements",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
+          }
+        },
+        items: [
+          {
+            value: "creditsOrDisbursementsThatAreNotAWholeNumber",
+            text: "Not a whole number, eg £25.19"
+          },
+          {
+            value: "creditsOrDisbursementsOver200",
+            text: "Over £120"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "frequencyOfTransactions",
+        name: "frequencyOfTransactions",
+        fieldset: {
+          legend: {
+            text: "Frequency of transactions",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
+          }
+        },
+        items: [
+          {
+            value: "moreThan4CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks",
+            text: "4 or more credits sent by a single debit card or bank account in last 4 weeks"
+          },
+          {
+            value: "moreThan4DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks",
+            text: "4 or more disbursements sent to a single bank account in last 4 weeks"
+          }
+        ]
+      }) }}
+
+
+      {{ govukCheckboxes({
+        idPrefix: "aPrisoner",
+        name: "aPrisoner",
+        fieldset: {
+          legend: {
+            text: "Prisoner transactions",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
+          }
+        },
+        items: [
+          {
+            value: "aPrisonerGettingMoneyFromMoreThan4DebitCardsOrBankAccountsWithin4Weeks",
+            text: "Money from 4 or more debit cards or bank accounts in last 4 weeks"
+          },
+          {
+            value: "aPrisonerSendingMoneyToMoreThan4BankAccountsWithin4Weeks",
+            text: "Money to 4 or more bank accounts in last 4 weeks"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "aDebitCardOrBankAccount",
+        name: "aDebitCardOrBankAccount",
+        fieldset: {
+          legend: {
+            text: "A debit card or bank account",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
+          }
+        },
+
+        items: [
+          {
+            value: "aDebitCardOrBankAccountSendingMoneyToMoreThan4PrisonersWithin4Weeks",
+            text: "Money from a debit card or bank account to more than 4 prisoners in last 4 weeks"
+          },
+          {
+            value: "aBankAccountGettingMoneyFromMoreThan4PrisonersWithin4Weeks",
+            text: "Money sent to a bank account by more than 4 prisoners in last 4 weeks"
+          }
+        ]
+      }) }}
+
+      {% from "radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        idPrefix: "howOftenDoYouWantEmails",
+        name: "howOftenDoYouWantEmails",
+        fieldset: {
+          legend: {
+            text: "Do you want your new notifications by email?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2 govuk-!-padding-top-4"
+          }
+        },
+        items: [
+          {
+            value: "onceADay",
+            text: "Yes, once a day"
+          },
+          {
+            value: "onceAWeek",
+            text: "Yes, once a week"
+          },
+          {
+            value: "onceAMonth",
+            text: "No, I can check the notifications page"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+          html: 'Save notifications'
+      }) }}
+    </form>
+  </div>
 </div>
 
 {% endblock %}

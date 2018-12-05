@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Manage email notifications - Prisoner money intelligence
+{% endblock %}
+
+{%block beforeContent%}
+{% include "includes/pilot-banner.html" %}
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Your prisons
+    </h1>
+    <p class="govuk-body-l">You'll get notifications for these prisons.</p>
+
+    <div id="myDIV">
+      <dl class="app-check-your-answers app-check-your-answers--short">
+        <div class="app-check-your-answers__contents list-item-row">
+          <dt class="app-check-your-answers__answer">
+            HMP/YOI Downview
+          </dt>
+          <dd class="app-check-your-answers__change">
+            <a href="#" class="remove-list-item">
+              Remove<span class="govuk-visually-hidden"> HMP/YOI Downview prison</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Add more prisons
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <form class="form" method="post">
+          <h2 class="govuk-heading-m govuk-visually-hidden">Add more prisons</h2>
+          <div id="prisonInput">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="name">
+                Prison name
+              </label>
+              <div id="prisons"></div><br>
+              {{ govukButton({
+                html: 'Add prison',
+                classes: 'addAnother'
+              }) }}
+            </div>
+          </div>
+        </form>
+
+        <form class="form" method="post">
+        </div>
+      </details>
+
+      {{ govukButton({
+        html: 'Save and continue'
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
