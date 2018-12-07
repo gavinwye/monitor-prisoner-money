@@ -21,23 +21,22 @@ Manage email notifications - Prisoner money intelligence
       {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-              idPrefix: "monitoredTransactions",
-              name: "monitoredTransactions",
-              fieldset: {
-                legend: {
-                  text: "Monitored transactions",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
-                }
-              },
-              items: [
-                {
-                  value: "allTransactions",
-                  text: "All transactions you're already following - prisoners, debit cards, bank accounts",
-                  checked: checked("monitoredTransactions", "allTransactions")
-                }
-              ]
-            }) }}
+        idPrefix: "monitoredTransactions",
+        name: "monitoredTransactions",
+        fieldset: {
+          legend: {
+            text: "Monitored transactions",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+          }
+        },
+        items: [
+          {
+            value: "allTransactions",
+            text: "All transactions you’re already following - prisoners, debit cards, bank accounts - in your prisons"
+          }
+        ]
+      }) }}
 
       {{ govukCheckboxes({
         idPrefix: "amounts",
@@ -52,7 +51,7 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "creditsOrDisbursementsThatAreNotAWholeNumber",
-            text: "Not a whole number, eg £25.19",
+            text: "Not a whole number, for example, £25.19",
             checked: checked("amounts", "creditsOrDisbursementsThatAreNotAWholeNumber")
           },
           {
@@ -162,9 +161,9 @@ Manage email notifications - Prisoner money intelligence
           },
           {
             value: "onceAMonth",
-            text: "No, I can check the notifications page",
+            text: "No, I can check the notifications screen",
             checked: checked("howOftenDoYouWantEmails", "onceAMonth")
-          }
+            }
         ]
       }) }}
 
