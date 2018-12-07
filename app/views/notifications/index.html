@@ -34,7 +34,7 @@ Manage email notifications - Prisoner money intelligence
                 {
                   value: "allTransactions",
                   text: "All transactions you're already following - prisoners, debit cards, bank accounts",
-                  checked: data.monitoredTransactions === 'allTransactions'
+                  checked: checked("monitoredTransactions", "allTransactions")
                 }
               ]
             }) }}
@@ -52,11 +52,13 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "creditsOrDisbursementsThatAreNotAWholeNumber",
-            text: "Not a whole number, eg £25.19"
+            text: "Not a whole number, eg £25.19",
+            checked: checked("amounts", "creditsOrDisbursementsThatAreNotAWholeNumber")
           },
           {
             value: "creditsOrDisbursementsOver200",
-            text: "Over £120"
+            text: "Over £120",
+            checked: checked("amounts", "creditsOrDisbursementsOver200")
           }
         ]
       }) }}
@@ -74,11 +76,13 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "moreThan4CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks",
-            text: "4 or more credits sent by a single debit card or bank account in last 4 weeks"
+            text: "4 or more credits sent by a single debit card or bank account in last 4 weeks",
+            checked: checked("frequencyOfTransactions", "moreThan4CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks")
           },
           {
             value: "moreThan4DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks",
-            text: "4 or more disbursements sent to a single bank account in last 4 weeks"
+            text: "4 or more disbursements sent to a single bank account in last 4 weeks",
+            checked: checked("frequencyOfTransactions", "moreThan4DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks")
           }
         ]
       }) }}
@@ -97,11 +101,13 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "aPrisonerGettingMoneyFromMoreThan4DebitCardsOrBankAccountsWithin4Weeks",
-            text: "Money from 4 or more debit cards or bank accounts in last 4 weeks"
+            text: "Money from 4 or more debit cards or bank accounts in last 4 weeks",
+            checked: checked("aPrisoner", "aPrisonerGettingMoneyFromMoreThan4DebitCardsOrBankAccountsWithin4Weeks")
           },
           {
             value: "aPrisonerSendingMoneyToMoreThan4BankAccountsWithin4Weeks",
-            text: "Money to 4 or more bank accounts in last 4 weeks"
+            text: "Money to 4 or more bank accounts in last 4 weeks",
+            checked: checked("aPrisoner", "aPrisonerSendingMoneyToMoreThan4BankAccountsWithin4Weeks")
           }
         ]
       }) }}
@@ -120,11 +126,13 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "aDebitCardOrBankAccountSendingMoneyToMoreThan4PrisonersWithin4Weeks",
-            text: "Money from a debit card or bank account to more than 4 prisoners in last 4 weeks"
+            text: "Money from a debit card or bank account to more than 4 prisoners in last 4 weeks",
+            checked: checked("aDebitCardOrBankAccount", "aDebitCardOrBankAccountSendingMoneyToMoreThan4PrisonersWithin4Weeks")
           },
           {
             value: "aBankAccountGettingMoneyFromMoreThan4PrisonersWithin4Weeks",
-            text: "Money sent to a bank account by more than 4 prisoners in last 4 weeks"
+            text: "Money sent to a bank account by more than 4 prisoners in last 4 weeks",
+            checked: checked("aDebitCardOrBankAccount", "aBankAccountGettingMoneyFromMoreThan4PrisonersWithin4Weeks")
           }
         ]
       }) }}
@@ -144,15 +152,18 @@ Manage email notifications - Prisoner money intelligence
         items: [
           {
             value: "onceADay",
-            text: "Yes, once a day"
+            text: "Yes, once a day",
+            checked: checked("howOftenDoYouWantEmails", "onceADay")
           },
           {
             value: "onceAWeek",
-            text: "Yes, once a week"
+            text: "Yes, once a week",
+            checked: checked("howOftenDoYouWantEmails", "onceAWeek")
           },
           {
             value: "onceAMonth",
-            text: "No, I can check the notifications page"
+            text: "No, I can check the notifications page",
+            checked: checked("howOftenDoYouWantEmails", "onceAMonth")
           }
         ]
       }) }}
