@@ -21,22 +21,23 @@ Manage email notifications - Prisoner money intelligence
       {% from "checkboxes/macro.njk" import govukCheckboxes %}
 
       {{ govukCheckboxes({
-        idPrefix: "monitoredTransactions",
-        name: "monitoredTransactions",
-        fieldset: {
-          legend: {
-            text: "Monitored transactions",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
-          }
-        },
-        items: [
-          {
-            value: "allTransactions",
-            text: "All transactions you’re already following - prisoners, debit cards, bank accounts"
-          }
-        ]
-      }) }}
+              idPrefix: "monitoredTransactions",
+              name: "monitoredTransactions",
+              fieldset: {
+                legend: {
+                  text: "Monitored transactions",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
+                }
+              },
+              items: [
+                {
+                  value: "allTransactions",
+                  text: "All transactions you're already following - prisoners, debit cards, bank accounts",
+                  checked: data.monitoredTransactions === 'allTransactions'
+                }
+              ]
+            }) }}
 
       {{ govukCheckboxes({
         idPrefix: "amounts",
