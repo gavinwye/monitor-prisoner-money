@@ -6,13 +6,35 @@
 
 {% block content %}
 
+{% if data['howOftenDoYouWantEmails'] === 'onceADay'  %}
+{% elseif data['howOftenDoYouWantEmails'] === 'onceAWeek'  %}
+{% elseif data['howOftenDoYouWantEmails'] === 'onceAMonth'  %}
+{% else %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
+    <div class="hack-banner-alert govuk-!-padding-2">
+      <p class="govuk-body govuk-!-margin-bottom-2">
+        <strong class="govuk-tag govuk-!-margin-right-2">
+          pilot
+        </strong>
+        We are piloting notifications. <a href="/notifications/start">Setup your notifications</a> in this new pilot
+      </p>
+      <p class="govuk-body-s govuk-!-margin-bottom-0">
+        <a href="#">Don't show me this again</a>
+      </p>
+    </div>
+  </div>
+</div>
+{% endif %}
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
       Welcome Jason Brading
     </h1>
   </div>
 </div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <p class="govuk-body-l govuk-!-margin-bottom-9">Use this tool to monitor all credits sent to prisoners using the <a href="#">Send money to someone in prison</a> service.</p>
