@@ -100,6 +100,12 @@
 
 .hack-banner-alert {
   border: solid 4px #005ea5;
-  // background-color: 	#2b8cc4;
-  // color: #fff;
+  margin-top: -20px;
+}
+
+
+.hack-banner-alert .govuk-phase-banner {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  border-bottom: 0px solid #bfc1c3;
 }
