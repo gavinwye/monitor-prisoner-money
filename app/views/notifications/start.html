@@ -36,7 +36,8 @@
     <form class="form" method="post">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: notificationsButtonText
+        text: "Start now",
+        classes: "govuk-button--start"
       }) }}
     </form>
 
