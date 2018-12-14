@@ -109,3 +109,35 @@
   padding-bottom: 0px;
   border-bottom: 0px solid #bfc1c3;
 }
+
+.hack-list-inline li {
+  display: inline;
+  float: right;
+}
+
+.hack-col-10 {
+  width: 10%;
+}
+.hack-col-23 {
+  width: 23.3%;
+}
+
+.hack-inset-red{
+  color: #df3034;
+  border-left: 10px solid #df3034;
+  // padding-top: 6px;
+  // padding-bottom: 6px;
+}
+
+.bold{
+  font-weight: 700 !important;
+}
+
+.hack-notification-banner {
+  border: solid 4px #df3034;
+  padding: 10px;
+}
+
+.red{
+  border-left: 10px solid #df3034;
+}
