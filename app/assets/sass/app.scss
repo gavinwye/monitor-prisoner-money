@@ -109,3 +109,22 @@
   padding-bottom: 0px;
   border-bottom: 0px solid #bfc1c3;
 }
+
+.hack-border-bottom{
+  border-bottom: 0px;
+}
+
+.hack-inset-red{
+  color: #df3034;
+  border-left: 5px solid #df3034;
+  padding-left: 5px;
+  font-weight: 700;
+}
+
+.hack-table-row-vertical-align-top{
+  vertical-align: top;
+}
+.hack-list-inline li {
+    display: inline;
+    float: right;
+  }

@@ -1,0 +1,259 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Notifications
+{% endblock %}
+
+{%block beforeContent%}
+{% include "includes/pilot-banner.html" %}
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-3 govuk-!-margin-top-4">
+      Notifications
+    </h1>
+  </div>
+  <div class="govuk-grid-column-one-third govuk-!-margin-bottom-3 govuk-!-margin-top-7">
+    <ul class="govuk-list hack-list-inline govuk-!-font-size-14">
+      <li><a href="#">Export</a></li>
+      <li style="padding-right: 10px;"><a href="#">Print</a></li>
+    </ul>
+    <!-- <p class="govuk-body" style="float: right;"><a class="govuk-link" href="/notifications/">Edit notification settings</a></p> -->
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-visually-hidden">Notifications</caption>
+      <thead class="govuk-table__head hack-table-row-vertical-align-top govuk-!-font-size-14">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header govuk-table__header" scope="col">Date recieved</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+          <th class="govuk-table__header govuk-table__header" scope="col">Prisoner name</th>
+          <th class="govuk-table__header govuk-table__header" scope="col">Sender</th>
+          <th class="govuk-table__header govuk-table__header" scope="col">Senders card or account</th>
+          <th class="govuk-table__header govuk-table__header" scope="col">Type</th>
+          <th class="govuk-table__header govuk-table__header" scope="col">Notification type</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body hack-table-row-vertical-align-top govuk-!-font-size-14">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£35.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Adam Douglas</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">Mick Myers</td>
+          <td class="govuk-table__cell govuk-table__cell">Card ending: 9766</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Monitored</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">John Watson</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">Jimmy Cramer</td>
+          <td class="govuk-table__cell govuk-table__cell">Card ending: 9766</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over £200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Ethan Clark</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">George Lee</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 67584534</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over 10 credits in 4 weeks</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">11/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£50.05</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Igor Samms</a> <br>ZA1233DS</td>
+          <td class="govuk-table__cell govuk-table__cell">Ann Bodin</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 564932876</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Not a whole number</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">09/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Peter Borg</a> <br>RT5467G</td>
+          <td class="govuk-table__cell govuk-table__cell">A. Smith</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98076534</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over £200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">05/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Stuart Douglas</a> <br>A5796ZB</td>
+          <td class="govuk-table__cell govuk-table__cell">Joa Egli</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98452398</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Monitored</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£35.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Adam Douglas</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">Mick Myers</td>
+          <td class="govuk-table__cell govuk-table__cell">Card ending: 9766</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Monitored</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">John Watson</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">Jimmy Cramer</td>
+          <td class="govuk-table__cell govuk-table__cell">Card ending: 9766</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over £200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Ethan Clark</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">George Lee</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 67584534</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over 10 credits in 4 weeks</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">11/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£50.05</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Igor Samms</a> <br>ZA1233DS</td>
+          <td class="govuk-table__cell govuk-table__cell">Ann Bodin</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 564932876</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Not a whole number</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">09/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Peter Borg</a> <br>RT5467G</td>
+          <td class="govuk-table__cell govuk-table__cell">A. Smith</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98076534</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over £200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">05/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Stuart Douglas</a> <br>A5796ZB</td>
+          <td class="govuk-table__cell govuk-table__cell">Joa Egli</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98452398</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Monitored</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£35.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Adam Douglas</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">Mick Myers</td>
+          <td class="govuk-table__cell govuk-table__cell">Card ending: 9766</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Monitored</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">John Watson</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">Jimmy Cramer</td>
+          <td class="govuk-table__cell govuk-table__cell">Card ending: 9766</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over £200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">17/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Ethan Clark</a> <br>A6191FY</td>
+          <td class="govuk-table__cell govuk-table__cell">George Lee</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 67584534</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over 10 credits in 4 weeks</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">11/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£50.05</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Igor Samms</a> <br>ZA1233DS</td>
+          <td class="govuk-table__cell govuk-table__cell">Ann Bodin</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 564932876</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Not a whole number</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">09/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Peter Borg</a> <br>RT5467G</td>
+          <td class="govuk-table__cell govuk-table__cell">A. Smith</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98076534</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over £200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">05/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Stuart Douglas</a> <br>A5796ZB</td>
+          <td class="govuk-table__cell govuk-table__cell">Joa Egli</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98452398</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Monitored</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">09/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Peter Borg</a> <br>RT5467G</td>
+          <td class="govuk-table__cell govuk-table__cell">A. Smith</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98076534</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Over £200</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell govuk-table__cell">05/06/2018</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">£1500.00</td>
+          <td class="govuk-table__cell govuk-table__cell"><a href="#">Stuart Douglas</a> <br>A5796ZB</td>
+          <td class="govuk-table__cell govuk-table__cell">Joa Egli</td>
+          <td class="govuk-table__cell govuk-table__cell">Account no: 98452398</td>
+          <td class="govuk-table__cell govuk-table__cell">Credit</td>
+          <td class="govuk-table__cell govuk-table__cell">Monitored</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+</div>
+
+{% endblock %}
