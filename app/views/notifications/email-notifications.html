@@ -1,0 +1,52 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Email
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Email</h1>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h1 class="govuk-heading-l">
+      New intelligence tool notifications
+    </h1>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <p class="govuk-body">
+      You have 3 transactions to view
+    </p>
+
+    <p class="govuk-body">
+      Credits or disbursments:
+    </p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Credits over £120 - 7 notifications</li>
+      <li>Disbursements over £120 - 2 notifications</li>
+    </ul>
+
+    <p class="govuk-body">
+      Frequency of transactions:
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>4 or more credits sent by a single debit card in last 4 weeks - 11 notifications</li>
+      <li>4 or more disbursements sent by a single bank account in last 4 weeks - 1 notification</li>
+    </ul>
+
+    <form class="form" method="post">
+      {% from "button/macro.njk" import govukButton %}
+      {{ govukButton({
+      html: 'Go to notifications'
+    }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
