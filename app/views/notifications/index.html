@@ -13,163 +13,39 @@ Manage email notifications - Prisoner money intelligence
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      What do you want to be notified about?
+      Email notifications
     </h1>
 
+    <p class="govuk-body-l">We can send you an email notification update every Monday so that you know what has happened during the previous week.</p>
+
     <form class="form" method="post">
-
-      {% from "checkboxes/macro.njk" import govukCheckboxes %}
-
-      {{ govukCheckboxes({
-        idPrefix: "monitoredTransactions",
-        name: "monitoredTransactions",
-        fieldset: {
-          legend: {
-            text: "Monitored transactions",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-padding-top-4"
-          }
-        },
-        items: [
-          {
-            value: "allTransactions",
-            text: "All transactions you’re already following - prisoners, debit cards, bank accounts - in your prisons",
-            checked: checked("monitoredTransactions", "allTransactions")
-          }
-        ]
-      }) }}
-
-      {{ govukCheckboxes({
-        idPrefix: "amounts",
-        name: "amounts",
-        fieldset: {
-          legend: {
-            text: "Credits and disbursements",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4"
-          }
-        },
-        items: [
-          {
-            value: "creditsOrDisbursementsThatAreNotAWholeNumber",
-            text: "Not a whole number, for example, £25.19",
-            checked: checked("amounts", "creditsOrDisbursementsThatAreNotAWholeNumber")
-          },
-          {
-            value: "creditsOrDisbursementsOver200",
-            text: "Over £120",
-            checked: checked("amounts", "creditsOrDisbursementsOver200")
-          }
-        ]
-      }) }}
-
-      {{ govukCheckboxes({
-        idPrefix: "frequencyOfTransactions",
-        name: "frequencyOfTransactions",
-        fieldset: {
-          legend: {
-            text: "Number of credits/disbursements sent",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
-          }
-        },
-        items: [
-          {
-            value: "moreThan4CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks",
-            text: "4 or more credits sent by a single debit card or bank account in last 4 weeks",
-            checked: checked("frequencyOfTransactions", "moreThan4CreditsFromTheSameDebitCardOrBankAccountToAnyPrisonerWithin4Weeks")
-          },
-          {
-            value: "moreThan4DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks",
-            text: "4 or more disbursements sent to a single bank account in last 4 weeks",
-            checked: checked("frequencyOfTransactions", "moreThan4DisbursementsFromAnyPrisonerToTheSameBankAccountWithin4Weeks")
-          }
-        ]
-      }) }}
-
-
-      {{ govukCheckboxes({
-        idPrefix: "aPrisoner",
-        name: "aPrisoner",
-        fieldset: {
-          legend: {
-            text: "Prisoner transactions",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
-          }
-        },
-        items: [
-          {
-            value: "aPrisonerGettingMoneyFromMoreThan4DebitCardsOrBankAccountsWithin4Weeks",
-            text: "Credits from 4 or more debit cards or bank accounts in last 4 weeks",
-            checked: checked("aPrisoner", "aPrisonerGettingMoneyFromMoreThan4DebitCardsOrBankAccountsWithin4Weeks")
-          },
-          {
-            value: "aPrisonerSendingMoneyToMoreThan4BankAccountsWithin4Weeks",
-            text: "Disbursements to 4 or more bank accounts in last 4 weeks",
-            checked: checked("aPrisoner", "aPrisonerSendingMoneyToMoreThan4BankAccountsWithin4Weeks")
-          }
-        ]
-      }) }}
-
-      {{ govukCheckboxes({
-        idPrefix: "aDebitCardOrBankAccount",
-        name: "aDebitCardOrBankAccount",
-        fieldset: {
-          legend: {
-            text: "Number of prisoners receiving/sending money",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-4 govuk-!-padding-top-4"
-          }
-        },
-
-        items: [
-          {
-            value: "aDebitCardOrBankAccountSendingMoneyToMoreThan4PrisonersWithin4Weeks",
-            text: "Credits from a debit card or bank account to more than 4 prisoners in last 4 weeks",
-            checked: checked("aDebitCardOrBankAccount", "aDebitCardOrBankAccountSendingMoneyToMoreThan4PrisonersWithin4Weeks")
-          },
-          {
-            value: "aBankAccountGettingMoneyFromMoreThan4PrisonersWithin4Weeks",
-            text: "Disbursements sent to a bank account by more than 4 prisoners in last 4 weeks",
-            checked: checked("aDebitCardOrBankAccount", "aBankAccountGettingMoneyFromMoreThan4PrisonersWithin4Weeks")
-          }
-        ]
-      }) }}
-
-      {% from "radios/macro.njk" import govukRadios %}
 
       {{ govukRadios({
         idPrefix: "howOftenDoYouWantEmails",
         name: "howOftenDoYouWantEmails",
         fieldset: {
           legend: {
-            text: "Do you want your new notifications by email?",
+            text: "How often would you like email notifications?",
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--m govuk-!-margin-bottom-2 govuk-!-padding-top-4"
+            classes: "govuk-fieldset__legend--l govuk-!-margin-bottom-2 govuk-!-padding-top-4"
           }
         },
         items: [
           {
-            value: "onceADay",
-            text: "Yes, once a day",
-            checked: checked("howOftenDoYouWantEmails", "onceADay")
-          },
-          {
             value: "onceAWeek",
-            text: "Yes, once a week",
+            text: "Once a week",
             checked: checked("howOftenDoYouWantEmails", "onceAWeek")
           },
           {
             value: "onceAMonth",
-            text: "No, I can check the notifications screen",
+            text: "Don't send me emails, I can check the notifications screen",
             checked: checked("howOftenDoYouWantEmails", "onceAMonth")
             }
         ]
       }) }}
 
       {{ govukButton({
-          html: 'Save notifications'
+          html: 'Continue'
       }) }}
     </form>
   </div>

@@ -1,28 +1,23 @@
 module.exports = function (router, content) {
 
-
   router.post('/notifications/email', function (req, res) {
     res.redirect('/sign-in/')
   })
 
   router.post('/sign-in/', function (req, res) {
-    res.redirect('/notifications/start')
+    res.redirect('/prisons/')
   })
 
-  router.post('/notifications/start', function (req, res) {
-    res.redirect('/notifications/setup/prisons/')
+  router.post('/prisons/', function (req, res) {
+    res.redirect('/prisons/success')
   })
 
-  router.post('/notifications/setup/prisons/', function (req, res) {
+  router.post('/prisons/success', function (req, res) {
     res.redirect('/notifications/')
   })
 
   router.post('/notifications/', function (req, res) {
-    res.redirect('/notifications/confirmation')
-  })
-
-  router.post('/notifications/confirmation', function (req, res) {
-    res.redirect('/')
+    res.redirect('/notifications/notifications-page')
   })
 
   // Pass the content in to the page
