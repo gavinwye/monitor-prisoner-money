@@ -19,7 +19,8 @@
 
 @media (min-width: 40.0625em) {
     .app-masthead {
-        padding-bottom: 30px
+        padding-bottom: 30px;
+        margin-top: -10px;
     }
 }
 
@@ -135,4 +136,8 @@
 }
 .hack-grey-out{
   opacity: 0.5;
+}
+.hack-homepage-header{
+  @extends .govuk-header__container;
+  // border-bottom: 10px;
 }

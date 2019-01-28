@@ -35,13 +35,33 @@
 {% block header %}
   {% include "includes/cookie-banner.html" %}
   {# Set serviceName in config.js. #}
-  {{ govukHeader({
+  <!-- {{ govukHeader({
     homepageUrl: "/",
     productName: "Prisoner money intelligence",
     serviceUrl: "/",
     containerClasses: "govuk-width-container",
     classes: "header-full-width"
-  }) }}
+  }) }} -->
+  <header class="govuk-header " role="banner" data-module="header">
+    <div class="govuk-header__container govuk-width-container hack-homepage-header">
+
+      <div class="govuk-header__logo">
+        <a href="/" class="govuk-header__link govuk-header__link--homepage">
+          <span class="govuk-header__logotype">
+            <image src="{{ asset_path }}/images/crest.png" class="govuk-header__logotype-crown-fallback-image"></image>
+            <span class="govuk-header__logotype-text">
+              HMPPS
+            </span>
+            <span class="govuk-header__product-name">
+              Prisoner money intelligence
+            </span>
+          </span>
+        </a>
+      </div>
+      <div class="header-proposition">
+      </div>
+    </div>
+  </header>
 {% endblock %}
 
 {% block main %}
