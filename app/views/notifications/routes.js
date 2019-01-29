@@ -6,7 +6,11 @@ module.exports = function (router, content) {
   })
 
   router.post('/sign-in/', function (req, res) {
-    res.redirect('/notifications/start')
+    res.redirect('/prisons')
+  })
+
+  router.post('/prisons/', function (req, res) {
+    res.redirect('/prisons/success')
   })
 
   router.post('/notifications/start', function (req, res) {
