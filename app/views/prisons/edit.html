@@ -16,9 +16,8 @@ Manage email notifications - Prisoner money intelligence
       Edit your prisons
     </h1>
 
-    <p class="govuk-body-l">At the moment you can only see data from public prisons.</p>
 
-    <p class="govuk-body">You'll see data for these prisons.</p>
+    <p class="govuk-body-l">You'll see data for:</p>
 
     <div id="myDIV">
       <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-5">
@@ -37,11 +36,16 @@ Manage email notifications - Prisoner money intelligence
 
     <form class="form" method="post">
       <h2 class="govuk-heading-m govuk-visually-hidden">Add more prisons</h2>
+
+      <!-- <p class="govuk-body">At the moment you can only see data from public prisons.</p> -->
       <div id="prisonInput">
         <div class="govuk-form-group govuk-!-margin-bottom-0">
           <label class="govuk-label" for="name">
             Add more prisons
           </label>
+          <span id="dob-hint" class="govuk-hint">
+            We only have data for public prisons
+          </span>
           <div id="prisons"></div><br>
           {{ govukButton({
             html: 'Add prison',
