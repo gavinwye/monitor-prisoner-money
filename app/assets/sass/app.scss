@@ -19,7 +19,8 @@
 
 @media (min-width: 40.0625em) {
     .app-masthead {
-        padding-bottom: 30px
+        padding-bottom: 30px;
+        margin-top: -10px;
     }
 }
 
@@ -136,8 +137,6 @@
 .hack-grey-out{
   opacity: 0.5;
 }
-<<<<<<< Updated upstream
-=======
 .hack-homepage-header{
   @extends .govuk-header__container;
   // border-bottom: 10px;
@@ -151,4 +150,3 @@
   background-color: #6f777b;
   color: black;
 }
->>>>>>> Stashed changes

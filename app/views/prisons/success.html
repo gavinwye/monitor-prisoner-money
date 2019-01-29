@@ -10,59 +10,38 @@ Manage email notifications - Prisoner money intelligence
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-panel govuk-panel--confirmation ">
-      <h1 class="govuk-headign-s govuk-!-margin-bottom-0 govuk-!-margin-top-0">Your prison settings have been saved</h1>
-    </div>
-
-    <div id="myDIV">
-      <dl class="app-check-your-answers app-check-your-answers--short">
-        <div class="app-check-your-answers__contents list-item-row">
-          <dt class="app-check-your-answers__answer">
-            HMP/YOI Downview
-          </dt>
-          <dd class="app-check-your-answers__change">
-            <a href="#" class="remove-list-item">
-              Remove<span class="govuk-visually-hidden"> HMP/YOI Downview prison</span>
-            </a>
-          </dd>
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l govuk-!-margin-top-0 govuk-!-padding-top-0" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-0">
+          <h1 class="govuk-panel__title">
+            Your prisons have been saved
+          </h1>
         </div>
-      </dl>
-    </div>
 
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Add more prisons
-        </span>
-      </summary>
-      <div class="govuk-details__text">
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">You’ll see data from these prisons:</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>HMP/YOI Downview</li>
+            <li>HMP Highpoint</li>
+        </ul>
+
+        <p class="govuk-body">
+          You can edit your prison settings at any time from your <a href="/profile">profile screen</a>.
+        </p>
+        <p class="govuk-body">
+          You can still see data from all public prisons by clicking the all prisons link on any data screen.
+        </p>
+
         <form class="form" method="post">
-          <h2 class="govuk-heading-m govuk-visually-hidden">Add more prisons</h2>
-          <div id="prisonInput">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="name">
-                Prison name
-              </label>
-              <div id="prisons"></div><br>
-              {{ govukButton({
-                html: 'Add prison',
-                classes: 'addAnother'
-              }) }}
-            </div>
-          </div>
+          {{ govukButton({
+            html: 'Continue'
+          }) }}
         </form>
-
-        <form class="form" method="post">
-        </div>
-      </details>
-
-      {{ govukButton({
-        html: 'Save and continue'
-      }) }}
-    </form>
-  </div>
+      </div>
+    </div>
+  </main>
 </div>
 
 {% endblock %}
