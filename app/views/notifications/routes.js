@@ -13,6 +13,10 @@ module.exports = function (router, content) {
     res.redirect('/prisons/success')
   })
 
+  router.post('/prisons/edit', function (req, res) {
+    res.redirect('/prisons/success')
+  })
+
   router.post('/notifications/start', function (req, res) {
     res.redirect('/notifications/setup/prisons/')
   })
