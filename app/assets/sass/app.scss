@@ -136,3 +136,19 @@
 .hack-grey-out{
   opacity: 0.5;
 }
+<<<<<<< Updated upstream
+=======
+.hack-homepage-header{
+  @extends .govuk-header__container;
+  // border-bottom: 10px;
+}
+.addAnother {
+  background-color: #bfc1c3;
+  color: black;
+  box-shadow: 0 0 0 #003618;
+}
+.addAnother:hover, .addAnother:focus{
+  background-color: #6f777b;
+  color: black;
+}
+>>>>>>> Stashed changes

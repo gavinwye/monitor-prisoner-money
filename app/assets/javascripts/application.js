@@ -13,7 +13,7 @@ $(document).ready(function () {
     e.preventDefault();
     $(".list-item-row:last").after(
       '<div class="app-check-your-answers__contents list-item-row">' +
-        '<dt class="app-check-your-answers__answer">' +
+        '<dt class="app-check-your-answers__answer govuk-!-font-weight-bold">' +
           $('#prison').val() +
         '</dt>' +
         '<dd class="app-check-your-answers__change">' +
