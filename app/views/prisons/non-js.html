@@ -1,0 +1,181 @@
+<!-- See documentation on github for how this should work:
+https://github.com/alphagov/accessible-autocomplete#progressive-enhancement -->
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirm your prisons - Prisoner money intelligence
+{% endblock %}
+
+{%block beforeContent%}
+<!-- {% include "includes/pilot-banner.html" %} -->
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Confirm your prisons
+    </h1>
+
+
+    <p class="govuk-body-l">You'll see data for:</p>
+
+    <div id="myDIV">
+      <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-5">
+        <div class="app-check-your-answers__contents list-item-row">
+          <dt class="app-check-your-answers__answer govuk-!-font-weight-bold">
+            HMP/YOI Downview
+          </dt>
+          <dd class="app-check-your-answers__change">
+            <a href="#" class="remove-list-item">
+              Remove<span class="govuk-visually-hidden"> HMP/YOI Downview prison</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+    <form class="form" method="post">
+      <h2 class="govuk-heading-m govuk-visually-hidden">Add another prison</h2>
+
+      <!-- <p class="govuk-body">At the moment you can only see data from public prisons.</p> -->
+      <div id="prisonInput">
+        <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <label class="govuk-label" for="name">
+            Add another prison
+          </label>
+          <span id="dob-hint" class="govuk-hint">
+            We only have data for public prisons
+          </span>
+          <select class="govuk-select" id="prisons">
+            <!-- <option value="HMP/YOI Askham Grange"></option> -->
+            <option value="HMP/YOI Askham Grange">HMP/YOI Askham Grange</option>
+            <option value="HMYOI Aylesbury">HMYOI Aylesbury</option>
+            <option value="HMP/YOI Bedford">HMP/YOI Bedford</option>
+            <option value="HMP/YOI Belmarsh">HMP/YOI Belmarsh</option>
+            <option value="HMP/YOI Berwyn">HMP/YOI Berwyn</option>
+            <option value="HMP/YOI Brinsford">HMP/YOI Brinsford</option>
+            <option value="HMP/YOI Bristol">HMP/YOI Bristol</option>
+            <option value="HMP Brixton">HMP Brixton</option>
+            <option value="HMP Buckley Hall">HMP Buckley Hall</option>
+            <option value="HMP/YOI Bullingdon">HMP/YOI Bullingdon</option>
+            <option value="HMP Bure">HMP Bure</option>
+            <option value="HMP/YOI Cardiff">HMP/YOI Cardiff</option>
+            <option value="HMP Channings Wood">HMP Channings Wood</option>
+            <option value="HMP/YOI Chelmsford">HMP/YOI Chelmsford</option>
+            <option value="HMP Coldingley">HMP Coldingley</option>
+            <option value="HMYOI Cookham Wood">HMYOI Cookham Wood</option>
+            <option value="HMP Dartmoor">HMP Dartmoor</option>
+            <option value="HMYOI Deerbolt">HMYOI Deerbolt</option>
+            <option value="HMP/YOI Downview">HMP/YOI Downview</option>
+            <option value="HMP/YOI Drake Hall">HMP/YOI Drake Hall</option>
+            <option value="HMP/YOI Durham">HMP/YOI Durham</option>
+            <option value="HMP/YOI East Sutton Park">HMP/YOI East Sutton Park</option>
+            <option value="HMP/YOI Eastwood Park">HMP/YOI Eastwood Park</option>
+            <option value="HMP/YOI Elmley">HMP/YOI Elmley</option>
+            <option value="HMP Erlestoke">HMP Erlestoke</option>
+            <option value="HMP/YOI Exeter">HMP/YOI Exeter</option>
+            <option value="HMP Featherstone">HMP Featherstone</option>
+            <option value="HMYOI Feltham">HMYOI Feltham</option>
+            <option value="HMP Ford">HMP Ford</option>
+            <option value="HMP/YOI Foston Hall">HMP/YOI Foston Hall</option>
+            <option value="HMP Frankland">HMP Frankland</option>
+            <option value="HMP Full Sutton">HMP Full Sutton</option>
+            <option value="HMP Garth">HMP Garth</option>
+            <option value="HMP Gartree">HMP Gartree</option>
+            <option value="HMP Grendon">HMP Grendon</option>
+            <option value="HMP Guys Marsh">HMP Guys Marsh</option>
+            <option value="HMP/YOI Hatfield">HMP/YOI Hatfield</option>
+            <option value="HMP Haverigg">HMP Haverigg</option>
+            <option value="HMP/YOI Hewell">HMP/YOI Hewell</option>
+            <option value="HMP/YOI High Down">HMP/YOI High Down</option>
+            <option value="HMP Highpoint">HMP Highpoint</option>
+            <option value="HMP/YOI Hindley">HMP/YOI Hindley</option>
+            <option value="HMP/YOI Hollesley Bay">HMP/YOI Hollesley Bay</option>
+            <option value="HMP/YOI Holme House">HMP/YOI Holme House</option>
+            <option value="HMP/YOI Hull">HMP/YOI Hull</option>
+            <option value="HMP Humber">HMP Humber</option>
+            <option value="HMP Huntercombe">HMP Huntercombe</option>
+            <option value="HMP/YOI Isis">HMP/YOI Isis</option>
+            <option value="HMP/YOI Isle of Wight">HMP/YOI Isle of Wight</option>
+            <option value="HMP Kirkham">HMP Kirkham</option>
+            <option value="HMP/YOI Kirklevington Grange">HMP/YOI Kirklevington Grange</option>
+            <option value="HMP Lancaster Farms">HMP Lancaster Farms</option>
+            <option value="HMP Leeds">HMP Leeds</option>
+            <option value="HMP Leicester">HMP Leicester</option>
+            <option value="HMP/YOI Lewes">HMP/YOI Lewes</option>
+            <option value="HMP Leyhill">HMP Leyhill</option>
+            <option value="HMP/YOI Lincoln">HMP/YOI Lincoln</option>
+            <option value="HMP Lindholme">HMP Lindholme</option>
+            <option value="HMP Littlehey">HMP Littlehey</option>
+            <option value="HMP Liverpool">HMP Liverpool</option>
+            <option value="HMP Long Lartin">HMP Long Lartin</option>
+            <option value="HMP/YOI Low Newton">HMP/YOI Low Newton</option>
+            <option value="HMP Maidstone">HMP Maidstone</option>
+            <option value="HMP/YOI Manchester">HMP/YOI Manchester</option>
+            <option value="STC Medway">STC Medway</option>
+            <option value="HMP/YOI Moorland">HMP/YOI Moorland</option>
+            <option value="IRC Morton Hall">IRC Morton Hall</option>
+            <option value="HMP/YOI New Hall">HMP/YOI New Hall</option>
+            <option value="HMP North Sea Camp">HMP North Sea Camp</option>
+            <option value="HMP/YOI Norwich">HMP/YOI Norwich</option>
+            <option value="HMP/YOI Nottingham">HMP/YOI Nottingham</option>
+            <option value="HMP Onley">HMP Onley</option>
+            <option value="HMP/YOI Pentonville">HMP/YOI Pentonville</option>
+            <option value="HMP/YOI Portland">HMP/YOI Portland</option>
+            <option value="HMP/YOI Prescoed">HMP/YOI Prescoed</option>
+            <option value="HMP/YOI Preston">HMP/YOI Preston</option>
+            <option value="HMP Ranby">HMP Ranby</option>
+            <option value="HMP Risley">HMP Risley</option>
+            <option value="HMP/YOI Rochester">HMP/YOI Rochester</option>
+            <option value="HMP/YOI Send">HMP/YOI Send</option>
+            <option value="HMP Spring Hill">HMP Spring Hill</option>
+            <option value="HMP Stafford">HMP Stafford</option>
+            <option value="HMP/YOI Standford Hill">HMP/YOI Standford Hill</option>
+            <option value="HMP Stocken">HMP Stocken</option>
+            <option value="HMP/YOI Stoke Heath">HMP/YOI Stoke Heath</option>
+            <option value="HMP/YOI Styal">HMP/YOI Styal</option>
+            <option value="HMP/YOI Sudbury">HMP/YOI Sudbury</option>
+            <option value="HMP Swaleside">HMP Swaleside</option>
+            <option value="HMP/YOI Swansea">HMP/YOI Swansea</option>
+            <option value="HMP/YOI Swinfen Hall">HMP/YOI Swinfen Hall</option>
+            <option value="HMP The Mount">HMP The Mount</option>
+            <option value="IRC The Verne">IRC The Verne</option>
+            <option value="HMP/YOI Thorn Cross">HMP/YOI Thorn Cross</option>
+            <option value="HMP Usk">HMP Usk</option>
+            <option value="HMP Wakefield">HMP Wakefield</option>
+            <option value="HMP/YOI Wandsworth">HMP/YOI Wandsworth</option>
+            <option value="HMP/YOI Warren Hill">HMP/YOI Warren Hill</option>
+            <option value="HMP Wayland">HMP Wayland</option>
+            <option value="HMP Wealstun">HMP Wealstun</option>
+            <option value="HMYOI Werrington">HMYOI Werrington</option>
+            <option value="HMYOI Wetherby">HMYOI Wetherby</option>
+            <option value="HMP Whatton">HMP Whatton</option>
+            <option value="HMP Whitemoor">HMP Whitemoor</option>
+            <option value="HMP/YOI Winchester">HMP/YOI Winchester</option>
+            <option value="HMP/YOI Woodhill">HMP/YOI Woodhill</option>
+            <option value="HMP/YOI Wormwood Scrubs">HMP/YOI Wormwood Scrubs</option>
+            <option value="HMP/YOI Wymott">HMP/YOI Wymott</option>
+          </select><br><br>
+          <!-- <div id="prisons"></div><br> -->
+          {{ govukButton({
+            html: 'Add prison',
+            classes: 'addAnother govuk-!-margin-bottom-0'
+          }) }}
+        </div>
+      </div>
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible ">
+
+    <form class="form" method="post">
+      {{ govukButton({
+        html: 'Confirm prisons'
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
