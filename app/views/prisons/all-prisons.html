@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Confirm your prisons - Prisoner money intelligence
+{% endblock %}
+
+{%block beforeContent%}
+<!-- {% include "includes/pilot-banner.html" %} -->
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Confirm your prisons
+    </h1>
+
+    <p class="govuk-body-l">You'll see data for:</p>
+
+    <div id="myDIV">
+      <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-5">
+        <div class="app-check-your-answers__contents list-item-row">
+          <dt class="app-check-your-answers__answer govuk-!-font-weight-bold">
+            All prisons
+          </dt>
+          <dd class="app-check-your-answers__change">
+            <a href="#" class="remove-list-item">
+              Remove<span class="govuk-visually-hidden"> All prisons</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <div class="hack-app-contact-panel">
+
+    <h2 class="govuk-heading-s hack-colour-white">You'll see a lot of data if you confirm All prisons which may make the tool unusable.</h2>
+    <p class="govuk-body-s hack-colour-white">If this is your intention click the confirm prisons button.</p>
+
+    <p class="govuk-body-s hack-colour-white">If not you can remove All prisons  and add the prisons you are interested in.</p>
+
+    </div>
+
+    <hr class="govuk-section-break govuk-section-break--m ">
+
+    <form class="form" method="post">
+      <h2 class="govuk-heading-m govuk-visually-hidden">Add another prison</h2>
+
+      <!-- <p class="govuk-body">At the moment you can only see data from public prisons.</p> -->
+      <div id="prisonInput">
+        <div class="govuk-form-group govuk-!-margin-bottom-0 ">
+          <label class="govuk-label" for="name">
+            Add another prison
+          </label>
+          <span id="dob-hint" class="govuk-hint">
+            We only have data for public prisons
+          </span>
+          <!-- <input id="prison" class="govuk-input govuk-!-margin-bottom-3 govuk-input--error" type="text" value="HMP/YOI Downview"> -->
+          <div id="prisons"></div><br>
+          {{ govukButton({
+            html: 'Add prison',
+            classes: 'addAnother govuk-!-margin-bottom-0'
+          }) }}
+        </div>
+      </div>
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible ">
+
+    <form class="form" method="post">
+      {{ govukButton({
+        html: 'Confirm prisons'
+      }) }}
+    </form>
+  </div>
+</div>
+
+{% endblock %}
