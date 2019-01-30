@@ -142,11 +142,13 @@
   // border-bottom: 10px;
 }
 .addAnother {
-  background-color: #bfc1c3;
+  background-color: #dee0e2;
   color: black;
-  box-shadow: 0 0 0 #003618;
+  box-shadow: 0 0 0 #dee0e2;
+  padding-bottom: 8px;
+  // bottom: -2px;
 }
 .addAnother:hover, .addAnother:focus{
-  background-color: #6f777b;
+  background-color: #bfc1c3;
   color: black;
 }
