@@ -29,7 +29,9 @@ Confirm your prisons - Prisoner money intelligence
       </div>
     </div>
 
-    <!-- <p class="govuk-body-l">You'll see data for:</p> -->
+    <p class="govuk-body-l">You'll see data for:</p>
+
+
 
     <!-- <div id="myDIV">
       <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-5">
@@ -51,15 +53,18 @@ Confirm your prisons - Prisoner money intelligence
 
       <!-- <p class="govuk-body">At the moment you can only see data from public prisons.</p> -->
       <div id="prisonInput">
-        <div class="govuk-form-group govuk-!-margin-bottom-0">
+        <div class="govuk-form-group govuk-!-margin-bottom-0 govuk-form-group--error">
           <label class="govuk-label" for="name">
             Add a prison
           </label>
           <span id="dob-hint" class="govuk-hint">
             We only have data for public prisons
           </span>
-          <div id="prisons"></div><br>
-          <!-- <input id="prison" class="govuk-input govuk-!-margin-bottom-3 govuk-input--error" type="text" value="HMP/YOI Downview"> -->
+          <span id="national-insurance-number-error" class="govuk-error-message">
+            You must add at least one prison
+          </span>
+          <!-- <div id="prisons"></div><br> -->
+          <input id="prison" class="govuk-input govuk-!-margin-bottom-3 govuk-input--error" type="text" value="">
           {{ govukButton({
             html: 'Add prison',
             classes: 'addAnother govuk-!-margin-bottom-0'
