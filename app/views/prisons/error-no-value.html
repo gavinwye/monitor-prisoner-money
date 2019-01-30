@@ -16,6 +16,19 @@ Confirm your prisons - Prisoner money intelligence
       Confirm your prisons
     </h1>
 
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#prison">Type a prison name</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <p class="govuk-body-l">You'll see data for:</p>
 
     <div id="myDIV">
@@ -45,7 +58,7 @@ Confirm your prisons - Prisoner money intelligence
           <span id="national-insurance-number-error" class="govuk-error-message">
             Type a prison name
           </span>
-          <input class="govuk-input govuk-!-margin-bottom-3 govuk-input--error" type="text">
+          <input id="prison" class="govuk-input govuk-!-margin-bottom-3 govuk-input--error" type="text">
           {{ govukButton({
             html: 'Add prison',
             classes: 'addAnother govuk-!-margin-bottom-0'

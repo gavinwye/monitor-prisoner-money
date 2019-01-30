@@ -23,7 +23,7 @@ Confirm your prisons - Prisoner money intelligence
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#nationality">You have already added HMP/YOI Downview</a>
+            <a href="#prison">You have already added HMP/YOI Downview</a>
           </li>
         </ul>
       </div>
@@ -58,7 +58,7 @@ Confirm your prisons - Prisoner money intelligence
           <span id="national-insurance-number-error" class="govuk-error-message">
             You have already added HMP/YOI Downview
           </span>
-          <input class="govuk-input govuk-!-margin-bottom-3 govuk-input--error" type="text" value="HMP/YOI Downview">
+          <input id="prison" class="govuk-input govuk-!-margin-bottom-3 govuk-input--error" type="text" value="HMP/YOI Downview">
           {{ govukButton({
             html: 'Add prison',
             classes: 'addAnother govuk-!-margin-bottom-0'
