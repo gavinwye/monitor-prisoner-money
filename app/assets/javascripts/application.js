@@ -13,7 +13,7 @@ $(document).ready(function () {
     e.preventDefault();
     $(".list-item-row:last").after(
       '<div class="app-check-your-answers__contents list-item-row">' +
-        '<dt class="app-check-your-answers__answer">' +
+        '<dt class="app-check-your-answers__answer govuk-!-font-weight-bold">' +
           $('#prison').val() +
         '</dt>' +
         '<dd class="app-check-your-answers__change">' +
@@ -29,6 +29,20 @@ $(document).ready(function () {
   $(document).on('click', '.remove-list-item', function (e) {
     e.preventDefault();
     $(this).parents('.list-item-row').remove();
+    sortParentFields();
+  });
+
+  // Remove all prisons
+  $(document).on('click', '.remove-list-item-all-prisons', function (e) {
+    e.preventDefault();
+    $(this).parents('.all-prisons').replaceWith(
+      '<div id="myDIV">'+
+        '<dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-5">' +
+          '<div class="app-check-your-answers__contents list-item-row">' +
+          '</div>' +
+        '</dl>' +
+      '</div>'
+    );
     sortParentFields();
   });
 

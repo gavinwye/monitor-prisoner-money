@@ -19,7 +19,8 @@
 
 @media (min-width: 40.0625em) {
     .app-masthead {
-        padding-bottom: 30px
+        padding-bottom: 30px;
+        margin-top: -10px;
     }
 }
 
@@ -135,4 +136,28 @@
 }
 .hack-grey-out{
   opacity: 0.5;
+}
+.hack-homepage-header{
+  @extends .govuk-header__container;
+  // border-bottom: 10px;
+}
+.addAnother {
+  background-color: #dee0e2;
+  color: black;
+  box-shadow: 0 0 0 #dee0e2;
+  padding-bottom: 8px;
+  // bottom: -2px;
+}
+.addAnother:hover, .addAnother:focus{
+  background-color: #bfc1c3;
+  color: black;
+}
+
+.hack-app-contact-panel{
+  background-color: #005ea5;
+  padding: 15px;
+  color: #fff !important;
+}
+.hack-colour-white{
+  color: #fff;
 }
