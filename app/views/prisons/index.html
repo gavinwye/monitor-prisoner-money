@@ -36,8 +36,6 @@ Confirm your prisons - Prisoner money intelligence
 
     <form class="form" method="post">
       <h2 class="govuk-heading-m govuk-visually-hidden">Add another prison</h2>
-
-      <!-- <p class="govuk-body">At the moment you can only see data from public prisons.</p> -->
       <div id="prisonInput">
         <div class="govuk-form-group govuk-!-margin-bottom-0">
           <label class="govuk-label" for="name">
@@ -49,8 +47,9 @@ Confirm your prisons - Prisoner money intelligence
           <div id="prisons"></div><br>
           {{ govukButton({
             html: 'Add prison',
-            classes: 'addAnother govuk-!-margin-bottom-0'
+            classes: 'addAnother govuk-!-margin-bottom-2'
           }) }}
+          <a href="#" class="govuk-link" style="float: right; margin-top: 13px; margin-right: 380px;">Add all prisons</a>
         </div>
       </div>
     </form>
