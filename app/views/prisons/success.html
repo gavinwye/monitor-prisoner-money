@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your prisons have been saved - Prisoner money intelligence
+{% endblock %}
+
+{%block beforeContent%}
+<!-- {% include "includes/pilot-banner.html" %} -->
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper govuk-main-wrapper--l govuk-!-margin-top-0 govuk-!-padding-top-0" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-0">
+          <h1 class="govuk-panel__title">
+            Your prisons have been saved
+          </h1>
+        </div>
+
+        <h2 class="govuk-heading-m govuk-!-margin-top-8">You'll see data for:</h2>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li>HMP/YOI Downview</li>
+            <li>HMP Highpoint</li>
+        </ul>
+
+        <p class="govuk-body">
+          Go back and <a href="javascript: history.go(-1)">change this</a> or edit your settings at any time from your profile screen.
+        </p>
+        
+        <form class="form" method="post">
+          {{ govukButton({
+            html: 'Continue'
+          }) }}
+        </form>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
