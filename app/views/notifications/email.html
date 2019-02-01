@@ -14,7 +14,7 @@ Email
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <h1 class="govuk-heading-l">
-      New notifications feature added to intelligence tool...
+      Prisoner money intelligence tool, new notifications feature
     </h1>
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -22,39 +22,43 @@ Email
       Dear [Name],
     </p>
 
-    <p class="govuk-body">
+    <!-- <p class="govuk-body">
       We've updated the prisoner money intelligence tool.
-    </p>
+    </p> -->
 
     <p class="govuk-body">
-      At the moment, you can search for, identify and monitor transactions in one or many prisons. But we’ve added a notifications feature so you can look at more specific transactions, for example, when:
+      We’ve added a notifications feature so you can look at more specific transactions, for example, when:
     </p>
 
     <ul class="govuk-list govuk-list--bullet">
+      <li>a prisoner sends money out to many accounts</li>
       <li>a sender credits several prisoner accounts</li>
       <li>unusual amounts of money are sent in or out</li>
-      <li>a prisoner sends money out to many accounts</li>
     </ul>
 
     <p class="govuk-body">
-      A notifications screen within the intelligence tool updates daily so you can check for anything of interest.
+      A notifications screen updates daily so you can check for anything of interest.
     </p>
 
-    <p class="govuk-body">We can also group specific notifications, chosen by you, and email them to you weekly.</p>
+    <p class="govuk-body">From now on we'll send you an email you every Monday with an overview of the last weeks transactions.</p>
 
-    <p class="govuk-body">Why not set up your notifications now, even if you haven't used the tool much before, and get the data useful to you delivered directly to your inbox?</p>
+    <p class="govuk-body">You can turn these email notifications off at any time  time from your <a href="#">profile screen</a>.</p>
 
     <form class="form" method="post">
+      <input type="hidden" name="notificationsEmail" value="notificationsEmail">
       {% from "button/macro.njk" import govukButton %}
       {{ govukButton({
-        html: 'Set up notifications'
+        html: 'View your notifications'
       }) }}
     </form>
 
-    <p class="govuk-body">
+    <p class="govuk-body">Notifications is a new feature – your <a href="#">feedback</a> will help us to improve it.</p>
+
+
+    <!-- <p class="govuk-body">
       Kind regards,<br>
       Prisoner money team
-    </p>
+    </p> -->
   </div>
 </div>
 
