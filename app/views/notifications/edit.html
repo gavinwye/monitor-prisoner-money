@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Email notifications - Prisoner money intelligence
+{% endblock %}
+
+{%block beforeContent%}
+<!-- {% include "includes/pilot-banner.html" %} -->
+{% endblock%}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Edit email notifications
+    </h1>
+
+
+    <!-- <p class="govuk-body-l">You'll see data for:</p> -->
+
+    <form class="form" method="post">
+      <!-- <h2 class="govuk-heading-m govuk-visually-hidden">Do you want email notifications every Monday?</h2> -->
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Do you want email notifications every Monday?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            checked: "true"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Save"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
