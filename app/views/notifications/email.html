@@ -19,20 +19,20 @@ Email
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <p class="govuk-body">
-      Dear [Name],
+      Dear [intelligence tool user]
     </p>
 
-    <!-- <p class="govuk-body">
+    <p class="govuk-body">
       We've updated the prisoner money intelligence tool.
-    </p> -->
+    </p>
 
     <p class="govuk-body">
-      We’ve added a notifications feature so you can look at more specific transactions, for example, when:
+      At the moment, you can search for, identify and monitor transactions in one or many prisons. But we’ve added features so you can look at more specific transactions, for example, when:
     </p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>a prisoner sends money out to many accounts</li>
       <li>a sender credits several prisoner accounts</li>
+      <li>a prisoner sends money out to many accounts</li>
       <li>unusual amounts of money are sent in or out</li>
     </ul>
 
@@ -40,23 +40,25 @@ Email
       A notifications screen updates daily so you can check for anything of interest.
     </p>
 
-    <p class="govuk-body">From now on we'll send you an email you every Monday with an overview of the last weeks transactions.</p>
+    <p class="govuk-body">But, from now on, we'll email you each Monday with an overview of the past week's transactions. We hope this is helpful.</p>
 
-    <p class="govuk-body">You can turn these email notifications off at any time from your <a href="#">profile screen</a>.</p>
+    <p class="govuk-body">You can turn these email notifications off at any time from your <a href="/profile">profile screen</a>.</p>
 
     <form class="form" method="post">
       <input type="hidden" name="notificationsEmail" value="notificationsEmail">
-      {% from "button/macro.njk" import govukButton %}
+      
       {{ govukButton({
         html: 'View your notifications'
       }) }}
     </form>
 
+    <p class="govuk-body">Any <a href="#">feedback</a> helps us improve the tool further.</p>
 
-    <!-- <p class="govuk-body">
+
+    <p class="govuk-body">
       Kind regards,<br>
       Prisoner money team
-    </p> -->
+    </p>
   </div>
 </div>
 
