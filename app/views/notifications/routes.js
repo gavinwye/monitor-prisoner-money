@@ -21,6 +21,10 @@ module.exports = function (router, content) {
     res.redirect('/prisons/edit')
   })
 
+  router.post('/notifications/email-notifications', function (req, res) {
+    res.redirect('/notifications/')
+  })
+
   router.post('/sign-in/', function (req, res) {
     // Get the answer from the query string
     var notificationsEmail = req.session.data['notificationsEmail'] // USer is coming from notifications intro email

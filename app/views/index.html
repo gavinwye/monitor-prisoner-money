@@ -6,33 +6,6 @@
 
 {% block content %}
 
-{% if data['howOftenDoYouWantEmails'] === 'onceADay'  %}
-{% elseif data['howOftenDoYouWantEmails'] === 'onceAWeek'  %}
-{% elseif data['howOftenDoYouWantEmails'] === 'onceAMonth'  %}
-{% else %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full govuk-!-margin-bottom-6">
-    <div class="hack-banner-alert govuk-!-padding-2">
-      <!-- <p class="govuk-body govuk-!-margin-bottom-2">
-        <strong class="govuk-tag govuk-!-margin-right-2">
-          pilot
-        </strong>
-        We are piloting notifications. <a href="/notifications/start">Setup your notifications</a> in this new pilot.
-      </p>
-      <p class="govuk-body-s govuk-!-margin-bottom-0 govuk-!-margin-left-9 govuk-!-padding-left-4">
-        <a href="#">Don't show me this again</a>
-      </p> -->
-      {{ govukPhaseBanner({
-        tag: {
-          text: "pilot"
-        },
-        html: 'Notifications is a new feature. <a href="/notifications/start">Start now</a>'
-      }) }}
-    </div>
-  </div>
-</div>
-{% endif %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
