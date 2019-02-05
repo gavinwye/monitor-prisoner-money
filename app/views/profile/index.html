@@ -19,12 +19,30 @@ Profile - Prisoner money intelligence
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <h2 class="govuk-heading-l">Email notifications</h2>
-    <p class="govuk-body">You are currely recieving email notifications every Monday.</p>
-    <form class="form" method="post">
-      <button type="submit" class="govuk-button">
-        Stop email notificataions
-      </button>
-    </form>
+    <!-- <div id="emailNotificationSettings">
+      <p class="govuk-body">You are currely recieving email notifications every Monday.</p>
+      <form class="form" method="post">
+        <button class="govuk-button" onclick="toggleFunction()">
+          Stop email notificataions
+        </button>
+      </form>
+    </div> -->
+
+
+      <div id="notificationsOn">
+      <p class="govuk-body class1">You are currely recieving email notifications every Monday.</p>
+        <button id="button" class="govuk-button button-elem">
+          Turn off email notificataions
+        </button>
+      </div>
+      <div id="notificationsOff">
+        <p class="govuk-body class1">You are not currently recieving email notifications.</p>
+          <button id="button" class="govuk-button button-elem">
+            Turn on email notificataions
+          </button>
+      </div>
+
+
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 

@@ -47,5 +47,14 @@ $(document).ready(function () {
   });
 
 
+  $(function(){
+      $('#notificationsOff').hide();
+      $('button').click(function(){
+          $('div > #notificationsOff').toggle();
+          $('div > #notificationsOn').toggle();
+      });
+  });
+
+
   // Add javascripts above here
 })
