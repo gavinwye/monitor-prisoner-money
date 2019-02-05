@@ -46,7 +46,8 @@ Email
 
     <form class="form" method="post">
       <input type="hidden" name="notificationsEmail" value="notificationsEmail">
-      
+      {% from "button/macro.njk" import govukButton %}
+
       {{ govukButton({
         html: 'View your notifications'
       }) }}
