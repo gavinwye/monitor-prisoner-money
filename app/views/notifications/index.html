@@ -51,7 +51,7 @@ Notifications
       </summary>
       <div class="govuk-details__text">
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
+          <div class="govuk-grid-column-full" id="creditsOrDisbursements">
             {% include "./includes/not_whole_number.html" %}
           </div>
         </div>
@@ -92,40 +92,7 @@ Notifications
   <div class="govuk-details__text">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-visually-hidden">Disbursements over £120</caption>
-          <thead class="govuk-table__head hack-table-row-vertical-align-top govuk-!-font-size-14">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header govuk-table__header" scope="col">Date </th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Prisoners name & number</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Prison</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Senders name</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Senders card number or bank account</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body hack-table-row-vertical-align-top govuk-!-font-size-14">
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">16/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£300.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Cameron Smith</a> <br> A1848TS</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Frankland</td>
-              <td class="govuk-table__cell govuk-table__cell">Steven Cooper</td>
-              <td class="govuk-table__cell govuk-table__cell">Account number: 18471253</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">16/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£200.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Mitchell Tyler</a> <br> A9101KQ</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Frankland</td>
-              <td class="govuk-table__cell govuk-table__cell">Sophie Harrison</td>
-              <td class="govuk-table__cell govuk-table__cell">Account number: 62882302</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-          </tbody>
-        </table>
+        {% include "./includes/disbursements_over_120.html" %}
       </div>
     </div>
   </div>
@@ -151,121 +118,7 @@ Notifications
   <div class="govuk-details__text">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-visually-hidden">Notifications</caption>
-          <thead class="govuk-table__head hack-table-row-vertical-align-top govuk-!-font-size-14">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header govuk-table__header" scope="col">Date</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Prisoners name & number</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Prison</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Senders name</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Senders card number or bank account</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body hack-table-row-vertical-align-top govuk-!-font-size-14">
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">14/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£10.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Keith Fletcher</a> <br> A1954MJ</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP/YOI Deerbolt</td>
-              <td class="govuk-table__cell govuk-table__cell">Josephine Green</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 2064</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">15/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£20.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Denis Matthews</a> <br> A6527MU</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP/YOI Holme House</td>
-              <td class="govuk-table__cell govuk-table__cell">Gail Higgins</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 2968</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">16/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£10.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Edward Baxter</a> <br> A8244MA</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Wakefield	</td>
-              <td class="govuk-table__cell govuk-table__cell">Bryan Griff</td>
-              <td class="govuk-table__cell govuk-table__cell">Account: 24411674</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">17/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£30.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Elizabeth Cole</a> <br> A9880NY</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Frankland	</td>
-              <td class="govuk-table__cell govuk-table__cell">Amy Ward</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 8911</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">17/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£10.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Angela Smith</a> <br> A8554BB</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Frankland	</td>
-              <td class="govuk-table__cell govuk-table__cell">Geoffrey White</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 8554</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">18/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£10.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Tina Coleman</a> <br> A1300MM</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Frankland	</td>
-              <td class="govuk-table__cell govuk-table__cell">Chelsea Ross</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 7979</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">19/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£50.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Melissa Pearce</a> <br> A7489UF</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP/YOI Hull</td>
-              <td class="govuk-table__cell govuk-table__cell">Garry Lewis</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 2619</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">19/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£20.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Stewart Williams</a> <br> A2843HJ</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Whitemoor	</td>
-              <td class="govuk-table__cell govuk-table__cell">Mary Yates</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 2335</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">19/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£3	.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Kevin Gibbons</a> <br> A8821BW</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP/YOI Cardiff</td>
-              <td class="govuk-table__cell govuk-table__cell">Lee Ross</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 1172</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">20/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£20.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Stephanie Watts</a> <br> A2005BJ</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Frankland	</td>
-              <td class="govuk-table__cell govuk-table__cell">Callum Matthews</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 7403</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">20/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£20.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Colin Collins</a> <br> A8307YV</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Long Lartin	</td>
-              <td class="govuk-table__cell govuk-table__cell">Patricia Graham</td>
-              <td class="govuk-table__cell govuk-table__cell">Card ending: 2600</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-          </tbody>
-        </table>
+        {% include "./includes/4OrMoreCreditsSentByASingleDebitCardInLast4Weeks.html" %}
       </div>
     </div>
   </div>
@@ -280,31 +133,7 @@ Notifications
   <div class="govuk-details__text">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <table class="govuk-table">
-          <caption class="govuk-table__caption govuk-visually-hidden">Notifications</caption>
-          <thead class="govuk-table__head hack-table-row-vertical-align-top govuk-!-font-size-14">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header govuk-table__header" scope="col">Date</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Prisoners name & number</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Prison</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Senders name</th>
-              <th class="govuk-table__header govuk-table__header" scope="col">Senders card number or bank account</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body hack-table-row-vertical-align-top govuk-!-font-size-14">
-            <tr>
-              <td class="govuk-table__cell govuk-table__cell">16/08/2018</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">£10.00</td>
-              <td class="govuk-table__cell govuk-table__cell"><a href="#">Edward Baxter</a> <br> A8244MA</td>
-              <td class="govuk-table__cell govuk-table__cell">HMP Wakefield	</td>
-              <td class="govuk-table__cell govuk-table__cell">Bryan Griff</td>
-              <td class="govuk-table__cell govuk-table__cell">Account: 24411674</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
-            </tr>
-          </tbody>
-        </table>
+        {% include "./includes/4OrMoreDisbursementsSentToASingleBankAccountInLast4Weeks.html" %}
       </div>
     </div>
   </div>
