@@ -49,10 +49,11 @@ $(document).ready(function () {
 
   $(function(){
       $('#notificationsOff').hide();
-      $('button').click(function(){
+      $('.button-elem').click(function(){
           $('div > #notificationsOff').toggle();
           $('div > #notificationsOn').toggle();
       });
+
   });
 
 
