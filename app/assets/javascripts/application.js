@@ -9,21 +9,34 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
 // Add a the prison in the form on the prisons page
+  // $(".addAnother").click(function(e){
+  //   e.preventDefault();
+  //   $(".list-item-row:last").after(
+  //     '<div class="app-check-your-answers__contents list-item-row">' +
+  //       '<dt class="app-check-your-answers__answer govuk-!-font-weight-bold">' +
+  //         $('#prison').val() +
+  //       '</dt>' +
+  //       '<dd class="app-check-your-answers__change">' +
+  //         '<a href="#" class="remove-list-item">' +
+  //           'Remove<span class="govuk-visually-hidden"> {{data[\'prison\']}}</span>' +
+  //         '</a>' +
+  //       '</dd>' +
+  //     '</div>'
+  //   );
+  // });
+
   $(".addAnother").click(function(e){
     e.preventDefault();
     $(".list-item-row:last").after(
-      '<div class="app-check-your-answers__contents list-item-row">' +
-        '<dt class="app-check-your-answers__answer govuk-!-font-weight-bold">' +
-          $('#prison').val() +
-        '</dt>' +
-        '<dd class="app-check-your-answers__change">' +
-          '<a href="#" class="remove-list-item">' +
-            'Remove<span class="govuk-visually-hidden"> {{data[\'prison\']}}</span>' +
-          '</a>' +
-        '</dd>' +
+      '<div class="list-item-row">' +
+      '<label class="govuk-label" for="name">' +
+        'Prison name' +
+      '</label>' +
+      '<div id="prisons"></div><br>' +
       '</div>'
     );
   });
+
 
   // remove a prisons
   $(document).on('click', '.remove-list-item', function (e) {

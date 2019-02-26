@@ -13,13 +13,15 @@ Confirm your prisons - Prisoner money intelligence
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Confirm your prisons
+      Add your prisons
     </h1>
+
+    <p class="govuk-body-l">We only have data for public prisons</p>
 
 
     <!-- <p class="govuk-body-l">You'll see data for:</p> -->
 
-    <div id="myDIV">
+    <!-- <div id="myDIV">
       <dl class="app-check-your-answers app-check-your-answers--short govuk-!-margin-bottom-5">
         <div class="app-check-your-answers__contents list-item-row">
           <dt class="app-check-your-answers__answer govuk-!-font-weight-bold">
@@ -32,37 +34,41 @@ Confirm your prisons - Prisoner money intelligence
           </dd>
         </div>
       </dl>
-    </div>
+    </div> -->
 
-    <!-- <form class="form" method="post">
+    <form class="form" method="post">
       <h2 class="govuk-heading-m govuk-visually-hidden">Add another prison</h2>
       <div id="prisonInput">
         <div class="govuk-form-group govuk-!-margin-bottom-0">
+          <div class="list-item-row">
           <label class="govuk-label" for="name">
-            Add another prison
+            Prison name
           </label>
-          <span id="dob-hint" class="govuk-hint">
+          <!-- <span id="dob-hint" class="govuk-hint">
             We only have data for public prisons
-          </span>
+          </span> -->
           <div id="prisons"></div><br>
-          {{ govukButton({
+          </div>
+          <p class="govuk-body"><a href="" class="addAnother govuk-link govuk-link--no-visited-state">Add another prison</a></p>
+          <!-- {{ govukButton({
             html: 'Add prison',
             classes: 'addAnother govuk-!-margin-bottom-2'
-          }) }}
-          <a href="#" class="govuk-link" style="float: right; margin-top: 13px; margin-right: 380px;">Add all prisons</a>
+          }) }} -->
+          <br>
+          <!-- <a href="#" class="govuk-link govuk-link--no-visited-state" style="float: right; margin-top: 13px; margin-right: 380px;">Add all prisons</a> -->
         </div>
       </div>
-    </form> -->
+    </form>
 
-    <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible "> -->
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible ">
 
     <form class="form" method="post">
       {{ govukButton({
-        html: 'Confirm prisons'
+        html: 'Add prisons'
       }) }}
     </form>
 
-    <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="/prisons/add-prisons">Add more prisons</a></p>
+    <!-- <p class="govuk-body"><a href="#">Add other prisons</a></p> -->
 
   </div>
 </div>
