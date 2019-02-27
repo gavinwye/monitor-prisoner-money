@@ -125,10 +125,6 @@
 .hack-table-row-vertical-align-top{
   vertical-align: top;
 }
-.hack-list-inline li {
-    display: inline;
-    float: right;
-  }
 .hack-small-govuk-select{
   @extends .govuk-select;
   height: 25px !important;
@@ -160,4 +156,45 @@
 }
 .hack-colour-white{
   color: #fff;
+}
+.hack-list-inline li {
+    display: inline;
+  }
+
+.previous{
+    padding-left: 24px;
+    background-image: url(../images/arrow-pagination-left.svg);
+    background-position: 0 5px;
+    background-repeat: no-repeat;
+    background-size: 17px 14px;
+    display: block;
+    }
+.previous a, .next a{
+    text-decoration: none;
+    }
+
+.next{
+    padding-left: 24px;
+    background-image: url(../images/arrow-pagination-right.svg);
+    background-position: 120px 6px;
+    background-repeat: no-repeat;
+    background-size: 17px 14px;
+    text-align: right;
+    padding-right: 105px;
+
+  }
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+
+.greyed-out{
+  color: #0b0c0c !important;
+}
+
+.next-disabled{
+  @extend .next;
+  fill: #0b0c0c;
 }
