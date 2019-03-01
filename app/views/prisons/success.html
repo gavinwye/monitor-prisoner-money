@@ -31,8 +31,9 @@ Your prisons have been saved - Prisoner money intelligence
         <p class="govuk-body">
           Go back and <a href="javascript: history.go(-1)">change this</a> or edit your settings at any time from your profile screen.
         </p>
-        
+
         <form class="form" method="post">
+          <input type="hidden" name="prisons" value="prisons">
           {{ govukButton({
             html: 'Continue'
           }) }}

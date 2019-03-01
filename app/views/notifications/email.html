@@ -10,16 +10,15 @@ Email
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Email</h1>
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    <h1 class="govuk-heading-l">
-      New notifications feature added to intelligence tool...
-    </h1>
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <p class="govuk-body-s govuk-!-font-weight-bold">
+      Subject: Prisoner money intelligence tool, new notifications feature
+    </p>
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <p class="govuk-body">
-      Dear Jason,
+      Dear [intelligence tool user]
     </p>
 
     <p class="govuk-body">
@@ -27,31 +26,34 @@ Email
     </p>
 
     <p class="govuk-body">
-      At the moment, you can search for, identify and monitor transactions in one or many prisons. But we’ve added a notifications feature so you can look at more specific transactions, for example, when:
+      At the moment, you can search for, identify and monitor transactions in one or many prisons. But we’ve added features so you can look at more specific transactions, for example, when:
     </p>
 
-    {# Remove 'govuk-list--bullet' class for standard list #}
     <ul class="govuk-list govuk-list--bullet">
+      <li>a monitored prisoner sends or receives money</li>
       <li>a sender credits several prisoner accounts</li>
-      <li>unusual amounts of money are sent in or out (eg, high or irregular numbers)</li>
-      <li>a prisoner sends money out to many accounts</li>
+      <li>unusual amounts of money are sent in or out</li>
     </ul>
 
-    {# Paragraph font size class suffixes: -l or -s #}
     <p class="govuk-body">
-      A notifications screen within the intelligence tool updates daily so you can check for anything of interest.
+      A notifications screen updates daily so you can check for anything of interest.
     </p>
 
-    <p class="govuk-body">You can also choose to have new notifications sent to you in a daily or weekly email.</p>
+    <p class="govuk-body">But, from now on, we'll email you each Monday with an overview of the past week's transactions. We hope this is helpful.</p>
 
-    <p class="govuk-body">Why not set up your notifications now, even if you haven't used the tool much before?</p>
+    <p class="govuk-body">You can turn these email notifications off at any time from your <a href="/profile">profile screen</a>.</p>
 
     <form class="form" method="post">
+      <input type="hidden" name="notificationsEmail" value="notificationsEmail">
       {% from "button/macro.njk" import govukButton %}
+
       {{ govukButton({
-      html: 'Set up notifications'
-    }) }}
+        html: 'View your notifications'
+      }) }}
     </form>
+
+    <p class="govuk-body">Any <a href="#">feedback</a> helps us improve the tool further.</p>
+
 
     <p class="govuk-body">
       Kind regards,<br>

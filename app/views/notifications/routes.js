@@ -5,10 +5,6 @@ module.exports = function (router, content) {
     res.redirect('/sign-in/')
   })
 
-  router.post('/sign-in/', function (req, res) {
-    res.redirect('/prisons')
-  })
-
   router.post('/prisons/', function (req, res) {
     res.redirect('/prisons/success')
   })
@@ -17,25 +13,30 @@ module.exports = function (router, content) {
     res.redirect('/prisons/success')
   })
 
-  router.post('/notifications/start', function (req, res) {
-    res.redirect('/notifications/setup/prisons/')
-  })
-
-  router.post('/notifications/setup/prisons/', function (req, res) {
+  router.post('/prisons/success', function (req, res) {
     res.redirect('/notifications/')
   })
 
-  router.post('/notifications/', function (req, res) {
-    res.redirect('/notifications/confirmation')
+  router.post('/profile', function (req, res) {
+    res.redirect('/prisons/edit')
   })
 
-  router.post('/notifications/confirmation', function (req, res) {
-    res.redirect('/')
+  router.post('/notifications/email-notifications', function (req, res) {
+    res.redirect('/notifications/')
   })
 
-  // Pass the content in to the page
-  router.get('/notifications/start/', function (req, res) {
-    res.render('notifications/start', content)
+  router.post('/sign-in/', function (req, res) {
+    // Get the answer from the query string
+    var notificationsEmail = req.session.data['notificationsEmail'] // USer is coming from notifications intro email
+    var prisons = req.session.data['prisons'] // Prisons have been set
+
+    if (notificationsEmail === 'notificationsEmail' && prisons === 'prisons') {
+      // Redirect to the relevant page
+      res.redirect('/notifications/')
+    } else {
+      // If the variable is any other value (or is missing) render the page requested
+      res.redirect('/prisons/')
+    }
   })
 
   // END__######################################################################################################
