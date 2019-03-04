@@ -1,0 +1,49 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+Email
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full-width">
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <p class="govuk-body-s govuk-!-font-weight-bold">
+      Subject: Intelligence tool notifications
+    </p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h1 class="govuk-heading-m">Your notifications for week commencing 15/08/2018</h1>
+    <p class="govuk-body">You have 21 transactions to view</p>
+
+    <h2 class="govuk-heading-m">Monitored transactions</h2>
+    <p class="govuk-body">No notifications</p>
+
+    <h2 class="govuk-heading-m">Credits or disbursements</h2>
+    <p class="govuk-body">42 notifications</p>
+
+    <h2 class="govuk-heading-m">Number of credits/disbursements sent</h2>
+    <p class="govuk-body">22 notifications</p>
+
+    <h2 class="govuk-heading-m">Prisoner transactions</h2>
+    <p class="govuk-body">No notifications</p>
+
+    <h2 class="govuk-heading-m">Number of prisoners receiving/sending money</h2>
+    <p class="govuk-body">Credits from a debit card or bank account to more than 4 prisoners in last 4 weeks</p>
+    <p class="govuk-body govuk-!-font-weight-bold">No notifications</p>
+    <p class="govuk-body">Disbursements sent to a bank account by more than 4 prisoners in last 4 weeks</p>
+    <p class="govuk-body govuk-!-font-weight-bold">No notifications</p>
+
+
+    <p class="govuk-body"><a href="/notifications">View your notifications</a></p>
+
+    <p class="govuk-body">You can turn these email notifications off at any time from your <a href="/settings">settings screen</a>.</p>
+  </div>
+</div>
+
+{% endblock %}
