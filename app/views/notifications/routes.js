@@ -17,7 +17,7 @@ module.exports = function (router, content) {
     res.redirect('/notifications/')
   })
 
-  router.post('/profile', function (req, res) {
+  router.post('/settings', function (req, res) {
     res.redirect('/prisons/edit')
   })
 

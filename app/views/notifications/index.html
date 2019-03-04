@@ -12,28 +12,25 @@ Notifications
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-  <h1 class="govuk-heading-xl govuk-!-margin-bottom-3">
-    Notifications
-  </h1>
-  </div>
-  <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body-l">Your notifications for 15/08/2018 - 21/08/2018</p>
-
-    <!-- <nav role="navigation" aria-label="Pagination">
-      <ul class="hack-list-inline govuk-!-margin-top-2">
-        <li><span class="govuk-body">Previous week &raquo;</span></li>
-        <li><span class="govuk-body"> &laquo; Last week</span></li>
-      </ul>
-    </nav> -->
-
-    <p class="govuk-body govuk-!-font-weight-bold">You have 52 notifications</p>
-
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Notifications
+    </h1>
   </div>
   <div class="govuk-grid-column-one-third">
-    <ul class="hack-list-inline govuk-!-margin-top-2">
-      <li><a href="#" class="govuk-link">Export</a></li>
-      <li><a href="#" class="govuk-link">Print</a></li>
+    <ul class="hack-list-inline govuk-!-margin-top-2 right">
+      <li class="govuk-!-margin-right-2"><a href="#" class="govuk-link govuk-link--no-visited-state">Export<span class="govuk-visually-hidden">week commencing 15/08/2018</span></a></li>
+      <li><a href="#" class="govuk-link govuk-link--no-visited-state">Print<span class="govuk-visually-hidden">week commencing 15/08/2018</span></a></li>
     </ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body-l govuk-!-margin-bottom-3">Week commencing <span class="govuk-!-font-weight-bold">15/08/2018</span></p>
+    <div class="pagination">
+      <ul class="hack-list-inline govuk-list govuk-!-margin-0 govuk-!-margin-bottom-5">
+        <li class="previous"><a href="/notifications/notifications-page-last-week" class="govuk-link--no-visited-state">Previous week</a></li>
+        <!-- <li class="next right"><a href="/notifications/notifications-page" class="govuk-link--no-visited-state"></a></li> -->
+      </ul>
+    </div>
+    <p class="govuk-body govuk-!-font-weight-bold">You have 52 notifications</p>
   </div>
 </div>
 
@@ -60,29 +57,29 @@ Notifications
     </h2>
   </div>
 </div>
-    <h3 class="govuk-heading-m">Not a whole number, for example, £25.19</h3>
-    <details class="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          29 notifications
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full" id="creditsOrDisbursements">
-            {% include "./includes/not_whole_number.html" %}
-          </div>
-        </div>
+<h3 class="govuk-heading-m">Not a whole number, for example, £25.19</h3>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      29 notifications
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" id="creditsOrDisbursements">
+        {% include "./includes/not_whole_number.html" %}
       </div>
-    </details>
-    <h3 class="govuk-heading-m ">
-      Credits over £120
-    </h3>
+    </div>
+  </div>
+</details>
+<h3 class="govuk-heading-m ">
+  Credits over £120
+</h3>
 
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-    11 notifications
+      11 notifications
     </span>
   </summary>
   <div class="govuk-details__text">
