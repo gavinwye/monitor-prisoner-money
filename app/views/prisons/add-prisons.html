@@ -16,7 +16,7 @@ Confirm your prisons - Prisoner money intelligence
       Add your prisons
     </h1>
 
-    <p class="govuk-body-l">We only have data for public prisons</p>
+    <p class="govuk-body-l">We only have data for public prisons.</p>
 
 
     <!-- <p class="govuk-body-l">You'll see data for:</p> -->
@@ -39,6 +39,7 @@ Confirm your prisons - Prisoner money intelligence
     <form class="form" method="post">
       <h2 class="govuk-heading-m govuk-visually-hidden">Add another prison</h2>
       <div id="prisonInput">
+        <!-- <p class="govuk-body"><a href="" class="addAnother govuk-link govuk-link--no-visited-state">Add all avalible prisons</a></p> -->
         <div class="govuk-form-group govuk-!-margin-bottom-0">
           <div class="list-item-row">
           <label class="govuk-label" for="name">
@@ -50,21 +51,16 @@ Confirm your prisons - Prisoner money intelligence
           <div id="prisons"></div><br>
           </div>
           <p class="govuk-body"><a href="" class="addAnother govuk-link govuk-link--no-visited-state">Add another prison</a></p>
-          <!-- {{ govukButton({
-            html: 'Add prison',
-            classes: 'addAnother govuk-!-margin-bottom-2'
-          }) }} -->
-          <br>
-          <!-- <a href="#" class="govuk-link govuk-link--no-visited-state" style="float: right; margin-top: 13px; margin-right: 380px;">Add all prisons</a> -->
+          <p class="govuk-body">Or</p>
+          <p class="govuk-body"><a href="all-prisons" class="govuk-link govuk-link--no-visited-state">Add all prisons</a></p>
         </div>
-      </div>
     </form>
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible ">
 
     <form class="form" method="post">
       {{ govukButton({
-        html: 'Add prisons'
+        html: 'Save prisons'
       }) }}
     </form>
 

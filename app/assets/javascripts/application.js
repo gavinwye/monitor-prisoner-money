@@ -32,9 +32,9 @@ $(document).ready(function () {
       '<label class="govuk-label" for="name">' +
         'Prison name' +
       '</label>' +
-      '<div id="prisons"></div><br>' +
+      '<input class="govuk-input govuk-!-margin-bottom-5" id="event-name" name="event-name" type="text">' +
       '</div>'
-    );
+          );
   });
 
 
