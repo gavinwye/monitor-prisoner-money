@@ -32,7 +32,8 @@ $(document).ready(function () {
       '<label class="govuk-label" for="name">' +
         'Prison name' +
       '</label>' +
-      '<input class="govuk-input govuk-!-margin-bottom-5" id="event-name" name="event-name" type="text">' +
+      '<input class="govuk-input govuk-input--width-20 govuk-!-margin-bottom-5" id="event-name" name="event-name" type="text">' +
+      '<a href="" class="remove-list-item remove-link govuk-link govuk-link--no-visited-state">Remove</a>' +
       '</div>'
           );
   });
