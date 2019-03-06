@@ -4,19 +4,20 @@
 Settings - Prisoner money intelligence
 {% endblock %}
 
-{%block beforeContent%}
-<!-- {% include "includes/pilot-banner.html" %} -->
-{% endblock%}
-
 {% block content %}
 
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+  </div>
+
   <div class="govuk-grid-column-two-thirds">
 
     <span class="govuk-caption-xl">Lucy Edwards</span>
     <h1 class="govuk-heading-xl">Settings</h1>
+    <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
 
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
     <div id="notifications">
       <div id="notificationsOn">
         <h2 class="govuk-heading-l">Email notifications on</h2>
@@ -36,18 +37,73 @@ Settings - Prisoner money intelligence
 
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-    <h2 class="govuk-heading-l">Prisons</h2>
-    <p class="govuk-body">You'll see data for:</p>
+    <h2 class="govuk-heading-l" id="managePrisons">Your prisons</h2>
     <ul class="govuk-list govuk-list--bullet">
       <li>HMP/YOI Downview</li>
       <li>HMP/YOI High Down</li>
     </ul>
     <form class="form" method="post">
+      <input type="hidden" name="changePrisons" value="changePrisons">
       <button type="submit" class="govuk-button">
         Edit prisons
       </button>
     </form>
 
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l" id="changePassword">Change password</h2>
+
+    <form class="form" method="post">
+      <input type="hidden" name="changePassword" value="changePassword">
+      <button type="submit" class="govuk-button" formaction="/settings/change-password">
+        Change your password
+      </button>
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l" id="manageUsers">Manage users</h2>
+    <p class="govuk-body">Add, view, edit or disable user accounts. When you disable a user account, that user will be unable to log in.</p>
+
+
+    <form class="form" method="post">
+      <button type="submit" class="govuk-button">
+        Manage users
+      </button>
+    </form>
+
+  </div>
+  <div class="govuk-grid-column-one-third">
+
+    <!-- <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Navigation
+          </h2>
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="#notifications">
+                  Email notifications
+                </a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="#managePrisons">
+                  Manage prisons
+                </a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="#changePassword">
+                  Change password
+                </a>
+              </li>
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="#manageUsers">
+                  Manage users
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside> -->
   </div>
 </div>
 
