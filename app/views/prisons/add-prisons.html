@@ -13,10 +13,10 @@ Confirm your prisons - Prisoner money intelligence
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Add prisons
+      Add or remove prisons
     </h1>
 
-    <p class="govuk-body-l">We only have data for public prisons.</p>
+    <!-- <p class="govuk-body-l">We only have data for public prisons.</p> -->
 
 
     <!-- <p class="govuk-body-l">You'll see data for:</p> -->
@@ -45,7 +45,9 @@ Confirm your prisons - Prisoner money intelligence
           <label class="govuk-label" for="name">
             Prison name
           </label>
-          <div id="prisons"></div><br>
+          <input class="govuk-input govuk-input--width-20 govuk-!-margin-bottom-5" id="event-name" name="event-name" type="text" value="HMP/YOI Downview">
+          <a href="" class="remove-list-item remove-link govuk-link govuk-link--no-visited-state">Remove</a>
+          <!-- <div id="prisons"></div><br> -->
           </div>
           <p class="govuk-body"><a href="" class="addAnother govuk-link govuk-link--no-visited-state">Add another prison</a></p>
           <p class="govuk-body">Or</p>
@@ -53,11 +55,11 @@ Confirm your prisons - Prisoner money intelligence
         </div>
     </form>
 
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible ">
+    <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible "> -->
 
     <form class="form" method="post">
       {{ govukButton({
-        html: 'Save prisons'
+        html: 'Save'
       }) }}
     </form>
 
