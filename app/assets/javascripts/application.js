@@ -60,6 +60,21 @@ $(document).ready(function () {
     sortParentFields();
   });
 
+  // Remove all prisons
+  $(document).on('click', '.remove-list-item-one-prison', function (e) {
+    e.preventDefault();
+    $(this).parents('.list-item-row').replaceWith(
+      '<div class="list-item-row">' +
+      '<label class="govuk-label" for="name">' +
+        'Prison name' +
+      '</label>' +
+      '<input class="govuk-input govuk-input--width-20 govuk-!-margin-bottom-5" id="event-name" name="prison-name" type="text">' +
+      '<a href="" class="remove-list-item remove-link govuk-link govuk-link--no-visited-state">Remove</a>' +
+      '</div>'
+    );
+    sortParentFields();
+  });
+
 
   $(function(){
       $('#notificationsOff').hide();
