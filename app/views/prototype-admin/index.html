@@ -9,8 +9,10 @@ Prototype admin
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Use this page to set things for testing
+      Set data variables
     </h1>
+
+    <p class="govuk-body-l">Use this form to set data for testing. Some pages need initial data values to work.</p>
 
     <form class="form" method="post">
 
@@ -22,11 +24,24 @@ Prototype admin
           text: "Will be displayed in the top right"
           },
         id: "userName",
-        name: "userName"
+        name: "userName",
+        value: "Gavin Wye"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Default prison"
+        },
+        hint: {
+          text: "Will be displayed on the prison selection page and setting page"
+          },
+        id: "prisonName",
+        name: "prisonName",
+        value: "HMP/YOI Downview"
       }) }}
 
       {{ govukButton({
-        html: 'Save user'
+        html: 'Save data'
       }) }}
 
     </form>

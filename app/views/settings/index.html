@@ -13,7 +13,7 @@ Settings - Prisoner money intelligence
 
   <div class="govuk-grid-column-two-thirds">
 
-    <span class="govuk-caption-xl">Lucy Edwards</span>
+    <span class="govuk-caption-xl">{{ data['userName'] }}</span>
     <h1 class="govuk-heading-xl">Settings</h1>
     <!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
 
@@ -39,8 +39,7 @@ Settings - Prisoner money intelligence
 
     <h2 class="govuk-heading-l" id="managePrisons">Your prisons</h2>
     <ul class="govuk-list govuk-list--bullet">
-      <li>HMP/YOI Downview</li>
-      <li>HMP/YOI High Down</li>
+      <li>{{ data['prisonName'] }}</li>
     </ul>
     <form class="form" method="post">
       <input type="hidden" name="changePrisons" value="changePrisons">

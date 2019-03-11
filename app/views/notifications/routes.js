@@ -10,7 +10,7 @@ module.exports = function (router, content) {
   })
 
   router.post('/prisons/edit', function (req, res) {
-    res.redirect('/prisons/success')
+    res.redirect('/settings')
   })
 
   router.post('/prisons/success', function (req, res) {
