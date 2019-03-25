@@ -9,21 +9,35 @@ $(document).ready(function () {
   window.GOVUKFrontend.initAll()
 
 // Add a the prison in the form on the prisons page
+  // $(".addAnother").click(function(e){
+  //   e.preventDefault();
+  //   $(".list-item-row:last").after(
+  //     '<div class="app-check-your-answers__contents list-item-row">' +
+  //       '<dt class="app-check-your-answers__answer govuk-!-font-weight-bold">' +
+  //         $('#prison').val() +
+  //       '</dt>' +
+  //       '<dd class="app-check-your-answers__change">' +
+  //         '<a href="#" class="remove-list-item">' +
+  //           'Remove<span class="govuk-visually-hidden"> {{data[\'prison\']}}</span>' +
+  //         '</a>' +
+  //       '</dd>' +
+  //     '</div>'
+  //   );
+  // });
+
   $(".addAnother").click(function(e){
     e.preventDefault();
     $(".list-item-row:last").after(
-      '<div class="app-check-your-answers__contents list-item-row">' +
-        '<dt class="app-check-your-answers__answer govuk-!-font-weight-bold">' +
-          $('#prison').val() +
-        '</dt>' +
-        '<dd class="app-check-your-answers__change">' +
-          '<a href="#" class="remove-list-item">' +
-            'Remove<span class="govuk-visually-hidden"> {{data[\'prison\']}}</span>' +
-          '</a>' +
-        '</dd>' +
+      '<div class="list-item-row">' +
+      '<label class="govuk-label" for="name">' +
+        'Prison name' +
+      '</label>' +
+      '<input class="govuk-input govuk-input--width-20 govuk-!-margin-bottom-5" id="event-name" name="event-name" type="text">' +
+      '<a href="" class="remove-list-item remove-link govuk-link govuk-link--no-visited-state">Remove</a>' +
       '</div>'
-    );
+          );
   });
+
 
   // remove a prisons
   $(document).on('click', '.remove-list-item', function (e) {
@@ -41,6 +55,21 @@ $(document).ready(function () {
           '<div class="app-check-your-answers__contents list-item-row">' +
           '</div>' +
         '</dl>' +
+      '</div>'
+    );
+    sortParentFields();
+  });
+
+  // Remove all prisons
+  $(document).on('click', '.remove-list-item-one-prison', function (e) {
+    e.preventDefault();
+    $(this).parents('.list-item-row').replaceWith(
+      '<div class="list-item-row">' +
+      '<label class="govuk-label" for="name">' +
+        'Prison name' +
+      '</label>' +
+      '<input class="govuk-input govuk-input--width-20 govuk-!-margin-bottom-5" id="prisonName" name="prisonName" type="text">' +
+      '<a href="" class="remove-list-item remove-link govuk-link govuk-link--no-visited-state">Remove</a>' +
       '</div>'
     );
     sortParentFields();
