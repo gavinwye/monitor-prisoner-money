@@ -18,6 +18,7 @@ $govuk-font-family: 'Helvetica Neue', 'Inter UI', sans-serif;
 @import "components/cookie-banner";
 @import "components/accessible-autocomplete";
 // @import "components/_pagination";
+@import "components/service-navigation";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "./app.scss";
