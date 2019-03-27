@@ -1,0 +1,400 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Advanced search
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Advanced search
+    </h1>
+    <p class="govuk-body-l">Search all data in publc prisons.</p>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+    <h3 class="govuk-heading-l">Prison</h3>
+    {{ govukInput({
+      label: {
+        text: "Prison name",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Credits</h2>
+    <h3 class="govuk-heading-m">Date recieved</h3>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+      {{ govukDateInput({
+        id: "passport-issued",
+        namePrefix: "passport-issued",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 01 08 2007"
+        }
+      }) }}
+      </div>
+      <div class="govuk-grid-column-one-third">
+      {{ govukDateInput({
+        id: "passport-issued",
+        namePrefix: "passport-issued",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 01 08 2007"
+        }
+      }) }}
+      </div>
+    </div>
+
+    <!-- <h3 class="govuk-heading-m">Amount</h3> -->
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Amount",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Not a whole number"
+          },
+          {
+            value: "scotland",
+            text: "Not a multiple of £5"
+          },
+          {
+            value: "wales",
+            text: "Not a multiple of £10"
+          },
+          {
+            value: "england",
+            text: "£100 or more"
+          },
+          {
+            value: "scotland",
+            text: "Exact amount"
+          },
+          {
+            value: "wales",
+            text: "Exact number of pence"
+          }
+        ]
+      }) }}
+
+
+
+
+
+      <!-- <h3 class="govuk-heading-m">Credit status</h3> -->
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Credit status",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Pending"
+          },
+          {
+            value: "scotland",
+            text: "Credited"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-l">Payment source</h3>
+
+      {{ govukInput({
+        label: {
+          text: "Sender name",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Payment method",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Any method"
+          },
+          {
+            value: "scotland",
+            text: "Bank transfer"
+          },
+          {
+            value: "wales",
+            text: "Debit card"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-l">Prisoners</h3>
+
+      {{ govukInput({
+        label: {
+          text: "Prisoner number",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Prisoner name",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "waste",
+        name: "waste",
+        fieldset: {
+        },
+        items: [
+          {
+            value: "carcasses",
+            text: "Only serving prisoners"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h3 class="govuk-heading-l">Disbursements</h3>
+
+      <h3 class="govuk-heading-m">Date entered</h3>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "From",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 01 08 2007"
+          }
+        }) }}
+        </div>
+        <div class="govuk-grid-column-one-third">
+        {{ govukDateInput({
+          id: "passport-issued",
+          namePrefix: "passport-issued",
+          fieldset: {
+            legend: {
+              text: "To",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 01 08 2007"
+          }
+        }) }}
+        </div>
+      </div>
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Amount",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Not a whole number"
+          },
+          {
+            value: "scotland",
+            text: "Not a multiple of £5"
+          },
+          {
+            value: "wales",
+            text: "Not a multiple of £10"
+          },
+          {
+            value: "england",
+            text: "£100 or more"
+          },
+          {
+            value: "scotland",
+            text: "Exact amount"
+          },
+          {
+            value: "wales",
+            text: "Exact number of pence"
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Recipient</h2>
+
+      {{ govukInput({
+        label: {
+          text: "Name",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-10",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Sort code",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-10",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Account number",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Invoice number",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-20",
+        name: "width-20"
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Status",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "england",
+            text: "Entered"
+          },
+          {
+            value: "scotland",
+            text: "Confirmed"
+          },
+          {
+            value: "wales",
+            text: "sent"
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+  </div>
+</div>
+
+{% endblock %}
