@@ -66,23 +66,18 @@
         <nav>
           <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
             <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link govuk-header__navigation-item--active" href="/credits/">
+              <a class="govuk-header__link" href="#1">
                 Credits
               </a>
             </li>
             <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/payment-sources/">
+              <a class="govuk-header__link" href="#2">
                 Payment sources
               </a>
             </li>
             <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/prisoners/">
+              <a class="govuk-header__link" href="#3">
                 Prisoners
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/disbursements">
-                Disbursements
               </a>
             </li>
             <li class="govuk-header__navigation-item">
@@ -103,12 +98,6 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="app-service-navigation">
-  <h2 class="app-service-navigation__name">
-    Your prisons
-  </h2>
-  <a class="app-service-navigation__switch" href="/services">Change</a>
-</div>
 {% endblock %}
 
 {% if useAutoStoreData %}
