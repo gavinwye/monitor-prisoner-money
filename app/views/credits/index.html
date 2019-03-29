@@ -20,9 +20,9 @@ Credits
             Sender name, email address or prisoner number
           </label>
           <input class="govuk-input govuk-!-width-two-thirds" id="width-20" name="width-20" type="text">
-          <button type="submit" class="govuk-button">
-            Search
-          </button>
+          {{ govukButton({
+            html: 'Search'
+          }) }}
           <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
         </div>
       </form>
@@ -52,10 +52,24 @@ Credits
           <td class="govuk-table__cell">Credited</td>
           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
         </tr>
+        {% for credit in credits %}
+          <!-- <li><a class="govuk-link" href="./{{ service.slug }}">{{ service.name }}</a></li> -->
+          <tr class="govuk-table__row hack-table-row-vertical-align-top">
+            <td class="govuk-table__cell">{{ credit.received_at }}</td>
+            <td class="govuk-table__cell"><a href="#">{{ credit.prisoner_number }}</a><br> {{ credit.prisoner_name }}</td>
+            <td class="govuk-table__cell"><a href="">{{ credit.sender_name }}</a><br> by Debit card</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ credit.amount }}</td>
+            <td class="govuk-table__cell">{{ credit.prison }}</td>
+            <td class="govuk-table__cell">{{ credit.status }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
+          </tr>
+        {% endfor %}
       </tbody>
     </table>
 
-        </div>
+
+
+  </div>
 
 
 

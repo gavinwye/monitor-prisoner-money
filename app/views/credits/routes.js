@@ -1,12 +1,10 @@
 module.exports = function (router, content) {
 
-  router.get('/credits/routes', function(req, res) {
 
-      res.render('/credits/',
-          {
-              courts: utils.getcreditsList()
-          });
-  });
+  router.post('/credits/', function (req, res) {
+    res.redirect('/credits/results')
+  })
+
 
   // END__######################################################################################################
 }
