@@ -23,7 +23,7 @@ Credits
           {{ govukButton({
             html: 'Search'
           }) }}
-          <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
+          <p><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
         </div>
       </form>
 
@@ -34,40 +34,34 @@ Credits
       <thead class="govuk-table__head">
         <tr class="govuk-table__row hack-table-row-vertical-align-top">
           <th class="govuk-table__header" scope="col">Date recieved</th>
-          <th class="govuk-table__header" scope="col">Prisoner</th>
-          <th class="govuk-table__header" scope="col">Payment source</th>
+          <th class="govuk-table__header" scope="col">Sender (from)</th>
+          <th class="govuk-table__header" scope="col">Prisoner (to)</th>
+
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
           <th class="govuk-table__header" scope="col">Prison</th>
           <th class="govuk-table__header" scope="col">Status</th>
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
         </tr>
       </thead>
-      <tbody class="govuk-table__body ">
+      <tbody class="govuk-table__body">
+        {%- for credit in credits -%}
         <tr class="govuk-table__row hack-table-row-vertical-align-top">
-          <td class="govuk-table__cell">11 March 2019</td>
-          <td class="govuk-table__cell"><a href="#">X7562DF</a><br> LOUIS KNIGHT</td>
-          <td class="govuk-table__cell"><a href="">Pauline Davies</a><br> by Debit card</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">£25.00</td>
-          <td class="govuk-table__cell">HMP Leeds</td>
-          <td class="govuk-table__cell">Credited</td>
+          <td class="govuk-table__cell">{{ credit.received_at }}</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ credit.sender_name }}</a><br>{%- if credit.card_number_last_digits -%}
+            by Debit card
+          {%- else -%}
+            by Bank transfer
+          {%- endif -%}</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ credit.prisoner_name }}</a><br>{{ credit.prisoner_number }}</td>
+
+          <td class="govuk-table__cell govuk-table__cell--numeric">{{ credit.amount }}</td>
+          <td class="govuk-table__cell">{{ credit.prison_name }}</td>
+          <td class="govuk-table__cell title-caps">{{ credit.status }}</td>
           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
         </tr>
-        {% for credit in credits %}
-          <!-- <li><a class="govuk-link" href="./{{ service.slug }}">{{ service.name }}</a></li> -->
-          <tr class="govuk-table__row hack-table-row-vertical-align-top">
-            <td class="govuk-table__cell">{{ credit.received_at }}</td>
-            <td class="govuk-table__cell"><a href="#">{{ credit.prisoner_number }}</a><br> {{ credit.prisoner_name }}</td>
-            <td class="govuk-table__cell"><a href="">{{ credit.sender_name }}</a><br> by Debit card</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">{{ credit.amount }}</td>
-            <td class="govuk-table__cell">{{ credit.prison }}</td>
-            <td class="govuk-table__cell">{{ credit.status }}</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
-          </tr>
-        {% endfor %}
+        {%- endfor -%}
       </tbody>
     </table>
-
-
 
   </div>
 
