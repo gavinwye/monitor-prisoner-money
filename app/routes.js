@@ -13,6 +13,7 @@ const viewContent = require('./routes-content');
 require('./views/notifications/routes')(router, viewContent);
 require('./views/prisons/routes')(router);
 require('./views/credits/routes')(router);
+require('./views/payment-sources/routes')(router);
 ///////////
 // This gets all of the data
 // var creditData = require('./data/credits_list.json');
