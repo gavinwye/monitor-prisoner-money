@@ -34,11 +34,11 @@ Disbursements
       <thead class="govuk-table__head">
         <tr class="govuk-table__row hack-table-row-vertical-align-top">
           <th class="govuk-table__header" scope="col">Date entered</th>
-          <th class="govuk-table__header" scope="col">Prisoner</th>
-          <th class="govuk-table__header" scope="col">Recipient</th>
-          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+          <th class="govuk-table__header" scope="col">Prisoner (from)</th>
+          <th class="govuk-table__header" scope="col">Recipient (to)</th>
           <th class="govuk-table__header" scope="col">Prison</th>
           <th class="govuk-table__header" scope="col">Status</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
         </tr>
       </thead>
@@ -48,9 +48,9 @@ Disbursements
           <td class="govuk-table__cell">{{ disbursement.created }}</td>
           <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ disbursement.prisoner_name }}</a> <br> by {{ disbursement.prisoner_number }} </td>
           <td class="govuk-table__cell">{{ disbursement.recipient_first_name }} {{ disbursement.recipient_last_name }}</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">{{ disbursement.amount }}</td>
           <td class="govuk-table__cell">{{ disbursement.prison_name }}</td>
           <td class="govuk-table__cell">{{ disbursement.resolution }}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">{{ disbursement.amount }}</td>
           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
         </tr>
         {%- endfor -%}
