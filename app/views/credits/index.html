@@ -19,7 +19,7 @@ Credits
           <label class="govuk-label" for="width-20">
             Sender name, email address or prisoner number
           </label>
-          <input class="govuk-input govuk-!-width-two-thirds" id="width-20" name="width-20" type="text">
+          <input class="govuk-input govuk-!-width-two-thirds" id="creditSearch" name="creditSearch" type="text">
           {{ govukButton({
             html: 'Search'
           }) }}
@@ -35,9 +35,10 @@ Credits
         <tr class="govuk-table__row hack-table-row-vertical-align-top">
           <th class="govuk-table__header" scope="col">Date recieved</th>
           <th class="govuk-table__header" scope="col">Sender (from)</th>
+          <th class="govuk-table__header" scope="col">Sender email address</th>
           <th class="govuk-table__header" scope="col">Prisoner (to)</th>
           <th class="govuk-table__header" scope="col">Prison</th>
-          <th class="govuk-table__header" scope="col">Status</th>
+          <!-- <th class="govuk-table__header" scope="col">Status</th> -->
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
         </tr>
@@ -46,14 +47,23 @@ Credits
         {%- for credit in credits -%}
         <tr class="govuk-table__row hack-table-row-vertical-align-top">
           <td class="govuk-table__cell">{{ credit.received_at }}</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ credit.sender_name }}</a><br>{%- if credit.card_number_last_digits -%}
-            by Debit card
-          {%- else -%}
-            by Bank transfer
-          {%- endif -%}</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ credit.sender_name }}</a><br>
+            {%- if credit.card_number_last_digits -%}
+              by Debit card
+            {%- else -%}
+              by Bank transfer
+            {%- endif -%}
+          </td>
+          <td class="govuk-table__cell">
+            {%- if credit.card_number_last_digits -%}
+              {{ credit.sender_email }}
+            {%- else -%}
+              Not collected
+            {%- endif -%}
+          </td>
           <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ credit.prisoner_name }}</a><br>{{ credit.prisoner_number }}</td>
           <td class="govuk-table__cell">{{ credit.prison_name }}</td>
-          <td class="govuk-table__cell title-caps">{{ credit.status }}</td>
+          <!-- <td class="govuk-table__cell title-caps">{{ credit.status }}</td> -->
           <td class="govuk-table__cell govuk-table__cell--numeric">{{ credit.amount }}</td>
           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
         </tr>

@@ -19,7 +19,7 @@ Prisoners
         <label class="govuk-label" for="width-20">
           Prisoner number or name
         </label>
-        <input class="govuk-input govuk-!-width-one-half" id="width-20" name="width-20" type="text">
+        <input class="govuk-input govuk-!-width-two-thirds" id="prisonerSearch" name="prisonerSearch" type="text">
         <button type="submit" class="govuk-button">
           Search
         </button>
@@ -99,7 +99,7 @@ Prisoners
               <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ prisoner.prisoner_name }}</a><br>{{ prisoner.prisoner_number }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.recipient_count }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.disbursement_count }}</td>
-              <td class="govuk-table__cell">{{ prisoner.prison_name }}</td>
+
               <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.disbursement_total }}</td>
               <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
             </tr>

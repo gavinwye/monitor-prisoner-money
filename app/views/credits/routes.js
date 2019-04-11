@@ -14,5 +14,15 @@ module.exports = function (router, content) {
     });
   });
 
+  // This is for the credits data
+  router.get('/credits/results', function(req, res) {
+    // location of credit data json file
+    var creditData = require('../../data/credits_list.json');
+    res.render('credits/results',
+    {
+      credits: creditData
+    });
+  });
+
   // END__######################################################################################################
 }
