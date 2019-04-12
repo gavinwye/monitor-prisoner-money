@@ -16,29 +16,6 @@ require('./views/credits/routes')(router);
 require('./views/senders/routes')(router);
 require('./views/prisoners/routes')(router);
 require('./views/disbursements/routes')(router);
-///////////
-// This gets all of the data
-// var creditData = require('./data/credits_list.json');
-// This prints it in the console
-// console.log(creditData);
-
-///////////
-// This gets the individual variables defined below
-// var credits = require('./data/credits_list.json');
-//
-// credits.forEach(function(credit) {
-//     var creditAmount = credit.amount;
-//     var creditCard_number_last_digits = credit.card_number_last_digits;
-//     // Print the variables in the console
-//     // console.log(creditAmount);
-//     // console.log(creditCard_number_last_digits);
-// });
-
-getcreditData: () => {
-	return creditData;
-}
-
-
 
 // Add your routes here - above the module.exports line
 module.exports = router;
