@@ -1,0 +1,84 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Payment sources
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Senders search results
+    </h1>
+    <p class="govuk-body">One person using multiple cards is displayed as two different senders. We do not validate or combine names or email address.</p>
+  </div>
+  <div class="govuk-grid-column-full">
+    <!-- <h2 class="govuk-heading-m">Search</h2> -->
+    <form class="form" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="width-20">
+          Sender name, sender email address or payment method
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="senderSearch" name="senderSearch" type="text" value="{{ data['senderSearch'] }}">
+        <button type="submit" class="govuk-button">
+          Search
+        </button>
+        <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
+      </div>
+    </form>
+
+    <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
+    {%- if data['senderSearch'] == '' -%}
+    <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span> returned no results <a href="/disbursements/" class="govuk-link--no-visited-state">search again</a></p>
+    {%- else -%}
+    <p class="govuk-body-l">Search results for <span class="govuk-!-font-weight-bold">{{ data['senderSearch'] }}</span> <a href="/disbursements/" class="govuk-link--no-visited-state">clear search</a></p>
+    <table class="govuk-table govuk-!-font-size-14 ">
+      <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row hack-table-row-vertical-align-top">
+          <th class="govuk-table__header" scope="col">Sender</th>
+          <th class="govuk-table__header" scope="col">Payment method</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Number of credits sent</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Prisoners sent to</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Number of prisons sent to</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Total amount sent</th>
+          <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body ">
+        {%- for sender in senders -%}
+          {%- if data['senderSearch'] in [sender.sender_name,sender.sender_email,sender.source] -%}
+          <tr class="govuk-table__row hack-table-row-vertical-align-top">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ sender.sender_name }}</a> <br>
+              {%- if sender.sender_email -%}
+                {{ sender.sender_email }}
+                {%- else  -%}
+                Email not provided
+              {%- endif -%}
+            </td>
+            <td class="govuk-table__cell">{{ sender.source }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.credit_count }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.prisoner_count }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.prison_count }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.credit_total }}</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
+          </tr>
+          {%- endif -%}
+        {%- endfor -%}
+      </tbody>
+    </table>
+    {%- endif -%}
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}

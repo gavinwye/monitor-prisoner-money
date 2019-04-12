@@ -9,17 +9,18 @@ Payment sources
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Payment sources
+      Senders
     </h1>
+    <p class="govuk-body">One person using multiple cards is displayed as two different senders. We do not validate or combine names or email address.</p>
   </div>
   <div class="govuk-grid-column-full">
     <!-- <h2 class="govuk-heading-m">Search</h2> -->
     <form class="form" method="post">
       <div class="govuk-form-group">
         <label class="govuk-label" for="width-20">
-          Sender name, email address or account number
+          Sender name, sender email address or payment method
         </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="paymentSourceSearch" name="paymentSourceSearch" type="text">
+        <input class="govuk-input govuk-!-width-two-thirds" id="senderSearch" name="senderSearch" type="text">
         <button type="submit" class="govuk-button">
           Search
         </button>
@@ -33,7 +34,8 @@ Payment sources
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
       <thead class="govuk-table__head">
         <tr class="govuk-table__row hack-table-row-vertical-align-top">
-          <th class="govuk-table__header" scope="col">Payment source</th>
+          <th class="govuk-table__header" scope="col">Sender</th>
+          <th class="govuk-table__header" scope="col">Payment method</th>
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Number of credits sent</th>
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Prisoners sent to</th>
           <th class="govuk-table__header govuk-table__header--numeric" scope="col">Number of prisons sent to</th>
@@ -44,7 +46,14 @@ Payment sources
       <tbody class="govuk-table__body ">
         {%- for sender in senders -%}
         <tr class="govuk-table__row hack-table-row-vertical-align-top">
-          <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ sender.sender_name }}</a> <br> by {{ sender.source }} </td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ sender.sender_name }}</a> <br>
+            {%- if sender.sender_email -%}
+              {{ sender.sender_email }}
+              {%- else  -%}
+              Email not provided
+            {%- endif -%}
+          </td>
+          <td class="govuk-table__cell">{{ sender.source }}</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.credit_count }}</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.prisoner_count }}</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.prison_count }}</td>

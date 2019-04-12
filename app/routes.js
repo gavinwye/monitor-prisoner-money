@@ -13,7 +13,7 @@ const viewContent = require('./routes-content');
 require('./views/notifications/routes')(router, viewContent);
 require('./views/prisons/routes')(router);
 require('./views/credits/routes')(router);
-require('./views/payment-sources/routes')(router);
+require('./views/senders/routes')(router);
 require('./views/prisoners/routes')(router);
 require('./views/disbursements/routes')(router);
 ///////////
