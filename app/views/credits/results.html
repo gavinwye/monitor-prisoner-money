@@ -28,7 +28,7 @@ Credits
 
 
     <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
-    {%- if data['creditSearch'] != [credit.sender_email,credit.prisoner_number,credit.sender_name] -%}
+    {%- if data['creditSearch'] == '' -%}
     <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['creditSearch'] }}"</span> returned no results <a href="/credits/" class="govuk-link--no-visited-state">search again</a></p>
     {%- else -%}
     <p class="govuk-body-l">Search results for <span class="govuk-!-font-weight-bold">{{ data['creditSearch'] }}</span> <a href="/credits/" class="govuk-link--no-visited-state">clear search</a></p>
