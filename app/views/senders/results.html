@@ -29,7 +29,7 @@ Payment sources
     </form>
 
     <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
-    {%- if data['senderSearch'] == '' -%}
+    {%- if senders.length == 0 -%}
     <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span> returned no results <a href="/disbursements/" class="govuk-link--no-visited-state">search again</a></p>
     {%- else -%}
     <p class="govuk-body-l">Search results for <span class="govuk-!-font-weight-bold">{{ data['senderSearch'] }}</span> <a href="/disbursements/" class="govuk-link--no-visited-state">clear search</a></p>
@@ -48,7 +48,6 @@ Payment sources
       </thead>
       <tbody class="govuk-table__body ">
         {%- for sender in senders -%}
-          {%- if data['senderSearch'] in [sender.sender_name,sender.sender_email,sender.source] -%}
           <tr class="govuk-table__row hack-table-row-vertical-align-top">
             <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ sender.sender_name }}</a> <br>
               {%- if sender.sender_email -%}
@@ -64,7 +63,6 @@ Payment sources
             <td class="govuk-table__cell govuk-table__cell--numeric">{{ sender.credit_total }}</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
           </tr>
-          {%- endif -%}
         {%- endfor -%}
       </tbody>
     </table>
