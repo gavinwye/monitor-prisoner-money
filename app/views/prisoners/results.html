@@ -27,7 +27,7 @@ Prisoners
       </div>
     </form>
 
-    {%- if data['prisonerSearch'] == '' -%}
+    {%- if prisoners.length == 0 -%}
     <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span> returned no results <a href="/prisons/" class="govuk-link--no-visited-state">search again</a></p>
     {%- else -%}
     <p class="govuk-body-l">Search results for <span class="govuk-!-font-weight-bold">{{ data['prisonerSearch'] }}</span> <a href="/prisons/" class="govuk-link--no-visited-state">clear search</a></p>
@@ -67,7 +67,6 @@ Prisoners
           </thead>
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.credit_count >= 1 and data['prisonerSearch'] in [prisoner.prisoner_name,prisoner.prisoner_number] -%}
               <tr class="govuk-table__row hack-table-row-vertical-align-top">
                 <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ prisoner.prisoner_name }}</a><br>{{ prisoner.prisoner_number }}</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.credit_count }}</td>
@@ -76,7 +75,6 @@ Prisoners
                 <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.credit_total }}</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
               </tr>
-              {%- endif -%}
             {%- endfor -%}
           </tbody>
         </table>
@@ -98,7 +96,6 @@ Prisoners
           </thead>
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.disbursement_count >= 1 and data['prisonerSearch'] in [prisoner.prisoner_name,prisoner.prisoner_number] -%}
               <tr class="govuk-table__row hack-table-row-vertical-align-top">
                 <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ prisoner.prisoner_name }}</a><br>{{ prisoner.prisoner_number }}</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.recipient_count }}</td>
@@ -107,7 +104,6 @@ Prisoners
                 <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.disbursement_total }}</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
               </tr>
-              {%- endif -%}
             {%- endfor -%}
           </tbody>
         </table>

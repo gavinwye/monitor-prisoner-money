@@ -18,9 +18,20 @@ module.exports = function (router, content) {
   router.get('/credits/results', function(req, res) {
     // location of credit data json file
     var creditData = require('../../data/credits_list.json');
+    let terms = (req.session.data.creditSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
+    let credits = creditData.filter(function (credit) {
+      for (let term of terms) {
+        for (let field of [credit.sender_email, credit.prisoner_number, credit.sender_name]) {
+          if ((field || '').toLowerCase().indexOf(term) >= 0) {
+            return true
+          }
+        }
+      }
+      return false
+    })
     res.render('credits/results',
     {
-      credits: creditData
+      credits: credits
     });
   });
 
