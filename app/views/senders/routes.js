@@ -21,7 +21,7 @@ module.exports = function (router, content) {
     let terms = (req.session.data.senderSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
     let senders = senderData.filter(function (sender) {
       for (let term of terms) {
-        for (let field of [sender.sender_name, sender.sender_email, sender.source]) {
+        for (let field of [sender.sender_name, sender.sender_email]) {
           if ((field || '').toLowerCase().indexOf(term) >= 0) {
             return true
           }
