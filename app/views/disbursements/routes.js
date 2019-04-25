@@ -18,7 +18,7 @@ module.exports = function (router, content) {
   router.get('/disbursements/results', function(req, res) {
     // location of credit data json file
     var disbursementData = require('../../data/disbursement_list.json');
-    let terms = (req.session.data.creditSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
+    let terms = (req.session.data.disbursementSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
     let disbursements = disbursementData.filter(function (disbursement) {
       for (let term of terms) {
         for (let field of [disbursement.recipient_name, disbursement.prisoner_number]) {

@@ -18,7 +18,7 @@ module.exports = function (router, content) {
   router.get('/senders/results', function(req, res) {
     // location of credit data json file
     var senderData = require('../../data/sender_list.json');
-    let terms = (req.session.data.creditSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
+    let terms = (req.session.data.senderSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
     let senders = senderData.filter(function (sender) {
       for (let term of terms) {
         for (let field of [sender.sender_name, sender.sender_email, sender.source]) {
