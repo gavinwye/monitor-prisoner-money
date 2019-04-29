@@ -48,30 +48,15 @@ Prisoners
       </ul>
 
       <section class="govuk-tabs__panel" id="credits">
-        <h2 class="govuk-heading-l">Credits</h2>
+        <h2 class="govuk-heading-l">Total credits</h2>
         <table class="govuk-table govuk-!-font-size-14 ">
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row hack-table-row-vertical-align-top">
-              <th class="govuk-table__header" scope="col">Prisoner</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Credits recieved</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Total payment sources</th>
-              <th class="govuk-table__header" scope="col">Prison</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Total amount of credits</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
-            </tr>
-          </thead>
+          {% include "prisoners/includes/_table_header_credits.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
               {%- if prisoner.credit_count >= 1 -%}
-              <tr class="govuk-table__row hack-table-row-vertical-align-top">
-                <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ prisoner.prisoner_name }}</a><br>{{ prisoner.prisoner_number }}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.credit_count }}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.sender_count }}</td>
-                <td class="govuk-table__cell">{{ prisoner.prison_name }}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.credit_total }}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
-              </tr>
+              <!-- The line above stops disbursements appearing in the credits view -->
+                {% include "prisoners/includes/_table_row_credits.html" %}
               {%- endif -%}
             {%- endfor -%}
           </tbody>
@@ -79,30 +64,15 @@ Prisoners
 
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
-        <h2 class="govuk-heading-l">Disbursements</h2>
+        <h2 class="govuk-heading-l">Total disbursements</h2>
         <table class="govuk-table govuk-!-font-size-14 ">
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row hack-table-row-vertical-align-top">
-              <th class="govuk-table__header" scope="col">Prisoner</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Total recipients</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Disbursements sent</th>
-              <th class="govuk-table__header" scope="col">Prison</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Total amount of disbursements</th>
-              <th class="govuk-table__header govuk-table__header--numeric" scope="col">Action</th>
-            </tr>
-          </thead>
+          {% include "prisoners/includes/_table_header_disbursements.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
               {%- if prisoner.disbursement_count >= 1 -%}
-              <tr class="govuk-table__row hack-table-row-vertical-align-top">
-                <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ prisoner.prisoner_name }}</a><br>{{ prisoner.prisoner_number }}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.recipient_count }}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.disbursement_count }}</td>
-
-                <td class="govuk-table__cell govuk-table__cell--numeric">{{ prisoner.disbursement_total }}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
-              </tr>
+              <!-- The line above stops credits appearing in the disbursements view -->
+                {% include "prisoners/includes/_table_row_disbursements.html" %}
               {%- endif -%}
             {%- endfor -%}
           </tbody>
