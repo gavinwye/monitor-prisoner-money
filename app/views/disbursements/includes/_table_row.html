@@ -1,0 +1,14 @@
+<tr class="govuk-table__row hack-table-row-vertical-align-top">
+  <td class="govuk-table__cell">{{ disbursement.created }}</td>
+  <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ disbursement.prisoner_name }}</a><br>{{ disbursement.prisoner_number }} </td>
+  <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ disbursement.recipient_name }}</a> <br>
+  {%- if disbursement.recipient_email -%}
+    {{ disbursement.recipient_email }}
+    {%- else  -%}
+    Email not provided
+  {%- endif -%}</td>
+  <td class="govuk-table__cell">{{ disbursement.prison_name }}</td>
+  <!-- <td class="govuk-table__cell">{{ disbursement.resolution }}</td> -->
+  <td class="govuk-table__cell govuk-table__cell--numeric">{{ disbursement.amount }}</td>
+  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
+</tr>
