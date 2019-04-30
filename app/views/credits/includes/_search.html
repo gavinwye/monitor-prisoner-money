@@ -1,0 +1,12 @@
+<form class="form" method="post">
+  <div class="govuk-form-group">
+    <label class="govuk-label" for="width-20">
+      Sender name, sender email address or prisoner number
+    </label>
+    <input class="govuk-input govuk-!-width-two-thirds" id="creditSearch" name="creditSearch" type="text" value="">
+    {{ govukButton({
+      html: 'Search'
+    }) }}
+    <p><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
+  </div>
+</form>

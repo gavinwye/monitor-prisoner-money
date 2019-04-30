@@ -9,7 +9,7 @@ Disbursements
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Disbursements
+      Disbursements search results
     </h1>
   </div>
   <div class="govuk-grid-column-full">
@@ -19,7 +19,7 @@ Disbursements
         <label class="govuk-label" for="width-20">
           Recipient name or prisoner number
         </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="disbursementSearch" name="disbursementSearch" type="text">
+        <input class="govuk-input govuk-!-width-two-thirds" id="disbursementSearch" name="disbursementSearch" type="text" value="{{ data['disbursementSearch'] }}">
         <button type="submit" class="govuk-button">
           Search
         </button>
@@ -28,16 +28,20 @@ Disbursements
     </form>
 
     <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
-
+    {%- if disbursements.length == 0 -%}
+    <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['disbursementSearch'] }}"</span> returned no results <a href="/disbursements/" class="govuk-link--no-visited-state">search again</a></p>
+    {%- else -%}
+    <p class="govuk-body-l">Search results for <span class="govuk-!-font-weight-bold">{{ data['disbursementSearch'] }}</span> <a href="/disbursements/" class="govuk-link--no-visited-state">clear search</a></p>
     <table class="govuk-table govuk-!-font-size-14 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
       {% include "disbursements/includes/_table_header.html" %}
       <tbody class="govuk-table__body ">
         {%- for disbursement in disbursements -%}
-          {% include "disbursements/includes/_table_row.html" %}
+        {% include "disbursements/includes/_table_row.html" %}
         {%- endfor -%}
       </tbody>
     </table>
+    {%- endif -%}
 
         </div>
 

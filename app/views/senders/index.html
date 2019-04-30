@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Disbursements
+Payment sources
 {% endblock %}
 
 {% block content %}
@@ -9,17 +9,18 @@ Disbursements
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Disbursements
+      Senders
     </h1>
+    <p class="govuk-body">One person using multiple cards is displayed as two different senders. We do not validate or combine names or email address.</p>
   </div>
   <div class="govuk-grid-column-full">
     <!-- <h2 class="govuk-heading-m">Search</h2> -->
     <form class="form" method="post">
       <div class="govuk-form-group">
         <label class="govuk-label" for="width-20">
-          Recipient name or prisoner number
+          Sender name or email address
         </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="disbursementSearch" name="disbursementSearch" type="text">
+        <input class="govuk-input govuk-!-width-two-thirds" id="senderSearch" name="senderSearch" type="text">
         <button type="submit" class="govuk-button">
           Search
         </button>
@@ -27,28 +28,16 @@ Disbursements
       </div>
     </form>
 
-    <!-- <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible"> -->
+    <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
 
     <table class="govuk-table govuk-!-font-size-14 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-      {% include "disbursements/includes/_table_header.html" %}
+      {% include "senders/includes/_table_header.html" %}
       <tbody class="govuk-table__body ">
-        {%- for disbursement in disbursements -%}
-          {% include "disbursements/includes/_table_row.html" %}
-        {%- endfor -%}
+        {% include "senders/includes/_table_row.html" %}
       </tbody>
     </table>
-
-        </div>
-
-
-
-
-
-
-
-
-
+  </div>
 </div>
 
 {% endblock %}

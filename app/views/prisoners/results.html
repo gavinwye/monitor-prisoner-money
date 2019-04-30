@@ -9,7 +9,7 @@ Prisoners
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Prisoners
+      Prisoners search results
     </h1>
   </div>
   <div class="govuk-grid-column-full">
@@ -19,7 +19,7 @@ Prisoners
         <label class="govuk-label" for="width-20">
           Prisoner number or name
         </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="prisonerSearch" name="prisonerSearch" type="text">
+        <input class="govuk-input govuk-!-width-two-thirds" id="prisonerSearch" name="prisonerSearch" type="text" value="{{ data['prisonerSearch'] }}">
         <button type="submit" class="govuk-button">
           Search
         </button>
@@ -27,6 +27,10 @@ Prisoners
       </div>
     </form>
 
+    {%- if prisoners.length == 0 -%}
+    <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span> returned no results <a href="/prisons/" class="govuk-link--no-visited-state">search again</a></p>
+    {%- else -%}
+    <p class="govuk-body-l">Search results for <span class="govuk-!-font-weight-bold">{{ data['prisonerSearch'] }}</span> <a href="/prisons/" class="govuk-link--no-visited-state">clear search</a></p>
     <!-- ********************************** -->
 
     <div class="govuk-tabs" data-module="tabs">
@@ -48,7 +52,7 @@ Prisoners
       </ul>
 
       <section class="govuk-tabs__panel" id="credits">
-        <h2 class="govuk-heading-l">Total credits</h2>
+        <h2 class="govuk-heading-l">Credits</h2>
         <table class="govuk-table govuk-!-font-size-14 ">
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
           {% include "prisoners/includes/_table_header_credits.html" %}
@@ -64,7 +68,7 @@ Prisoners
 
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
-        <h2 class="govuk-heading-l">Total disbursements</h2>
+        <h2 class="govuk-heading-l">Disbursements</h2>
         <table class="govuk-table govuk-!-font-size-14 ">
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
           {% include "prisoners/includes/_table_header_disbursements.html" %}
@@ -81,6 +85,8 @@ Prisoners
       </section>
     </div>
     <!-- *************************************** -->
+
+    {%- endif -%}
 
   </div>
 
