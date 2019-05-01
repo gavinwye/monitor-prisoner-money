@@ -9,5 +9,9 @@ module.exports = function (router, content) {
     res.redirect('/prisons/')
   })
 
+  router.post('/prisons/success', function (req, res) {
+    res.redirect('/')
+  })
+
   // END__######################################################################################################
 }
