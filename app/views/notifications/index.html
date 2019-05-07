@@ -4,10 +4,6 @@
 Notifications
 {% endblock %}
 
-{%block beforeContent%}
-
-{% endblock%}
-
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -16,33 +12,30 @@ Notifications
       Notifications
     </h1>
   </div>
-  <div class="govuk-grid-column-one-third">
-    <ul class="hack-list-inline govuk-!-margin-top-2 right">
-      <li class="govuk-!-margin-right-2"><a href="#" class="govuk-link govuk-link--no-visited-state">Export<span class="govuk-visually-hidden">week commencing 15/08/2018</span></a></li>
-      <li><a href="#" class="govuk-link govuk-link--no-visited-state">Print<span class="govuk-visually-hidden">week commencing 15/08/2018</span></a></li>
-    </ul>
-  </div>
-  <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body-l govuk-!-margin-bottom-3">Week commencing <span class="govuk-!-font-weight-bold">15/08/2018</span></p>
+  <div class="govuk-grid-column-full">
+    <p class="govuk-body-l govuk-!-margin-bottom-3">Week commencing <span class="govuk-!-font-weight-bold">29/04/2019</span></p>
     <div class="pagination">
       <ul class="hack-list-inline govuk-list govuk-!-margin-0 govuk-!-margin-bottom-5">
         <li class="previous"><a href="/notifications/notifications-page-last-week" class="govuk-link--no-visited-state">Previous week</a></li>
-        <!-- <li class="next right"><a href="/notifications/notifications-page" class="govuk-link--no-visited-state"></a></li> -->
       </ul>
     </div>
-    <p class="govuk-body govuk-!-font-weight-bold">You have 52 notifications</p>
+    <p class="govuk-body govuk-!-font-weight-bold">You have 17 notifications</p>
   </div>
 </div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="govuk-grid-row hack-grey-out">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l">
       Monitored transactions
     </h2>
     <h3 class="govuk-heading-m ">
-      All transactions you’re already following - prisoners, debit cards, bank accounts - in your prisons
+      Credits for prisoners, debit card, bank accounts you’re monitoring
+    </h3>
+    <p class="govuk-body">No notifications</p>
+    <h3 class="govuk-heading-m ">
+      Disbursements for prisoners, bank accounts you’re monitoring
     </h3>
     <p class="govuk-body">No notifications</p>
   </div>
@@ -51,17 +44,17 @@ Notifications
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l">
       Credits or disbursements
     </h2>
   </div>
 </div>
-<h3 class="govuk-heading-m">Not a whole number, for example, £25.19</h3>
+<h3 class="govuk-heading-m">Credits not a whole number, for example £25.19</h3>
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      29 notifications
+      2 notifications
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -72,14 +65,17 @@ Notifications
     </div>
   </div>
 </details>
+
+<h3 class="govuk-heading-m">Disbursements not a whole number, for example £25.19</h3>
+<p class="govuk-body">No notifications</p>
+
 <h3 class="govuk-heading-m ">
   Credits over £120
 </h3>
-
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      11 notifications
+      2 notifications
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -92,7 +88,7 @@ Notifications
 </details>
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h3 class="govuk-heading-m">
       Disbursements over £120
     </h3>
@@ -101,7 +97,7 @@ Notifications
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      2 notifications
+      1 notification
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -116,17 +112,17 @@ Notifications
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-l govuk-!-margin-bottom-3 govuk-!-margin-top-4">
-      Number of credits/disbursements sent
+      Debit cards or bank accounts with frequent transactions
     </h2>
   </div>
 </div>
-<h3 class="govuk-heading-m ">4 or more credits sent by a single debit card in last 4 weeks</h3>
+<h3 class="govuk-heading-m ">Debit cards or bank accounts sending 4 or more credits in last 4 weeks</h3>
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      11 notifications
+      3 notifications
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -137,11 +133,11 @@ Notifications
     </div>
   </div>
 </details>
-<h3 class="govuk-heading-m ">4 or more disbursements sent to a single bank account in last 4 weeks</h3>
+<h3 class="govuk-heading-m ">Bank accounts receiving 4 or more disbursements in last 4 weeks</h3>
 <details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      1 notification
+      4 notification
     </span>
   </summary>
   <div class="govuk-details__text">
@@ -155,39 +151,79 @@ Notifications
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="govuk-grid-row hack-grey-out">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">
-      Prisoner transactions
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3 govuk-!-margin-top-4">
+      Prisoners sending money to or receiving money from several debit cards or bank accounts
     </h2>
-    <h3 class="govuk-heading-m ">
-      Credits from 4 or more debit cards or bank accounts in last 4 weeks
-    </h3>
-    <p class="govuk-body">No notifications</p>
-    <h3 class="govuk-heading-m ">
-      Disbursements to 4 or more bank accounts in last 4 weeks
-    </h3>
-    <p class="govuk-body">No notifications</p>
   </div>
 </div>
+<h3 class="govuk-heading-m ">
+  Prisoners receiving credits from 4 or more debit cards or bank accounts in last 4 weeks
+</h3>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      3 notification
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% include "./includes/prisonersReceivingCreditsFrom4OrMoreDebitCardsOrBankAccountsInLast4Weeks.html" %}
+      </div>
+    </div>
+  </div>
+</details>
+<h3 class="govuk-heading-m ">
+  Prisoners sending money to 4 or more bank accounts in last 4 weeks
+</h3>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      1 notification
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% include "./includes/prisonersSendingMoneyTo4OrMoreBankAccountsInLast4Weeks.html" %}
+      </div>
+    </div>
+  </div>
+</details>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-<div class="govuk-grid-row hack-grey-out">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">
-      Number of prisoners receiving/sending money
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-3 govuk-!-margin-top-4">
+      Debit cards or bank accounts sending money to or receiving money from several prisoners
     </h2>
-    <h3 class="govuk-heading-m ">
-      Credits from a debit card or bank account to more than 4 prisoners in last 4 weeks
-    </h3>
-    <p class="govuk-body">No notifications</p>
-    <h3 class="govuk-heading-m ">
-      Disbursements sent to a bank account by more than 4 prisoners in last 4 weeks
-    </h3>
-    <p class="govuk-body">No notifications</p>
   </div>
 </div>
+<h3 class="govuk-heading-m hack-grey-out">
+  Debit cards or bank accounts sending money to more than 4 prisoners in last 4 weeks
+</h3>
+<p class="govuk-body hack-grey-out">No notifications</p>
+<h3 class="govuk-heading-m ">
+  Bank accounts receiving money from more than 4 prisoners in last 4 weeks
+</h3>
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      1 notification
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        {% include "./includes/bankAccountsReceivingMoneyFromMoreThan4PrisonersInLast4Weeks.html" %}
+      </div>
+    </div>
+  </div>
+</details>
+
 
 </div>
 
