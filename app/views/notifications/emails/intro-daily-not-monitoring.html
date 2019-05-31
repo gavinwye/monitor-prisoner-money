@@ -1,0 +1,27 @@
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+Prisoner money notifications for DD/MM/YYYY
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">To: firstname.lastname@hmps.gsi.gov.uk</p>
+    <p class="govuk-body">From: money-to-prisoners@digital.justice.gov.uk</p>
+    <p class="govuk-body">Subject: <span class=" govuk-!-font-weight-bold">Introducing prisoner money intelegence notifications</span></p>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    <p class="govuk-body">Dear {{ data['userName'] }},</p>
+    <p class="govuk-body">We’re introducing notifications for payment sources and prisoners you are monitoring.</p>
+    <p class="govuk-body">From today, we will email once a day listing all of the payment sources or prisoners you are monitoring that have new transactions. If nothing happens, we won’t email you.</p>
+    <p class="govuk-body">You are not monitoring anyone at the moment. So you won't get any emails until you start monitoring a payment source or sender.</p>
+    <p class="govuk-body">Kind regards <br>The Prisoner money team</p>
+
+  </div>
+</div>
+
+
+<!-- </div> -->
+
+{% endblock %}
