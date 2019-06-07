@@ -18,4 +18,5 @@ $govuk-font-family: 'Helvetica Neue', 'Inter UI', sans-serif;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "./app.scss";
+@import "node_modules/@ministryofjustice/frontend/all";
 // @import "./unbranded.scss"
