@@ -79,9 +79,39 @@ Prisoners
                 {% include "prisoners/includes/_table_row_credits.html" %}
               {%- endif -%}
             {%- endfor -%}
+
           </tbody>
         </table>
+        {% from "moj-pagination/macro.njk" import mojPagination %}
+        {{ mojPagination({
+          results: {
+            from: 1,
+            to: 5,
+            count: 85
+          },
 
+          previous: {
+            text: 'Previous',
+            href: ''
+          },
+
+          next: {
+            text: 'Next',
+            href: ''
+          },
+
+          items: [{
+            text: '1',
+            href: '/page=1',
+            selected: true
+          }, {
+            text: '2',
+            href: '/page=5'
+          }, {
+            text: '3',
+            href: '/page=6'
+          }]
+        }) }}
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
         <h2 class="govuk-heading-l">Total disbursements</h2>
@@ -97,7 +127,36 @@ Prisoners
             {%- endfor -%}
           </tbody>
         </table>
+        {% from "moj-pagination/macro.njk" import mojPagination %}
+        {{ mojPagination({
+          results: {
+            from: 1,
+            to: 5,
+            count: 85
+          },
 
+          previous: {
+            text: 'Previous',
+            href: ''
+          },
+
+          next: {
+            text: 'Next',
+            href: ''
+          },
+
+          items: [{
+            text: '1',
+            href: '/page=1',
+            selected: true
+          }, {
+            text: '2',
+            href: '/page=5'
+          }, {
+            text: '3',
+            href: '/page=6'
+          }]
+        }) }}
       </section>
     </div>
     <!-- *************************************** -->
