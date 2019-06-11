@@ -4,6 +4,10 @@ module.exports = function (router, content) {
     res.redirect('/prisoners/results')
   })
 
+  router.post('/prisoners/results', function (req, res) {
+    res.redirect('/prisoners/')
+  })
+
   // This is for the credits data
   router.get('/prisoners/', function(req, res) {
     // location of credit data json file
