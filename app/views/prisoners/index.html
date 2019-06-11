@@ -15,17 +15,38 @@ Prisoners
   <div class="govuk-grid-column-full">
     <!-- <h2 class="govuk-heading-m">Search</h2> -->
     <form class="form" method="post">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="width-20">
-          Prisoner number or name
+      <!-- <div class="govuk-form-group">
+        <label class="govuk-label govuk-body govuk-!-font-size-27" for="width-20">
+          Search prisoner number or name
         </label>
+        <span id="event-name-hint" class="govuk-hint">
+          Prison numbers should be in the format 'A1234AB'.
+        </span>
         <input class="govuk-input govuk-!-width-two-thirds" id="prisonerSearch" name="prisonerSearch" type="text">
         <button type="submit" class="govuk-button">
-          Search
+          Search prisoners
         </button>
         <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
-      </div>
+      </div> -->
+      {{ govukInput({
+        label: {
+          classes: "govuk-body govuk-!-font-size-27",
+          text: "Search prisoner number or name"
+        },
+        hint: {
+          text: "Prison numbers should be in the format 'A1234AB'."
+        },
+        classes: "govuk-!-width-three-quarters",
+        id: "event-name",
+        name: "event-name"
+      }) }}
+      {{ govukButton({
+        classes: "govuk-!-margin-top-1",
+        text: "Search prisoners"
+      }) }}
     </form>
+
+    <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
 
     <!-- ********************************** -->
 
