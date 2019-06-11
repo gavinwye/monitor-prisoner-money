@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Notifications
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">
+      Notifications
+    </h1>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Your monitored payment sources and prisoners</h2>
+    {{ govukInsetText({
+      text: "You're not monitoring anything at the moment. When you start to monitor a payment source or prisoner, notifications of any activity will be here."
+    }) }}
+  </div>
+</div>
+
+
+</div>
+
+{% endblock %}

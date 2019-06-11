@@ -1,0 +1,31 @@
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+Prisoner money notifications for DD/MM/YYYY
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">To: firstname.lastname@hmps.gsi.gov.uk</p>
+    <p class="govuk-body">From: money-to-prisoners@digital.justice.gov.uk</p>
+    <p class="govuk-body">Subject: <span class=" govuk-!-font-weight-bold">New helpful ways to get the best from the intelligence tool</span></p>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    <p class="govuk-body">Dear {{ data['userName'] }},</p>
+    <p class="govuk-body">We hope you already find the intelligence tool useful.</p>
+    <p class="govuk-body">At the moment, you’re not using the tool to ‘monitor’ payment sources or prisoners across prisons which can be useful in tracking potentially suspicious financial activity.</p> 
+    <p class="govuk-body">You can start monitoring by going to your <a href="/settings/">settings screen</a>.</p>
+    <p class="govuk-body">And once you’ve started to monitor payment sources and/or prisoners, we’ll notify you by daily email when any actions take place. When there is no new activity on what you’re monitoring, we won’t email you.</p>
+    <p class="govuk-body">You can turn off these email notifications at any time from your settings screen.</p>
+    <p class="govuk-body">Any <a href="/feedback/">feedback</a> you can give us helps improve the tool further.</p>
+    <p class="govuk-body">We hope you find this helpful.</p>
+    <p class="govuk-body">Kind regards <br>Prisoner money team</p>
+
+  </div>
+</div>
+
+
+<!-- </div> -->
+
+{% endblock %}

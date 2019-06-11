@@ -1,0 +1,46 @@
+{% extends "layout-email.html" %}
+
+{% block pageTitle %}
+Prisoner money notifications for DD/MM/YYYY
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">To: firstname.lastname@hmps.gsi.gov.uk</p>
+    <p class="govuk-body">From: money-to-prisoners@digital.justice.gov.uk</p>
+    <p class="govuk-body">Subject: <span class=" govuk-!-font-weight-bold">New notification feature added to intelligence tool</span></p>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+    <p class="govuk-body">Dear {{ data['userName'] }},</p>
+    <p class="govuk-body">We've updated the prisoner money intelligence tool.</p>
+    <p class="govuk-body">At the moment, you can monitor payment sources or prisoners in one or many prisons.</p>
+    <p class="govuk-body">From today, we’ll notify you by daily email when any actions take place on a payment source or prisoner you're monitoring.</p>
+    <p class="govuk-body">When there is no new activity, we won’t email you.</p>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <p class="govuk-body">View your notifications for payment sources or prisoners you’re monitoring for 20/05/2019</p>
+
+    <p class="govuk-heading-m"><a href="/notifications#20/05/2019">You have 5 notifications</a></p>
+    <p class="govuk-heading-s">Payment sources</p>
+    <ul class="govuk-list">
+      <li><a href="/payment-sources/payment-source">Payment source 1 transaction</a></li>
+      <li><a href="/payment-sources/payment-source">Payment source 1 transaction</a></li>
+      <li><a href="/payment-sources/payment-source">Payment source 1 transaction</a></li>
+    </ul>
+    <p class="govuk-heading-s">Prisoners</p>
+    <ul class="govuk-list">
+      <li><a href="/prisoners/prisoner/A12345">Prisoner name (A12345) 1 transaction</a></li>
+      <li><a href="/prisoners/prisoner/A12345">Prisoner name (A12345) 1 transaction</a></li>
+    </ul>
+
+    <p class="govuk-body">You can turn off these email notifications from your <a href="/settings/">settings screen</a> in the intelligence tool.</p>
+
+    <p class="govuk-body">Kind regards <br>Prisoner money team</p>
+
+  </div>
+</div>
+
+
+<!-- </div> -->
+
+{% endblock %}
