@@ -13,28 +13,14 @@ Prisoners
     </h1>
   </div>
   <div class="govuk-grid-column-full">
-    <!-- <h2 class="govuk-heading-m">Search</h2> -->
     <form class="form" method="post">
-      <!-- <div class="govuk-form-group">
-        <label class="govuk-label govuk-body govuk-!-font-size-27" for="width-20">
-          Search prisoner number or name
-        </label>
-        <span id="event-name-hint" class="govuk-hint">
-          Prison numbers should be in the format 'A1234AB'.
-        </span>
-        <input class="govuk-input govuk-!-width-two-thirds" id="prisonerSearch" name="prisonerSearch" type="text">
-        <button type="submit" class="govuk-button">
-          Search prisoners
-        </button>
-        <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
-      </div> -->
       {{ govukInput({
         label: {
           classes: "govuk-body govuk-!-font-size-27",
           text: "Search prisoner number or name"
         },
         hint: {
-          text: "Prison numbers should be in the format 'A1234AB'."
+          text: "Prisoner numbers should be in the format 'A1234AB'."
         },
         classes: "govuk-!-width-three-quarters",
         id: "prisonerSearch",
@@ -45,7 +31,7 @@ Prisoners
       }) }}
     </form>
 
-    <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
+    <p><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
 
     <!-- ********************************** -->
 
@@ -162,15 +148,6 @@ Prisoners
     <!-- *************************************** -->
 
   </div>
-
-
-
-
-
-
-
-
-
 </div>
 
 {% endblock %}
