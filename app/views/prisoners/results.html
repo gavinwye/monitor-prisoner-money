@@ -17,13 +17,12 @@ Prisoners
       <div class="govuk-grid-column-two-thirds">
         {%- if prisoners.length == 0 -%}
         <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span> returned no results</p>
-
         {%- else -%}
         <p class="govuk-body-l">Showing <span class="govuk-!-font-weight-bold">1 Credit</span> and <span class="govuk-!-font-weight-bold">1 Disbursment</span> containing prisoner number or name <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span></p>
       </div>
     </div>
-    <!-- ********************************** -->
 
+    <!-- tabs ********************************** -->
     <div class="govuk-tabs" data-module="tabs">
       <h2 class="govuk-tabs__title">
         Credits & Disbursements
