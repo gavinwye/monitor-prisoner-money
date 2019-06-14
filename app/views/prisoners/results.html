@@ -18,7 +18,7 @@ Prisoners
         {%- if prisoners.length == 0 -%}
         <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span> returned no results</p>
         {%- else -%}
-        <p class="govuk-body-l">Showing <span class="govuk-!-font-weight-bold">1 Credit</span> and <span class="govuk-!-font-weight-bold">1 Disbursment</span> containing prisoner number or name <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span></p>
+        <p class="govuk-body-l">1 result containing prisoner number or name <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span></p>
       </div>
     </div>
 
@@ -42,7 +42,7 @@ Prisoners
       </ul>
 
       <section class="govuk-tabs__panel" id="credits">
-        <h2 class="govuk-heading-l">Credits contaning "{{ data['prisonerSearch'] }}"</h2>
+        <!-- <h2 class="govuk-heading-l">Credits contaning "{{ data['prisonerSearch'] }}"</h2> -->
         <table class="govuk-table govuk-!-font-size-16 ">
           <!-- <p class="govuk-body">Credits contaning "{{ data['prisonerSearch'] }}"</p> -->
           <!-- <caption class="govuk-table__caption">Credits contaning "{{ data['prisonerSearch'] }}"</caption> -->
@@ -59,7 +59,7 @@ Prisoners
 
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
-        <h2 class="govuk-heading-l">Disbursements contaning "{{ data['prisonerSearch'] }}"</h2>
+        <!-- <h2 class="govuk-heading-l">Disbursements contaning "{{ data['prisonerSearch'] }}"</h2> -->
         <table class="govuk-table govuk-!-font-size-16 ">
           <!-- <p class="govuk-body">Disbursements contaning "{{ data['prisonerSearch'] }}"</p> -->
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
