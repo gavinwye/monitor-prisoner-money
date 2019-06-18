@@ -12,7 +12,7 @@ Prisoners
       Search results: prisoners
     </h1>
     <form class="form" method="post">
-    {{ govukButton({
+      {{ govukButton({
         text: "Search again",
         classes: "govuk-button"
       }) }}
@@ -22,7 +22,7 @@ Prisoners
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         {%- if prisoners.length == 0 -%}
-        <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span> returned no results</p>
+        <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> returned no results</p>
         {%- else -%}
         <p class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span></p>
       </div>
@@ -55,10 +55,10 @@ Prisoners
           {% include "prisoners/includes/_table_header_credits.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.credit_count >= 1 -%}
-              <!-- The line above stops disbursements appearing in the credits view -->
-                {% include "prisoners/includes/_table_row_credits.html" %}
-              {%- endif -%}
+            {%- if prisoner.credit_count >= 1 -%}
+            <!-- The line above stops disbursements appearing in the credits view -->
+            {% include "prisoners/includes/_table_row_credits.html" %}
+            {%- endif -%}
             {%- endfor -%}
           </tbody>
         </table>
@@ -72,10 +72,10 @@ Prisoners
           {% include "prisoners/includes/_table_header_disbursements.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.disbursement_count >= 1 -%}
-              <!-- The line above stops credits appearing in the disbursements view -->
-                {% include "prisoners/includes/_table_row_disbursements.html" %}
-              {%- endif -%}
+            {%- if prisoner.disbursement_count >= 1 -%}
+            <!-- The line above stops credits appearing in the disbursements view -->
+            {% include "prisoners/includes/_table_row_disbursements.html" %}
+            {%- endif -%}
             {%- endfor -%}
           </tbody>
         </table>
@@ -85,24 +85,7 @@ Prisoners
     <!-- *************************************** -->
 
     {%- endif -%}
-
-    <!-- <form class="form" method="post">
-    {{ govukButton({
-        text: "Search again",
-        classes: "govuk-button"
-      }) }}
-    </form> -->
-
   </div>
-
-
-
-
-
-
-
-
-
 </div>
 
 {% endblock %}
