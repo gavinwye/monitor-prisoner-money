@@ -16,6 +16,12 @@ Senders
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
           Search results: senders
         </h1>
+        <form class="form" method="post">
+        {{ govukButton({
+            text: "Search again",
+            classes: "govuk-button"
+          }) }}
+        </form>
         {%- if senders.length == 0 -%}
         <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span> returned no results</p>
         {%- else -%}
@@ -27,12 +33,7 @@ Senders
         <p class="govuk-body-s">We do not validate or combine names or email address.</p>
       </div>
     </div>
-    <form class="form" method="post">
-    {{ govukButton({
-        text: "Search again",
-        classes: "govuk-button"
-      }) }}
-    </form>
+
     <table class="govuk-table govuk-!-font-size-16 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
       {% include "senders/includes/_table_header.html" %}
@@ -41,12 +42,6 @@ Senders
       </tbody>
     </table>
     {%- endif -%}
-    <form class="form" method="post">
-    {{ govukButton({
-        text: "Search again",
-        classes: "govuk-button"
-      }) }}
-    </form>
   </div>
 
 
