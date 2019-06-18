@@ -42,10 +42,10 @@ Prisoners
       </ul>
 
       <section class="govuk-tabs__panel" id="credits">
-        <!-- <h2 class="govuk-heading-l">Credits contaning "{{ data['prisonerSearch'] }}"</h2> -->
+        <!-- <h2 class="govuk-heading-l">Credits containing "{{ data['prisonerSearch'] }}"</h2> -->
         <table class="govuk-table govuk-!-font-size-16 ">
-          <!-- <p class="govuk-body">Credits contaning "{{ data['prisonerSearch'] }}"</p> -->
-          <!-- <caption class="govuk-table__caption">Credits contaning "{{ data['prisonerSearch'] }}"</caption> -->
+          <!-- <p class="govuk-body">Credits containing "{{ data['prisonerSearch'] }}"</p> -->
+          <!-- <caption class="govuk-table__caption">Credits containing "{{ data['prisonerSearch'] }}"</caption> -->
           {% include "prisoners/includes/_table_header_credits.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
@@ -61,7 +61,7 @@ Prisoners
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
         <!-- <h2 class="govuk-heading-l">Disbursements contaning "{{ data['prisonerSearch'] }}"</h2> -->
         <table class="govuk-table govuk-!-font-size-16 ">
-          <!-- <p class="govuk-body">Disbursements contaning "{{ data['prisonerSearch'] }}"</p> -->
+          <!-- <p class="govuk-body">Disbursements containing "{{ data['prisonerSearch'] }}"</p> -->
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
           {% include "prisoners/includes/_table_header_disbursements.html" %}
           <tbody class="govuk-table__body ">
