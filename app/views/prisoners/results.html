@@ -11,6 +11,12 @@ Prisoners
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
       Search results: prisoners
     </h1>
+    <form class="form" method="post">
+    {{ govukButton({
+        text: "Search again",
+        classes: "govuk-button"
+      }) }}
+    </form>
   </div>
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
@@ -21,13 +27,6 @@ Prisoners
         <p class="govuk-body-l">1 result containing prisoner number or name <span class="govuk-!-font-weight-bold">"{{ data['prisonerSearch'] }}"</span></p>
       </div>
     </div>
-
-    <form class="form" method="post">
-    {{ govukButton({
-        text: "Search again",
-        classes: "govuk-button"
-      }) }}
-    </form>
 
     <!-- tabs ********************************** -->
     <div class="govuk-tabs" data-module="tabs">
