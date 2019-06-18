@@ -14,7 +14,7 @@ Senders
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-          Search results: senders
+          Search results: Senders
         </h1>
         <form class="form" method="post">
         {{ govukButton({
@@ -25,7 +25,7 @@ Senders
         {%- if senders.length == 0 -%}
         <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span> returned no results</p>
         {%- else -%}
-        <p class="govuk-body-l">1 result containing sender name or email address  <span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span></p>
+        <p class="govuk-body-l">Results containing prisoner number or name<span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span></p>
       </div>
       <div class="govuk-grid-column-one-third blue-box-right">
         <h2 class="govuk-heading-s">About sender data</h2>
