@@ -9,7 +9,7 @@ Prisoners
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Search results: Prisoners
+      Search results: prisoners
     </h1>
     <form class="form" method="post">
       {{ govukButton({
@@ -24,10 +24,9 @@ Prisoners
         {%- if prisoners.length == 0 -%}
         <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> returned no results</p>
         {%- else -%}
-        <p class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span></p>
+        <p class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span>.</p>
       </div>
     </div>
-
     <!-- tabs ********************************** -->
     <div class="govuk-tabs" data-module="tabs">
       <h2 class="govuk-tabs__title">
@@ -83,15 +82,64 @@ Prisoners
       </section>
     </div>
     <!-- *************************************** -->
-    <p class="govuk-body">There are also 23 other results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> other prisons we have data for.</p>
-    <!-- <form class="form" method="post"> -->
-      {{ govukButton({
-        text: "View these results",
-        classes: "govuk-button--secondary",
-        href: "global-results"
-      }) }}
-    <!-- </form> -->
 
+    <h2 class="govuk-heading-m">Results form all prisons we have data for</h2>
+
+    <!-- tabs ********************************** -->
+    <div class="govuk-tabs" data-module="tabs">
+      <h2 class="govuk-tabs__title">
+        Credits & Disbursements
+      </h2>
+
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#credits_global">
+            Credits
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#disbursements_global">
+            Disbursements
+          </a>
+        </li>
+      </ul>
+
+      <section class="govuk-tabs__panel" id="credits_global">
+        <!-- <h2 class="govuk-heading-l">Credits containing "{{ data['prisonerSearch'] }}"</h2> -->
+        <table class="govuk-table govuk-!-font-size-16 ">
+          <!-- <p class="govuk-body">Credits containing "{{ data['prisonerSearch'] }}"</p> -->
+          <!-- <caption class="govuk-table__caption">Credits containing "{{ data['prisonerSearch'] }}"</caption> -->
+          {% include "prisoners/includes/_table_header_credits_global.html" %}
+          <tbody class="govuk-table__body ">
+            {%- for prisoner in prisoners -%}
+            {%- if prisoner.credit_count >= 1 -%}
+            <!-- The line above stops disbursements appearing in the credits view -->
+            {% include "prisoners/includes/_table_row_credits_global.html" %}
+            {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+      </section>
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements_global">
+        <!-- <h2 class="govuk-heading-l">Disbursements containing "{{ data['prisonerSearch'] }}"</h2> -->
+        <table class="govuk-table govuk-!-font-size-16 ">
+          <!-- <p class="govuk-body">Disbursements containing "{{ data['prisonerSearch'] }}"</p> -->
+          <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
+          {% include "prisoners/includes/_table_header_disbursements_global.html" %}
+          <tbody class="govuk-table__body ">
+            {%- for prisoner in prisoners -%}
+            {%- if prisoner.disbursement_count >= 1 -%}
+            <!-- The line above stops credits appearing in the disbursements view -->
+            {% include "prisoners/includes/_table_row_disbursements_global.html" %}
+            {%- endif -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+
+      </section>
+    </div>
+    <!-- *************************************** -->
     {%- endif -%}
   </div>
 </div>
