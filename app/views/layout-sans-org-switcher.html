@@ -66,16 +66,6 @@
         <nav>
           <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
             <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/prisoners/">
-                Prisoners
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/senders/">
-                Senders
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
               <a class="govuk-header__link govuk-header__navigation-item--active" href="/credits/">
                 Credits
               </a>
@@ -83,6 +73,16 @@
             <li class="govuk-header__navigation-item">
               <a class="govuk-header__link" href="/disbursements">
                 Disbursements
+              </a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/prisoners/">
+                Prisoners
+              </a>
+            </li>
+            <li class="govuk-header__navigation-item">
+              <a class="govuk-header__link" href="/senders/">
+                Senders
               </a>
             </li>
             <li class="govuk-header__navigation-item">
@@ -103,21 +103,17 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="app-service-navigation">
+<!-- <div class="app-service-navigation">
 {% from "moj-organisation-switcher/macro.njk" import mojOrganisationSwitcher %}
 {{ mojOrganisationSwitcher({
   classes: 'govuk-!-padding-bottom-2 govuk-!-margin-top-2',
   text: data['prisonName'],
   link: {
     html: 'Change <span class="govuk-visually-hidden">prison</span>',
-    href: '/settings/#managePrisons'
+    href: '/settings/'
   }
 }) }}
-<!-- <h2 class="app-service-navigation__name">
-  {{ data['prisonName'] }}
-</h2>
-<a class="app-service-navigation__switch" href="/services">Change</a> -->
-</div>
+</div> -->
 
 {% endblock %}
 
