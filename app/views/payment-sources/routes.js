@@ -25,7 +25,7 @@ module.exports = function (router, content) {
     let terms = (req.session.data.paymentSourceSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
     let paymentSources = paymentSourceData.filter(function (paymentSource) {
       for (let term of terms) {
-        for (let field of [paymentSource.paymentSource_name, paymentSource.paymentSource_email]) {
+        for (let field of [paymentSource.payment_source_name, paymentSource.payment_source_email]) {
           if ((field || '').toLowerCase().indexOf(term) >= 0) {
             return true
           }
@@ -35,7 +35,7 @@ module.exports = function (router, content) {
     })
     res.render('payment-sources/results',
     {
-      paymentSources: paymentSources
+      payment_sources: paymentSources
     });
   });
 
