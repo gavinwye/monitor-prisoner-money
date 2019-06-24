@@ -1,14 +1,14 @@
 <tr class="govuk-table__row hack-table-row-vertical-align-top">
   <td class="govuk-table__cell">{{ credit.received_at }}</td>
-  <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ credit.sender_name }}</a><br>
+  <td class="govuk-table__cell">{{ credit.sender_name }}<br>
     {%- if credit.card_number_last_digits -%}
     {{ credit.sender_email }}
     {%- else -%}
     Email not collected
     {%- endif -%}
   </td>
-  <td class="govuk-table__cell"><a href="#" class="govuk-link--no-visited-state">{{ credit.prisoner_name }}</a><br>{{ credit.prisoner_number }}</td>
-  <td class="govuk-table__cell">{{ credit.prison_name }}</td>
+  <td class="govuk-table__cell">{{ credit.prisoner_name }}<br>{{ credit.prisoner_number }}</td>
+  <!-- <td class="govuk-table__cell">{{ credit.prison_name }}</td> -->
   <!-- <td class="govuk-table__cell title-caps">{{ credit.status }}</td> -->
   <td class="govuk-table__cell govuk-table__cell--numeric">{{ credit.amount }}</td>
   <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
