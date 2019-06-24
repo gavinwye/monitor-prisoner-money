@@ -1,20 +1,19 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Senders
+Search results: Payment sources
 {% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <!-- <p class="govuk-body">One person using multiple cards is displayed as two different senders. We do not validate or combine names or email address.</p> -->
   </div>
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-          Search results: Senders
+          Search results: Payment sources
         </h1>
         <form class="form" method="post">
         {{ govukButton({
@@ -22,23 +21,23 @@ Senders
             classes: "govuk-button"
           }) }}
         </form>
-        {%- if senders.length == 0 -%}
-        <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span> returned no results</p>
+        {%- if payment_sources.length == 0 -%}
+        <p class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span> returned no results</p>
         {%- else -%}
-        <p class="govuk-body-l">Results containing prisoner number or name<span class="govuk-!-font-weight-bold">"{{ data['senderSearch'] }}"</span></p>
+        <p class="govuk-body-l">Results containing prisoner number or name<span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span></p>
       </div>
       <div class="govuk-grid-column-one-third blue-box-right">
-        <h2 class="govuk-heading-s">About sender data</h2>
-        <p class="govuk-body-s">One person using many cards displays as many senders.</p>
+        <h2 class="govuk-heading-s">About payment_source data</h2>
+        <p class="govuk-body-s">One person using many cards displays as many payment sources.</p>
         <p class="govuk-body-s">We can't check names match their cards, we can't match people by name to different cards and we can't check if email addresses are real.</p>
       </div>
     </div>
 
     <table class="govuk-table govuk-!-font-size-16 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-      {% include "senders/includes/_table_header.html" %}
+      {% include "payment-sources/includes/_table_header.html" %}
       <tbody class="govuk-table__body ">
-        {% include "senders/includes/_table_row.html" %}
+        {% include "payment-sources/includes/_table_row.html" %}
       </tbody>
     </table>
     {%- endif -%}

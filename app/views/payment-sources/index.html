@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Senders
+Payment sources
 {% endblock %}
 
 {% block content %}
@@ -14,32 +14,32 @@ Senders
     <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
       <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-        Senders
+        Payment sources
       </h1>
     <!-- <h2 class="govuk-heading-m">Search</h2> -->
     <form class="form" method="post">
-      {{ govukInput({
-              label: {
-                classes: "govuk-body govuk-!-font-size-27 govuk-!-width-full",
-                text: "Search sender name or email address"
-              },
-              hint: {
-                text: "Common or incomplete names may show many results",
-                classes: "govuk-!-width-full"
-              },
-              classes: "govuk-!-width-full",
-              id: "senderSearch",
-              name: "senderSearch"
-            }) }}
-            {{ govukButton({
-              text: "Search senders"
-            }) }}
+    {{ govukInput({
+        label: {
+          classes: "govuk-body govuk-!-font-size-27 govuk-!-width-full",
+          text: "Search payment source name or email address"
+        },
+        hint: {
+          text: "Common or incomplete names may show many results",
+          classes: "govuk-!-width-full"
+        },
+        classes: "govuk-!-width-full",
+        id: "paymentSourceSearch",
+        name: "paymentSourceSearch"
+      }) }}
+      {{ govukButton({
+        text: "Search payment sources"
+      }) }}
     </form>
     <p><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
     </div>
     <div class="govuk-grid-column-one-third blue-box-right">
-      <h2 class="govuk-heading-s">About sender data</h2>
-      <p class="govuk-body-s">One person using many cards displays as many senders.</p>
+      <h2 class="govuk-heading-s">About payment_source data</h2>
+      <p class="govuk-body-s">One person using many cards displays as many payment sources.</p>
       <p class="govuk-body-s">We can't check names match their cards, we can't match people by name to different cards and we can't check if email addresses are real.</p>
     </div>
     </div>
@@ -48,9 +48,9 @@ Senders
 
     <table class="govuk-table govuk-!-font-size-16 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-      {% include "senders/includes/_table_header.html" %}
+      {% include "payment-sources/includes/_table_header.html" %}
       <tbody class="govuk-table__body ">
-        {% include "senders/includes/_table_row.html" %}
+        {% include "payment-sources/includes/_table_row.html" %}
       </tbody>
     </table>
     {% from "moj-pagination/macro.njk" import mojPagination %}
