@@ -26,7 +26,7 @@ Credits
         {%- if credits.length == 0 -%}
         <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> returned no results.</h2>
         {%- else -%}
-        <h2 class="govuk-body-l">Results containing prisoner number or name <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span>.</h2>
+        <h2 class="govuk-body-l">Results containing prisoner number or name <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> in <span class="govuk-!-font-weight-bold">"{{ data['prisonName'] }}"</span>.</h2>
       </div>
     </div>
     <table class="govuk-table govuk-!-font-size-16 ">
@@ -38,14 +38,16 @@ Credits
         {%- endfor -%}
       </tbody>
     </table>
-    <p class="govuk-body">View results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> from other prisons.</p>
-    <form class="form" method="post">
-      {{ govukButton({
-        text: "View results",
-        classes: "govuk-button--secondary",
-        href: "global-results"
-      }) }}
-    </form>
+    <h2 class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> in other prisons.</h2>
+    <table class="govuk-table govuk-!-font-size-16 ">
+    <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
+      {% include "credits/includes/_table_global_header.html" %}
+      <tbody class="govuk-table__body">
+        {%- for credit in credits -%}
+          {% include "credits/includes/_table_global_row.html" %}
+        {%- endfor -%}
+      </tbody>
+    </table>
     {%- endif -%}
   </div>
 </div>
