@@ -220,3 +220,34 @@ width: 80%;}
 .title-caps{
   text-transform: capitalize;
 }
+
+/* Link button
+   Use on buttons that should look like they're links,
+   except with no underline.
+*/
+.eff-button--link {
+  color: govuk-colour("blue");
+  font-size: inherit;
+  border-width: 0;
+  padding: 0;
+  margin: 0;
+  display: inline;
+  background-color: transparent;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.eff-button--link:active {
+  color: govuk-colour("blue");
+}
+
+.eff-button--link:focus,
+.eff-button--link:focus:hover {
+  background-color: $govuk-focus-colour;
+  color: $govuk-focus-text-colour;
+}
+
+.eff-button--link:hover {
+  color: $govuk-link-hover-colour;
+  background-color: transparent;
+}

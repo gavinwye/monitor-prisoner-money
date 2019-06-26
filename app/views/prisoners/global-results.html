@@ -1,22 +1,18 @@
-{% extends "layout.html" %}
+{% extends "layout-search-results.html" %}
 
 {% block pageTitle %}
 Prisoners
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Search results: Prisoners
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Prisoners</span>
+       Search results
     </h1>
     <!-- <form class="form" method="post"> -->
-      {{ govukButton({
-        text: "Search again",
-        classes: "govuk-button",
-        href: "/prisoners"
-      }) }}
+
     <!-- </form> -->
   </div>
   <div class="govuk-grid-column-full">
