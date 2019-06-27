@@ -7,16 +7,12 @@ Credits
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-  </div>
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
         Credits
       </h1>
-    <!-- <h2 class="govuk-heading-m">Search</h2> -->
     <form class="form" method="post">
     {{ govukInput({
         label: {
@@ -24,10 +20,8 @@ Credits
           text: "Search sender name, email address or prisoner number"
         },
         hint: {
-          text: "Common or incomplete names may show many results",
-          classes: "govuk-!-width-full"
+          text: "Common or incomplete names may show many results"
         },
-        classes: "govuk-!-width-full",
         id: "creditSearch",
         name: "creditSearch"
       }) }}
@@ -35,7 +29,7 @@ Credits
         text: "Search credits"
       }) }}
     </form>
-    <p><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
+    <p class="govuk-body govuk-!-margin-bottom-8"><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
     </div>
     <!-- <div class="govuk-grid-column-one-third blue-box-right">
       <h2 class="govuk-heading-s">About payment source data</h2>

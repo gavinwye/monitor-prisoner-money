@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-search-results.html" %}
 
 {% block pageTitle %}
 Credits
@@ -12,21 +12,15 @@ Credits
   </div>
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-one-half">
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-          Search results: Credits
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">Credits</span>
+          Search results
         </h1>
-        <!-- <form class="form" method="post"> -->
-        {{ govukButton({
-            text: "Search again",
-            classes: "govuk-button",
-            href: "/payment-sources"
-          }) }}
-        <!-- </form> -->
         {%- if credits.length == 0 -%}
-        <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> returned no results.</h2>
+        <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> returned no results</h2>
         {%- else -%}
-        <h2 class="govuk-body-l">Results containing prisoner number or name <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span>.</h2>
+        <h2 class="govuk-body-l">Results containing prisoner number or name <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span></h2>
       </div>
     </div>
     <table class="govuk-table govuk-!-font-size-16 ">
@@ -38,14 +32,12 @@ Credits
         {%- endfor -%}
       </tbody>
     </table>
-    <p class="govuk-body">View results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> from other prisons.</p>
-    <form class="form" method="post">
-      {{ govukButton({
-        text: "View results",
-        classes: "govuk-button--secondary",
-        href: "global-results"
+    {{ govukButton({
+        text: "Search again",
+        classes: "govuk-button",
+        href: "/payment-sources"
       }) }}
-    </form>
+     <p class="govuk-body"><a href="/credits/global-results" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> from other prisons</a></p>
     {%- endif -%}
   </div>
 </div>
