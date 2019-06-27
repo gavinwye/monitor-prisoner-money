@@ -221,14 +221,12 @@ width: 80%;}
   text-transform: capitalize;
 }
 
-.blue-box-right{
+.blue-box{
   background-color: govuk-colour("blue");
-  float: right;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  margin-right: 15px;
+  margin-top: govuk-spacing(0);
+  padding: govuk-spacing(4);
 }
 
-.blue-box-right h2, .blue-box-right p {
+.blue-box h2, .blue-box p {
   color: govuk-colour("white");
 }
