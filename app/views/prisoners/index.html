@@ -7,12 +7,10 @@ Prisoners
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       Prisoners
     </h1>
-  </div>
-  <div class="govuk-grid-column-full">
     <form class="form" method="post">
       {{ govukInput({
         label: {
@@ -20,9 +18,8 @@ Prisoners
           text: "Search prisoner number or name"
         },
         hint: {
-          text: "For example, name or 'A1234BC'."
+          text: "For example, name or 'A1234BC'"
         },
-        classes: "govuk-!-width-one-half",
         id: "prisonerSearch",
         name: "prisonerSearch"
       }) }}
@@ -30,6 +27,9 @@ Prisoners
         text: "Search prisoners"
       }) }}
     </form>
+  </div>
+  <div class="govuk-grid-column-full">
+
 
     <p class="govuk-body govuk-!-margin-bottom-8"><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
 
