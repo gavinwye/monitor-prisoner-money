@@ -14,9 +14,9 @@ Search results: Payment sources
           Search results
         </h1>
         {%- if payment_sources.length == 0 -%}
-        <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span> returned no results.</h2>
+        <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span> returned no results</h2>
         {%- else -%}
-        <h2 class="govuk-body-l">Results containing prisoner number or name<span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span> in <span class="govuk-!-font-weight-bold">"{{ data['prisonName'] }}"</span>.</h2>
+        <h2 class="govuk-body-l">Results containing prisoner number or name<span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span> in <span class="govuk-!-font-weight-bold">"{{ data['prisonName'] }}"</span></h2>
       </div>
       <div class="govuk-grid-column-one-third">
         {% include "payment-sources/includes/payment_source_data_description_box.html" %}
@@ -30,7 +30,7 @@ Search results: Payment sources
         {% include "payment-sources/includes/_table_row.html" %}
       </tbody>
     </table>
-    <h2 class="govuk-body-l govuk-!-margin-top-9">Results containing <span class="govuk-!-font-weight-bold">'{{ data['paymentSourceSearch'] }}'</span> in other prisons.</h2>
+    <h2 class="govuk-body-l govuk-!-margin-top-9">Results containing <span class="govuk-!-font-weight-bold">'{{ data['paymentSourceSearch'] }}'</span> in other prisons</h2>
     <table class="govuk-table govuk-!-font-size-16 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
       {% include "payment-sources/includes/_table_global_header.html" %}
