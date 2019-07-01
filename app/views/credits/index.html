@@ -48,6 +48,9 @@ Credits
         {%- endfor -%}
       </tbody>
     </table>
+    {%- if credits.length > 25 -%}
+    {% include "includes/pagination.html" %}
+    {%- endif -%}
 
   </div>
 

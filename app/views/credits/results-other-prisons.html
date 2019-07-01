@@ -12,7 +12,7 @@ Credits
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Credits</span>
-          Search results
+          Search results - other prisons
         </h1>
         <!-- <form class="form" method="post"> -->
 
@@ -20,19 +20,10 @@ Credits
         {%- if credits.length == 0 -%}
         <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> returned no results</h2>
         {%- else -%}
-        <h2 class="govuk-body-l">Results containing prisoner number or name <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> in <span class="govuk-!-font-weight-bold">"{{ data['prisonName'] }}"</span></h2>
+        <h2 class="govuk-body-l govuk-!-margin-top-9">Results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> in other prisons</h2>
       </div>
     </div>
-    <table class="govuk-table govuk-!-font-size-16 ">
-    <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-      {% include "credits/includes/_table_header.html" %}
-      <tbody class="govuk-table__body">
-        {%- for credit in credits -%}
-          {% include "credits/includes/_table_row.html" %}
-        {%- endfor -%}
-      </tbody>
-    </table>
-    <h2 class="govuk-body-l govuk-!-margin-top-9">Results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> in other prisons</h2>
+
     <table class="govuk-table govuk-!-font-size-16 ">
     <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
       {% include "credits/includes/_table_global_header.html" %}
@@ -42,10 +33,13 @@ Credits
         {%- endfor -%}
       </tbody>
     </table>
+    {%- if credits.length > 25 -%}
+    {% include "includes/pagination.html" %}
+    {%- endif -%}
     {{ govukButton({
         text: "Search again",
         classes: "govuk-button",
-        href: "/payment-sources"
+        href: "/credits"
       }) }}
     {%- endif -%}
   </div>

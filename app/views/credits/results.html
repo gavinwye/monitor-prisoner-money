@@ -32,12 +32,15 @@ Credits
         {%- endfor -%}
       </tbody>
     </table>
+    {%- if credits.length > 25 -%}
+    {% include "includes/pagination.html" %}
+    {%- endif -%}
     {{ govukButton({
         text: "Search again",
         classes: "govuk-button",
-        href: "/payment-sources"
+        href: "/credits"
       }) }}
-     <p class="govuk-body"><a href="/credits/global-results" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> from other prisons</a></p>
+     <p class="govuk-body"><a href="/credits/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['creditSearch'] }}'</span> from other prisons</a></p>
     {%- endif -%}
   </div>
 </div>

@@ -44,7 +44,7 @@ module.exports = function (router, content) {
   });
 
   // This is for the credits data
-  router.get('/credits/global-results', function(req, res) {
+  router.get('/credits/results-other-prisons', function(req, res) {
     // location of credit data json file
     var creditData = require('../../data/credits_list.json');
     let terms = (req.session.data.creditSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
@@ -58,7 +58,7 @@ module.exports = function (router, content) {
       }
       return false
     })
-    res.render('credits/global-results',
+    res.render('credits/results-other-prisons',
     {
       credits: credits
     });
