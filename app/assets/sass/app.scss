@@ -220,3 +220,13 @@ width: 80%;}
 .title-caps{
   text-transform: capitalize;
 }
+
+.blue-box{
+  background-color: govuk-colour("blue");
+  margin-top: govuk-spacing(0);
+  padding: govuk-spacing(4);
+}
+
+.blue-box h2, .blue-box p {
+  color: govuk-colour("white");
+}
