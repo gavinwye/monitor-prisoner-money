@@ -1,7 +1,7 @@
-{% extends "layout-search-results.html" %}
+{% extends "layout-search-results-other-prisons.html" %}
 
 {% block pageTitle %}
-Disbursements - Search results
+Disbursements - Search results - other prisons
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@ Disbursements - Search results
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">
           <span class="govuk-caption-xl">Disbursements</span>
-          Search results
+          Search results - other prisons
         </h1>
         {%- if disbursements.length == 0 -%}
         <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['disbursementSearch'] }}'</span> returned no results</h2>
@@ -21,15 +21,16 @@ Disbursements - Search results
           href: "/disbursements"
         }) }}
         {%- else -%}
-        <h2 class="govuk-body-l">Search results for <span class="govuk-!-font-weight-bold">'{{ data['disbursementSearch'] }}'</span></h2>
+        <h2 class="govuk-body-l govuk-!-margin-top-9">Results containing <span class="govuk-!-font-weight-bold">'{{ data['disbursementSearch'] }}'</span> in other prisons</h2>
       </div>
     </div>
+
     <table class="govuk-table govuk-!-font-size-16 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-      {% include "disbursements/includes/_table_header.html" %}
+      {% include "disbursements/includes/_table_header_global.html" %}
       <tbody class="govuk-table__body ">
         {%- for disbursement in disbursements -%}
-        {% include "disbursements/includes/_table_row.html" %}
+        {% include "disbursements/includes/_table_row_global.html" %}
         {%- endfor -%}
       </tbody>
     </table>
@@ -41,7 +42,6 @@ Disbursements - Search results
       classes: "govuk-button govuk-!-margin-top-9",
       href: "/disbursements"
     }) }}
-    <p class="govuk-body"><a href="/disbursements/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['disbursementSearch'] }}'</span> from other prisons</a></p>
     {%- endif -%}
   </div>
 </div>
