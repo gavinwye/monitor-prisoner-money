@@ -5,12 +5,11 @@ Prisoners
 {% endblock %}
 
 {% block content %}
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       <span class="govuk-caption-xl">Prisoners</span>
-      Search results
+      Search results - other prisons
     </h1>
     <!-- <form class="form" method="post"> -->
 
@@ -22,40 +21,43 @@ Prisoners
         {%- if prisoners.length == 0 -%}
         <h2  class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> returned no results</h2>
         {%- else -%}
-        <h2  class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span></h2>
+        <h2 class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> in other prisons.</h2>
       </div>
     </div>
+    <!-- tabs ********************************** -->
+
+    <!-- *************************************** -->
 
     <!-- tabs ********************************** -->
     <div class="govuk-tabs" data-module="tabs">
-      <h2 class="govuk-tabs__title">
-        Credits and disbursements
-      </h2>
+      <h3 class="govuk-tabs__title">
+        Credits & Disbursements
+      </h3>
 
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#credits">
+          <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#credits_global">
             Credits
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#disbursements">
+          <a class="govuk-tabs__tab" href="#disbursements_global">
             Disbursements
           </a>
         </li>
       </ul>
 
-      <section class="govuk-tabs__panel" id="credits">
+      <section class="govuk-tabs__panel" id="credits_global">
         <!-- <h2 class="govuk-heading-l">Credits containing "{{ data['prisonerSearch'] }}"</h2> -->
         <table class="govuk-table govuk-!-font-size-16 ">
           <!-- <p class="govuk-body">Credits containing "{{ data['prisonerSearch'] }}"</p> -->
           <!-- <caption class="govuk-table__caption">Credits containing "{{ data['prisonerSearch'] }}"</caption> -->
-          {% include "prisoners/includes/_table_header_credits.html" %}
+          {% include "prisoners/includes/_table_header_credits_global.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
             {%- if prisoner.credit_count >= 1 -%}
             <!-- The line above stops disbursements appearing in the credits view -->
-            {% include "prisoners/includes/_table_row_credits.html" %}
+            {% include "prisoners/includes/_table_row_credits_global.html" %}
             {%- endif -%}
             {%- endfor -%}
           </tbody>
@@ -65,17 +67,17 @@ Prisoners
         {%- endif -%}
 
       </section>
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements_global">
         <!-- <h2 class="govuk-heading-l">Disbursements containing "{{ data['prisonerSearch'] }}"</h2> -->
         <table class="govuk-table govuk-!-font-size-16 ">
           <!-- <p class="govuk-body">Disbursements containing "{{ data['prisonerSearch'] }}"</p> -->
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-          {% include "prisoners/includes/_table_header_disbursements.html" %}
+          {% include "prisoners/includes/_table_header_disbursements_global.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
             {%- if prisoner.disbursement_count >= 1 -%}
             <!-- The line above stops credits appearing in the disbursements view -->
-            {% include "prisoners/includes/_table_row_disbursements.html" %}
+            {% include "prisoners/includes/_table_row_disbursements_global.html" %}
             {%- endif -%}
             {%- endfor -%}
           </tbody>
@@ -83,25 +85,18 @@ Prisoners
         {%- if prisoners.length > 25 -%}
         {% include "includes/pagination.html" %}
         {%- endif -%}
+
       </section>
     </div>
-    <!-- *************************************** -->
+    {%- endif -%}
     {{ govukButton({
       text: "Search again",
       classes: "govuk-button",
       href: "/prisoners"
     }) }}
-    <p class="govuk-body"><a href="/prisoners/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> from other prisons</a></p>
-    <!-- <form class="form" method="post">
-    {{ govukButton({
-    text: "View results",
-    classes: "govuk-button--secondary",
-    href: "global-results"
-  }) }}
-</form> -->
 
-{%- endif -%}
-</div>
+    <!-- *************************************** -->
+  </div>
 </div>
 
 {% endblock %}
