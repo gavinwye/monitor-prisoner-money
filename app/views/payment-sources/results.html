@@ -16,9 +16,9 @@ Search results: Payment sources
         {%- if payment_sources.length == 0 -%}
         <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span> returned no results.</h2>
         {{ govukButton({
-        text: "Search again",
-        classes: "govuk-button",
-        href: "/payment-sources"
+          text: "Search again",
+          classes: "govuk-button",
+          href: "/payment-sources"
         }) }}
         {%- else -%}
         <h2 class="govuk-body-l">Results containing prisoner number or name <span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span></h2>
@@ -35,12 +35,15 @@ Search results: Payment sources
         {% include "payment-sources/includes/_table_row.html" %}
       </tbody>
     </table>
-      {{ govukButton({
+    {%- if payment_sources.length > 25 -%}
+    {% include "includes/pagination.html" %}
+    {%- endif -%}
+    {{ govukButton({
       text: "Search again",
       classes: "govuk-button",
       href: "/payment-sources"
     }) }}
-    <p class="govuk-body"><a href="/payment-sources/global-results" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['paymentSourceSearch'] }}'</span> from other prisons</a></p>
+    <p class="govuk-body"><a href="/payment-sources/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['paymentSourceSearch'] }}'</span> from other prisons</a></p>
 
     {%- endif -%}
   </div>

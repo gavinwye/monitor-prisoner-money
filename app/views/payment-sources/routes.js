@@ -40,7 +40,7 @@ module.exports = function (router, content) {
   });
 
   // This is for the credits data
-  router.get('/payment-sources/global-results', function(req, res) {
+  router.get('/payment-sources/results-other-prisons', function(req, res) {
     // location of credit data json file
     var paymentSourceData = require('../../data/payment_source_list.json');
     let terms = (req.session.data.paymentSourceSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
@@ -54,7 +54,7 @@ module.exports = function (router, content) {
       }
       return false
     })
-    res.render('payment-sources/global-results',
+    res.render('payment-sources/results-other-prisons',
     {
       payment_sources: paymentSources
     });
