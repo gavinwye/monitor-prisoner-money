@@ -1,4 +1,4 @@
-id,prison,prisoner_name,prisoner_number,sender_count,recipient_count,credit_count,credit_total,disbursement_count,disbursement_total
+id,prison,prisoner_name,prisoner_number,payment_source_count,recipient_count,credit_count,credit_total,disbursement_count,disbursement_total
 70,LEI,REECE GREGORY,X0080MY,0,2,0,0,2,20000
 68,LEI,LEONARD BRYANT,X0099TP,1,0,1,9400,0,0
 16,BXI,KEITH STOREY,X0591PY,1,0,1,9100,0,0

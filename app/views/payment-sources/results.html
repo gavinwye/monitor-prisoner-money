@@ -1,0 +1,61 @@
+{% extends "layout-search-results.html" %}
+
+{% block pageTitle %}
+Search results: Payment sources
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row govuk-!-margin-bottom-9">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          <span class="govuk-caption-xl">Payment sources</span>
+          Search results
+        </h1>
+        {%- if payment_sources.length == 0 -%}
+        <h2 class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span> returned no results.</h2>
+        {{ govukButton({
+          text: "Search again",
+          classes: "govuk-button",
+          href: "/payment-sources"
+        }) }}
+        {%- else -%}
+        <h2 class="govuk-body-l">Results containing prisoner number or name <span class="govuk-!-font-weight-bold">"{{ data['paymentSourceSearch'] }}"</span></h2>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {% include "payment-sources/includes/payment_source_data_description_box.html" %}
+      </div>
+    </div>
+
+    <table class="govuk-table govuk-!-font-size-16 ">
+      <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
+      {% include "payment-sources/includes/_table_header.html" %}
+      <tbody class="govuk-table__body ">
+        {% include "payment-sources/includes/_table_row.html" %}
+      </tbody>
+    </table>
+    {%- if payment_sources.length > 25 -%}
+    {% include "includes/pagination.html" %}
+    {%- endif -%}
+    {{ govukButton({
+      text: "Search again",
+      classes: "govuk-button",
+      href: "/payment-sources"
+    }) }}
+    <p class="govuk-body"><a href="/payment-sources/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['paymentSourceSearch'] }}'</span> from other prisons</a></p>
+
+    {%- endif -%}
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}

@@ -4,6 +4,14 @@ module.exports = function (router, content) {
     res.redirect('/credits/results')
   })
 
+  router.post('/credits/results', function (req, res) {
+    res.redirect('/credits/results')
+  })
+
+  router.post('/credits/results', function (req, res) {
+    res.redirect('/credits/global-results')
+  })
+
   // This is for the credits data
   router.get('/credits/', function(req, res) {
     // location of credit data json file
@@ -21,7 +29,7 @@ module.exports = function (router, content) {
     let terms = (req.session.data.creditSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
     let credits = creditData.filter(function (credit) {
       for (let term of terms) {
-        for (let field of [credit.sender_email, credit.prisoner_number, credit.sender_name]) {
+        for (let field of [credit.payment_source_email, credit.prisoner_number, credit.payment_source_name]) {
           if ((field || '').toLowerCase().indexOf(term) >= 0) {
             return true
           }
@@ -30,6 +38,27 @@ module.exports = function (router, content) {
       return false
     })
     res.render('credits/results',
+    {
+      credits: credits
+    });
+  });
+
+  // This is for the credits data
+  router.get('/credits/results-other-prisons', function(req, res) {
+    // location of credit data json file
+    var creditData = require('../../data/credits_list.json');
+    let terms = (req.session.data.creditSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
+    let credits = creditData.filter(function (credit) {
+      for (let term of terms) {
+        for (let field of [credit.sender_email, credit.prisoner_number, credit.sender_name]) {
+          if ((field || '').toLowerCase().indexOf(term) >= 0) {
+            return true
+          }
+        }
+      }
+      return false
+    })
+    res.render('credits/results-other-prisons',
     {
       credits: credits
     });

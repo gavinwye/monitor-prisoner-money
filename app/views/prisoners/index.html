@@ -8,24 +8,30 @@ Prisoners
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+    <h1 class="govuk-heading-xl">
       Prisoners
     </h1>
+    <form class="form" method="post">
+      {{ govukInput({
+        label: {
+          classes: "govuk-body govuk-!-font-size-27",
+          text: "Search prisoner number or name"
+        },
+        hint: {
+          text: "For example, name or 'A1234BC'"
+        },
+        id: "prisonerSearch",
+        name: "prisonerSearch"
+      }) }}
+      {{ govukButton({
+        text: "Search prisoners"
+      }) }}
+    </form>
   </div>
   <div class="govuk-grid-column-full">
-    <!-- <h2 class="govuk-heading-m">Search</h2> -->
-    <form class="form" method="post">
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="width-20">
-          Prisoner number or name
-        </label>
-        <input class="govuk-input govuk-!-width-two-thirds" id="prisonerSearch" name="prisonerSearch" type="text">
-        <button type="submit" class="govuk-button">
-          Search
-        </button>
-        <p><a href="/advanced-search/" class="govuk-link">Advanced search</a></p>
-      </div>
-    </form>
+
+
+    <p class="govuk-body govuk-!-margin-bottom-8"><a href="/advanced-search/" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
 
     <!-- ********************************** -->
 
@@ -48,50 +54,46 @@ Prisoners
       </ul>
 
       <section class="govuk-tabs__panel" id="credits">
-        <h2 class="govuk-heading-l">Total credits</h2>
+        <!-- <h2 class="govuk-heading-l">Total credits</h2> -->
         <table class="govuk-table govuk-!-font-size-14 ">
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
           {% include "prisoners/includes/_table_header_credits.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.credit_count >= 1 -%}
-              <!-- The line above stops disbursements appearing in the credits view -->
-                {% include "prisoners/includes/_table_row_credits.html" %}
-              {%- endif -%}
+            {%- if prisoner.credit_count >= 1 -%}
+            <!-- The line above stops disbursements appearing in the credits view -->
+            {% include "prisoners/includes/_table_row_credits.html" %}
+            {%- endif -%}
             {%- endfor -%}
+
           </tbody>
         </table>
-
+        {%- if prisoners.length > 25 -%}
+        {% include "includes/pagination.html" %}
+        {%- endif -%}
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
-        <h2 class="govuk-heading-l">Total disbursements</h2>
+        <!-- <h2 class="govuk-heading-l">Total disbursements</h2> -->
         <table class="govuk-table govuk-!-font-size-14 ">
           <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
           {% include "prisoners/includes/_table_header_disbursements.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.disbursement_count >= 1 -%}
-              <!-- The line above stops credits appearing in the disbursements view -->
-                {% include "prisoners/includes/_table_row_disbursements.html" %}
-              {%- endif -%}
+            {%- if prisoner.disbursement_count >= 1 -%}
+            <!-- The line above stops credits appearing in the disbursements view -->
+            {% include "prisoners/includes/_table_row_disbursements.html" %}
+            {%- endif -%}
             {%- endfor -%}
           </tbody>
         </table>
-
+        {%- if prisoners.length > 25 -%}
+        {% include "includes/pagination.html" %}
+        {%- endif -%}
       </section>
     </div>
     <!-- *************************************** -->
 
   </div>
-
-
-
-
-
-
-
-
-
 </div>
 
 {% endblock %}
