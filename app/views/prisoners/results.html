@@ -10,8 +10,8 @@ Prisoners
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
       <span class="govuk-caption-xl">Prisoners</span>
-       Search results
-      </h1>
+      Search results
+    </h1>
     <!-- <form class="form" method="post"> -->
 
     <!-- </form> -->
@@ -60,6 +60,9 @@ Prisoners
             {%- endfor -%}
           </tbody>
         </table>
+        {%- if prisoners.length > 25 -%}
+        {% include "includes/pagination.html" %}
+        {%- endif -%}
 
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
@@ -77,7 +80,9 @@ Prisoners
             {%- endfor -%}
           </tbody>
         </table>
-
+        {%- if prisoners.length > 25 -%}
+        {% include "includes/pagination.html" %}
+        {%- endif -%}
       </section>
     </div>
     <!-- *************************************** -->
@@ -86,17 +91,17 @@ Prisoners
       classes: "govuk-button",
       href: "/prisoners"
     }) }}
-    <p class="govuk-body"><a href="/prisoners/global-results" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> from other prisons</a></p>
+    <p class="govuk-body"><a href="/prisoners/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> from other prisons</a></p>
     <!-- <form class="form" method="post">
-      {{ govukButton({
-        text: "View results",
-        classes: "govuk-button--secondary",
-        href: "global-results"
-      }) }}
-    </form> -->
+    {{ govukButton({
+    text: "View results",
+    classes: "govuk-button--secondary",
+    href: "global-results"
+  }) }}
+</form> -->
 
-    {%- endif -%}
-  </div>
+{%- endif -%}
+</div>
 </div>
 
 {% endblock %}

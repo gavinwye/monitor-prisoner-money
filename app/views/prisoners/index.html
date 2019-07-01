@@ -60,44 +60,17 @@ Prisoners
           {% include "prisoners/includes/_table_header_credits.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.credit_count >= 1 -%}
-              <!-- The line above stops disbursements appearing in the credits view -->
-                {% include "prisoners/includes/_table_row_credits.html" %}
-              {%- endif -%}
+            {%- if prisoner.credit_count >= 1 -%}
+            <!-- The line above stops disbursements appearing in the credits view -->
+            {% include "prisoners/includes/_table_row_credits.html" %}
+            {%- endif -%}
             {%- endfor -%}
 
           </tbody>
         </table>
-        {% from "moj-pagination/macro.njk" import mojPagination %}
-        {{ mojPagination({
-          results: {
-            from: 1,
-            to: 5,
-            count: 85
-          },
-
-          previous: {
-            text: 'Previous',
-            href: ''
-          },
-
-          next: {
-            text: 'Next',
-            href: ''
-          },
-
-          items: [{
-            text: '1',
-            href: '/page=1',
-            selected: true
-          }, {
-            text: '2',
-            href: '/page=5'
-          }, {
-            text: '3',
-            href: '/page=6'
-          }]
-        }) }}
+        {%- if prisoners.length > 25 -%}
+        {% include "includes/pagination.html" %}
+        {%- endif -%}
       </section>
       <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="disbursements">
         <!-- <h2 class="govuk-heading-l">Total disbursements</h2> -->
@@ -106,43 +79,16 @@ Prisoners
           {% include "prisoners/includes/_table_header_disbursements.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-              {%- if prisoner.disbursement_count >= 1 -%}
-              <!-- The line above stops credits appearing in the disbursements view -->
-                {% include "prisoners/includes/_table_row_disbursements.html" %}
-              {%- endif -%}
+            {%- if prisoner.disbursement_count >= 1 -%}
+            <!-- The line above stops credits appearing in the disbursements view -->
+            {% include "prisoners/includes/_table_row_disbursements.html" %}
+            {%- endif -%}
             {%- endfor -%}
           </tbody>
         </table>
-        {% from "moj-pagination/macro.njk" import mojPagination %}
-        {{ mojPagination({
-          results: {
-            from: 1,
-            to: 5,
-            count: 85
-          },
-
-          previous: {
-            text: 'Previous',
-            href: ''
-          },
-
-          next: {
-            text: 'Next',
-            href: ''
-          },
-
-          items: [{
-            text: '1',
-            href: '/page=1',
-            selected: true
-          }, {
-            text: '2',
-            href: '/page=5'
-          }, {
-            text: '3',
-            href: '/page=6'
-          }]
-        }) }}
+        {%- if prisoners.length > 25 -%}
+        {% include "includes/pagination.html" %}
+        {%- endif -%}
       </section>
     </div>
     <!-- *************************************** -->

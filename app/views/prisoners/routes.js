@@ -40,7 +40,7 @@ module.exports = function (router, content) {
   });
 
   // This is for the credits data
-  router.get('/prisoners/global-results', function(req, res) {
+  router.get('/prisoners/results-other-prisons', function(req, res) {
     // location of credit data json file
     var prisonerData = require('../../data/prisoner_list.json');
     let terms = (req.session.data.prisonerSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
@@ -54,7 +54,7 @@ module.exports = function (router, content) {
       }
       return false
     })
-    res.render('prisoners/global-results',
+    res.render('prisoners/results-other-prisons',
     {
       prisoners: prisoners
     });
