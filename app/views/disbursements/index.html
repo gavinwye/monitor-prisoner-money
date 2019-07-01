@@ -45,7 +45,9 @@ Disbursements
         {%- endfor -%}
       </tbody>
     </table>
-  {% include "includes/pagination.html" %}
+    {%- if disbursements.length > 25 -%}
+    {% include "includes/pagination.html" %}
+    {%- endif -%}
   </div>
 </div>
 

@@ -33,7 +33,9 @@ Disbursements - Search results
         {%- endfor -%}
       </tbody>
     </table>
+    {%- if disbursements.length > 25 -%}
     {% include "includes/pagination.html" %}
+    {%- endif -%}
     {{ govukButton({
       text: "Search again",
       classes: "govuk-button govuk-!-margin-top-9",
