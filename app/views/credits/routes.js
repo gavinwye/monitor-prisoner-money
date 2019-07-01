@@ -29,7 +29,7 @@ module.exports = function (router, content) {
     let terms = (req.session.data.creditSearch || '').trim().split(/\s+/).map(term => term.toLowerCase())
     let credits = creditData.filter(function (credit) {
       for (let term of terms) {
-        for (let field of [credit.sender_email, credit.prisoner_number, credit.sender_name]) {
+        for (let field of [credit.payment_source_email, credit.prisoner_number, credit.payment_source_name]) {
           if ((field || '').toLowerCase().indexOf(term) >= 0) {
             return true
           }

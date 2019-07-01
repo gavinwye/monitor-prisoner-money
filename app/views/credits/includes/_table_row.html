@@ -2,7 +2,7 @@
   <td class="govuk-table__cell">{{ credit.received_at }}</td>
   <td class="govuk-table__cell">{{ credit.sender_name }}<br>
     {%- if credit.card_number_last_digits -%}
-    {{ credit.sender_email }}
+    {{ credit.payment_source_email }}
     {%- else -%}
     Email not collected
     {%- endif -%}

@@ -1,0 +1,17 @@
+{%- for payment_source in payment_sources -%}
+<tr class="govuk-table__row hack-table-row-vertical-align-top">
+  <td class="govuk-table__cell">{{ payment_source.payment_source_name }}<br>
+    {%- if payment_source.payment_source_email -%}
+      {{ payment_source.payment_source_email }}
+      {%- else  -%}
+      Email not provided
+    {%- endif -%}
+  </td>
+  <td class="govuk-table__cell">{{ payment_source.source }}</td>
+  <td class="govuk-table__cell govuk-table__cell--numeric">{{ payment_source.credit_count }}</td>
+  <td class="govuk-table__cell govuk-table__cell--numeric">{{ payment_source.prisoner_count }}</td>
+  <td class="govuk-table__cell govuk-table__cell--numeric">{{ payment_source.prison_count }}</td>
+  <td class="govuk-table__cell govuk-table__cell--numeric">{{ payment_source.credit_total }}</td>
+  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
+</tr>
+{%- endfor -%}
