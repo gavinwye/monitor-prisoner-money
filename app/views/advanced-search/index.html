@@ -11,12 +11,13 @@ Advanced search
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
       Advanced search
     </h1>
-    <p class="govuk-body-l">Search all data avalible</p>
+    <p class="govuk-body-l">You can search all data from the padst 7 years, using a combination of any of the search fields avalible.</p>
+    <p class="govuk-body">Partial or incomplete search terms will return more results.</p>
   </div>
 
-  <div class="govuk-grid-column-full">
-
-  {{ govukCheckboxes({
+  <div class="govuk-grid-column-two-thirds">
+  <!-- Sections -->
+  <!-- {{ govukCheckboxes({
     idPrefix: "waste",
     name: "waste",
     classes: "govuk-checkboxes--inline",
@@ -40,11 +41,13 @@ Advanced search
         text: "Disbursements"
       }
     ]
-  }) }}
-
+  }) }} -->
+  <h2 class="govuk-heading-l govuk-!-margin-top-9">People or organisations</h2>
+  <p class="govuk-body">Prisoners, senders or recipients</p>
+  <!-- Name -->
   {{ govukInput({
     label: {
-      text: "Prisoner number",
+      text: "Name",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--s"
     },
@@ -52,8 +55,67 @@ Advanced search
     id: "width-20",
     name: "width-20"
   }) }}
-
+  <!-- Email address -->
   {{ govukInput({
+    label: {
+      text: "Email address",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-20",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+  <!-- IP Addess -->
+  {{ govukInput({
+    label: {
+      text: "IP Addess",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+  <!-- Postcode -->
+  {{ govukInput({
+    label: {
+      text: "Postcode",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+  <!-- Prisoner number -->
+  {{ govukInput({
+    label: {
+      text: "Prisoner number",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+  <!-- Prisoners no longer in custody -->
+  {{ govukCheckboxes({
+    idPrefix: "waste",
+    name: "waste",
+    fieldset: {
+    },
+    items: [
+      {
+        value: "carcasses",
+        text: "Show prisoners who are no longer in custody"
+      }
+    ]
+  }) }}
+  <!-- Prison region -->
+  <!-- <h2 class="govuk-heading-l">Prison</h2> -->
+  <!-- Prison name -->
+  <!-- {{ govukInput({
     label: {
       text: "Prison name",
       isPageHeading: false,
@@ -62,149 +124,9 @@ Advanced search
     classes: "govuk-input--width-20",
     id: "width-20",
     name: "width-20"
-  }) }}
-
-  {{ govukInput({
-    label: {
-      text: "Sender name",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-20",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
-  {{ govukInput({
-    label: {
-      text: "Prisoner name",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-20",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
-  {{ govukRadios({
-    classes: "govuk-radios--inline",
-    idPrefix: "where-do-you-live",
-    name: "where-do-you-live",
-    fieldset: {
-      legend: {
-        text: "Payment method",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
-      }
-    },
-    items: [
-      {
-        value: "england",
-        text: "Any method"
-      },
-      {
-        value: "scotland",
-        text: "Bank transfer"
-      },
-      {
-        value: "wales",
-        text: "Debit card"
-      }
-    ]
-  }) }}
-
-  {{ govukInput({
-    label: {
-      text: "Sender account number",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-20",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
-  {{ govukInput({
-    label: {
-      text: "Sender email address",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-20",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
-  {{ govukInput({
-    label: {
-      text: "Sender postcode",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-10",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
-  <h3 class="govuk-heading-m">Date</h3>
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
-    {{ govukDateInput({
-      id: "passport-issued",
-      namePrefix: "passport-issued",
-      fieldset: {
-        legend: {
-          text: "From",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      hint: {
-        text: "For example, 01 08 2007"
-      }
-    }) }}
-    </div>
-    <div class="govuk-grid-column-one-third">
-    {{ govukDateInput({
-      id: "passport-issued",
-      namePrefix: "passport-issued",
-      fieldset: {
-        legend: {
-          text: "To",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      hint: {
-        text: "For example, 01 08 2007"
-      }
-    }) }}
-    </div>
-  </div>
-
-  {{ govukInput({
-    label: {
-      text: "Sort code",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-10",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
-  {{ govukInput({
-    label: {
-      text: "Recipient Name",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-20",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
-  {{ govukCheckboxes({
+  }) }} -->
+  <!-- Prison type -->
+  <!-- {{ govukCheckboxes({
     idPrefix: "waste",
     name: "waste",
     fieldset: {
@@ -231,9 +153,9 @@ Advanced search
         text: "Young offender"
       }
     ]
-  }) }}
-
-  {{ govukCheckboxes({
+  }) }} -->
+  <!-- Prison region -->
+  <!-- {{ govukCheckboxes({
     idPrefix: "waste",
     name: "waste",
     fieldset: {
@@ -280,9 +202,9 @@ Advanced search
         text: "Wales"
       }
     ]
-  }) }}
-
-  {{ govukCheckboxes({
+  }) }} -->
+  <!-- Prison category -->
+  <!-- {{ govukCheckboxes({
     idPrefix: "waste",
     name: "waste",
     fieldset: {
@@ -317,11 +239,24 @@ Advanced search
         text: "Young Offender Institution"
       }
     ]
-  }) }}
-
+  }) }} -->
+  <h2 class="govuk-heading-l govuk-!-margin-top-9">Payment sources</h2>
+  <p class="govuk-body">Money can be sent in or out using a bank account but money can only be sent in using a debit card.</p>
+  <!-- Sender name -->
+  <!-- {{ govukInput({
+    label: {
+      text: "Sender name",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-20",
+    id: "width-20",
+    name: "width-20"
+  }) }} -->
+  <!-- Bank account number -->
   {{ govukInput({
     label: {
-      text: "Sender Last 4 digits of card number",
+      text: "Bank account number",
       isPageHeading: false,
       classes: "govuk-fieldset__legend--s"
     },
@@ -329,7 +264,109 @@ Advanced search
     id: "width-20",
     name: "width-20"
   }) }}
+  <!-- Sort code -->
+  {{ govukInput({
+    label: {
+      text: "Sort code",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-10",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+  <!-- Last 4 digits of card number -->
+  {{ govukInput({
+    label: {
+      text: "Last 4 digits of card number",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    hint: {
+    text: "Only for money sent in to prisoners"
+    },
+    classes: "govuk-input--width-10",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+  <!-- Payment method -->
+  <!-- {{ govukRadios({
+    classes: "govuk-radios--inline",
+    idPrefix: "where-do-you-live",
+    name: "where-do-you-live",
+    fieldset: {
+      legend: {
+        text: "Payment method",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    items: [
+      {
+        value: "england",
+        text: "Any method"
+      },
+      {
+        value: "scotland",
+        text: "Bank transfer"
+      },
+      {
+        value: "wales",
+        text: "Debit card"
+      }
+    ]
+  }) }} -->
+  <!-- Date -->
+  <h2 class="govuk-heading-l govuk-!-margin-top-9">Date</h2>
+  <p class="govuk-body">We can only keep transaction data up to 7 years.</p>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
+      fieldset: {
+        legend: {
+          text: "From",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 01 08 2007"
+      }
+    }) }}
+    </div>
+    <div class="govuk-grid-column-one-third">
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
+      fieldset: {
+        legend: {
+          text: "To",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 01 08 2007"
+      }
+    }) }}
+    </div>
+  </div>
 
+  <!-- Recipient Name -->
+  <!-- {{ govukInput({
+    label: {
+      text: "Recipient Name",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-20",
+    id: "width-20",
+    name: "width-20"
+  }) }} -->
+  <!-- Amount -->
+  <h2 class="govuk-heading-l govuk-!-margin-top-9">Amounts</h2>
   {% set exactAmountHtml %}
   {{ govukInput({
     id: "contact-by-email",
@@ -344,7 +381,6 @@ Advanced search
     }
   }) }}
   {% endset -%}
-
   {% set exactNumberOfPenceHtml %}
   {{ govukInput({
     id: "contact-by-email",
@@ -359,16 +395,15 @@ Advanced search
     }
   }) }}
   {% endset -%}
-
   {{ govukRadios({
     classes: "govuk-radios",
     idPrefix: "where-do-you-live",
     name: "where-do-you-live",
     fieldset: {
       legend: {
-        text: "Amount",
+        text: "Amounts",
         isPageHeading: false,
-        classes: "govuk-fieldset__legend--m"
+        classes: "govuk-fieldset__legend--l govuk-visually-hidden"
       }
     },
     items: [
@@ -405,17 +440,7 @@ Advanced search
     ]
   }) }}
 
-  {{ govukInput({
-    label: {
-      text: "Sender IP Addess",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    },
-    classes: "govuk-input--width-10",
-    id: "width-20",
-    name: "width-20"
-  }) }}
-
+  <!-- Search button -->
   {{ govukButton({
     text: "Search"
   }) }}
