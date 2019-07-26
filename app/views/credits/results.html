@@ -46,3 +46,8 @@ Credits
 </div>
 
 {% endblock %}
+
+{% block pageScripts %}{{ super }}
+{% set searchTerm=data["creditSearch"] %}
+{% include "includes/highlight-search-terms.html" %}
+{% endblock %}

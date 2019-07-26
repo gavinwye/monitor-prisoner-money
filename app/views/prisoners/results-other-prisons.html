@@ -100,3 +100,8 @@ Prisoners
 </div>
 
 {% endblock %}
+
+{% block pageScripts %}{{ super }}
+{% set searchTerm=data["prisonerSearch"] %}
+{% include "includes/highlight-search-terms.html" %}
+{% endblock %}
