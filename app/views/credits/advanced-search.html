@@ -1,4 +1,4 @@
-{% extends "layout.html" %}
+{% extends "layout-search-results.html" %}
 
 {% block pageTitle %}
 Advanced search
@@ -132,7 +132,6 @@ Advanced search
 
     <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Payment methods</h2>
-    <h3 class="govuk-heading-m">Debit card</h3>
 
     <p class="govuk-body">Name and email are supplied by users when they make a debit card payment, they are not validated.</p>
 
@@ -146,6 +145,8 @@ Advanced search
       id: "width-20",
       name: "width-20"
     }) }}
+
+    <h3 class="govuk-heading-m">Debit card</h3>
 
     {{ govukInput({
       label: {
@@ -171,6 +172,17 @@ Advanced search
 
     {{ govukInput({
       label: {
+        text: "IP Address",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-10",
+      id: "width-10",
+      name: "width-10"
+    }) }}
+
+    {{ govukInput({
+      label: {
         text: "Last 4 digits of card number",
         isPageHeading: false,
         classes: "govuk-fieldset__legend--s"
@@ -179,6 +191,8 @@ Advanced search
       id: "width-10",
       name: "width-10"
     }) }}
+
+
     </div>
 
     <div class="govuk-grid-column-full">
