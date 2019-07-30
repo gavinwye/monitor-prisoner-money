@@ -1,0 +1,291 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Advanced search
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Disbursements</span>
+      Advanced search
+    </h1>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+  <h2 class="govuk-heading-l">Date entered</h2>
+    <p class="govuk-body">We only keep transaction data for 7 years.</p>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+      {{ govukDateInput({
+        id: "passport-issued",
+        namePrefix: "passport-issued",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 01 08 2007"
+        }
+      }) }}
+      </div>
+      <div class="govuk-grid-column-one-third">
+      {{ govukDateInput({
+        id: "passport-issued",
+        namePrefix: "passport-issued",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 01 08 2007"
+        }
+      }) }}
+      </div>
+    </div>
+    </div>
+
+    <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Amount</h2>
+    {% set exactAmountHtml %}
+    {{ govukInput({
+      id: "contact-by-email",
+      name: "contact-by-email",
+      type: "email",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Exact amount"
+      },
+      attributes: {
+        spellcheck: "false"
+      }
+    }) }}
+    {% endset -%}
+    {% set exactNumberOfPenceHtml %}
+    {{ govukInput({
+      id: "contact-by-email",
+      name: "contact-by-email",
+      type: "email",
+      classes: "govuk-!-width-one-third",
+      label: {
+        text: "Exact number of pence"
+      },
+      attributes: {
+        spellcheck: "false"
+      }
+    }) }}
+    {% endset -%}
+    {{ govukRadios({
+      classes: "govuk-radios",
+      idPrefix: "where-do-you-live",
+      name: "where-do-you-live",
+      fieldset: {
+        legend: {
+          text: "Amounts",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l govuk-visually-hidden"
+        }
+      },
+      items: [
+        {
+          value: "england",
+          text: "Not a whole number"
+        },
+        {
+          value: "scotland",
+          text: "Not a multiple of £5"
+        },
+        {
+          value: "wales",
+          text: "Not a multiple of £10"
+        },
+        {
+          value: "england",
+          text: "£100 or more"
+        },
+        {
+          value: "scotland",
+          text: "Exact amount",
+          conditional: {
+            html: exactAmountHtml
+          }
+        },
+        {
+          value: "wales",
+          text: "Exact number of pence",
+          conditional: {
+            html: exactNumberOfPenceHtml
+          }
+        }
+      ]
+    }) }}
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Recipient</h2>
+
+    {{ govukInput({
+      label: {
+        text: "Name",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Email",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Postcode",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">Payment method</h2>
+    <h3 class="govuk-heading-m">Bank transfer</h3>
+
+    {{ govukInput({
+      label: {
+        text: "Account number",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-10",
+      id: "width-10",
+      name: "width-10"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Sort code",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-10",
+      id: "width-10",
+      name: "width-10"
+    }) }}
+
+    <h3 class="govuk-heading-m">Cheque</h3>
+
+    {{ govukCheckboxes({
+      idPrefix: "waste",
+      name: "waste",
+      fieldset: {
+      },
+      items: [
+      {
+        value: "carcasses",
+        text: "Cheque"
+      }
+      ]
+    }) }}
+    </div>
+
+    <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Prisoner</h2>
+
+    {{ govukInput({
+      label: {
+        text: "Prisoner name",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Prisoner number",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukCheckboxes({
+      idPrefix: "waste",
+      name: "waste",
+      fieldset: {
+      },
+      items: [
+      {
+        value: "carcasses",
+        text: "Show prisoners no longer in custody"
+      }
+      ]
+    }) }}
+    </div>
+
+    <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Prison</h2>
+
+    {{ govukInput({
+      label: {
+        text: "Prison name",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+    </div>
+
+    <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Invoice number</h2>
+
+    {{ govukInput({
+      label: {
+        text: "Invoice number",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+    </div>
+
+    <div class="govuk-grid-column-full">
+    {{ govukButton({
+      text: "Search disbursements"
+    }) }}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}
