@@ -62,13 +62,13 @@ Prisoners
 </div>
 <div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-one-half">
-    <h2 class="govuk-heading-l">Credits received</h2>
+    <h2 class="govuk-heading-l">Disbursements sent</h2>
   </div>
   <div class="govuk-grid-column-one-half">
         {{ govukButton({
-      text: "View disbursements",
+      text: "View credits",
       classes: "govuk-button--secondary right",
-      href: "OWEN%20BRADLEY_disbursments"
+            href: "OWEN%20BRADLEY"
     }) }}
   </div>
 </div>
@@ -86,11 +86,11 @@ Prisoners
   <div class="govuk-grid-column-full">
     <table class="govuk-table govuk-!-font-size-16 ">
       <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-      {% include "prisoners/includes/_table_header_credits_prisoner.html" %}
+      {% include "prisoners/includes/_table_header_disbursments_prisoner.html" %}
       <tbody class="govuk-table__body ">
 
         <!-- The line above stops disbursements appearing in the credits view -->
-        {% include "prisoners/includes/_table_row_credits_prisoner.html" %}
+        {% include "prisoners/includes/_table_row_disbursments_prisoner.html" %}
 
 
       </tbody>

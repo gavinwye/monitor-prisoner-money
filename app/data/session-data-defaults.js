@@ -21,6 +21,6 @@ module.exports = {
 
   // Insert values here
   "userName": "Gavin Wye",
-  "prisonName": "HMP/YOI Croyden",
+  "prisonName": "HMP/YOI Croydon",
 
 }
