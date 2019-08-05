@@ -47,3 +47,8 @@ Disbursements - Search results - other prisons
 </div>
 
 {% endblock %}
+
+{% block pageScripts %}{{ super }}
+{% set searchTerm=data["disbursementSearch"] %}
+{% include "includes/highlight-search-terms.html" %}
+{% endblock %}

@@ -52,3 +52,8 @@ Search results: Payment sources
 </div>
 
 {% endblock %}
+
+{% block pageScripts %}{{ super }}
+{% set searchTerm=data["paymentSourceSearch"] %}
+{% include "includes/highlight-search-terms.html" %}
+{% endblock %}

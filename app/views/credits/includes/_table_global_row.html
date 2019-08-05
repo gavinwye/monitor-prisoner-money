@@ -1,13 +1,13 @@
 <tr class="govuk-table__row hack-table-row-vertical-align-top">
   <td class="govuk-table__cell">{{ credit.received_at }}</td>
-  <td class="govuk-table__cell">{{ credit.payment_source_name }}<br>
+  <td class="govuk-table__cell"><span class="highlightable">{{ credit.payment_source_name }}</span><br>
     {%- if credit.card_number_last_digits -%}
-    {{ credit.payment_source_email }}
+    <span class="highlightable">{{ credit.payment_source_email }}</span>
     {%- else -%}
     Email not collected
     {%- endif -%}
   </td>
-  <td class="govuk-table__cell">{{ credit.prisoner_name }}<br>{{ credit.prisoner_number }}</td>
+  <td class="govuk-table__cell">{{ credit.prisoner_name }}<br><span class="highlightable">{{ credit.prisoner_number }}</span></td>
   <td class="govuk-table__cell">{{ credit.prison_name }}</td>
   <!-- <td class="govuk-table__cell title-caps">{{ credit.status }}</td> -->
   <td class="govuk-table__cell govuk-table__cell--numeric">{{ credit.amount }}</td>
