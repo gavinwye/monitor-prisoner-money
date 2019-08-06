@@ -1,5 +1,7 @@
 {% extends "layout-search-results.html" %}
 
+{% set nav = 'prisoners' %}
+
 {% block pageTitle %}
 Prisoners
 {% endblock %}
@@ -53,7 +55,7 @@ Prisoners
           {% include "prisoners/includes/_table_header_credits.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-            {%- if prisoner.credit_count >= 1 -%}
+            {%- if prisoner.credit_count >= 0 -%}
             <!-- The line above stops disbursements appearing in the credits view -->
             {% include "prisoners/includes/_table_row_credits.html" %}
             {%- endif -%}
@@ -73,7 +75,7 @@ Prisoners
           {% include "prisoners/includes/_table_header_disbursements.html" %}
           <tbody class="govuk-table__body ">
             {%- for prisoner in prisoners -%}
-            {%- if prisoner.disbursement_count >= 1 -%}
+            {%- if prisoner.disbursement_count >= 0 -%}
             <!-- The line above stops credits appearing in the disbursements view -->
             {% include "prisoners/includes/_table_row_disbursements.html" %}
             {%- endif -%}
