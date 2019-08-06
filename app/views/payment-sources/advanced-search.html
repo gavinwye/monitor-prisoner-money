@@ -16,13 +16,14 @@ Advanced search
   </div>
 
   <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l">Payment source details</h2>
 
-    <h2 class="govuk-heading-l">Payment methods</h2>
-    <h3 class="govuk-heading-m">Debit card</h3>
+    <p class="govuk-body">Name, email and postcode are supplied by users when they make a debit card payment. They are not validated. </p>
 
-    <p class="govuk-body">Name and email are supplied by users when they make a debit card payment, they are not validated.</p>
 
-    {{ govukInput({
+    <p class="govuk-body">When users make a bank transfer, the bank supplies the name on the bank account. </p>
+
+        {{ govukInput({
       label: {
         text: "Name",
         isPageHeading: false,
@@ -54,6 +55,9 @@ Advanced search
       id: "width-20",
       name: "width-20"
     }) }}
+
+    <h2 class="govuk-heading-l">Payment methods</h2>
+    <h3 class="govuk-heading-m">Debit card</h3>
 
     {{ govukInput({
       label: {
