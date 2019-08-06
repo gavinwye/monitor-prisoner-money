@@ -133,9 +133,13 @@ Advanced search
     <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-l">Payment methods</h2>
 
-    <p class="govuk-body">Name and email are supplied by users when they make a debit card payment, they are not validated.</p>
+    <h3 class="govuk-heading-m">Payment source details</h3>
 
-    {{ govukInput({
+    <p class="govuk-body">Name, email and postcode are supplied by users when they make a debit card payment, they are not validated. </p>
+
+    <p class="govuk-body">When users make a bank transfer the name is supplied by the bank and is the name of the bank account. </p>
+
+        {{ govukInput({
       label: {
         text: "Name",
         isPageHeading: false,
@@ -145,8 +149,6 @@ Advanced search
       id: "width-20",
       name: "width-20"
     }) }}
-
-    <h3 class="govuk-heading-m">Debit card</h3>
 
     {{ govukInput({
       label: {
@@ -170,6 +172,19 @@ Advanced search
       name: "width-20"
     }) }}
 
+    <!-- <p class="govuk-body">Name and email are supplied by users when they make a debit card payment, they are not validated.</p>
+
+    {{ govukInput({
+      label: {
+        text: "Name",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }} -->
+
     {{ govukInput({
       label: {
         text: "IP Address",
@@ -180,6 +195,32 @@ Advanced search
       id: "width-10",
       name: "width-10"
     }) }}
+
+    <h3 class="govuk-heading-m">Debit card</h3>
+
+    <!-- {{ govukInput({
+      label: {
+        text: "Email",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Postcode",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }} -->
+
+
 
     {{ govukInput({
       label: {
