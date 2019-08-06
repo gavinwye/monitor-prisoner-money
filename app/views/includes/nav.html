@@ -1,0 +1,34 @@
+<nav>
+  <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
+    <li class="govuk-header__navigation-item {% if nav === 'prisoners' %}govuk-header__navigation-item--active {% endif %}">
+      <a class="govuk-header__link" href="/prisoners/">
+        Prisoners
+      </a>
+    </li>
+    <li class="govuk-header__navigation-item {% if nav === 'payment' %}govuk-header__navigation-item--active {% endif %}">
+      <a class="govuk-header__link" href="/payment-sources/">
+        Payment sources
+      </a>
+    </li>
+    <li class="govuk-header__navigation-item {% if nav === 'credits' %}govuk-header__navigation-item--active {% endif %}">
+      <a class="govuk-header__link" href="/credits/">
+        Credits
+      </a>
+    </li>
+    <li class="govuk-header__navigation-item {% if nav === 'disbursements' %}govuk-header__navigation-item--active {% endif %}">
+      <a class="govuk-header__link" href="/disbursements">
+        Disbursements
+      </a>
+    </li>
+    <li class="govuk-header__navigation-item  {% if nav === 'notifications' %}govuk-header__navigation-item--active {% endif %}">
+      <a class="govuk-header__link" href="/notifications/">
+        Notifications
+      </a>
+    </li>
+    <li class="govuk-header__navigation-item {% if nav === 'help' %}govuk-header__navigation-item--active {% endif %}">
+      <a class="govuk-header__link" href="#4">
+        Get help
+      </a>
+    </li>
+  </ul>
+</nav>

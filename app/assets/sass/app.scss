@@ -247,3 +247,13 @@ width: 80%;}
   background-color: #fff2d3;
   padding: 2px 0px 0px;
 }
+
+.govuk-header__navigation-item a {
+  font-weight: normal;
+}
+
+.govuk-header__navigation-item--active a:link,
+.govuk-header__navigation-item--active a:visited {
+  font-weight: bold;
+  color: govuk-colour('white');
+}

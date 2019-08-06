@@ -12,6 +12,6 @@
   <td class="govuk-table__cell govuk-table__cell--numeric">{{ payment_source.prisoner_count }}</td>
   <td class="govuk-table__cell govuk-table__cell--numeric">{{ payment_source.prison_count }}</td>
   <td class="govuk-table__cell govuk-table__cell--numeric">{{ payment_source.credit_total }}</td>
-  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View details</a></td>
+  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="{{ payment_source.payment_source_name }}">View details</a></td>
 </tr>
 {%- endfor -%}

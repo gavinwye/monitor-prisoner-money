@@ -53,50 +53,12 @@
       </div>
       <div class="header-proposition">
         <div class="content">
-          <nav id="proposition-menu">
-            <ul id="proposition-links">
-              <li class="govuk-header__navigation-item"><a href="/settings" class="govuk-header__link">{{ data['userName'] }}</a></li>
-              <li class="govuk-header__navigation-item"><a href="/sign-in" class="govuk-header__link">Sign out</a></li>
-            </ul>
-          </nav>
+          {% include "includes/secondary-nav.html" %}
         </div>
       </div>
       <div class="govuk-header__content">
         <button type="button" role="button" class="govuk-header__menu-button js-header-toggle" aria-controls="navigation" aria-label="Show or hide Top Level Navigation">Menu</button>
-        <nav>
-          <ul id="navigation" class="govuk-header__navigation " aria-label="Top Level Navigation">
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link govuk-header__navigation-item--active" href="/credits/">
-                Credits
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/disbursements">
-                Disbursements
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/prisoners/">
-                Prisoners
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/senders/">
-                Senders
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="/notifications/">
-                Notifications
-              </a>
-            </li>
-            <li class="govuk-header__navigation-item">
-              <a class="govuk-header__link" href="#4">
-                Get help
-              </a>
-            </li>
-          </ul>
-        </nav>
+        {% include "includes/nav.html" %}
       </div>
     </div>
   </header>
