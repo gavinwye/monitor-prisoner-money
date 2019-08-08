@@ -59,7 +59,15 @@
 <div class="app-pane__content">
   <main class="main-content" role="main">
     <div class="app-masthead">
+
       {% block beforeContent %}{% endblock %}
+      <div class="govuk-width-container">
+        <!-- <main class="govuk-main-wrapper"> -->
+          <div class="govuk-grid-row">
+            {% include "includes/firefox-banner.html" %}
+          </div>
+        <!-- </main> -->
+      </div>
     </div>
     {% block content %}{% endblock %}
   </main>
