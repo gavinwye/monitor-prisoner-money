@@ -126,18 +126,7 @@ Advanced search
       ]
     }) }}
 
-    <h2 class="govuk-heading-l">Prison</h2>
-
-    {{ govukInput({
-      label: {
-        text: "Prison name",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
-      },
-      classes: "govuk-input--width-20",
-      id: "width-20",
-      name: "width-20"
-    }) }}
+    {% include "includes/search_prisons_radios.html" %}
 
     {{ govukButton({
       text: "Search payment sources"
