@@ -56,22 +56,7 @@ Advanced search
       name: "width-20"
     }) }}
 
-    <h2 class="govuk-heading-l">Payment methods</h2>
-    <h3 class="govuk-heading-m">Debit card</h3>
-
-    {{ govukInput({
-      label: {
-        text: "Last 4 digits of card number",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
-      },
-      classes: "govuk-input--width-10",
-      id: "width-10",
-      name: "width-10"
-    }) }}
-
-    <h3 class="govuk-heading-m">Bank transfer</h3>
-
+    {% set bankTransferHtml %}
     {{ govukInput({
       label: {
         text: "Account number",
@@ -92,6 +77,53 @@ Advanced search
       classes: "govuk-input--width-10",
       id: "width-10",
       name: "width-10"
+    }) }}
+    {% endset -%}
+
+    {% set debitCardHtml %}
+    {{ govukInput({
+      label: {
+        text: "Last 4 digits of card number",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-10",
+      id: "width-10",
+      name: "width-10"
+    }) }}
+    {% endset -%}
+
+    {{ govukRadios({
+      idPrefix: "bank-transfer",
+      name: "bank-transfer",
+      fieldset: {
+        legend: {
+          text: "Payment method",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+        {
+          value: "any method",
+          text: "Any method",
+          checked: "true"
+        },
+        {
+          value: "bank transfer",
+          text: "Bank transfer",
+          conditional: {
+            html: bankTransferHtml
+          }
+        },
+        {
+          value: "debit card",
+          text: "Debit card",
+          conditional: {
+            html: debitCardHtml
+          }
+        }
+      ]
     }) }}
 
     <h2 class="govuk-heading-l">Prison</h2>

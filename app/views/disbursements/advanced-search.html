@@ -171,9 +171,8 @@ Advanced search
     </div>
 
     <div class="govuk-grid-column-full">
-      <h2 class="govuk-heading-l">Payment method</h2>
-    <h3 class="govuk-heading-m">Bank transfer</h3>
 
+    {% set bankTransferHtml %}
     {{ govukInput({
       label: {
         text: "Account number",
@@ -195,21 +194,38 @@ Advanced search
       id: "width-10",
       name: "width-10"
     }) }}
+    {% endset -%}
 
-    <h3 class="govuk-heading-m">Cheque</h3>
-
-    {{ govukCheckboxes({
-      idPrefix: "waste",
-      name: "waste",
+    {{ govukRadios({
+      idPrefix: "bank-transfer",
+      name: "bank-transfer",
       fieldset: {
+        legend: {
+          text: "Payment method",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
       },
       items: [
-      {
-        value: "carcasses",
-        text: "Cheque"
-      }
+        {
+          value: "any method",
+          text: "Any method",
+          checked: "true"
+        },
+        {
+          value: "bank transfer",
+          text: "Bank transfer",
+          conditional: {
+            html: bankTransferHtml
+          }
+        },
+        {
+          value: "cheque",
+          text: "Cheque"
+        }
       ]
     }) }}
+
     </div>
 
     <div class="govuk-grid-column-full">
