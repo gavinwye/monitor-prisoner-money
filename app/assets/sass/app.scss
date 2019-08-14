@@ -257,3 +257,33 @@ width: 80%;}
   font-weight: bold;
   color: govuk-colour('white');
 }
+
+.govuk-panel--temporary {
+  background-color: govuk-colour("light-blue");
+  text-align: left;
+  margin-top: 20px;
+}
+
+.app-service-navigation + .govuk-grid-row {
+  margin-top: -15px;
+}
+
+.app-masthead + .govuk-width-container, .govuk-width-container + main.govuk-main-wrapper {
+  margin-top: -15px;
+}
+
+.govuk-panel--temporary .govuk-heading-m, .govuk-panel--temporary .govuk-body-l {
+  color: govuk-colour("white");
+}
+
+.govuk-panel--temporary .govuk-panel__title{
+  font-size: 2.25rem;
+}
+
+.govuk-panel--temporary img {
+  width: 60px;
+  float: left;
+  // clear: none;
+  margin-right: 20px;
+
+}
