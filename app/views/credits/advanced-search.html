@@ -294,33 +294,10 @@ Advanced search
       name: "width-20"
     }) }}
 
-    {{ govukCheckboxes({
-      idPrefix: "waste",
-      name: "waste",
-      fieldset: {
-      },
-      items: [
-      {
-        value: "carcasses",
-        text: "Show prisoners no longer in custody"
-      }
-      ]
-    }) }}
     </div>
 
     <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-l">Prison</h2>
-
-    {{ govukInput({
-      label: {
-        text: "Prison name",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
-      },
-      classes: "govuk-input--width-20",
-      id: "width-20",
-      name: "width-20"
-    }) }}
+      {% include "includes/search_prisons_radios.html" %}
     </div>
 
     <div class="govuk-grid-column-full">
