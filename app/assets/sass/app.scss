@@ -272,7 +272,7 @@ width: 80%;}
   margin-top: -15px;
 }
 
-.govuk-panel--temporary .govuk-heading-m, .govuk-panel--temporary .govuk-body-l {
+.govuk-panel--temporary .govuk-heading-m, .govuk-panel--temporary .govuk-body-l, .govuk-panel--temporary .govuk-body, .govuk-panel--feedback .feedback-link{
   color: govuk-colour("white");
 }
 
@@ -285,5 +285,11 @@ width: 80%;}
   float: left;
   // clear: none;
   margin-right: 20px;
+}
 
+.govuk-panel--feedback {
+  margin-top: -30px;
+  margin-bottom: 60px;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
