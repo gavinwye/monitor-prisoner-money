@@ -8,14 +8,7 @@ Credits
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
-    {{ govukPanel({
-      html: "<p class='govuk-body-l'>We’ve updated the tool. <a class='feedback-link' href='/feedback'>Tell us what you think?</a></p>",
-      classes: "govuk-panel--temporary govuk-panel--feedback"
-    }) }}
-  </div>
-</div>
+{% include "includes/feedback-link.html" %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
