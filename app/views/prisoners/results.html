@@ -24,7 +24,7 @@ Prisoners
         {%- if prisoners.length == 0 -%}
         <h2  class="govuk-body-l">Your search for <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> returned no results</h2>
         {%- else -%}
-        <h2  class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span></h2>
+        <h2  class="govuk-body-l">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> in your selected prisons.</h2>
       </div>
     </div>
 
@@ -89,11 +89,12 @@ Prisoners
     </div>
     <!-- *************************************** -->
     {{ govukButton({
-      text: "Search again",
+      text: "Start new search",
       classes: "govuk-button",
       href: "/prisoners"
     }) }}
-    <p class="govuk-body"><a href="/prisoners/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> from other prisons</a></p>
+    <p class="govuk-body"><a href="/prisoners/results-other-prisons" class="govuk-link--no-visited-state">See results from all prisons</a></p>
+    <!-- <p class="govuk-body"><a href="/prisoners/results-other-prisons" class="govuk-link--no-visited-state">Results containing <span class="govuk-!-font-weight-bold">'{{ data['prisonerSearch'] }}'</span> from other prisons</a></p> -->
     <!-- <form class="form" method="post">
     {{ govukButton({
     text: "View results",

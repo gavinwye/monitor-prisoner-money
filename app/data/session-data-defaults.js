@@ -20,7 +20,7 @@ Example usage:
 module.exports = {
 
   // Insert values here
-  "userName": "Gavin Wye",
-  "prisonName": "HMP/YOI Croydon",
+  "userName": "Nosey Parker",
+  "prisonName": "HMP/YOI Croydon"
 
 }
