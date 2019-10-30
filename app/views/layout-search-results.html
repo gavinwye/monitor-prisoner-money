@@ -79,6 +79,21 @@
   {{ data['prisonName'] }}
 </h2>
 <a class="app-service-navigation__switch" href="/services">Change</a> -->
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Prisoners",
+      href: "#"
+    },
+    {
+      text: "Search results"
+    }
+  ]
+}) }}
 {{ govukBackLink({
   text: "Back",
   href: "javascript:history.go(-1)",
