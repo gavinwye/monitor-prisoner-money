@@ -1,0 +1,149 @@
+{% extends "layout.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Delayed capture
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-table tbody th{
+  font-weight: normal;
+}
+tr {
+  vertical-align: text-top;
+}
+.govuk-table tbody td{
+  padding: 10px 0px;
+}
+.govuk-button{
+  margin-bottom: 1em;
+}
+</style>
+
+<div class="moj-banner">
+
+  <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" /></svg>
+
+    <div class="moj-banner__message">
+      <span class="moj-banner__assistive">information</span>Select text to add comment.</div>
+
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-xl">
+          Delayed capture
+        </h1>
+
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Date sent</th>
+              <th scope="col" class="govuk-table__header">Payment source (from)</th>
+              <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+              <th scope="col" class="govuk-table__header">Amount</th>
+              <th scope="col" class="govuk-table__header">Rule</th>
+              <th scope="col" class="govuk-table__header">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">DD Month YYYY<br><span class="govuk-body-s">HH:MM:SS</span></th>
+              <td class="govuk-table__cell">
+                <a href="delayed_capture/payment_source">Sender Name</a><br>
+                **** **** **** 1111 11/22<br>
+                <span class="govuk-body-s">
+                  user@email.com</span>
+                </td>
+                <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+                <th scope="row" class="govuk-table__header">£XX</th>
+                <th scope="row" class="govuk-table__header">Rule 1</th>
+                <th scope="row" class="govuk-table__header">
+                  <a class="govuk-button" href="#">Accept</a>
+                  <a class="govuk-button govuk-button--secondary" href="#">Reject</a><br>
+                  <a class="govuk-link" href="delayed_capture/transaction_details">View details</a>
+                </th>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">DD Month YYYY<br><span class="govuk-body-s">HH:MM:SS</span></th>
+                <td class="govuk-table__cell">
+                  <a href="delayed_capture/payment_source">Sender Name</a><br>
+                  **** **** **** 1111 11/22<br>
+                  <span class="govuk-body-s">
+                    user@email.com</span>
+                  </td>
+                  <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+                  <th scope="row" class="govuk-table__header">£XX</th>
+                  <th scope="row" class="govuk-table__header">Rule 1</th>
+                  <th scope="row" class="govuk-table__header">
+                    <a class="govuk-button" href="#">Accept</a>
+                    <a class="govuk-button govuk-button--secondary" href="#">Reject</a><br>
+                    <a class="govuk-link" href="delayed_capture/transaction_details">View details</a>
+                  </th>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header">DD Month YYYY<br><span class="govuk-body-s">HH:MM:SS</span></th>
+                  <td class="govuk-table__cell">
+                    <a href="delayed_capture/payment_source">Sender Name</a><br>
+                    **** **** **** 1111 11/22<br>
+                    <span class="govuk-body-s">
+                      user@email.com</span>
+                    </td>
+                    <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+                    <th scope="row" class="govuk-table__header">£XX</th>
+                    <th scope="row" class="govuk-table__header">Rule 1</th>
+                    <th scope="row" class="govuk-table__header">
+                      <a class="govuk-button" href="#">Accept</a>
+                      <a class="govuk-button govuk-button--secondary" href="#">Reject</a><br>
+                      <a class="govuk-link" href="delayed_capture/transaction_details">View details</a>
+                    </th>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">DD Month YYYY<br><span class="govuk-body-s">HH:MM:SS</span></th>
+                    <td class="govuk-table__cell">
+                      <a href="delayed_capture/payment_source">Sender Name</a><br>
+                      **** **** **** 1111 11/22<br>
+                      <span class="govuk-body-s">
+                        user@email.com</span>
+                      </td>
+                      <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+                      <th scope="row" class="govuk-table__header">£XX</th>
+                      <th scope="row" class="govuk-table__header">Rule 1</th>
+                      <th scope="row" class="govuk-table__header">
+                        <a class="govuk-button" href="#">Accept</a>
+                        <a class="govuk-button govuk-button--secondary" href="#">Reject</a><br>
+                        <a class="govuk-link" href="delayed_capture/transaction_details">View details</a>
+                      </th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                      <th scope="row" class="govuk-table__header">DD Month YYYY<br><span class="govuk-body-s">HH:MM:SS</span></th>
+                      <td class="govuk-table__cell">
+                        <a href="delayed_capture/payment_source">Sender Name</a><br>
+                        **** **** **** 1111 11/22<br>
+                        <span class="govuk-body-s">
+                          user@email.com</span>
+                        </td>
+                        <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+                        <th scope="row" class="govuk-table__header">£XX</th>
+                        <th scope="row" class="govuk-table__header">Rule 1</th>
+                        <th scope="row" class="govuk-table__header">
+                          <a class="govuk-button" href="#">Accept</a>
+                          <a class="govuk-button govuk-button--secondary" href="#">Reject</a><br>
+                          <a class="govuk-link" href="delayed_capture/transaction_details">View details</a>
+                        </th>
+                      </tr>
+                    </tbody>
+                  </table>
+                  {% include "includes/pagination.html" %}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {% endblock %}

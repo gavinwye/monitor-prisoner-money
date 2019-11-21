@@ -5,6 +5,9 @@ $govuk-global-styles: true;
 $govuk-font-family: 'Helvetica Neue', 'Inter UI', sans-serif;
 // $govuk-font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
 
+// We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework.
+$govuk-assets-path: '/govuk/assets/';
+
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
 @import "lib/extensions/extensions";
 
@@ -18,5 +21,16 @@ $govuk-font-family: 'Helvetica Neue', 'Inter UI', sans-serif;
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 @import "./app.scss";
-@import "node_modules/@ministryofjustice/frontend/all";
+// @import "node_modules/@ministryofjustice/frontend/all";
 // @import "./unbranded.scss"
+.mtp-table{
+  text-align: left;
+}
+.mtp-table th{
+  font-weight: normal;
+  padding-right: 15px;
+  padding-bottom: 5px;
+}
+.mtp-table td{
+  font-weight: bold;
+}

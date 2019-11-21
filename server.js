@@ -1,4 +1,5 @@
 // Core dependencies
+const fs = require('fs')
 const path = require('path')
 
 // NPM dependencies
@@ -31,11 +32,9 @@ var useV6 = false
 var v6App
 var v6Routes
 
-try {
+if (fs.existsSync('./app/v6/routes.js')) {
   v6Routes = require('./app/v6/routes.js')
   useV6 = true
-} catch (e) {
-  // No routes.js in app/v6 so we can continue with useV6 false
 }
 
 const app = express()
@@ -113,8 +112,6 @@ app.use('/public', express.static(path.join(__dirname, '/public')))
 
 // Serve govuk-frontend in from node_modules (so not to break pre-extenstions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
-app.use('/assets', express.static(path.join(__dirname, '/node_modules/@ministryofjustice/frontend/assets')))
-
 
 // Set up documentation app
 if (useDocumentation) {
