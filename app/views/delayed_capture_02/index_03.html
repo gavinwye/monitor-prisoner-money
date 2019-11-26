@@ -1,0 +1,1642 @@
+{% extends "layout_delayed_capture.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Delayed capture
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-table tbody th{
+  font-weight: normal;
+}
+tr {
+  vertical-align: text-top;
+}
+.govuk-table tbody td{
+  padding: 10px 0px;
+}
+.govuk-button{
+  margin-bottom: 1em;
+}
+.moj-notification-badge{
+  font-size: 19px;
+  min-width: 20px;
+  padding: 0px 4px;
+  /*border: 2px solid #0b0c0c;*/
+}
+.moj-notification-badge-P2{
+  /*background-color: #f47738;
+  color: #0b0c0c;*/
+  /*background-color: #ffdd00;*/
+  background-color: #f47738;
+  color: #fff;
+}
+.moj-notification-badge-P3{
+  /*background-color: #ffdd00;
+  color: #0b0c0c;*/
+  background-color: #28a197;
+  color: #fff;
+}
+.moj-notification-badge-P4{
+  /*background-color: #5694ca;
+  color: #0b0c0c;*/
+  background-color: #1d70b8;
+  color: #fff;
+}
+.moj-notification-badge-P5{
+  /*background-color: #626a6e;
+  color: #fff;*/
+  background-color: #0b0c0c;
+  color: #fff;
+}
+.totes{
+  display: inline-block;
+  background-color: #f3f2f1;
+  padding: 10px 15px 5px 15px;
+  margin-right: 10px;
+}
+.totes .govuk-heading-xl{
+  margin: 0px 0px 5px;
+}
+.totes-active {
+  box-sizing:border-box;
+  border: 2px solid black;
+}
+/*.totes :hover{
+box-sizing:content-box;
+border: 2px solid black;
+}*/
+.govuk-checkboxes{
+  background-color: white;
+  margin: 15px 0px -10px 0px;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Delayed capture
+    </h1>
+    <p class="totes totes-active">
+      <span class="govuk-heading-xl">258</span>
+      <span class="govuk-body">Pending payments</span>
+      <span class="govuk-checkboxes__item govuk-checkboxes govuk-checkboxes--small">
+        <input class="govuk-checkboxes__input" style="display:inline-block" id="organisation" name="organisation" type="checkbox" value="hmrc" checked="">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Show all
+        </label>
+      </span>
+    </p>
+    <p class="totes">
+      <span class="govuk-heading-xl">56</span>
+      <span id="notifications" class="moj-notification-badge">1</span>  Day left</span>
+      <span class="govuk-checkboxes__item govuk-checkboxes govuk-checkboxes--small">
+        <input class="govuk-checkboxes__input" style="display:inline-block" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Show
+        </label>
+      </span>
+    </p>
+    <p class="totes">
+      <span class="govuk-heading-xl">42</span>
+      <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span> Days left</span>
+      <span class="govuk-checkboxes__item govuk-checkboxes govuk-checkboxes--small">
+        <input class="govuk-checkboxes__input" style="display:inline-block" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Show
+        </label>
+      </span>
+    </p>
+    <p class="totes">
+      <span class="govuk-heading-xl">68</span>
+      <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span> Days left</span>
+      <span class="govuk-checkboxes__item govuk-checkboxes govuk-checkboxes--small">
+        <input class="govuk-checkboxes__input" style="display:inline-block" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Show
+        </label>
+      </span>
+    </p>
+    <p class="totes">
+      <span class="govuk-heading-xl">57</span>
+      <span id="notifications" class="moj-notification-badge moj-notification-badge-P4">4</span> Days left</span>
+      <span class="govuk-checkboxes__item govuk-checkboxes govuk-checkboxes--small">
+        <input class="govuk-checkboxes__input" style="display:inline-block" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Show
+        </label>
+      </span>
+    </p>
+    <p class="totes">
+      <span class="govuk-heading-xl">35</span>
+      <span id="notifications" class="moj-notification-badge moj-notification-badge-P5">5</span> Days left</span>
+      <span class="govuk-checkboxes__item govuk-checkboxes govuk-checkboxes--small">
+        <input class="govuk-checkboxes__input" style="display:inline-block" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Show
+        </label>
+      </span>
+    </p>
+
+    <table class="govuk-table govuk-!-margin-top-3">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Days left</th>
+          <th scope="col" class="govuk-table__header">Date sent</th>
+          <th scope="col" class="govuk-table__header">Debit card (from)</th>
+          <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+          <th scope="col" class="govuk-table__header">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge">1</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>  <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P2">2</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr><tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <span id="notifications" class="moj-notification-badge moj-notification-badge-P3">3</span>
+          </td>
+          <td class="govuk-table__cell">DD Month YYYY HH:MM
+            <a class="govuk-link" style="display:block" href="delayed_capture/transaction_details">View transaction details</a>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="delayed_capture/payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+          </td>
+          <td class="govuk-table__cell"><a href="delayed_capture/prisoner_details">A1234AB</a><br>Prisoner name</td>
+          <th scope="row" class="govuk-table__header">£XX</th>
+          <th scope="row" class="govuk-table__header">
+            <a class="govuk-button" href="delayed_capture/accept">Accept</a>
+            <a class="govuk-button govuk-button--secondary" href="delayed_capture/reject">Reject</a><br>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+    {% include "includes/pagination.html" %}
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
