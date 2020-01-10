@@ -1,0 +1,25 @@
+{% extends "layout_only_primary.html" %}
+
+
+{% block pageTitle %}
+Delayed capture
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <label class="govuk-heading-xl" for="more-detail">
+        What are your main tasks?
+        <p class="govuk-body-l govuk-!-margin-top-3">We are asking this so we can improve the service</p>
+      </label>
+      <span id="more-detail-hint" class="govuk-hint">
+      </span>
+      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+    </div>
+    <a class="govuk-button" href="../index">Continue</a>
+  </div>
+</div>
+
+{% endblock %}
