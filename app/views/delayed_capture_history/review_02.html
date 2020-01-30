@@ -12,6 +12,13 @@ Delayed capture
 .govuk-table td.reason{
   font-size: inherit;
 }
+td {
+  border-bottom: 0px !important;
+}
+.reason{
+  padding-bottom: 20px !important;
+  padding-top: 0px !important;
+}
 .datesent{
   border-bottom: 1px solid white;
 }
@@ -21,7 +28,7 @@ Delayed capture
 .rulename{
   display: block;
   margin-bottom: 0;
-  color: #626a6e;
+  /*color: #626a6e;*/
 }
 .govuk-table tbody th{
   font-weight: normal;
@@ -121,11 +128,11 @@ tr {
             <a href="payment_source">Sender Name</a><br>
             **** **** **** 1111 11/22<br>
             sender@email.com <br>
-            PO51ED
+            POST CODE
           </td>
           <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
-            HMP Bedford<br>
-            H Wing 132</td>
+            HMP Prison<br>
+            A Wing 111</td>
             <td class="govuk-table__cell">£XX</td>
             <td class="govuk-table__cell" >
               Pending
@@ -135,7 +142,7 @@ tr {
       </table>
 
 
-      <p class="govuk-heading-m govuk-!-margin-top-8">History of credit decisions, concerning debit card or prisoner</p>
+      <p class="govuk-heading-m govuk-!-margin-top-8">Credit decisions matching debit card or prisoner</p>
       <table class="govuk-table govuk-!-margin-top-3">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -152,72 +159,81 @@ tr {
             </td>
             <td class="govuk-table__cell">
               <a href="payment_source">Sender Name</a><br>
-              **** **** **** 1111 11/22 <br>
-              sendername@email.com <br>
-              PO51ED
+              **** **** **** 1111 11/22<br>
+              sender@email.com <br>
+              POST CODE
             </td>
-            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-              H Wing 132</td>
+            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+              HMP Prison<br>
+              A Wing 111</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
             </tr>
             <tr class="govuk-table__cell">
               <td colspan="1" class="prereason"></td>
               <td colspan="4" class="reason">
-                <span class="govuk-body rulename">Name of rule broken</span>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
                 </td>
                 <td class="govuk-table__cell">
                   <a href="payment_source">Sender Name</a><br>
-                  **** **** **** 9999 03/22<br>
+                  **** **** **** 1111 11/22<br>
                   sender@email.com <br>
-                  CO01TR
+                  POST CODE
                 </td>
-                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                  H Wing 132</td>
+                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                  HMP Prison<br>
+                  A Wing 111</td>
                   <td class="govuk-table__cell">£XX</td>
                   <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
                 </tr>
                 <tr class="govuk-table__cell">
                   <td colspan="1" class="prereason"></td>
                   <td colspan="4" class="reason">
-                    <span class="govuk-body rulename">Name of rule broken</span>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                    <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">DD Month YYYY HH:MM
+                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
                     </td>
                     <td class="govuk-table__cell">
                       <a href="payment_source">Sender Name</a><br>
                       **** **** **** 1111 11/22<br>
-                      namesender@email.com <br>
-                      PO51ED
+                      sender@email.com <br>
+                      POST CODE
                     </td>
-                    <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-                      H Wing 92</td>
+                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                      HMP Prison<br>
+                      A Wing 111</td>
                       <td class="govuk-table__cell">£XX</td>
-                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
+                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                     </tr>
-                  </tbody>
-                </table>
-                <div class="govuk-grid-row">
-                  <div class="govuk-grid-column-two-thirds">
-                    <p class="govuk-heading-m govuk-!-margin-top-6">Your decision</p>
-                    <div class="govuk-form-group">
-                      <label class="govuk-label" for="more-detail">
-                        Give details (details are optional when accepting)
-                      </label>
-                      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    <tr class="govuk-table__cell">
+                      <td colspan="1" class="prereason"></td>
+                      <td colspan="4" class="reason">
+                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                      <p class="govuk-heading-m govuk-!-margin-top-6">Your decision</p>
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail">
+                          Give details (details are optional when accepting)
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                      </div>
+                      <a class="govuk-button govuk-!-margin-right-3" href="/delayed_capture_history">Accept credit</a>
+                      <a class="govuk-button" style="background-color:#d4351c;" href="/delayed_capture_history">Reject credit</a>
                     </div>
-                    <a class="govuk-button govuk-!-margin-right-3" href="/delayed_capture_history">Accept credit</a>
-                    <a class="govuk-button" style="background-color:#d4351c;" href="/delayed_capture_history">Reject credit</a>
                   </div>
                 </div>
+
               </div>
 
-            </div>
-
-            {% endblock %}
+              {% endblock %}

@@ -12,7 +12,13 @@ Delayed capture
 .govuk-table tbody th{
   font-weight: normal;
 }
-
+.td-override td {
+  border-bottom: 0px !important;
+}
+.reason{
+  padding-bottom: 20px !important;
+  padding-top: 0px !important;
+}
 .datesent{
   border-bottom: 1px solid white;
 }
@@ -21,8 +27,8 @@ Delayed capture
 }
 .rulename{
   display: block;
-  margin-bottom: 0;
-  color: #626a6e;
+  border-top: 1px solid white;
+  margin: 0px;
 }
 tr {
   vertical-align: text-top;
@@ -102,7 +108,7 @@ tr {
   <ul class="govuk-tabs__list">
     <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
       <a class="govuk-tabs__tab" href="#pending">
-        Pending <span class="moj-notification-badge moj-notification-badge-P0">305</span>
+        Pending <span class="moj-notification-badge moj-notification-badge-P0">65</span>
       </a>
     </li>
     <li class="govuk-tabs__list-item">
@@ -122,7 +128,7 @@ tr {
       Pending credits
     </h1>
     <p class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-5">
-      305 credits
+      65 credits
     </p>
     <p>
       <span class="govuk-heading-m govuk-!-margin-bottom-6">
@@ -441,441 +447,857 @@ tr {
             <th scope="col" class="govuk-table__header">Decision</th>
           </tr>
         </thead>
-        <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              <a href="payment_source">Sender Name</a><br>
-              **** **** **** 1111 11/22<br>
-              namesender@email.com <br>
-              PO51ED
-            </td>
-            <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-              H Wing 92</td>
-              <td class="govuk-table__cell">£XX</td>
-              <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">DD Month YYYY HH:MM
-              </td>
-              <td class="govuk-table__cell">
-                <a href="payment_source">Sender Name</a><br>
-                **** **** **** 1111 11/22<br>
-                namesender@email.com <br>
-                PO51ED
-              </td>
-              <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-                H Wing 92</td>
-                <td class="govuk-table__cell">£XX</td>
-                <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">DD Month YYYY HH:MM
-                </td>
-                <td class="govuk-table__cell">
-                  <a href="payment_source">Sender Name</a><br>
-                  **** **** **** 1111 11/22<br>
-                  namesender@email.com <br>
-                  PO51ED
-                </td>
-                <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-                  H Wing 92</td>
-                  <td class="govuk-table__cell">£XX</td>
-                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
-                </tr>
-                <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">DD Month YYYY HH:MM
-                  </td>
-                  <td class="govuk-table__cell">
-                    <a href="payment_source">Sender Name</a><br>
-                    **** **** **** 1111 11/22<br>
-                    namesender@email.com <br>
-                    PO51ED
-                  </td>
-                  <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-                    H Wing 92</td>
-                    <td class="govuk-table__cell">£XX</td>
-                    <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
-                  </tr>
-                  <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">DD Month YYYY HH:MM
-                    </td>
-                    <td class="govuk-table__cell">
-                      <a href="payment_source">Sender Name</a><br>
-                      **** **** **** 1111 11/22<br>
-                      namesender@email.com <br>
-                      PO51ED
-                    </td>
-                    <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-                      H Wing 92</td>
-                      <td class="govuk-table__cell">£XX</td>
-                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell">DD Month YYYY HH:MM
-                      </td>
-                      <td class="govuk-table__cell">
-                        <a href="payment_source">Sender Name</a><br>
-                        **** **** **** 1111 11/22<br>
-                        namesender@email.com <br>
-                        PO51ED
-                      </td>
-                      <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-                        H Wing 92</td>
-                        <td class="govuk-table__cell">£XX</td>
-                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
-                      </tr>
+        <tbody class="govuk-table__body td-override">
+
           <tr class="govuk-table__row">
             <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
             </td>
             <td class="govuk-table__cell">
               <a href="payment_source">Sender Name</a><br>
-              **** **** **** 1111 11/22 <br>
-              sendername@email.com <br>
-              PO51ED
+              **** **** **** 1111 11/22<br>
+              sender@email.com <br>
+              POST CODE
             </td>
-            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-              H Wing 132</td>
+            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+              HMP Prison<br>
+              A Wing 111</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
             </tr>
             <tr class="govuk-table__cell">
               <td colspan="1" class="prereason"></td>
               <td colspan="4" class="reason">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
               </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
                 </td>
                 <td class="govuk-table__cell">
                   <a href="payment_source">Sender Name</a><br>
-                  **** **** **** 9999 03/22<br>
+                  **** **** **** 1111 11/22<br>
                   sender@email.com <br>
-                  CO01TR
+                  POST CODE
                 </td>
-                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                  H Wing 132</td>
+                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                  HMP Prison<br>
+                  A Wing 111</td>
                   <td class="govuk-table__cell">£XX</td>
                   <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                 </tr>
                 <tr class="govuk-table__cell">
                   <td colspan="1" class="prereason"></td>
                   <td colspan="4" class="reason">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">DD Month YYYY HH:MM
+                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
                     </td>
                     <td class="govuk-table__cell">
                       <a href="payment_source">Sender Name</a><br>
                       **** **** **** 1111 11/22<br>
-                      namesender@email.com <br>
-                      PO51ED
+                      sender@email.com <br>
+                      POST CODE
                     </td>
-                    <td class="govuk-table__cell"><a href="prisoner_details">TR978T</a><br>Prisoner name <br>HMP Bedford<br>
-                      H Wing 92</td>
+                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                      HMP Prison<br>
+                      A Wing 111</td>
                       <td class="govuk-table__cell">£XX</td>
-                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Bob Smith</td>
+                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                     </tr>
-                  </tbody>
-                </table>
-                {% include "includes/pagination.html" %}
-              </section>
-
-              <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="rejected">
-
-                <p class="govuk-heading-l govuk-!-margin-bottom-1">Rejected credits</p>
-                <p class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-5">
-                  78 credits
-                </p>
-                <table class="govuk-table govuk-!-margin-top-3">
-                  <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                      <th scope="col" class="govuk-table__header">Date sent</th>
-                      <th scope="col" class="govuk-table__header">Debit card (from)</th>
-                      <th scope="col" class="govuk-table__header">Prisoner (to)</th>
-                      <th scope="col" class="govuk-table__header">Amount</th>
-                      <th scope="col" class="govuk-table__header">Decision</th>
-                    </tr>
-                  </thead>
-                  <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                      <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                      </td>
-                      <td class="govuk-table__cell">
-                        <a href="payment_source">Sender Name</a><br>
-                        **** **** **** 1111 11/22 <br>
-                        sendername@email.com <br>
-                        PO51ED
-                      </td>
-                      <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                        H Wing 132</td>
-                        <td class="govuk-table__cell">£XX</td>
-                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                    <tr class="govuk-table__cell">
+                      <td colspan="1" class="prereason"></td>
+                      <td colspan="4" class="reason">
+                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                       </tr>
-                      <tr class="govuk-table__cell">
-                        <td colspan="1" class="prereason"></td>
-                        <td colspan="4" class="reason">
-                          <span class="govuk-body rulename">Name of rule broken</span>
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                      <tr class="govuk-table__row">
+                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                        </td>
+                        <td class="govuk-table__cell">
+                          <a href="payment_source">Sender Name</a><br>
+                          **** **** **** 1111 11/22<br>
+                          sender@email.com <br>
+                          POST CODE
+                        </td>
+                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                          HMP Prison<br>
+                          A Wing 111</td>
+                          <td class="govuk-table__cell">£XX</td>
+                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                         </tr>
-                        <tr class="govuk-table__row">
-                          <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                          </td>
-                          <td class="govuk-table__cell">
-                            <a href="payment_source">Sender Name</a><br>
-                            **** **** **** 9999 03/22<br>
-                            sender@email.com <br>
-                            CO01TR
-                          </td>
-                          <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                            H Wing 132</td>
-                            <td class="govuk-table__cell">£XX</td>
-                            <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                        <tr class="govuk-table__cell">
+                          <td colspan="1" class="prereason"></td>
+                          <td colspan="4" class="reason">
+                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                           </tr>
-                          <tr class="govuk-table__cell">
-                            <td colspan="1" class="prereason"></td>
-                            <td colspan="4" class="reason">
-                              <span class="govuk-body rulename">Name of rule broken</span>
-                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                            </td>
+                            <td class="govuk-table__cell">
+                              <a href="payment_source">Sender Name</a><br>
+                              **** **** **** 1111 11/22<br>
+                              sender@email.com <br>
+                              POST CODE
+                            </td>
+                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                              HMP Prison<br>
+                              A Wing 111</td>
+                              <td class="govuk-table__cell">£XX</td>
+                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                             </tr>
-                            <tr class="govuk-table__row">
-                              <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                              </td>
-                              <td class="govuk-table__cell">
-                                <a href="payment_source">Sender Name</a><br>
-                                **** **** **** 9999 03/22<br>
-                                sender@email.com <br>
-                                CO01TR
-                              </td>
-                              <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                H Wing 132</td>
-                                <td class="govuk-table__cell">£XX</td>
-                                <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                            <tr class="govuk-table__cell">
+                              <td colspan="1" class="prereason"></td>
+                              <td colspan="4" class="reason">
+                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                               </tr>
-                              <tr class="govuk-table__cell">
-                                <td colspan="1" class="prereason"></td>
-                                <td colspan="4" class="reason">
-                                  <span class="govuk-body rulename">Name of rule broken</span>
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                              <tr class="govuk-table__row">
+                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                </td>
+                                <td class="govuk-table__cell">
+                                  <a href="payment_source">Sender Name</a><br>
+                                  **** **** **** 1111 11/22<br>
+                                  sender@email.com <br>
+                                  POST CODE
+                                </td>
+                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                  HMP Prison<br>
+                                  A Wing 111</td>
+                                  <td class="govuk-table__cell">£XX</td>
+                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                 </tr>
-                                <tr class="govuk-table__row">
-                                  <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                  </td>
-                                  <td class="govuk-table__cell">
-                                    <a href="payment_source">Sender Name</a><br>
-                                    **** **** **** 9999 03/22<br>
-                                    sender@email.com <br>
-                                    CO01TR
-                                  </td>
-                                  <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                    H Wing 132</td>
-                                    <td class="govuk-table__cell">£XX</td>
-                                    <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                <tr class="govuk-table__cell">
+                                  <td colspan="1" class="prereason"></td>
+                                  <td colspan="4" class="reason">
+                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                   </tr>
-                                  <tr class="govuk-table__cell">
-                                    <td colspan="1" class="prereason"></td>
-                                    <td colspan="4" class="reason">
-                                      <span class="govuk-body rulename">Name of rule broken</span>
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                  <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                      <a href="payment_source">Sender Name</a><br>
+                                      **** **** **** 1111 11/22<br>
+                                      sender@email.com <br>
+                                      POST CODE
+                                    </td>
+                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                      HMP Prison<br>
+                                      A Wing 111</td>
+                                      <td class="govuk-table__cell">£XX</td>
+                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                     </tr>
-                                    <tr class="govuk-table__row">
-                                      <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                      </td>
-                                      <td class="govuk-table__cell">
-                                        <a href="payment_source">Sender Name</a><br>
-                                        **** **** **** 9999 03/22<br>
-                                        sender@email.com <br>
-                                        CO01TR
-                                      </td>
-                                      <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                        H Wing 132</td>
-                                        <td class="govuk-table__cell">£XX</td>
-                                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                    <tr class="govuk-table__cell">
+                                      <td colspan="1" class="prereason"></td>
+                                      <td colspan="4" class="reason">
+                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                       </tr>
-                                      <tr class="govuk-table__cell">
-                                        <td colspan="1" class="prereason"></td>
-                                        <td colspan="4" class="reason">
-                                          <span class="govuk-body rulename">Name of rule broken</span>
-                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                      <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                        </td>
+                                        <td class="govuk-table__cell">
+                                          <a href="payment_source">Sender Name</a><br>
+                                          **** **** **** 1111 11/22<br>
+                                          sender@email.com <br>
+                                          POST CODE
+                                        </td>
+                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                          HMP Prison<br>
+                                          A Wing 111</td>
+                                          <td class="govuk-table__cell">£XX</td>
+                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                         </tr>
-                                        <tr class="govuk-table__row">
-                                          <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                          </td>
-                                          <td class="govuk-table__cell">
-                                            <a href="payment_source">Sender Name</a><br>
-                                            **** **** **** 9999 03/22<br>
-                                            sender@email.com <br>
-                                            CO01TR
-                                          </td>
-                                          <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                            H Wing 132</td>
-                                            <td class="govuk-table__cell">£XX</td>
-                                            <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                        <tr class="govuk-table__cell">
+                                          <td colspan="1" class="prereason"></td>
+                                          <td colspan="4" class="reason">
+                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                           </tr>
-                                          <tr class="govuk-table__cell">
-                                            <td colspan="1" class="prereason"></td>
-                                            <td colspan="4" class="reason">
-                                              <span class="govuk-body rulename">Name of rule broken</span>
-                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                          <tr class="govuk-table__row">
+                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                            </td>
+                                            <td class="govuk-table__cell">
+                                              <a href="payment_source">Sender Name</a><br>
+                                              **** **** **** 1111 11/22<br>
+                                              sender@email.com <br>
+                                              POST CODE
+                                            </td>
+                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                              HMP Prison<br>
+                                              A Wing 111</td>
+                                              <td class="govuk-table__cell">£XX</td>
+                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                             </tr>
-                                            <tr class="govuk-table__row">
-                                              <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                              </td>
-                                              <td class="govuk-table__cell">
-                                                <a href="payment_source">Sender Name</a><br>
-                                                **** **** **** 9999 03/22<br>
-                                                sender@email.com <br>
-                                                CO01TR
-                                              </td>
-                                              <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                                H Wing 132</td>
-                                                <td class="govuk-table__cell">£XX</td>
-                                                <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                            <tr class="govuk-table__cell">
+                                              <td colspan="1" class="prereason"></td>
+                                              <td colspan="4" class="reason">
+                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                               </tr>
-                                              <tr class="govuk-table__cell">
-                                                <td colspan="1" class="prereason"></td>
-                                                <td colspan="4" class="reason">
-                                                  <span class="govuk-body rulename">Name of rule broken</span>
-                                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                              <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                </td>
+                                                <td class="govuk-table__cell">
+                                                  <a href="payment_source">Sender Name</a><br>
+                                                  **** **** **** 1111 11/22<br>
+                                                  sender@email.com <br>
+                                                  POST CODE
+                                                </td>
+                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                  HMP Prison<br>
+                                                  A Wing 111</td>
+                                                  <td class="govuk-table__cell">£XX</td>
+                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                                 </tr>
-                                                <tr class="govuk-table__row">
-                                                  <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                                  </td>
-                                                  <td class="govuk-table__cell">
-                                                    <a href="payment_source">Sender Name</a><br>
-                                                    **** **** **** 9999 03/22<br>
-                                                    sender@email.com <br>
-                                                    CO01TR
-                                                  </td>
-                                                  <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                                    H Wing 132</td>
-                                                    <td class="govuk-table__cell">£XX</td>
-                                                    <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                <tr class="govuk-table__cell">
+                                                  <td colspan="1" class="prereason"></td>
+                                                  <td colspan="4" class="reason">
+                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                                   </tr>
-                                                  <tr class="govuk-table__cell">
-                                                    <td colspan="1" class="prereason"></td>
-                                                    <td colspan="4" class="reason">
-                                                      <span class="govuk-body rulename">Name of rule broken</span>
-                                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                  <tr class="govuk-table__row">
+                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                    </td>
+                                                    <td class="govuk-table__cell">
+                                                      <a href="payment_source">Sender Name</a><br>
+                                                      **** **** **** 1111 11/22<br>
+                                                      sender@email.com <br>
+                                                      POST CODE
+                                                    </td>
+                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                      HMP Prison<br>
+                                                      A Wing 111</td>
+                                                      <td class="govuk-table__cell">£XX</td>
+                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                                     </tr>
-                                                    <tr class="govuk-table__row">
-                                                      <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                                      </td>
-                                                      <td class="govuk-table__cell">
-                                                        <a href="payment_source">Sender Name</a><br>
-                                                        **** **** **** 9999 03/22<br>
-                                                        sender@email.com <br>
-                                                        CO01TR
-                                                      </td>
-                                                      <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                                        H Wing 132</td>
-                                                        <td class="govuk-table__cell">£XX</td>
-                                                        <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                    <tr class="govuk-table__cell">
+                                                      <td colspan="1" class="prereason"></td>
+                                                      <td colspan="4" class="reason">
+                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                                       </tr>
-                                                      <tr class="govuk-table__cell">
-                                                        <td colspan="1" class="prereason"></td>
-                                                        <td colspan="4" class="reason">
-                                                          <span class="govuk-body rulename">Name of rule broken</span>
-                                                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                      <tr class="govuk-table__row">
+                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                        </td>
+                                                        <td class="govuk-table__cell">
+                                                          <a href="payment_source">Sender Name</a><br>
+                                                          **** **** **** 1111 11/22<br>
+                                                          sender@email.com <br>
+                                                          POST CODE
+                                                        </td>
+                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                          HMP Prison<br>
+                                                          A Wing 111</td>
+                                                          <td class="govuk-table__cell">£XX</td>
+                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                                         </tr>
-                                                        <tr class="govuk-table__row">
-                                                          <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                                          </td>
-                                                          <td class="govuk-table__cell">
-                                                            <a href="payment_source">Sender Name</a><br>
-                                                            **** **** **** 9999 03/22<br>
-                                                            sender@email.com <br>
-                                                            CO01TR
-                                                          </td>
-                                                          <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                                            H Wing 132</td>
-                                                            <td class="govuk-table__cell">£XX</td>
-                                                            <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                        <tr class="govuk-table__cell">
+                                                          <td colspan="1" class="prereason"></td>
+                                                          <td colspan="4" class="reason">
+                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                                           </tr>
-                                                          <tr class="govuk-table__cell">
-                                                            <td colspan="1" class="prereason"></td>
-                                                            <td colspan="4" class="reason">
-                                                              <span class="govuk-body rulename">Name of rule broken</span>
-                                                              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                          <tr class="govuk-table__row">
+                                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                            </td>
+                                                            <td class="govuk-table__cell">
+                                                              <a href="payment_source">Sender Name</a><br>
+                                                              **** **** **** 1111 11/22<br>
+                                                              sender@email.com <br>
+                                                              POST CODE
+                                                            </td>
+                                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                              HMP Prison<br>
+                                                              A Wing 111</td>
+                                                              <td class="govuk-table__cell">£XX</td>
+                                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                                             </tr>
-                                                            <tr class="govuk-table__row">
-                                                              <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                                              </td>
-                                                              <td class="govuk-table__cell">
-                                                                <a href="payment_source">Sender Name</a><br>
-                                                                **** **** **** 9999 03/22<br>
-                                                                sender@email.com <br>
-                                                                CO01TR
-                                                              </td>
-                                                              <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                                                H Wing 132</td>
-                                                                <td class="govuk-table__cell">£XX</td>
-                                                                <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                            <tr class="govuk-table__cell">
+                                                              <td colspan="1" class="prereason"></td>
+                                                              <td colspan="4" class="reason">
+                                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                                               </tr>
-                                                              <tr class="govuk-table__cell">
-                                                                <td colspan="1" class="prereason"></td>
-                                                                <td colspan="4" class="reason">
-                                                                  <span class="govuk-body rulename">Name of rule broken</span>
-                                                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                              <tr class="govuk-table__row">
+                                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                </td>
+                                                                <td class="govuk-table__cell">
+                                                                  <a href="payment_source">Sender Name</a><br>
+                                                                  **** **** **** 1111 11/22<br>
+                                                                  sender@email.com <br>
+                                                                  POST CODE
+                                                                </td>
+                                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                  HMP Prison<br>
+                                                                  A Wing 111</td>
+                                                                  <td class="govuk-table__cell">£XX</td>
+                                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                                                 </tr>
-                                                                <tr class="govuk-table__row">
-                                                                  <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
-                                                                  </td>
-                                                                  <td class="govuk-table__cell">
-                                                                    <a href="payment_source">Sender Name</a><br>
-                                                                    **** **** **** 9999 03/22<br>
-                                                                    sender@email.com <br>
-                                                                    CO01TR
-                                                                  </td>
-                                                                  <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>HMP Bedford<br>
-                                                                    H Wing 132</td>
-                                                                    <td class="govuk-table__cell">£XX</td>
-                                                                    <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                <tr class="govuk-table__cell">
+                                                                  <td colspan="1" class="prereason"></td>
+                                                                  <td colspan="4" class="reason">
+                                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
                                                                   </tr>
-                                                                  <tr class="govuk-table__cell">
-                                                                    <td colspan="1" class="prereason"></td>
-                                                                    <td colspan="4" class="reason">
-                                                                      <span class="govuk-body rulename">Name of rule broken</span>
-                                                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                  <tr class="govuk-table__row">
+                                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                    </td>
+                                                                    <td class="govuk-table__cell">
+                                                                      <a href="payment_source">Sender Name</a><br>
+                                                                      **** **** **** 1111 11/22<br>
+                                                                      sender@email.com <br>
+                                                                      POST CODE
+                                                                    </td>
+                                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                      HMP Prison<br>
+                                                                      A Wing 111</td>
+                                                                      <td class="govuk-table__cell">£XX</td>
+                                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
                                                                     </tr>
+                                                                    <tr class="govuk-table__cell">
+                                                                      <td colspan="1" class="prereason"></td>
+                                                                      <td colspan="4" class="reason">
+                                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                                                                      </tr>
+                                                                      <tr class="govuk-table__row">
+                                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                        </td>
+                                                                        <td class="govuk-table__cell">
+                                                                          <a href="payment_source">Sender Name</a><br>
+                                                                          **** **** **** 1111 11/22<br>
+                                                                          sender@email.com <br>
+                                                                          POST CODE
+                                                                        </td>
+                                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                          HMP Prison<br>
+                                                                          A Wing 111</td>
+                                                                          <td class="govuk-table__cell">£XX</td>
+                                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
+                                                                        </tr>
+                                                                        <tr class="govuk-table__cell">
+                                                                          <td colspan="1" class="prereason"></td>
+                                                                          <td colspan="4" class="reason">
+                                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                                                                          </tr>
+                                                                          <tr class="govuk-table__row">
+                                                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                            </td>
+                                                                            <td class="govuk-table__cell">
+                                                                              <a href="payment_source">Sender Name</a><br>
+                                                                              **** **** **** 1111 11/22<br>
+                                                                              sender@email.com <br>
+                                                                              POST CODE
+                                                                            </td>
+                                                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                              HMP Prison<br>
+                                                                              A Wing 111</td>
+                                                                              <td class="govuk-table__cell">£XX</td>
+                                                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
+                                                                            </tr>
+                                                                            <tr class="govuk-table__cell">
+                                                                              <td colspan="1" class="prereason"></td>
+                                                                              <td colspan="4" class="reason">
+                                                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                                                                              </tr>
+                                                                              <tr class="govuk-table__row">
+                                                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                </td>
+                                                                                <td class="govuk-table__cell">
+                                                                                  <a href="payment_source">Sender Name</a><br>
+                                                                                  **** **** **** 1111 11/22<br>
+                                                                                  sender@email.com <br>
+                                                                                  POST CODE
+                                                                                </td>
+                                                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                  HMP Prison<br>
+                                                                                  A Wing 111</td>
+                                                                                  <td class="govuk-table__cell">£XX</td>
+                                                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
+                                                                                </tr>
+                                                                                <tr class="govuk-table__cell">
+                                                                                  <td colspan="1" class="prereason"></td>
+                                                                                  <td colspan="4" class="reason">
+                                                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                                                                                  </tr>
+                                                                                  <tr class="govuk-table__row">
+                                                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                    </td>
+                                                                                    <td class="govuk-table__cell">
+                                                                                      <a href="payment_source">Sender Name</a><br>
+                                                                                      **** **** **** 1111 11/22<br>
+                                                                                      sender@email.com <br>
+                                                                                      POST CODE
+                                                                                    </td>
+                                                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                      HMP Prison<br>
+                                                                                      A Wing 111</td>
+                                                                                      <td class="govuk-table__cell">£XX</td>
+                                                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
+                                                                                    </tr>
+                                                                                    <tr class="govuk-table__cell">
+                                                                                      <td colspan="1" class="prereason"></td>
+                                                                                      <td colspan="4" class="reason">
+                                                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                                                                                      </tr>
+                                                                                      <tr class="govuk-table__row">
+                                                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                        </td>
+                                                                                        <td class="govuk-table__cell">
+                                                                                          <a href="payment_source">Sender Name</a><br>
+                                                                                          **** **** **** 1111 11/22<br>
+                                                                                          sender@email.com <br>
+                                                                                          POST CODE
+                                                                                        </td>
+                                                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                          HMP Prison<br>
+                                                                                          A Wing 111</td>
+                                                                                          <td class="govuk-table__cell">£XX</td>
+                                                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
+                                                                                        </tr>
+                                                                                        <tr class="govuk-table__cell">
+                                                                                          <td colspan="1" class="prereason"></td>
+                                                                                          <td colspan="4" class="reason">
+                                                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                                                                                          </tr>
+
+                                                                                        </tbody>
+                                                                                      </table>
+                                                                                      {% include "includes/pagination.html" %}
+                                                                                    </section>
+
+                                                                                    <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="rejected">
+
+                                                                                      <p class="govuk-heading-l govuk-!-margin-bottom-1">Rejected credits</p>
+                                                                                      <p class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-5">
+                                                                                        78 credits
+                                                                                      </p>
+                                                                                      <table class="govuk-table govuk-!-margin-top-3">
+                                                                                        <thead class="govuk-table__head">
+                                                                                          <tr class="govuk-table__row">
+                                                                                            <th scope="col" class="govuk-table__header">Date sent</th>
+                                                                                            <th scope="col" class="govuk-table__header">Debit card (from)</th>
+                                                                                            <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+                                                                                            <th scope="col" class="govuk-table__header">Amount</th>
+                                                                                            <th scope="col" class="govuk-table__header">Decision</th>
+                                                                                          </tr>
+                                                                                        </thead>
+                                                                                        <tbody class="govuk-table__body td-override">
+                                                                                          <tr class="govuk-table__row">
+                                                                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                            </td>
+                                                                                            <td class="govuk-table__cell">
+                                                                                              <a href="payment_source">Sender Name</a><br>
+                                                                                              **** **** **** 1111 11/22<br>
+                                                                                              sender@email.com <br>
+                                                                                              POST CODE
+                                                                                            </td>
+                                                                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                              HMP Prison<br>
+                                                                                              A Wing 111</td>
+                                                                                              <td class="govuk-table__cell">£XX</td>
+                                                                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                            </tr>
+                                                                                            <tr class="govuk-table__cell">
+                                                                                              <td colspan="1" class="prereason"></td>
+                                                                                              <td colspan="4" class="reason">
+                                                                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                              </tr>
+                                                                                              <tr class="govuk-table__row">
+                                                                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                </td>
+                                                                                                <td class="govuk-table__cell">
+                                                                                                  <a href="payment_source">Sender Name</a><br>
+                                                                                                  **** **** **** 1111 11/22<br>
+                                                                                                  sender@email.com <br>
+                                                                                                  POST CODE
+                                                                                                </td>
+                                                                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                  HMP Prison<br>
+                                                                                                  A Wing 111</td>
+                                                                                                  <td class="govuk-table__cell">£XX</td>
+                                                                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                </tr>
+                                                                                                <tr class="govuk-table__cell">
+                                                                                                  <td colspan="1" class="prereason"></td>
+                                                                                                  <td colspan="4" class="reason">
+                                                                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                    <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                  </tr>
+                                                                                                  <tr class="govuk-table__row">
+                                                                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                    </td>
+                                                                                                    <td class="govuk-table__cell">
+                                                                                                      <a href="payment_source">Sender Name</a><br>
+                                                                                                      **** **** **** 1111 11/22<br>
+                                                                                                      sender@email.com <br>
+                                                                                                      POST CODE
+                                                                                                    </td>
+                                                                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                      HMP Prison<br>
+                                                                                                      A Wing 111</td>
+                                                                                                      <td class="govuk-table__cell">£XX</td>
+                                                                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                    </tr>
+                                                                                                    <tr class="govuk-table__cell">
+                                                                                                      <td colspan="1" class="prereason"></td>
+                                                                                                      <td colspan="4" class="reason">
+                                                                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                        <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                      </tr>
+                                                                                                      <tr class="govuk-table__row">
+                                                                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                        </td>
+                                                                                                        <td class="govuk-table__cell">
+                                                                                                          <a href="payment_source">Sender Name</a><br>
+                                                                                                          **** **** **** 1111 11/22<br>
+                                                                                                          sender@email.com <br>
+                                                                                                          POST CODE
+                                                                                                        </td>
+                                                                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                          HMP Prison<br>
+                                                                                                          A Wing 111</td>
+                                                                                                          <td class="govuk-table__cell">£XX</td>
+                                                                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                        </tr>
+                                                                                                        <tr class="govuk-table__cell">
+                                                                                                          <td colspan="1" class="prereason"></td>
+                                                                                                          <td colspan="4" class="reason">
+                                                                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                            <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                          </tr>
+                                                                                                          <tr class="govuk-table__row">
+                                                                                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                            </td>
+                                                                                                            <td class="govuk-table__cell">
+                                                                                                              <a href="payment_source">Sender Name</a><br>
+                                                                                                              **** **** **** 1111 11/22<br>
+                                                                                                              sender@email.com <br>
+                                                                                                              POST CODE
+                                                                                                            </td>
+                                                                                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                              HMP Prison<br>
+                                                                                                              A Wing 111</td>
+                                                                                                              <td class="govuk-table__cell">£XX</td>
+                                                                                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                            </tr>
+                                                                                                            <tr class="govuk-table__cell">
+                                                                                                              <td colspan="1" class="prereason"></td>
+                                                                                                              <td colspan="4" class="reason">
+                                                                                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                              </tr>
+                                                                                                              <tr class="govuk-table__row">
+                                                                                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                </td>
+                                                                                                                <td class="govuk-table__cell">
+                                                                                                                  <a href="payment_source">Sender Name</a><br>
+                                                                                                                  **** **** **** 1111 11/22<br>
+                                                                                                                  sender@email.com <br>
+                                                                                                                  POST CODE
+                                                                                                                </td>
+                                                                                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                  HMP Prison<br>
+                                                                                                                  A Wing 111</td>
+                                                                                                                  <td class="govuk-table__cell">£XX</td>
+                                                                                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                </tr>
+                                                                                                                <tr class="govuk-table__cell">
+                                                                                                                  <td colspan="1" class="prereason"></td>
+                                                                                                                  <td colspan="4" class="reason">
+                                                                                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                    <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                  </tr>
+                                                                                                                  <tr class="govuk-table__row">
+                                                                                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                    </td>
+                                                                                                                    <td class="govuk-table__cell">
+                                                                                                                      <a href="payment_source">Sender Name</a><br>
+                                                                                                                      **** **** **** 1111 11/22<br>
+                                                                                                                      sender@email.com <br>
+                                                                                                                      POST CODE
+                                                                                                                    </td>
+                                                                                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                      HMP Prison<br>
+                                                                                                                      A Wing 111</td>
+                                                                                                                      <td class="govuk-table__cell">£XX</td>
+                                                                                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                    </tr>
+                                                                                                                    <tr class="govuk-table__cell">
+                                                                                                                      <td colspan="1" class="prereason"></td>
+                                                                                                                      <td colspan="4" class="reason">
+                                                                                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                        <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                      </tr>
+                                                                                                                      <tr class="govuk-table__row">
+                                                                                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                        </td>
+                                                                                                                        <td class="govuk-table__cell">
+                                                                                                                          <a href="payment_source">Sender Name</a><br>
+                                                                                                                          **** **** **** 1111 11/22<br>
+                                                                                                                          sender@email.com <br>
+                                                                                                                          POST CODE
+                                                                                                                        </td>
+                                                                                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                          HMP Prison<br>
+                                                                                                                          A Wing 111</td>
+                                                                                                                          <td class="govuk-table__cell">£XX</td>
+                                                                                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                        </tr>
+                                                                                                                        <tr class="govuk-table__cell">
+                                                                                                                          <td colspan="1" class="prereason"></td>
+                                                                                                                          <td colspan="4" class="reason">
+                                                                                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                            <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                          </tr>
+                                                                                                                          <tr class="govuk-table__row">
+                                                                                                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                            </td>
+                                                                                                                            <td class="govuk-table__cell">
+                                                                                                                              <a href="payment_source">Sender Name</a><br>
+                                                                                                                              **** **** **** 1111 11/22<br>
+                                                                                                                              sender@email.com <br>
+                                                                                                                              POST CODE
+                                                                                                                            </td>
+                                                                                                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                              HMP Prison<br>
+                                                                                                                              A Wing 111</td>
+                                                                                                                              <td class="govuk-table__cell">£XX</td>
+                                                                                                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                            </tr>
+                                                                                                                            <tr class="govuk-table__cell">
+                                                                                                                              <td colspan="1" class="prereason"></td>
+                                                                                                                              <td colspan="4" class="reason">
+                                                                                                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                              </tr>
+                                                                                                                              <tr class="govuk-table__row">
+                                                                                                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                </td>
+                                                                                                                                <td class="govuk-table__cell">
+                                                                                                                                  <a href="payment_source">Sender Name</a><br>
+                                                                                                                                  **** **** **** 1111 11/22<br>
+                                                                                                                                  sender@email.com <br>
+                                                                                                                                  POST CODE
+                                                                                                                                </td>
+                                                                                                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                  HMP Prison<br>
+                                                                                                                                  A Wing 111</td>
+                                                                                                                                  <td class="govuk-table__cell">£XX</td>
+                                                                                                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                </tr>
+                                                                                                                                <tr class="govuk-table__cell">
+                                                                                                                                  <td colspan="1" class="prereason"></td>
+                                                                                                                                  <td colspan="4" class="reason">
+                                                                                                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                    <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                  </tr>
+                                                                                                                                  <tr class="govuk-table__row">
+                                                                                                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                    </td>
+                                                                                                                                    <td class="govuk-table__cell">
+                                                                                                                                      <a href="payment_source">Sender Name</a><br>
+                                                                                                                                      **** **** **** 1111 11/22<br>
+                                                                                                                                      sender@email.com <br>
+                                                                                                                                      POST CODE
+                                                                                                                                    </td>
+                                                                                                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                      HMP Prison<br>
+                                                                                                                                      A Wing 111</td>
+                                                                                                                                      <td class="govuk-table__cell">£XX</td>
+                                                                                                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                    </tr>
+                                                                                                                                    <tr class="govuk-table__cell">
+                                                                                                                                      <td colspan="1" class="prereason"></td>
+                                                                                                                                      <td colspan="4" class="reason">
+                                                                                                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                        <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                      </tr>
+                                                                                                                                      <tr class="govuk-table__row">
+                                                                                                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                        </td>
+                                                                                                                                        <td class="govuk-table__cell">
+                                                                                                                                          <a href="payment_source">Sender Name</a><br>
+                                                                                                                                          **** **** **** 1111 11/22<br>
+                                                                                                                                          sender@email.com <br>
+                                                                                                                                          POST CODE
+                                                                                                                                        </td>
+                                                                                                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                          HMP Prison<br>
+                                                                                                                                          A Wing 111</td>
+                                                                                                                                          <td class="govuk-table__cell">£XX</td>
+                                                                                                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                        </tr>
+                                                                                                                                        <tr class="govuk-table__cell">
+                                                                                                                                          <td colspan="1" class="prereason"></td>
+                                                                                                                                          <td colspan="4" class="reason">
+                                                                                                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                            <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                          </tr>
+                                                                                                                                          <tr class="govuk-table__row">
+                                                                                                                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                            </td>
+                                                                                                                                            <td class="govuk-table__cell">
+                                                                                                                                              <a href="payment_source">Sender Name</a><br>
+                                                                                                                                              **** **** **** 1111 11/22<br>
+                                                                                                                                              sender@email.com <br>
+                                                                                                                                              POST CODE
+                                                                                                                                            </td>
+                                                                                                                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                              HMP Prison<br>
+                                                                                                                                              A Wing 111</td>
+                                                                                                                                              <td class="govuk-table__cell">£XX</td>
+                                                                                                                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                            </tr>
+                                                                                                                                            <tr class="govuk-table__cell">
+                                                                                                                                              <td colspan="1" class="prereason"></td>
+                                                                                                                                              <td colspan="4" class="reason">
+                                                                                                                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                              </tr>
+                                                                                                                                              <tr class="govuk-table__row">
+                                                                                                                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                                </td>
+                                                                                                                                                <td class="govuk-table__cell">
+                                                                                                                                                  <a href="payment_source">Sender Name</a><br>
+                                                                                                                                                  **** **** **** 1111 11/22<br>
+                                                                                                                                                  sender@email.com <br>
+                                                                                                                                                  POST CODE
+                                                                                                                                                </td>
+                                                                                                                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                                  HMP Prison<br>
+                                                                                                                                                  A Wing 111</td>
+                                                                                                                                                  <td class="govuk-table__cell">£XX</td>
+                                                                                                                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                                </tr>
+                                                                                                                                                <tr class="govuk-table__cell">
+                                                                                                                                                  <td colspan="1" class="prereason"></td>
+                                                                                                                                                  <td colspan="4" class="reason">
+                                                                                                                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                    <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                                  </tr>
+                                                                                                                                                  <tr class="govuk-table__row">
+                                                                                                                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                                    </td>
+                                                                                                                                                    <td class="govuk-table__cell">
+                                                                                                                                                      <a href="payment_source">Sender Name</a><br>
+                                                                                                                                                      **** **** **** 1111 11/22<br>
+                                                                                                                                                      sender@email.com <br>
+                                                                                                                                                      POST CODE
+                                                                                                                                                    </td>
+                                                                                                                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                                      HMP Prison<br>
+                                                                                                                                                      A Wing 111</td>
+                                                                                                                                                      <td class="govuk-table__cell">£XX</td>
+                                                                                                                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                                    </tr>
+                                                                                                                                                    <tr class="govuk-table__cell">
+                                                                                                                                                      <td colspan="1" class="prereason"></td>
+                                                                                                                                                      <td colspan="4" class="reason">
+                                                                                                                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                        <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                                      </tr>
+                                                                                                                                                      <tr class="govuk-table__row">
+                                                                                                                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                                        </td>
+                                                                                                                                                        <td class="govuk-table__cell">
+                                                                                                                                                          <a href="payment_source">Sender Name</a><br>
+                                                                                                                                                          **** **** **** 1111 11/22<br>
+                                                                                                                                                          sender@email.com <br>
+                                                                                                                                                          POST CODE
+                                                                                                                                                        </td>
+                                                                                                                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                                          HMP Prison<br>
+                                                                                                                                                          A Wing 111</td>
+                                                                                                                                                          <td class="govuk-table__cell">£XX</td>
+                                                                                                                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                                        </tr>
+                                                                                                                                                        <tr class="govuk-table__cell">
+                                                                                                                                                          <td colspan="1" class="prereason"></td>
+                                                                                                                                                          <td colspan="4" class="reason">
+                                                                                                                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                            <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                                          </tr>
+                                                                                                                                                          <tr class="govuk-table__row">
+                                                                                                                                                            <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                                            </td>
+                                                                                                                                                            <td class="govuk-table__cell">
+                                                                                                                                                              <a href="payment_source">Sender Name</a><br>
+                                                                                                                                                              **** **** **** 1111 11/22<br>
+                                                                                                                                                              sender@email.com <br>
+                                                                                                                                                              POST CODE
+                                                                                                                                                            </td>
+                                                                                                                                                            <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                                              HMP Prison<br>
+                                                                                                                                                              A Wing 111</td>
+                                                                                                                                                              <td class="govuk-table__cell">£XX</td>
+                                                                                                                                                              <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                                            </tr>
+                                                                                                                                                            <tr class="govuk-table__cell">
+                                                                                                                                                              <td colspan="1" class="prereason"></td>
+                                                                                                                                                              <td colspan="4" class="reason">
+                                                                                                                                                                <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                                <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                                              </tr>
+                                                                                                                                                              <tr class="govuk-table__row">
+                                                                                                                                                                <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                                                </td>
+                                                                                                                                                                <td class="govuk-table__cell">
+                                                                                                                                                                  <a href="payment_source">Sender Name</a><br>
+                                                                                                                                                                  **** **** **** 1111 11/22<br>
+                                                                                                                                                                  sender@email.com <br>
+                                                                                                                                                                  POST CODE
+                                                                                                                                                                </td>
+                                                                                                                                                                <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                                                  HMP Prison<br>
+                                                                                                                                                                  A Wing 111</td>
+                                                                                                                                                                  <td class="govuk-table__cell">£XX</td>
+                                                                                                                                                                  <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                                                </tr>
+                                                                                                                                                                <tr class="govuk-table__cell">
+                                                                                                                                                                  <td colspan="1" class="prereason"></td>
+                                                                                                                                                                  <td colspan="4" class="reason">
+                                                                                                                                                                    <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                                    <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                                                  </tr>
+                                                                                                                                                                  <tr class="govuk-table__row">
+                                                                                                                                                                    <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <td class="govuk-table__cell">
+                                                                                                                                                                      <a href="payment_source">Sender Name</a><br>
+                                                                                                                                                                      **** **** **** 1111 11/22<br>
+                                                                                                                                                                      sender@email.com <br>
+                                                                                                                                                                      POST CODE
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                                                      HMP Prison<br>
+                                                                                                                                                                      A Wing 111</td>
+                                                                                                                                                                      <td class="govuk-table__cell">£XX</td>
+                                                                                                                                                                      <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                                                    </tr>
+                                                                                                                                                                    <tr class="govuk-table__cell">
+                                                                                                                                                                      <td colspan="1" class="prereason"></td>
+                                                                                                                                                                      <td colspan="4" class="reason">
+                                                                                                                                                                        <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                                        <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                                                      </tr>
+                                                                                                                                                                      <tr class="govuk-table__row">
+                                                                                                                                                                        <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                                                                                                                                                                        </td>
+                                                                                                                                                                        <td class="govuk-table__cell">
+                                                                                                                                                                          <a href="payment_source">Sender Name</a><br>
+                                                                                                                                                                          **** **** **** 1111 11/22<br>
+                                                                                                                                                                          sender@email.com <br>
+                                                                                                                                                                          POST CODE
+                                                                                                                                                                        </td>
+                                                                                                                                                                        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                                                                                                                                                                          HMP Prison<br>
+                                                                                                                                                                          A Wing 111</td>
+                                                                                                                                                                          <td class="govuk-table__cell">£XX</td>
+                                                                                                                                                                          <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+                                                                                                                                                                        </tr>
+                                                                                                                                                                        <tr class="govuk-table__cell">
+                                                                                                                                                                          <td colspan="1" class="prereason"></td>
+                                                                                                                                                                          <td colspan="4" class="reason">
+                                                                                                                                                                            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                                                                                                                                                                            <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                                                                                                                                                                          </tr>
 
 
-                                                                  </tbody>
-                                                                </table>
-                                                                {% include "includes/pagination.html" %}
-                                                              </section>
-                                                              <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
-                                                                <h2 class="govuk-heading-l">Past year</h2>
-                                                                <table class="govuk-table">
-                                                                  <thead class="govuk-table__head">
-                                                                    <tr class="govuk-table__row">
-                                                                      <th scope="col" class="govuk-table__header">Case manager</th>
-                                                                      <th scope="col" class="govuk-table__header">Cases opened</th>
-                                                                      <th scope="col" class="govuk-table__header">Cases closed</th>
-                                                                    </tr>
-                                                                  </thead>
-                                                                  <tbody class="govuk-table__body">
-                                                                    <tr class="govuk-table__row">
-                                                                      <td class="govuk-table__cell">David Francis</td>
-                                                                      <td class="govuk-table__cell">1380</td>
-                                                                      <td class="govuk-table__cell">1472</td>
-                                                                    </tr>
-                                                                    <tr class="govuk-table__row">
-                                                                      <td class="govuk-table__cell">Paul Farmer</td>
-                                                                      <td class="govuk-table__cell">1129</td>
-                                                                      <td class="govuk-table__cell">1083</td>
-                                                                    </tr>
-                                                                    <tr class="govuk-table__row">
-                                                                      <td class="govuk-table__cell">Rita Patel</td>
-                                                                      <td class="govuk-table__cell">1539</td>
-                                                                      <td class="govuk-table__cell">1265</td>
-                                                                    </tr>
-                                                                  </tbody>
-                                                                </table>
+                                                                                            </tbody>
+                                                                                          </table>
+{% include "includes/pagination.html" %}
+                                                                                        </section>
+                                                                                      </div>
 
-                                                              </section>
-                                                            </div>
-
-                                                            {% endblock %}
+                                                                                      {% endblock %}
