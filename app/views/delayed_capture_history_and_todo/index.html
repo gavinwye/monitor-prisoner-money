@@ -1,0 +1,513 @@
+{% extends "layout_delayed_capture.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Delayed capture
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-table tbody th{
+  font-weight: normal;
+}
+tr {
+  vertical-align: text-top;
+}
+.govuk-table tbody td{
+  padding: 10px 0px;
+}
+.govuk-button{
+  margin-bottom: 1em;
+}
+.moj-notification-badge{
+  font-size: 19px;
+  min-width: 20px;
+  padding: 0px 5px;
+  margin-right: 10px;
+  /*border: 2px solid #0b0c0c;*/
+}
+.moj-notification-badge-P2{
+  display: none;
+  /*background-color: #f47738;
+  color: #0b0c0c;*/
+  /*background-color: #ffdd00;*/
+  background-color: #f47738;
+  color: #fff;
+}
+.moj-notification-badge-P3{
+  display: none;
+  /*background-color: #ffdd00;
+  color: #0b0c0c;*/
+  background-color: #28a197;
+  color: #fff;
+}
+.moj-notification-badge-P4{
+  /*background-color: #5694ca;
+  color: #0b0c0c;*/
+  background-color: #1d70b8;
+  color: #fff;
+}
+.moj-notification-badge-P5{
+  /*background-color: #626a6e;
+  color: #fff;*/
+  background-color: #0b0c0c;
+  color: #fff;
+}
+.govuk-checkboxes__item{
+  display: inline-block !important;
+}
+.govuk-checkboxes{
+  display: inline-block !important;
+  background-color: white;
+  margin: 15px 0px -10px 0px;
+}
+.govuk-checkboxes--small{
+  display: inline-block !important;
+}
+.govuk-checkboxes__input{
+  display: inline-block !important;
+}
+.num-display .govuk-heading-l{
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+.num-display{
+  display: inline-block;
+  margin-right: 10px;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">
+      Credits pending
+    </h1>
+
+    <p class="govuk-body govuk-!-font-size-36 govuk-!-margin-bottom-3">
+      65 credits
+    </p>
+    <p>
+      <span class="govuk-heading-m govuk-!-margin-bottom-6">
+        <span id="notifications" class="moj-notification-badge">!</span> <strong>Warning: 11 credits need attention today</strong><br><span style="margin-left:46px;font-weight:normal; font-size:19px">Credits with a warning are 3 days old or more and will soon expire</span></span>
+      </p>
+
+      <table class="govuk-table govuk-!-margin-top-3">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header">Date sent</th>
+            <th scope="col" class="govuk-table__header">Debit card (from)</th>
+            <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+            <th scope="col" class="govuk-table__header">Amount</th>
+            <th scope="col" class="govuk-table__header">Decision</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_added">To do: User 1</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_added_user2">To do: User 2</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <span id="notifications" class="moj-notification-badge">!</span>
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+            </td>
+            <td class="govuk-table__cell">DD Month YYYY HH:MM
+            </td>
+            <td class="govuk-table__cell">
+              Sender Name<br>
+              **** **** **** 1111 11/22<br>
+            </td>
+            <td class="govuk-table__cell">A1234AB<br>Prisoner name</td>
+            <th scope="row" class="govuk-table__header">£XX</th>
+            <th scope="row" class="govuk-table__header">
+              <a href="/delayed_capture_history_and_todo/review_02">Review</a>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+      {% include "includes/pagination.html" %}
+    </div>
+  </div>
+</div>
+</div>
+
+{% endblock %}
