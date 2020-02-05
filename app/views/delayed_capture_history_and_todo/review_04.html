@@ -1,0 +1,274 @@
+{% extends "layout_delayed_confirm.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Delayed capture
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.custom-border{
+  padding-left: 6px !important;
+  border-left: 5px solid #d4351c;
+color:#d4351c !important;
+}
+.custom-border-accept{
+  border-color: #00703c;
+color:#00703c !important;
+}
+.bgrdcol{
+  /*background-color: #ffdd00;*/
+}
+.govuk-table td.reason{
+  font-size: inherit;
+}
+td {
+  border-bottom: 0px !important;
+}
+.reason{
+  padding-bottom: 20px !important;
+  padding-top: 0px !important;
+}
+.datesent{
+  border-bottom: 1px solid white;
+}
+.prereason{
+  width: 34%;
+}
+.rulename{
+  display: block;
+  margin-bottom: 0;
+  margin-top: 5px;
+  /*color: #626a6e;*/
+}
+.govuk-table tbody th{
+  font-weight: normal;
+}
+tr {
+  vertical-align: text-top;
+}
+.govuk-table tbody td{
+  padding: 10px 0px;
+}
+.govuk-button{
+  margin-bottom: 1em;
+}
+.moj-notification-badge{
+  font-size: 19px;
+  min-width: 20px;
+  padding: 0px 5px;
+  margin-right: 5px;
+  /*border: 2px solid #0b0c0c;*/
+}
+.moj-notification-badge-P2{
+  display: none;
+  /*background-color: #f47738;
+  color: #0b0c0c;*/
+  /*background-color: #ffdd00;*/
+  background-color: #f47738;
+  color: #fff;
+}
+.moj-notification-badge-P3{
+  display: none;
+  /*background-color: #ffdd00;
+  color: #0b0c0c;*/
+  background-color: #28a197;
+  color: #fff;
+}
+.moj-notification-badge-P4{
+  /*background-color: #5694ca;
+  color: #0b0c0c;*/
+  background-color: #1d70b8;
+  color: #fff;
+}
+.moj-notification-badge-P5{
+  /*background-color: #626a6e;
+  color: #fff;*/
+  background-color: #0b0c0c;
+  color: #fff;
+}
+.govuk-checkboxes__item{
+  display: inline-block !important;
+}
+.govuk-checkboxes{
+  display: inline-block !important;
+  background-color: white;
+  margin: 15px 0px -10px 0px;
+}
+.govuk-checkboxes--small{
+  display: inline-block !important;
+}
+.govuk-checkboxes__input{
+  display: inline-block !important;
+}
+.num-display .govuk-heading-l{
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+.num-display{
+  display: inline-block;
+  margin-right: 10px;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="moj-page-header-actions">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">
+          <h1 class="govuk-heading-xl">Review pending credit</h1>
+        </h1>
+      </div>
+
+      <div class="moj-page-header-actions__actions">
+        <!-- <p class="govuk-body" style="margin: 10px 0px">
+        Sam Smith is viewing this credit
+      </p> -->
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+
+          <a class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" href="review_added">
+            Add to my list
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <p class="govuk-heading-m">
+    Credit details
+  </p>
+  <table class="govuk-table govuk-!-margin-top-3">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Date sent</th>
+        <th scope="col" class="govuk-table__header">Debit card (from)</th>
+        <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+        <th scope="col" class="govuk-table__header">Amount</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <span id="notifications" class="moj-notification-badge">!</span>
+          DD Month YYYY HH:MM
+        </td>
+        <td class="govuk-table__cell">
+          <a href="payment_source">Sender Name</a><br>
+          **** **** **** 1111 11/22<br>
+          sender@email.com <br>
+          POST CODE
+        </td>
+        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+          HMP Prison<br>
+          A Wing 111</td>
+          <td class="govuk-table__cell">£XX</td>
+          <td class="govuk-table__cell" >
+            Review
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <p class="govuk-heading-m govuk-!-margin-top-8">Decision history</p>
+    <table class="govuk-table govuk-!-margin-top-3">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date sent</th>
+          <th scope="col" class="govuk-table__header">Debit card (from)</th>
+          <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+          <th scope="col" class="govuk-table__header">Decision</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+          </td>
+          <td class="govuk-table__cell">
+            <a class="bgrdcol custom-border" href="payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+            sender@email.com <br>
+            POST CODE
+          </td>
+          <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+            HMP Prison<br>
+            A Wing 111</td>
+            <td class="govuk-table__cell">£XX</td>
+            <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+          </tr>
+          <tr class="govuk-table__cell">
+            <td colspan="1" class="prereason"></td>
+            <td colspan="4" class="reason">
+              <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+              <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                <a href="payment_source">Sender Name</a><br>
+                **** **** **** 1111 11/22<br>
+                sender@email.com <br>
+                POST CODE
+              </td>
+              <td class="govuk-table__cell "><a href="prisoner_details">A1234AB</a><br><span class="custom-border">Prisoner name</span> <br>
+                HMP Prison<br>
+                A Wing 111</td>
+                <td class="govuk-table__cell">£XX</td>
+                <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+              </tr>
+              <tr class="govuk-table__cell">
+                <td colspan="1" class="prereason"></td>
+                <td colspan="4" class="reason">
+                  <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                  <strong>Details:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="payment_source">Sender Name</a><br>
+                    **** **** **** 1111 11/22<br>
+                    sender@email.com <br>
+                    POST CODE
+                  </td>
+                  <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br><span class="custom-border custom-border-accept">Prisoner name</span><br>
+                    HMP Prison<br>
+                    A Wing 111</td>
+                    <td class="govuk-table__cell">£XX</td>
+                    <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
+                  </tr>
+                  <tr class="govuk-table__cell">
+                    <td colspan="1" class="prereason"></td>
+                    <td colspan="4" class="reason">
+                      <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span> </td>
+                    </tr>
+
+                  </tbody>
+                </table>
+                <div class="govuk-grid-row">
+                  <div class="govuk-grid-column-two-thirds">
+                    <p class="govuk-heading-m govuk-!-margin-top-6">Your decision</p>
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="more-detail">
+                        Give details (optional, when accepting)
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                    </div>
+                    <a class="govuk-button govuk-!-margin-right-3" href="/delayed_capture_history">Accept credit</a>
+                    <a class="govuk-button" style="background-color:#d4351c;" href="/delayed_capture_history">Reject credit</a>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            {% endblock %}
