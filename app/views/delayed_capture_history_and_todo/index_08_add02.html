@@ -7,6 +7,17 @@ Delayed capture
 {% endblock %}
 
 {% block content %}
+<script type="text/javascript">
+window.addEventListener("load", myFunction);
+function myFunction(){
+  document.getElementById('add02').style = 'background-color:lightyellow;'
+}
+setTimeout(function() { fade(); }, 2000);
+function fade(){
+var el = document.getElementById('add02')
+el.style =   'transition: background-color 1.0s ease; background-color: white;'
+}
+</script>
 
 <style media="screen">
 .added-to{
@@ -206,7 +217,7 @@ tr {
             <td class="govuk-table__cell">
               <a href="/delayed_capture_history_and_todo/review_added_user2" class="govuk-button">Review</a>
             </td>
-            <td class="govuk-table__cell added-to"> Added to Somebody Longsurnamed</td>
+            <td class="govuk-table__cell added-to"> Added to Joe Blogg's list</td>
           </tr>
 
           <tr class="govuk-table__row" id="add02">
