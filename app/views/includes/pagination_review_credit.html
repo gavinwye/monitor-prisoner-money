@@ -1,0 +1,31 @@
+{% from "moj/components/pagination/macro.njk" import mojPagination %}
+<!-- Only display pagination if there are more than 25 results on the page -->
+{{ mojPagination({
+  results: {
+    from: 1,
+    to: 10,
+    count: 32
+  },
+
+  previous: {
+    text: 'Previous',
+    href: ''
+  },
+
+  next: {
+    text: 'Next',
+    href: ''
+  },
+
+  items: [{
+    text: '1',
+    href: '/page=1',
+    selected: true
+  }, {
+    text: '2',
+    href: '/page=5'
+  }, {
+    text: '3',
+    href: '/page=6'
+  }]
+}) }}
