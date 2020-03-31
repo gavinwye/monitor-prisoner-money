@@ -1,0 +1,296 @@
+{% extends "layout_delayed_capture.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Advanced search
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'Credits to action',
+        href: 'index'
+      },{
+        text: 'My list (8)',
+        href: 'mylist'
+      },{
+        text: 'Decision history',
+        href: 'history'
+      },{
+        text: 'Advanced search',
+        href: 'advanced-search',
+        active: true
+      }]
+    }) }}
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Credits to action and decision history</span>
+      Advanced search
+    </h1>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <!-- <h2 class="govuk-heading-l">Date received</h2> -->
+    <p class="govuk-body">We only keep transaction data for 7 years.</p>
+
+    {{ govukRadios({
+      idPrefix: "date-range",
+      name: "date-range",
+      fieldset: {
+        legend: {
+          text: "Date range",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+      {
+        value: "last 3 months",
+        text: "last 3 months",
+        checked: true
+      },
+      {
+        value: "full history",
+        text: "full history"
+      }
+      ]
+    }) }}
+
+    <!-- <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+    {{ govukDateInput({
+    id: "passport-issued",
+    namePrefix: "passport-issued",
+    fieldset: {
+    legend: {
+    text: "From",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--s"
+  }
+},
+hint: {
+text: "For example, 01 08 2007"
+}
+}) }}
+</div>
+<div class="govuk-grid-column-one-third">
+{{ govukDateInput({
+id: "passport-issued",
+namePrefix: "passport-issued",
+fieldset: {
+legend: {
+text: "To",
+isPageHeading: false,
+classes: "govuk-fieldset__legend--s"
+}
+},
+hint: {
+text: "For example, 01 08 2007"
+}
+}) }}
+</div>
+</div> -->
+</div>
+
+
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
+  <!-- <h2 class="govuk-heading-l">Payment methods</h2> -->
+
+  <h2 class="govuk-heading-l">Payment source details</h3>
+
+    <p class="govuk-body">Name, email and postcode are supplied by the sender when they make a debit card payment. They are not validated. </p>
+    <p class="govuk-body">When the sender makes a bank transfer, the bank supplies the name on the bank account.</p>
+
+    {{ govukInput({
+      label: {
+        text: "Name",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Email",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Postcode",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-20",
+      id: "width-20",
+      name: "width-20"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Last 4 digits of card number",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      },
+      classes: "govuk-input--width-10",
+      id: "width-10",
+      name: "width-10"
+    }) }}
+
+    <!-- <p class="govuk-body">Name and email are supplied by payment sources when they make a debit card payment. They are not validated.</p>
+
+    {{ govukInput({
+    label: {
+    text: "Name",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-20",
+  id: "width-20",
+  name: "width-20"
+}) }} -->
+
+<!-- {{ govukInput({
+label: {
+text: "IP Address",
+isPageHeading: false,
+classes: "govuk-fieldset__legend--s"
+},
+classes: "govuk-input--width-10",
+id: "width-10",
+name: "width-10"
+}) }} -->
+
+{% set bankTransferHtml %}
+{{ govukInput({
+  label: {
+    text: "Account number",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-10",
+  id: "width-10",
+  name: "width-10"
+}) }}
+
+{{ govukInput({
+  label: {
+    text: "Sort code",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-10",
+  id: "width-10",
+  name: "width-10"
+}) }}
+{% endset -%}
+
+{% set debitCardHtml %}
+{{ govukInput({
+  label: {
+    text: "Last 4 digits of card number",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--s"
+  },
+  classes: "govuk-input--width-10",
+  id: "width-10",
+  name: "width-10"
+}) }}
+{% endset -%}
+
+<!-- {{ govukRadios({
+idPrefix: "bank-transfer",
+name: "bank-transfer",
+fieldset: {
+legend: {
+text: "Payment method",
+isPageHeading: false,
+classes: "govuk-fieldset__legend--m"
+}
+},
+items: [
+{
+value: "any method",
+text: "Any method",
+checked: "true"
+},
+{
+value: "bank transfer",
+text: "Bank transfer",
+conditional: {
+html: bankTransferHtml
+}
+},
+{
+value: "debit card",
+text: "Debit card",
+conditional: {
+html: debitCardHtml
+}
+}
+]
+}) }} -->
+
+</div>
+
+<div class="govuk-grid-column-full">
+  <h2 class="govuk-heading-l">Prisoner</h2>
+
+  {{ govukInput({
+    label: {
+      text: "Prisoner name",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-20",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Prisoner number",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    },
+    classes: "govuk-input--width-20",
+    id: "width-20",
+    name: "width-20"
+  }) }}
+
+</div>
+
+<div class="govuk-grid-column-full">
+  {% include "includes/search_history_radios.html" %}
+</div>
+
+<div class="govuk-grid-column-full">
+  {{ govukButton({
+    text: "Search credits to action and decision history",
+    href: "advanced_search_results"
+  }) }}
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

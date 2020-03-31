@@ -66,7 +66,7 @@
 
 {% block beforeContent %}
 <div class="app-service-navigation">
-{% from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher %}
+<!-- {% from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher %}
 {{ mojOrganisationSwitcher({
   classes: 'govuk-!-padding-bottom-2 govuk-!-margin-top-2',
   text: data['prisonName'],
@@ -74,7 +74,7 @@
     html: 'Change <span class="govuk-visually-hidden">prison</span>',
     href: '/settings/#managePrisons'
   }
-}) }}
+}) }} -->
 <!-- <h2 class="app-service-navigation__name">
   {{ data['prisonName'] }}
 </h2>
@@ -86,12 +86,12 @@
       href: "#"
     },
     {
-      text: "Pending",
-      href: "#"
+      text: "Credits to Action",
+      href: "index"
     },
     {
-      text: "History",
-      href: "#"
+      text: "Decision history",
+      href: "history"
     },
     {
       text: "Advance search"

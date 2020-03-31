@@ -130,22 +130,25 @@ tr {
     {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 
     {{ mojSubNavigation({
-    label: 'Sub navigation',
-    items: [{
-    text: 'Credits to action',
-    href: 'index'
-    },{
-    text: 'My list (8)',
-    href: 'mylist'
-    },{
-    text: 'Decision history',
-    href: 'history',
-    active: true
-    }]
+      label: 'Sub navigation',
+      items: [{
+        text: 'Credits to action',
+        href: 'index'
+      },{
+        text: 'My list (8)',
+        href: 'mylist'
+      },{
+        text: 'Decision history',
+        href: 'history',
+        active: true
+      },{
+        text: 'Advanced search',
+        href: 'advanced-search'
+      }]
     }) }}
 
     <p class="govuk-heading-xl">Decision history</p>
-    <a href="advanced-search" class="govuk-link govuk-!-font-size-19">Advanced search</a>
+    <!-- <a href="advanced-search" class="govuk-link govuk-!-font-size-19">Advanced search</a> -->
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
