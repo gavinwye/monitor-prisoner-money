@@ -145,12 +145,32 @@ tr {
     }) }}
 
     <p class="govuk-heading-xl">Decision history</p>
-    <a href="advanced-search" class="govuk-link govuk-!-font-size-19">Advanced search</a>
+
+    <div class="govuk-grid-row" style="background-color:#f3f2f1;">
+      <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-top-2">Search decision history</h3>
+        <div class="govuk-form-group govuk-!-margin-bottom-1">
+          <label class="govuk-label govuk-!-margin-top-2 govuk-!-margin-bottom-2" for="search-input">
+            Search by sender name, card number (last 4 digits and expirey date), prisoner name or prisoner number<span class="govuk-visually-hidden"></span>
+          </label>
+          <input class="govuk-input" style="width:50%" id="search-input" name="search-input" type="text">
+          <a class="govuk-button" href="history_search_results" data-module="govuk-button" style="display:inline-block; margin-left:10px">
+            Search
+          </a>
+          <a href="#" class="govuk-link" style="margin-left:10px; font-size:19px">Clear search</a>
+        </div>
+      </div>
+    </div>
+
+<div class="govuk-!-margin-bottom-6">
+
+</div>
+
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header" style="width:25%">Date sent</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none" style="width:25%">Date sent</th>
           <th scope="col" class="govuk-table__header">Debit card (from)</th>
           <th scope="col" class="govuk-table__header">Prisoner (to)</th>
           <th scope="col" class="govuk-table__header">Amount</th>

@@ -11,8 +11,8 @@ Delayed capture
 <style media="screen">
 .added-to::before{
   content: "✓";
-font-size: 1.5em;
-color: #00703c;
+  font-size: 1.5em;
+  color: #00703c;
 }
 .pending-table .govuk-table__cell{
   border-bottom: 0px;
@@ -135,18 +135,18 @@ tr {
     {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
 
     {{ mojSubNavigation({
-    label: 'Sub navigation',
-    items: [{
-    text: 'Credits to action',
-    href: '#1',
-    active: true
-    },{
-    text: 'My list (8)',
-    href: 'mylist'
-    },{
-    text: 'Decision history',
-    href: 'history'
-    }]
+      label: 'Sub navigation',
+      items: [{
+        text: 'Credits to action',
+        href: '#1',
+        active: true
+      },{
+        text: 'My list (8)',
+        href: 'mylist'
+      },{
+        text: 'Decision history',
+        href: 'history'
+      }]
     }) }}
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-1">
@@ -159,6 +159,24 @@ tr {
       <span class="govuk-heading-m govuk-!-margin-bottom-6">
         <span id="notifications" class="moj-notification-badge">!</span> <strong>Warning: 11 credits need attention today</strong><br><span style="margin-left:46px;font-weight:normal; font-size:19px">Credits with a warning are 3 days old or more and will soon expire</span></span>
       </p>
+
+      <div class="govuk-grid-row" style="background-color:#f3f2f1;">
+        <div class="govuk-grid-column-full">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-top-2">Search credits to action</h3>
+          <div class="govuk-form-group govuk-!-margin-bottom-1">
+            <label class="govuk-label govuk-!-margin-top-2 govuk-!-margin-bottom-2" for="search-input">
+              Search by sender name, card number (last 4 digits and expirey date), prisoner name or prisoner number<span class="govuk-visually-hidden"></span>
+            </label>
+            <input class="govuk-input" style="width:50%" id="search-input" name="search-input" type="text">
+            <a class="govuk-button" href="index_search_results" data-module="govuk-button" style="display:inline-block; margin-left:10px">
+              Search
+            </a>
+            <a href="index" class="govuk-link" style="margin-left:10px; font-size:19px">Clear search</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="govuk-!-margin-bottom-6"></div>
 
       <table class="govuk-table govuk-!-margin-top-3">
         <thead class="govuk-table__head">
@@ -173,729 +191,729 @@ tr {
           </tr>
 
 
-        <tbody class="govuk-table__body pending-table">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_added" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell added-to">Added to my list</td>
-          </tr>
+          <tbody class="govuk-table__body pending-table">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_added" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell added-to">Added to my list</td>
+            </tr>
 
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="4" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="4" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="index_02_add01#add01" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
-          </tr>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="index_02_add01#add01" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
+            </tr>
 
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_added_user2" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell"> Added to Joe Bloggs' list</td>
-          </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_added_user2" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell"> Added to Joe Bloggs' list</td>
+            </tr>
 
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
-          </tr>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
+            </tr>
 
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-              <span id="notifications" class="moj-notification-badge">!</span>
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
-          <tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr><tr class="govuk-table__row" id="add01">
-            <td class="govuk-table__cell">
-            </td>
-            <td class="govuk-table__cell">DD Month YYYY HH:MM
-            </td>
-            <td class="govuk-table__cell">
-              Sender Name<br>
-              **** **** **** 1111 11/22<br>
-            </td>
-            <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-            <td class="govuk-table__cell">£XX</td>
-            <td class="govuk-table__cell">
-              <a href="review_02" class="govuk-button">Review</a>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-            </td>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr><tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
 
-          </tr>
-          <tr class="govuk-body rule-broken">
-            <td colspan="2" style="">
-            </td>
-            <td colspan="5" class="rule-broken-text">
-              <span><strong>Rule:</strong></span> Name of the rule broken
-            </td>
-          </tr>
-
-
-        </tbody>
-      </table>
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
 
 
-      {% include "includes/pagination.html" %}
+          </tbody>
+        </table>
 
 
+        {% include "includes/pagination.html" %}
+
+
+      </div>
     </div>
   </div>
-</div>
 </div>
 
 {% endblock %}
