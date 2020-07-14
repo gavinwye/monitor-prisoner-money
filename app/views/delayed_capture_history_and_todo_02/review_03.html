@@ -271,19 +271,44 @@ tr {
                               Multiple payments or payment sources
                             </label>
                           </div>
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
-                              Associated intelligence report
-                            </label>
+
+
+                          <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                            <div class="">
+                              <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+                              <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                                Associated intelligence report
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+                              <div class="govuk-form-group" style="width:400px">
+                                <label class="govuk-label" for="more-detail">
+                                  Give details
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                              </div>
+                            </div>
                           </div>
 
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="a">
-                            <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
-                              Subject of previous FIU investigation
-                            </label>
+
+                          <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                            <div class="">
+                              <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+                              <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                                Subject of previous FIU investigation
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+                              <div class="govuk-form-group" style="width:400px">
+                                <label class="govuk-label" for="more-detail">
+                                  Give details
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                              </div>
+                            </div>
                           </div>
+
+
 
                           <div class="govuk-checkboxes__item">
                             <input class="govuk-checkboxes__input" id="organisation-5" name="organisation" type="checkbox" value="b">
@@ -327,10 +352,11 @@ tr {
                                 </label>
                                 <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
                               </div>
-
                             </div>
                           </fieldset>
                         </div>
+
+
 
 
                         <a class="govuk-button govuk-!-margin-right-3" href="index">Accept credit</a>
