@@ -3,7 +3,7 @@
 {% set nav = 'prisoners' %}
 
 {% block pageTitle %}
-  Prisoner money intelligence
+Prisoner money intelligence
 {% endblock %}
 
 {% block content %}
@@ -11,50 +11,76 @@
 
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-      Welcome {{ data['userName'] }}
-    </h1>
-  </div>
-</div>
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body-l govuk-!-margin-bottom-9">Use this tool to monitor all credits sent to prisoners using the <a href="#">Send money to someone in prison</a> service.</p>
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="/prisoners/">Prisoners</a></p>
-  </div>
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="/payment-sources/">Payment sources</a></p>
-  </div>
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="/credits/">Credits</a></p>
-  </div>
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="/disbursements/">Disbursements</a></p>
-  </div>
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="/notifications/notifications-page">Notifications</a></p>
-  </div>
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="/delayed_capture/">Pending</a></p>
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-    <h2 class="govuk-heading-l">Admin options</h2>
-  </div>
-</div>
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="#">Manage users</a></p>
-  </div>
-  <div class="govuk-grid-column-one-third mtp-box">
-    <p class="govuk-body-l"><a href="#">Upload prisoner location file</a></p>
-  </div>
-</div>
+  <div class="moj-banner">
 
-{% endblock %}
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+      <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+      C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" /></svg>
+
+      <div class="moj-banner__message">
+
+        <h2 class="govuk-heading-m">November 2nd policy change</h2>
+        <p class="govuk-body">
+          A policy change on November 2nd will mean senders have to 'send money to someone in prison' using a debit card.
+        </p>
+        <p class="govuk-body">
+          They will not be able to send money by bank transfer or send in cash, cheques or Postal Orders by post.
+        </p>
+        <p class="govuk-body">
+          If they don't have a bank account, we're encouraging them to set one up. If they can't use this service, they can apply to the governor for an 'exemption' allowing them to still post money in.
+        </p>
+      </div>
+
+    </div>
+
+
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        Welcome {{ data['userName'] }}
+      </h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-l govuk-!-margin-bottom-9">Use this tool to monitor all credits sent to prisoners using the <a href="#">Send money to someone in prison</a> service.</p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="/prisoners/">Prisoners</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="/payment-sources/">Payment sources</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="/credits/">Credits</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="/disbursements/">Disbursements</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="/notifications/notifications-page">Notifications</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="/delayed_capture/">Pending</a></p>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Admin options</h2>
+    </div>
+  </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="#">Manage users</a></p>
+    </div>
+    <div class="govuk-grid-column-one-third mtp-box">
+      <p class="govuk-body-l"><a href="#">Upload prisoner location file</a></p>
+    </div>
+  </div>
+
+  {% endblock %}
