@@ -251,64 +251,125 @@ tr {
                   <div class="govuk-grid-column-two-thirds">
                     <p class="govuk-heading-m govuk-!-margin-top-6">About your decision</p>
 
-                    {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-                    {{ govukCheckboxes({
-                      idPrefix: "organisation",
-                      name: "organisation",
-                      classes: "govuk-checkboxes--small",
-                      fieldset: {
-                        legend: {
-                          text: "Select reasons for the rejected credit:",
-                          isPageHeading: false,
-                          classes: "govuk-label"
-                        }
-                      },
-                      items: [
-
-                      {
-                        value: "employment-tribunal",
-                        text: "Multiple payments or payment sources"
-                      },
-                      {
-                        value: "MOD",
-                        text: "Associated intelligence report"
-                      },
-                      {
-                        value: "DfT",
-                        text: "Subject of previous FIU investigation"
-                      },
-                      {
-                        value: "known",
-                        text: "Known association with other prisoner/s"
-                      },
-                      {
-                        value: "known",
-                        text: "Can't identify source"
-                      },
-                      {
-                        value: "known",
-                        text: "Paid multiple prisons"
-                      },
-                      {
-                        value: "known",
-                        text: "Used multiple cards"
-                      }
-                      ]
-                    }) }}
-
                     <div class="govuk-form-group">
-                      <label class="govuk-label" for="more-detail">
-                        Give details about anything else (optional)
-                      </label>
-                      <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                          <h3 class="govuk-label">
+                            Select reasons for the rejected credit:
+                          </h3>
+                        </legend>
+                        <div class="govuk-checkboxes govuk-checkboxes--small">
+                          <!-- <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                              Not on contacts list
+                            </label>
+                          </div> -->
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                              Multiple payments or payment sources
+                            </label>
+                          </div>
+
+
+                          <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                            <div class="">
+                              <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+                              <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                                Associated intelligence report
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+                              <div class="govuk-form-group" style="width:400px">
+                                <label class="govuk-label" for="more-detail">
+                                  Give details
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                            <div class="">
+                              <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+                              <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                                Associated FIU investigation
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+                              <div class="govuk-form-group" style="width:400px">
+                                <label class="govuk-label" for="more-detail">
+                                  Give details
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                              </div>
+                            </div>
+                          </div>
+
+
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-5" name="organisation" type="checkbox" value="b">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-5">
+                              Known association with other prisoner/s
+                            </label>
+                          </div>
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-6" name="organisation" type="checkbox" value="c">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-6">
+                              Can't identify source
+                            </label>
+                          </div>
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-7" name="organisation" type="checkbox" value="d">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-7">
+                              Paid multiple prisons
+                            </label>
+                          </div>
+
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation-8" name="organisation" type="checkbox" value="e">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation-8">
+                              Used multiple cards
+                            </label>
+                          </div>
+
+                          <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                            <div class="">
+                              <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+                              <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                                Other reason
+                              </label>
+                            </div>
+                            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+                              <div class="govuk-form-group" style="width:400px">
+                                <label class="govuk-label" for="more-detail">
+                                  Give details
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                              </div>
+                            </div>
+                          </fieldset>
+                        </div>
+
+                        <div class="govuk-form-group">
+                          <label class="govuk-label" for="more-detail-16">
+                            Give details about anything else (optional)
+                          </label>
+                          <textarea class="govuk-textarea" id="more-detail-16" name="more-detail-16" rows="5" aria-describedby="more-detail-hint"></textarea>
+                        </div>
+
+
+                        <a class="govuk-button govuk-!-margin-right-3" href="index">Accept credit</a>
+                        <a class="govuk-button" style="background-color:#d4351c;" href="index">Reject credit</a>
+                      </div>
                     </div>
-                    <a class="govuk-button govuk-!-margin-right-3" href="index">Accept credit</a>
-                    <a class="govuk-button" style="background-color:#d4351c;" href="index">Reject credit</a>
                   </div>
+
                 </div>
-              </div>
 
-            </div>
-
-            {% endblock %}
+                {% endblock %}
