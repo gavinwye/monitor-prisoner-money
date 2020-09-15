@@ -201,7 +201,7 @@ tr {
             <td colspan="1" class="prereason"></td>
             <td colspan="4" class="reason">
               <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
-              <strong>Decision reasoning:</strong> Associated intelligence report: 0123456789</br>Associated FIU investigation: 9876543210<br/>Other reason: Lorem ipsum dolor sit amet, consectetur adipisicing elit.</td>
+              <strong>Decision details:</strong> Associated intelligence report: 0123456789</br>Associated FIU investigation: 9876543210<br/>Other reason: Lorem ipsum dolor sit amet, consectetur adipisicing elit. </br>Further details: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
@@ -222,7 +222,7 @@ tr {
                 <td colspan="1" class="prereason"></td>
                 <td colspan="4" class="reason">
                   <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
-                  <strong>Decision reasoning:</strong> Not on contacts list.</br>Can't identify source.</td>
+                  <strong>Decision details:</strong> Not on contacts list.</br>Can't identify source.</br>Further details: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                 </tr>
                 <tr class="govuk-table__row">
                   <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
@@ -243,7 +243,7 @@ tr {
                     <td colspan="1" class="prereason"></td>
                     <td colspan="4" class="reason">
                       <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
-                      </td>
+                      <strong>Decision details:</strong> Further details: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
                     </td>
                   </tr>
 
@@ -310,6 +310,8 @@ tr {
                       </div>
                     </div>
 
+
+
                     <div class="govuk-checkboxes__item">
                       <input class="govuk-checkboxes__input" id="organisation-5" name="organisation" type="checkbox" value="b">
                       <label class="govuk-label govuk-checkboxes__label" for="organisation-5">
@@ -348,12 +350,19 @@ tr {
                       <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-03">
                         <div class="govuk-form-group" style="width:400px">
                           <label class="govuk-label" for="more-detail">
-                            Give details
+                            Give the reason
                           </label>
-                          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="2" aria-describedby="more-detail-hint"></textarea>
                         </div>
                       </div>
                     </fieldset>
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="more-detail-16">
+                      Give details about anything else (optional)
+                    </label>
+                    <textarea class="govuk-textarea" id="more-detail-16" name="more-detail-16" rows="5" aria-describedby="more-detail-hint"></textarea>
                   </div>
 
 
