@@ -1,0 +1,51 @@
+{% extends "layout_delayed_confirm.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Delayed capture
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Accept this credit
+    </h1>
+    <p class="govuk-body">
+      Credit details
+    </p>
+    <div class="govuk-inset-text mtp-table" style="margin-left:15px">
+      <table>
+        <tbody>
+          <tr>
+            <th>Date sent:</th>
+            <td>DD Month YYYY HH:MM</td>
+          </tr>
+          <tr>
+            <th>Sender name (from):</th>
+            <td>Sender name</td>
+          </tr>
+          <tr>
+            <th>Debit card (from):</th>
+            <td>**** **** **** 1111 11/22</td>
+          </tr>
+          <tr>
+            <th>Prisoner (to):</th>
+            <td>Prisoner name (A1234AB)</td>
+          </tr>
+          <tr>
+            <th>Amount:</th>
+            <td>£XX</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <a class="govuk-button" href="/delayed_capture_history">Accept credit</a>
+
+  </div>
+</div>
+
+{% endblock %}

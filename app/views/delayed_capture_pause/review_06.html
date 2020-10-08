@@ -1,0 +1,394 @@
+{% extends "layout_delayed_confirm.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Delayed capture
+{% endblock %}
+
+{% block content %}
+
+<style media="screen">
+.govuk-table td.reason{
+  font-size: inherit;
+}
+td {
+  border-bottom: 0px !important;
+}
+.reason{
+  padding-bottom: 20px !important;
+  padding-top: 0px !important;
+}
+.datesent{
+  border-bottom: 1px solid white;
+}
+.prereason{
+  width: 34%;
+}
+.rulename{
+  display: block;
+  margin-bottom: 0;
+  /*color: #626a6e;*/
+}
+.govuk-table tbody th{
+  font-weight: normal;
+}
+tr {
+  vertical-align: text-top;
+}
+.govuk-table tbody td{
+  padding: 10px 0px;
+}
+.govuk-button{
+  margin-bottom: 1em;
+}
+.moj-notification-badge{
+  font-size: 19px;
+  min-width: 20px;
+  padding: 0px 5px;
+  margin-right: 5px;
+  /*border: 2px solid #0b0c0c;*/
+}
+.moj-notification-badge-P2{
+  display: none;
+  /*background-color: #f47738;
+  color: #0b0c0c;*/
+  /*background-color: #ffdd00;*/
+  background-color: #f47738;
+  color: #fff;
+}
+.moj-notification-badge-P3{
+  display: none;
+  /*background-color: #ffdd00;
+  color: #0b0c0c;*/
+  background-color: #28a197;
+  color: #fff;
+}
+.moj-notification-badge-P4{
+  /*background-color: #5694ca;
+  color: #0b0c0c;*/
+  background-color: #1d70b8;
+  color: #fff;
+}
+.moj-notification-badge-P5{
+  /*background-color: #626a6e;
+  color: #fff;*/
+  background-color: #0b0c0c;
+  color: #fff;
+}
+.govuk-checkboxes__item{
+  display: inline-block !important;
+}
+.govuk-checkboxes{
+  display: inline-block !important;
+  background-color: white;
+  margin: 15px 0px -10px 0px;
+}
+.govuk-checkboxes--small{
+  display: inline-block !important;
+}
+.govuk-checkboxes__input{
+  display: inline-block !important;
+}
+.num-display .govuk-heading-l{
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+.num-display{
+  display: inline-block;
+  margin-right: 10px;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="moj-page-header-actions">
+
+      <div class="moj-page-header-actions__title">
+        <h1 class="govuk-heading-xl">
+          <h1 class="govuk-heading-xl">Review credit</h1>
+        </h1>
+      </div>
+
+      <div class="moj-page-header-actions__actions">
+        <!-- <p class="govuk-body" style="margin: 10px 0px">
+        Sam Smith is viewing this credit
+      </p> -->
+      <div class="moj-button-menu">
+        <div class="moj-button-menu__wrapper">
+
+          <a class="govuk-button moj-button-menu__item govuk-button--secondary moj-page-header-actions__action" data-module="govuk-button" href="review_added">
+            Add to my list
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <p class="govuk-heading-m">
+    Credit details
+  </p>
+  <table class="govuk-table govuk-!-margin-top-3">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Date sent</th>
+        <th scope="col" class="govuk-table__header">Debit card (from)</th>
+        <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+        <th scope="col" class="govuk-table__header">Amount</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <span id="notifications" class="moj-notification-badge">!</span>
+          DD Month YYYY HH:MM
+        </td>
+        <td class="govuk-table__cell">
+          <a href="payment_source">Sender Name</a><br>
+          **** **** **** 1111 11/22<br>
+          sender@email.com <br>
+          POST CODE
+        </td>
+        <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+          HMP Prison<br>
+          A Wing 111</td>
+          <td class="govuk-table__cell">£XX</td>
+          <td class="govuk-table__cell" >
+            Review
+          </td>
+        </tr>
+        <tr class="govuk-table__cell">
+          <td colspan="1" class="prereason"></td>
+          <td colspan="4" class="reason">
+            <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <p class="govuk-heading-m govuk-!-margin-top-8">Credit decisions matching debit card or prisoner</p>
+    <table class="govuk-table govuk-!-margin-top-3">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date sent</th>
+          <th scope="col" class="govuk-table__header">Debit card (from)</th>
+          <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+          <th scope="col" class="govuk-table__header">Amount</th>
+          <th scope="col" class="govuk-table__header">Decision</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+          </td>
+          <td class="govuk-table__cell">
+            <a href="payment_source">Sender Name</a><br>
+            **** **** **** 1111 11/22<br>
+            sender@email.com <br>
+            POST CODE
+          </td>
+          <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+            HMP Prison<br>
+            A Wing 111</td>
+            <td class="govuk-table__cell">£XX</td>
+            <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+          </tr>
+          <tr class="govuk-table__cell">
+            <td colspan="1" class="prereason"></td>
+            <td colspan="4" class="reason">
+              <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+              <strong>Decision details:</strong> Associated intelligence report: 0123456789</br>Associated FIU investigation: 9876543210<br/>Other reason: Lorem ipsum dolor sit amet, consectetur adipisicing elit. </br>Further details: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                <a href="payment_source">Sender Name</a><br>
+                **** **** **** 1111 11/22<br>
+                sender@email.com <br>
+                POST CODE
+              </td>
+              <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                HMP Prison<br>
+                A Wing 111</td>
+                <td class="govuk-table__cell">£XX</td>
+                <td class="govuk-table__cell"><span class="moj-badge moj-badge--red">Rejected</span><br>by Joe Bloggs</td>
+              </tr>
+              <tr class="govuk-table__cell">
+                <td colspan="1" class="prereason"></td>
+                <td colspan="4" class="reason">
+                  <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                  <strong>Decision details:</strong> Not on contacts list.</br>Can't identify source.</br>Further details: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell datesent">DD Month YYYY HH:MM
+                  </td>
+                  <td class="govuk-table__cell">
+                    <a href="payment_source">Sender Name</a><br>
+                    **** **** **** 1111 11/22<br>
+                    sender@email.com <br>
+                    POST CODE
+                  </td>
+                  <td class="govuk-table__cell"><a href="prisoner_details">A1234AB</a><br>Prisoner name <br>
+                    HMP Prison<br>
+                    A Wing 111</td>
+                    <td class="govuk-table__cell">£XX</td>
+                    <td class="govuk-table__cell"><span class="moj-badge moj-badge--green">Accepted</span><br>by Joe Bloggs</td>
+                  </tr>
+                  <tr class="govuk-table__cell">
+                    <td colspan="1" class="prereason"></td>
+                    <td colspan="4" class="reason">
+                      <span class="govuk-body rulename"><strong>Rule: </strong>Name of rule broken</span>
+                      <strong>Decision details:</strong> Further details: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </td>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  <h2 class="govuk-heading-l govuk-!-margin-top-6">Accept or reject this credit</h2>
+<p class="govuk-lead">
+  The previous 3 decisions have been:</br>
+<span class="moj-badge moj-badge--red">Rejected</span>
+<span class="moj-badge moj-badge--red">Rejected</span>
+<span class="moj-badge moj-badge--green">Accepted</span>
+</p>
+
+                  <h3 class="govuk-heading-m">To accept this credit:</h3>
+
+
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="more-detail-16">
+                        Give further details (optional)
+                      </label>
+                      <textarea class="govuk-textarea" id="more-detail-16" name="more-detail-16" rows="2" aria-describedby="more-detail-hint"></textarea>
+
+
+                    <a class="govuk-button govuk-!-margin-right-3" href="index">Accept credit</a></div>
+
+
+                    <h3 class="govuk-heading-m govuk-!-margin-top-4">To reject this credit:</h3>
+
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend">
+                            Select reasons for rejecting this credit:
+                          </legend>
+                          <div class="govuk-checkboxes govuk-checkboxes--small">
+                            <!-- <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                            Not on contacts list
+                          </label>
+                        </div> -->
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                            Multiple payments or payment sources
+                          </label>
+                        </div>
+
+
+                        <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                          <div class="">
+                            <input class="govuk-checkboxes__input" id="citizenship-conditional" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional">
+                            <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional">
+                              Associated intelligence report
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional">
+                            <div class="govuk-form-group" style="width:400px">
+                              <label class="govuk-label" for="more-detail">
+                                Give reference
+                              </label>
+                              <input class="govuk-input" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></input>
+                            </div>
+                          </div>
+                        </div>
+
+
+                        <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                          <div class="">
+                            <input class="govuk-checkboxes__input" id="citizenship-conditional-02" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-02">
+                            <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-02">
+                              Associated FIU investigation
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-02">
+                            <div class="govuk-form-group" style="width:400px">
+                              <label class="govuk-label" for="more-detail-02">
+                                Give FIU reference
+                              </label>
+                              <input class="govuk-input" id="more-detail-02" name="more-detail" rows="5" aria-describedby="more-detail-hint"></input>
+                            </div>
+                          </div>
+                        </div>
+
+
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-5" name="organisation" type="checkbox" value="b">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-5">
+                            Known association with other prisoner/s
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-6" name="organisation" type="checkbox" value="c">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-6">
+                            Can't identify source
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-7" name="organisation" type="checkbox" value="d">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-7">
+                            Paid multiple prisons
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="organisation-8" name="organisation" type="checkbox" value="e">
+                          <label class="govuk-label govuk-checkboxes__label" for="organisation-8">
+                            Used multiple cards
+                          </label>
+                        </div>
+
+                        <div class="govuk-checkboxes__item" data-module="govuk-checkboxes">
+                          <div class="">
+                            <input class="govuk-checkboxes__input" id="citizenship-conditional-03" name="citizen" type="checkbox" value="email" data-aria-controls="conditional-citizenship-conditional-03">
+                            <label class="govuk-label govuk-checkboxes__label" for="citizenship-conditional-03">
+                              Other reason
+                            </label>
+                          </div>
+                          <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-citizenship-conditional-03">
+                            <div class="govuk-form-group" style="width:400px">
+                              <label class="govuk-label" for="more-detail">
+                                Give the reason
+                              </label>
+                              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="2" aria-describedby="more-detail-hint"></textarea>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="more-detail-16">
+                          Give further details (optional)
+                        </label>
+                        <textarea class="govuk-textarea" id="more-detail-16" name="more-detail-16" rows="2" aria-describedby="more-detail-hint"></textarea>
+                      </div>
+
+                      <a class="govuk-button" style="background-color:#d4351c;" href="index">Reject credit</a>
+                    </div></div>
+                  </div>
+                </div>
+
+
+
+              {% endblock %}
