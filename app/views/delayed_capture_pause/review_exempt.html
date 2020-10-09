@@ -260,25 +260,30 @@ tr {
                   <span class="moj-badge moj-badge--green">Accepted</span>
                 </p>
 
-                <p class="govuk-body">
-                  You can remove the exemption.
-                </p>
+                <!-- <p class="govuk-body">
+                You can remove the exemption.
+              </p> -->
 
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="more-detail-16">
-                    Give your reason for removing the exemption.
-                  </label>
-                  <textarea class="govuk-textarea" id="more-detail-16" name="more-detail-16" rows="2" aria-describedby="more-detail-hint"></textarea>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Considering removing this exemption?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="more-detail-16">
+                      Give your reason for removing the exemption.
+                    </label>
+                    <textarea class="govuk-textarea" id="more-detail-16" name="more-detail-16" rows="2" aria-describedby="more-detail-hint"></textarea>
+                  </div>
+                  <a class="govuk-button govuk-!-margin-right-3" href="index">Remove exemption</a></div>
                 </div>
+              </details>
 
-
-                <a class="govuk-button govuk-!-margin-right-3" href="index">Remove exemption</a></div>
-
-
-
-              </div>
             </div>
+          </div>
+          
 
 
-
-            {% endblock %}
+          {% endblock %}
