@@ -1,0 +1,94 @@
+{% extends "layout-sans-org-switcher.html" %}
+
+{% set nav = 'credits' %}
+
+{% block pageTitle %}
+Credits
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">£XXX.XX credit</h1>
+    <p class="moj-badge moj-badge--grey">Whitelisted</p>
+  </div>
+
+  <hr style="margin: 15px 15px">
+
+  <div class="govuk-grid-column-one-quarter">
+    <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Prisoner number</p>
+    <p class="govuk-link"><a href="/prisoners/single-prisoner">A1234AB</a></p>
+    <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Prisoner name</p>
+    <p class="govuk-body">Forname Surname</p>
+    <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Prison</p>
+    <p class="govuk-body">HMP Prison</p>
+    <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Name given by sender</p>
+    <p class="govuk-body">Prisoner name</p>
+  </div>
+
+  <div class="govuk-grid-column-one-quarter">
+    <p class="govuk-body" style="visibility:hidden">Content</p>
+    <div style="text-align:center"><img style="width:32px; height:auto; text-align:center" src="/public/images/credit-arrow@2x.png" alt=""/>
+      <p class="govuk-body">Debit card</p></div>
+    </div>
+
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Sender name</p>
+      <p class="govuk-link"><a href="/payment-sources/single-source">Sender Name</a></p>
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Debit card number</p>
+      <p class="govuk-body">********1234</p>
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Expiry date</p>
+      <p class="govuk-body">MM/YY</p>
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Confirmation number</p>
+      <p class="govuk-body">123A1234</p>
+    </div>
+
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Address</p>
+      <p class="govuk-body">Address line 1</br>Address line 2</br>Address line 3</br>Address line 4</p>
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Email</p>
+      <p class="govuk-body">pennysender@email.com</p>
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">IP</p>
+      <p class="govuk-body">123.123.10.10</p>
+    </div>
+
+    <hr style="margin: 15px 15px">
+
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">Status</p>
+      <p class="govuk-body">Payment status</p>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+      <p class="govuk-body" style="visibility:hidden">Content</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+      <p class="govuk-label govuk-!-font-size-16" style="color:#505a5f">History</p>
+      <p class="govuk-body">DD/MM/YYYY HH:MM – Payment status</p>
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Remove from whitelist future credits from Sender Name to A1234AB
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail-16">
+              Give your reason for removing from whitelist.
+            </label>
+            <p class="govuk-hint">This will restart delay of credits from Sender Name to A1234AB
+            </p>
+            <textarea class="govuk-textarea" id="more-detail-16" name="more-detail-16" rows="2" aria-describedby="more-detail-hint"></textarea>
+          </div>
+          <a class="govuk-button govuk-!-margin-right-3" href="single_credit"> Remove from Whitelist</a></div>
+        </div>
+      </details>
+    </div>
+  </div>
+
+  {% endblock %}

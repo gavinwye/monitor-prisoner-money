@@ -65,6 +65,37 @@ Advanced search
       ]
     }) }}
 
+    {{ govukRadios({
+      idPrefix: "decision-status",
+      name: "decision-status",
+      fieldset: {
+        legend: {
+          text: "Credit status",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      items: [
+      {
+        value: "All",
+        text: "All statuses",
+        checked: true
+      },
+      {
+        value: "Accepted",
+        text: "Accepted"
+      },
+      {
+        value: "Rejected",
+        text: "Rejected"
+      },
+      {
+        value: "Whitelisted",
+        text: "Whitelisted"
+      }
+      ]
+    }) }}
+
     <!-- <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
     {{ govukDateInput({

@@ -1,0 +1,107 @@
+{% extends "layout.html" %}
+
+{% set nav = 'payment' %}
+
+{% block pageTitle %}
+Prisoners
+{% endblock %}
+
+<!-- THIS HAS BEEN HACKED TOGETHER FOR USER RESEARCH THIS PAGE SHOULD BE REDESIGNED  -->
+
+{% block content %}
+
+<div class="govuk-grid-row govuk-!-font-size-16">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+      Sender Name
+      <span class="govuk-caption-m">Debit card payments with these details <a href="" class="govuk-body">How are these grouped?</a></span>
+    </h1>
+    <div class="govuk-grid-row govuk-!-font-size-16">
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m govuk-!-font-size-16">Debit card number</span>
+        <h3 class="govuk-heading-s">********1234</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m govuk-!-font-size-16">Expiry date</span>
+        <h3 class="govuk-heading-s">MM/YY</h3>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <span class="govuk-caption-m govuk-!-font-size-16">Postcode</span>
+        <h3 class="govuk-heading-s">P05T C0DE</h3>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m govuk-!-font-size-16">Credits sent</span>
+        <h3 class="govuk-heading-s">X</h3>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m govuk-!-font-size-16">Prisoners</span>
+        <h3 class="govuk-heading-s">X</h3>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m govuk-!-font-size-16">Prisons</span>
+        <h3 class="govuk-heading-s">X</h3>
+      </div>
+      <div class="govuk-grid-column-one-quarter">
+        <span class="govuk-caption-m govuk-!-font-size-16">Total amount sent</span>
+        <h3 class="govuk-heading-s">£XXX.XX</h3>
+      </div>
+    </div>
+  </div>
+  <div class="govuk-grid-column-one-half govuk-!-margin-top-6">
+    {{ govukButton({
+      text: " Monitor this sender on your home page"
+    }) }}
+  </div>
+</div>
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-one-half">
+    <h2 class="govuk-heading-l">Credits sent</h2>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukInsetText({
+        text: "All credits sent by this sender are shown below ordered by received date (newest to oldest). You can’t see credits sent by post."
+      }) }}
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-9 ">
+      <p class="govuk-body right"><a href="#" class="govuk-link govuk-link--no-visited-state">Print</a> <a href="#" class="govuk-link govuk-link--no-visited-state">Export</a></p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <table class="govuk-table" style="font-size:16px !important;">
+        <caption class="govuk-table__caption"></caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Date received</th>
+            <th scope="col" class="govuk-table__header">Payment source (from)</th>
+            <th scope="col" class="govuk-table__header">Prisoner (to)</th>
+            <th scope="col" class="govuk-table__header">Prison</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amount</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DD/MM/YYYY</td>
+            <td class="govuk-table__cell">Sender Name</br>by debit card</td>
+            <td class="govuk-table__cell"><a href="/prisoners/single-prisoner">Prisoner Name</a></br>A1234AB</td>
+            <td class="govuk-table__cell">Prison</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">£XXX.XX</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">Whitelisted</br><a href="/credits/single_credit_whitelisted">View details</a></td>
+          </tr>
+          {% include "payment-sources/includes/_table_row_credits_sent_static.html" %}
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+
+
+
+  {% endblock %}

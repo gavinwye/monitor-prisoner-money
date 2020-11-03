@@ -3,58 +3,95 @@
 {% set nav = 'payment' %}
 
 {% block pageTitle %}
+
 Payment sources
 {% endblock %}
 
 {% block content %}
 
-{% include "includes/feedback-link.html" %}
+<!-- {% include "includes/feedback-link.html" %} -->
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        Payment sources
-      </h1>
-    <!-- <h2 class="govuk-heading-m">Search</h2> -->
-    <form class="form" method="post">
-    {{ govukInput({
-        label: {
-          classes: "govuk-body govuk-!-font-size-27 govuk-!-width-full",
-          text: "Search payment source name or email address"
-        },
-        hint: {
-          text: "Common or incomplete names may show many results",
-          classes: "govuk-!-width-full"
-        },
-        classes: "govuk-!-width-full",
-        id: "paymentSourceSearch",
-        name: "paymentSourceSearch"
-      }) }}
-      {{ govukButton({
-        text: "Search payment sources"
-      }) }}
-    </form>
-    <p class="govuk-body govuk-!-margin-bottom-8"><a href="/payment-sources/advanced-search" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          Payment sources
+        </h1>
+        <!-- <h2 class="govuk-heading-m">Search</h2> -->
+        <form class="form" method="post">
+          {{ govukInput({
+            label: {
+              classes: "govuk-body govuk-!-font-size-27 govuk-!-width-full",
+              text: "Search payment source name or email address"
+            },
+            hint: {
+              text: "Common or incomplete names may show many results",
+              classes: "govuk-!-width-full"
+            },
+            classes: "govuk-!-width-full",
+            id: "paymentSourceSearch",
+            name: "paymentSourceSearch"
+          }) }}
+          {{ govukButton({
+            text: "Search payment sources"
+          }) }}
+        </form>
+        <p class="govuk-body govuk-!-margin-bottom-8"><a href="/payment-sources/advanced-search" class="govuk-link govuk-link--no-visited-state">Advanced search</a></p>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {% include "payment-sources/includes/payment_source_data_description_box.html" %}
+      </div>
     </div>
-    <div class="govuk-grid-column-one-third">
-      {% include "payment-sources/includes/payment_source_data_description_box.html" %}
-    </div>
-    </div>
+
+    <p style="text-align:right"><a href="#" class="govuk-link">Print</a>&nbsp;<a href="#" class="govuk-link">Export</a></p>
 
     <hr class="govuk-section-break govuk-section-break--s govuk-section-break--visible">
-
-    <table class="govuk-table govuk-!-font-size-16 ">
-      <!-- <caption class="govuk-table__caption">Credits for your prisons sorted by date</caption> -->
-      {% include "payment-sources/includes/_table_header.html" %}
-      <tbody class="govuk-table__body ">
-        {% include "payment-sources/includes/_table_row.html" %}
+    <table class="govuk-table" style="font-size:16px !important;">
+      <caption class="govuk-table__caption"></caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Payment source</th>
+          <th scope="col" class="govuk-table__header">Payment method</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Number of credits sent</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Prisoners sent to</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Number of prisons sent to</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total amount sent</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Details</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
+        {% include "payment-sources/includes/_table_row_static.html" %}
       </tbody>
     </table>
-    {%- if payment_sources.length > 25 -%}
+
     {% include "includes/pagination.html" %}
-    {%- endif -%}
+    
   </div>
 </div>
 

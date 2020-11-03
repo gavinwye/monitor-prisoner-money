@@ -65,7 +65,32 @@
 {% endblock %}
 
 {% block beforeContent %}
-<div class="app-service-navigation">
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Path",
+      href: "#"
+    },
+    {
+      text: "Path",
+      href: "#"
+    }
+  ]
+}) }}
+<!-- <div class="app-service-navigation">
 {% from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher %}
 {{ mojOrganisationSwitcher({
   classes: 'govuk-!-padding-bottom-2 govuk-!-margin-top-2',
@@ -75,7 +100,7 @@
     href: '/settings/'
   }
 }) }}
-</div>
+</div> -->
 {% include "includes/firefox-banner.html" %}
 {% endblock %}
 
