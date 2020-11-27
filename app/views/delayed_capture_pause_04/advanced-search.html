@@ -1,0 +1,162 @@
+{% extends "layout_delayed_capture.html" %}
+
+{% set nav = 'delayed' %}
+
+{% block pageTitle %}
+Advanced search
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+
+    {{ mojSubNavigation({
+      label: 'Sub navigation',
+      items: [{
+        text: 'Credits to action',
+        href: 'index'
+      },{
+        text: 'My list (8)',
+        href: 'mylist'
+      },{
+        text: 'Decision history',
+        href: 'history'
+      },{
+        text: 'Auto accepts',
+        href: 'advanced-search',
+        active: true
+      }]
+    }) }}
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl"></span>
+      Auto accepts
+    </h1>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <!-- <h2 class="govuk-heading-l">Date received</h2> -->
+
+
+    <!-- {{ govukRadios({
+    idPrefix: "date-range",
+    name: "date-range",
+    fieldset: {
+    legend: {
+    text: "Date range",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--l"
+  }
+},
+items: [
+{
+value: "last 3 months",
+text: "last 3 months",
+checked: true
+},
+{
+value: "full history",
+text: "full history"
+}
+]
+}) }} -->
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Activated by
+      </h1>
+    </legend>
+    <div id="contact-hint" class="govuk-hint">
+      Select one option.
+    </div>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Me
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          Any user
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+        <label class="govuk-label govuk-radios__label" for="contact-3">
+          A specific user
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Enter user's email address
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel"></div>
+
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+
+</div>
+
+<div class="govuk-grid-column-two-thirds govuk-!-margin-top-3">
+
+  {{ govukInput({
+    label: {
+      text: "Payment source (optional)",
+      isPageHeading: false,
+      classes: "govuk-label--l"
+    },
+    hint: {
+      text: "Last 4 digits of card number"
+    },
+    classes: "govuk-input--width-10",
+    id: "width-10",
+    name: "width-10"
+  }) }}
+
+</div>
+
+<div class="govuk-grid-column-full govuk-!-margin-top-3">
+
+
+  {{ govukInput({
+    label: {
+      text: "Prisoner (optional)",
+      isPageHeading: false,
+      classes: "govuk-label--l"
+    },
+    hint: {
+      text: "Prisoner number"
+    },
+    classes: "govuk-input--width-10",
+    id: "width-10",
+    name: "width-10"
+  }) }}
+
+</div>
+
+<div class="govuk-grid-column-full govuk-!-margin-top-3">
+  {{ govukButton({
+    text: "Search",
+    href: "advanced_search_results_02"
+  }) }}
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}

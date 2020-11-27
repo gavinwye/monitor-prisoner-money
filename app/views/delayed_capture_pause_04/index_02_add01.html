@@ -8,12 +8,22 @@ Delayed capture
 
 {% block content %}
 
-<style media="screen">
-.added-to::before{
-  content: "✓";
-  font-size: 1.5em;
-  color: #00703c;
+<script type="text/javascript">
+window.addEventListener("load", myFunction);
+function myFunction(){
+  document.getElementById('add01').style = 'background-color:#00703c33'
+  document.getElementById('add01row02').style = 'background-color:#00703c33'
 }
+setTimeout(function() { fade(); }, 2000);
+function fade(){
+  var el = document.getElementById('add01')
+  el.style =   'transition: background-color 1.0s ease; background-color: white;'
+  var el2 = document.getElementById('add01row02')
+  el2.style =   'transition: background-color 1.0s ease; background-color: white;'
+}
+</script>
+
+<style media="screen">
 .pending-table .govuk-table__cell{
   border-bottom: 0px;
   border-top: 1px solid #b1b4b6;
@@ -36,6 +46,11 @@ Delayed capture
 .added-to{
   padding-left: 5px !important;
   /*font-size: 16px;*/
+}
+.added-to::before{
+  content: "✓";
+font-size: 1.5em;
+color: #00703c;
 }
 .govuk-table tbody th{
   font-weight: normal;
@@ -138,14 +153,14 @@ tr {
       label: 'Sub navigation',
       items: [{
         text: 'Credits to action',
-        href: 'index',
+        href: '#1',
         active: true
       },{
         text: 'My list (8)',
         href: 'mylist'
       },{
-        text: 'Decision history',
-        href: 'history'
+        text: 'History',
+        href: 'Decision history'
       }]
     }) }}
 
@@ -174,68 +189,6 @@ tr {
 
 
           <tbody class="govuk-table__body pending-table">
-
-
-            <tr class="govuk-table__row" id="add01">
-              <td class="govuk-table__cell">
-                <span id="notifications" class="moj-notification-badge">!</span>
-              </td>
-              <td class="govuk-table__cell">DD Month YYYY HH:MM
-              </td>
-              <td class="govuk-table__cell">
-                Sender Name<br>
-                **** **** **** 1111 11/22<br>
-              </td>
-              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-              <td class="govuk-table__cell">£XX</td>
-              <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
-              </td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-              </td>
-            </tr>
-
-            <tr class="govuk-body rule-broken">
-              <td colspan="2" style="">
-              </td>
-              <td colspan="5" class="rule-broken-text">
-                <span><strong>Rule:</strong></span> Name of the rule broken
-              </td>
-            </tr>
-
-
-
-
-
-            <tr class="govuk-table__row" id="add01">
-              <td class="govuk-table__cell">
-                <span id="notifications" class="moj-notification-badge">!</span>
-              </td>
-              <td class="govuk-table__cell">DD Month YYYY HH:MM
-              </td>
-              <td class="govuk-table__cell">
-                Sender Name<br>
-                **** **** **** 1111 11/22<br>
-              </td>
-              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
-              <td class="govuk-table__cell">£XX</td>
-              <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
-              </td>
-              <td class="govuk-table__cell">
-                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
-              </td>
-
-            </tr>
-            <tr class="govuk-body rule-broken">
-              <td colspan="2" style="">
-              </td>
-              <td colspan="5" class="rule-broken-text">
-                <span><strong>Rule:</strong></span> Name of the rule broken
-              </td>
-            </tr>
-
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <span id="notifications" class="moj-notification-badge">!</span>
@@ -249,7 +202,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_added" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell added-to">Added to my list</td>
             </tr>
@@ -262,6 +215,32 @@ tr {
               </td>
             </tr>
 
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell added-to">Added to my list</td>
+            </tr>
+
+            <tr class="govuk-body rule-broken" id=add01row02>
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
+
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <span id="notifications" class="moj-notification-badge">!</span>
@@ -275,7 +254,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_added_user2" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell"> Added to Joe Bloggs' list</td>
             </tr>
@@ -301,7 +280,35 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -329,7 +336,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -357,7 +364,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -385,7 +392,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -413,7 +420,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -441,7 +448,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -469,7 +476,35 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
+              </td>
+              <td class="govuk-table__cell">
+                <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
+              </td>
+
+            </tr>
+            <tr class="govuk-body rule-broken">
+              <td colspan="2" style="">
+              </td>
+              <td colspan="5" class="rule-broken-text">
+                <span><strong>Rule:</strong></span> Name of the rule broken
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row" id="add01">
+              <td class="govuk-table__cell">
+                <span id="notifications" class="moj-notification-badge">!</span>
+              </td>
+              <td class="govuk-table__cell">DD Month YYYY HH:MM
+              </td>
+              <td class="govuk-table__cell">
+                Sender Name<br>
+                **** **** **** 1111 11/22<br>
+              </td>
+              <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
+              <td class="govuk-table__cell">£XX</td>
+              <td class="govuk-table__cell">
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -496,7 +531,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -523,7 +558,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -548,7 +583,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -573,7 +608,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -598,7 +633,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -623,7 +658,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -648,7 +683,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -673,7 +708,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -698,7 +733,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -723,7 +758,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -748,7 +783,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -773,7 +808,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -798,7 +833,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -823,7 +858,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
@@ -848,7 +883,7 @@ tr {
               <td class="govuk-table__cell">A1234AB<br>Prisoner name</br>HMP Prison</td>
               <td class="govuk-table__cell">£XX</td>
               <td class="govuk-table__cell">
-                <a href="review_06" class="govuk-button">Review</a>
+                <a href="review_02" class="govuk-button">Review</a>
               </td>
               <td class="govuk-table__cell">
                 <a href="#" class="govuk-button govuk-button--secondary">Add to my list</a>
