@@ -175,31 +175,31 @@ tr {
           Anyone
         </label>
       </div>
-      <!-- <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="changed-name-2" name="contact" type="radio" value="no">
-        <label class="govuk-label govuk-radios__label" for="changed-name-2">
-          Me
-        </label>
-      </div> -->
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
-        <label class="govuk-label govuk-radios__label" for="contact-3">
-          A specific user
-        </label>
-      </div>
-      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="contact-by-text">
-            Enter user's email address
-          </label>
-          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel"></div>
-
-        </div>
-
-<span class="govuk-button" >Update list</span>
+      <input class="govuk-radios__input" id="changed-name-2" name="contact" type="radio" value="no">
+      <label class="govuk-label govuk-radios__label" for="changed-name-2">
+      Me
+    </label>
+  </div>
+  <!-- <div class="govuk-radios__item">
+    <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+    <label class="govuk-label govuk-radios__label" for="contact-3">
+      A specific user
+    </label>
+  </div>
+  <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="contact-by-text">
+        Enter user's email address
+      </label>
+      <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
     </div>
+  </div>
 
-  </fieldset>
+  <span class="govuk-button" >Update list</span> -->
+</div>
+
+</fieldset>
 </div>
 
 
@@ -436,30 +436,30 @@ tr {
 {%- from "moj/components/pagination/macro.njk" import mojPagination -%}
 
 {{ mojPagination({
-results: {
-from: 1,
-to: 20,
-count: 55
-},
-previous: {
-text: 'Previous',
-href: ''
-},
-next: {
-text: 'Next',
-href: ''
-},
-items: [{
-text: '1',
-href: '/page=1'
-}, {
-text: '2',
-href: '/page=2',
-selected: true
-}, {
-text: '3',
-href: '/page=3'
-}]
+  results: {
+    from: 1,
+    to: 20,
+    count: 55
+  },
+  previous: {
+    text: 'Previous',
+    href: ''
+  },
+  next: {
+    text: 'Next',
+    href: ''
+  },
+  items: [{
+    text: '1',
+    href: '/page=1'
+  }, {
+    text: '2',
+    href: '/page=2',
+    selected: true
+  }, {
+    text: '3',
+    href: '/page=3'
+  }]
 }) }}
 
 </div>

@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "@ministryofjustice/frontend": "0.0.17-alpha",
-    "acorn": "^6.0.5",
+    "acorn": "^6.4.2",
     "ansi-colors": "^3.2.3",
     "basic-auth": "^2.0.0",
     "basic-auth-connect": "^1.0.0",
     "body-parser": "^1.14.1",
-    "browser-sync": "^2.11.1",
+    "browser-sync": "^2.26.13",
     "client-sessions": "^0.8.0",
     "cookie-parser": "^1.4.3",
     "cross-spawn": "^6.0.5",
@@ -55,7 +55,7 @@
   "devDependencies": {
     "glob": "^7.1.4",
     "jest": "^24.0.1",
-    "node-sass": "^4.12.0",
+    "node-sass": "^4.14.1",
     "standard": "^12.0.1",
     "supertest": "^3.0.0"
   }
