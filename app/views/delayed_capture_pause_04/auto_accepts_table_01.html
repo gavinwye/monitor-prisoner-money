@@ -628,7 +628,11 @@ function sortTable(n) {
     }
   }
 }
-window.addEventListener("load", sortTable(3))
+function hack(){
+sortTable(3)
+sortTable(3)
+}
+window.addEventListener("load", hack)
 </script>
 
 <!-- <script src="/public/javascripts/vendor/jquery.min.js"></script>
