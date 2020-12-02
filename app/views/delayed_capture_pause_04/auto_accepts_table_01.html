@@ -171,21 +171,53 @@ tr {
   Auto accepts
 </h1>
 
+{%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+  results: {
+    from: 1,
+    to: 30,
+    count: 117
+  },
+  previous: {
+    text: 'Previous',
+    href: ''
+  },
+  next: {
+    text: 'Next',
+    href: ''
+  },
+  items: [{
+    text: '1',
+    href: '/page=1',
+    selected: true
+  }, {
+    text: '2',
+    href: '/page=2'
+  }, {
+    text: '3',
+    href: '/page=3'
+  }]
+}) }}
 
 
-
-<table class="govuk-table govuk-!-margin-top-3">
+<table class="govuk-table govuk-!-margin-top-3" id="myTable">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Debit card (from)</th>
       <th scope="col" class="govuk-table__header">Prisoner (to)</th>
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">
-        <button type="button" data-index="2">
+      <th scope="col" class="govuk-table__header" aria-sort="none">
+        <button type="button" data-index="2" onclick="sortTable(2)">
           Started by
         </button>
       </th>
       <!-- <th scope="col" class="govuk-table__header">Started by</th> -->
-      <th scope="col" class="govuk-table__header">Date started</th>
+      <!-- <th scope="col" class="govuk-table__header">Date started</th> -->
+      <th scope="col" class="govuk-table__header" aria-sort="none">
+        <button type="button" data-index="2" onclick="sortTable(3)">
+          Start date
+        </button>
+      </th>
       <th scope="col" class="govuk-table__header">Reason</th>
       <th scope="col" class="govuk-table__header">Action</th>
     </tr>
@@ -196,8 +228,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/12/02</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -206,8 +238,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/12/01</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -216,8 +248,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/12/01</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -226,8 +258,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/11/29</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -236,8 +268,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/11/29</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -246,8 +278,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/11/28</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -256,8 +288,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/11/26</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -266,8 +298,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/11/21</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -276,8 +308,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/11/21</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -286,19 +318,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="1">Jones, Kate</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
-      <td class="govuk-table__cell">Mother of prisoner</td>
-      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        **** **** **** 1111</br>Sender Name
-      </td>
-      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Jones, Kate</td>
+      <td class="govuk-table__cell">2020/10/01</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -308,8 +329,19 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/12/01</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/12/01</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -318,8 +350,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/11/26</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -328,8 +360,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/11/26</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -338,8 +370,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/10/21</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -348,8 +380,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/10/21</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -358,8 +390,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/10/09</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -368,8 +400,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/10/09</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -378,8 +410,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/10/02</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -388,8 +420,8 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Martin, Joe</td>
+      <td class="govuk-table__cell">2020/10/01</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -398,8 +430,108 @@ tr {
         **** **** **** 1111</br>Sender Name
       </td>
       <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
-      <td class="govuk-table__cell" data-sort-value="2">Martin, Joe</td>
-      <td class="govuk-table__cell">DD/MM/YYYY</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/30</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/23</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/23</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/23</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/15</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/15</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/07</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/07</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/03</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/11/03</td>
+      <td class="govuk-table__cell">Mother of prisoner</td>
+      <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        **** **** **** 1111</br>Sender Name
+      </td>
+      <td class="govuk-table__cell">A1234AB</br>Prisoner Name</td>
+      <td class="govuk-table__cell">Moore, Eliot</td>
+      <td class="govuk-table__cell">2020/09/11</td>
       <td class="govuk-table__cell">Mother of prisoner</td>
       <td class="govuk-table__cell"><a class="govuk-button govuk-button--secondary" href="review_auto_accept">Review</a></td>
     </tr>
@@ -413,8 +545,8 @@ tr {
 {{ mojPagination({
   results: {
     from: 1,
-    to: 20,
-    count: 55
+    to: 30,
+    count: 117
   },
   previous: {
     text: 'Previous',
@@ -440,6 +572,64 @@ tr {
 </div>
 
 </div>
+
+<script>
+function sortTable(n) {
+  var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+  table = document.getElementById("myTable");
+  switching = true;
+  //Set the sorting direction to ascending:
+  dir = "asc";
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    rows = table.rows;
+    /*Loop through all table rows (except the
+    first, which contains table headers):*/
+    for (i = 1; i < (rows.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*Get the two elements you want to compare,
+      one from current row and one from the next:*/
+      x = rows[i].getElementsByTagName("TD")[n];
+      y = rows[i + 1].getElementsByTagName("TD")[n];
+      /*check if the two rows should switch place,
+      based on the direction, asc or desc:*/
+      if (dir == "asc") {
+        if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch= true;
+          break;
+        }
+      } else if (dir == "desc") {
+        if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+          //if so, mark as a switch and break the loop:
+          shouldSwitch = true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark that a switch has been done:*/
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+      //Each time a switch is done, increase this count by 1:
+      switchcount ++;
+    } else {
+      /*If no switching has been done AND the direction is "asc",
+      set the direction to "desc" and run the while loop again.*/
+      if (switchcount == 0 && dir == "asc") {
+        dir = "desc";
+        switching = true;
+      }
+    }
+  }
+}
+window.addEventListener("load", sortTable(3))
+</script>
 
 <!-- <script src="/public/javascripts/vendor/jquery.min.js"></script>
 <script src="/public/javascripts/all.js"></script>
