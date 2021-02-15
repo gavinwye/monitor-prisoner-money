@@ -1,0 +1,87 @@
+{% extends "layout_only_primary.html" %}
+
+{% set nav = 'prisoners' %}
+
+{% block pageTitle %}
+Prisoner money intelligence
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Request an account
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+    {{ govukInput({
+      label: {
+        text: "First name"
+      },
+      id: "example",
+      name: "example"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Last name"
+      },
+      id: "example-2",
+      name: "example-2"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Email"
+      },
+      id: "example-4",
+      name: "example-4"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Username"
+      },
+      hint: {
+        text: "Enter your Quantum ID"
+      },
+      id: "example-5",
+      name: "example-5"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Your manager's email"
+      },
+      id: "example-3",
+      name: "example-3"
+    }) }}
+
+    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+    {{ govukTextarea({
+      name: "more-detail",
+      id: "more-detail",
+      label: {
+        text: "Reason for needing an account"
+      }
+    }) }}
+
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Submit request",
+      classes: "govuk-!-margin-top-3"
+    }) }}
+  </div>
+</div>
+
+
+{% endblock %}
