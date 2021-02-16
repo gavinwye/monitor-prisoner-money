@@ -7,6 +7,15 @@ if (window.console && window.console.info) {
 
 $(document).ready(function () {
   window.GOVUKFrontend.initAll()
+})
+
+// hacky added javascript - added }) above
+function getParam() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  const txt = urlParams.get('txt');
+  return txt;
+}
 
 // Add a the prison in the form on the prisons page
   // $(".addAnother").click(function(e){
@@ -87,4 +96,4 @@ $(document).ready(function () {
 
 
   // Add javascripts above here
-})
+// })

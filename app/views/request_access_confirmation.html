@@ -1,0 +1,33 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+window.onload = function() {getParam()};
+</script>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+
+<div class="govuk-!-margin-top-4"></div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Your request for an account has been sent
+      </h1>
+    </div>
+
+    <!-- <h2 class="govuk-heading-m">What happens next</h2> -->
+
+    <p class="govuk-body govuk-!-width-two-thirds">
+      Once <span class="govuk-!-font-weight-bold">a member of the Financial Investigations Unit</span> has approved your request, you’ll get an email with your sign in details.
+    </p>
+  </div>
+</div>
+
+{% endblock %}

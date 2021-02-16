@@ -1,0 +1,133 @@
+{% extends "layout_only_primary.html" %}
+
+{% set nav = 'prisoners' %}
+
+{% block pageTitle %}
+Prisoner money intelligence
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript">
+window.onload = function() {
+  var decision = getParam()
+  if (decision == "approve"){
+  // alert(decision);
+    var el = document.getElementById("approve");
+    el.style.display="block";
+  } else if (decision == "decline") {
+    var el = document.getElementById("decline");
+    el.style.display="block";
+  }
+
+};
+</script>
+
+{{ govukBackLink({
+  text: "Back",
+  href: "#"
+}) }}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Manage user accounts
+    </h1>
+    <div id="approve" style="display:none">
+      {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+      {{ mojBanner({
+        type: 'success',
+        text: 'New user request accepted',
+        iconFallbackText: 'Success'
+      }) }}
+    </div>
+
+    <div id="decline" style="display:none">
+      {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+      {{ mojBanner({
+        type: 'information',
+        text: 'New user request declined',
+        iconFallbackText: 'information'
+      }) }}
+    </div>
+
+    <p>
+      Add, view, edit or disable accounts. When you disable a user account, that user will be unable to sign in.
+    </p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Add a new user",
+      classes: "govuk-button--secondary",
+      href: "create_new_account"
+    }) }}
+
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-heading-m">New user requests</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Email</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Requested</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">Joe Bloggs</td>
+          <td class="govuk-table__cell">joe.bloggs@digital.kustice.gov.uk</td>
+          <td class="govuk-table__cell">16/02/2021</td>
+          <td class="govuk-table__cell"><a href="new_user_account">Manage</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">John Smith</td>
+          <td class="govuk-table__cell">john.smith@digital.justice.gov.uk</td>
+          <td class="govuk-table__cell">15/02/2021</td>
+          <td class="govuk-table__cell"><a href="new_user_account">Manage</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-heading-m">Edit existing users</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Email</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Can manage accounts</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row" style="color:grey !important">
+          <td scope="row" class="govuk-table__cell">Jim Bean</td>
+          <td class="govuk-table__cell">jim.bean@digital.kustice.gov.uk</td>
+          <td class="govuk-table__cell">✓</td>
+          <td class="govuk-table__cell"><a href="#">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Enable</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">Samantha Long</td>
+          <td class="govuk-table__cell">samantha.long@digital.justice.gov.uk</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><a href="create_new_account">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Disable</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell">Anthony Body</td>
+          <td class="govuk-table__cell">anthony.body@digital.justice.gov.uk</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"><a href="create_new_account">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Disable</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}

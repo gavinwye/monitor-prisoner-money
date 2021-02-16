@@ -1,0 +1,65 @@
+
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script type="text/javascript">
+window.onload = function() {getParam()};
+</script>
+
+
+<div class="govuk-!-margin-top-4"></div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        User account for "username" created
+      </h1>
+    </div>
+
+    <!-- <h2 class="govuk-heading-m">What happens next</h2> -->
+
+    <table class="govuk-table" style="width:50%">
+      <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+      <thead class="govuk-table__head">
+
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Username</th>
+          <td class="govuk-table__cell">ABC123D</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">First name</th>
+          <td class="govuk-table__cell">Joe</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Last name</th>
+          <td class="govuk-table__cell">Bloggs</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Email</th>
+          <td class="govuk-table__cell">joe.bloggs@digital.justice.gov.uk</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Manager's email</th>
+          <td class="govuk-table__cell">manager@digital.justice.gov.uk</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Reason for needing an account</th>
+          <td class="govuk-table__cell">Lorem ipsum</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">FIU user</th>
+          <td class="govuk-table__cell">Yes</td>
+        </tr>
+      </tbody>
+    </table>
+    <a class="govuk-link" style="font-size:19px" href="edit_new_account">Edit user account details</a>
+</br></br>
+  <a class="govuk-link" style="font-size:19px" href="manage_accounts">Return to user management</a>
+  </div>
+</div>
+
+{% endblock %}

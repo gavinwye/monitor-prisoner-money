@@ -12,8 +12,9 @@ Prisoner money intelligence
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Request an account
+      Edit user account
     </h1>
+
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -25,7 +26,8 @@ Prisoner money intelligence
         text: "First name"
       },
       id: "example",
-      name: "example"
+      name: "example",
+value: "Joe"
     }) }}
 
     {{ govukInput({
@@ -33,7 +35,8 @@ Prisoner money intelligence
         text: "Last name"
       },
       id: "example-2",
-      name: "example-2"
+      name: "example-2",
+value: "Bloggs"
     }) }}
 
     {{ govukInput({
@@ -41,7 +44,8 @@ Prisoner money intelligence
         text: "Email"
       },
       id: "example-4",
-      name: "example-4"
+      name: "example-4",
+value: "joe.bloggs@dgitial.justice.gov.uk"
     }) }}
 
     {{ govukInput({
@@ -52,15 +56,17 @@ Prisoner money intelligence
         text: "Enter your Quantum ID"
       },
       id: "example-5",
-      name: "example-5"
+      name: "example-5",
+value: "ABC123D"
     }) }}
 
     {{ govukInput({
       label: {
-        text: "Your manager's email"
+        text: "The user's manager's email"
       },
       id: "example-3",
-      name: "example-3"
+      name: "example-3",
+value: "manager.name@digital.justice.gov.uk"
     }) }}
 
     {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
@@ -68,21 +74,30 @@ Prisoner money intelligence
     {{ govukTextarea({
       name: "more-detail",
       id: "more-detail",
+value: "Lorem ipsum",
       label: {
         text: "Reason for needing an account"
       }
     }) }}
-
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-    {{ govukButton({
-      text: "Submit request",
-      href: "request_access_fork",
-      classes: "govuk-!-margin-top-3"
-    }) }}
   </div>
 </div>
+
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+            This account is for an FIU user</br>(FIU users will be able to manage other users's accounts)
+          </label>
+        </div>
+      </div>
+    </div>
+<a class="govuk-button" href="new_account_confirmation" style="margin-right:20px">
+  Save changes
+</a>
+<a href="manage_accounts" style="font-size:19px; position:relative; top:8px;">
+  Cancel
+</a>
 
 
 {% endblock %}

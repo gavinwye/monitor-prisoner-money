@@ -1,0 +1,35 @@
+{% extends "layout_unbranded.html" %}
+
+{% block content %}
+
+<style media="screen">
+p {
+  font-size: 21px;
+}
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p>
+      The user will not see this page.</br>The devs will work this out and the user will see one of these 2 screens...
+    </p>
+    <p class="govuk-heading-m">
+      If the username has <b>not</b> requested access before:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>The request is sent to all FIU users</li>
+        <li>All FIU users on login to the service will see a notification on the homepage that 'There are X users account requests'.</li>
+        <li>All FIU users will also receive an email about each account request.</li>
+      </ul>
+      <a href="request_access_confirmation" style="font-size:21px !important;">Username has <b>not</b> requested access before</a>
+    </p>
+    <p class="govuk-heading-m">
+        If the username has requested access before:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>The request is sent to Zendesk as a query</li>
+        </ul>
+      <a href="request_access_already_confirmation" style="font-size:21px !important;">Username has already requested access</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

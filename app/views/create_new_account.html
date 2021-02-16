@@ -12,8 +12,11 @@ Prisoner money intelligence
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">
-      Request an account
+      Create a new user account
     </h1>
+    <p class="govuk-body-lead">
+      Fill in a user's details to create an account. You can give them a general user or an account management role.
+    </p>
   </div>
 </div>
 <div class="govuk-grid-row">
@@ -57,7 +60,7 @@ Prisoner money intelligence
 
     {{ govukInput({
       label: {
-        text: "Your manager's email"
+        text: "The user's manager's email"
       },
       id: "example-3",
       name: "example-3"
@@ -72,17 +75,25 @@ Prisoner money intelligence
         text: "Reason for needing an account"
       }
     }) }}
-
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-    {{ govukButton({
-      text: "Submit request",
-      href: "request_access_fork",
-      classes: "govuk-!-margin-top-3"
-    }) }}
   </div>
 </div>
+
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+            This account is for an FIU user</br>(FIU users will be able to manage other users's accounts)
+          </label>
+        </div>
+      </div>
+    </div>
+<a class="govuk-button" href="new_account_confirmation" style="margin-right:20px">
+  Create
+</a>
+<a href="manage_accounts" style="font-size:19px; position:relative; top:8px;">
+  Cancel
+</a>
 
 
 {% endblock %}

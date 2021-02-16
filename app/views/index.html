@@ -12,6 +12,18 @@ Prisoner money intelligence
 
 <div class="govuk-grid-row">
 
+  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+  {% set html %}
+    <p class="govuk-notification-banner__heading">
+      There are 2 new account requests
+      <a class="govuk-notification-banner__link" href="manage_accounts">Manage requests</a>.
+    </p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
 
     <div class="govuk-grid-column-two-thirds">
 
