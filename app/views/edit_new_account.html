@@ -1,9 +1,24 @@
-{% extends "layout_only_primary.html" %}
+{% extends "layout.html" %}
 
 {% set nav = 'prisoners' %}
 
 {% block pageTitle %}
 Prisoner money intelligence
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Path",
+      href: "#"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}

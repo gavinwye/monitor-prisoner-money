@@ -1,16 +1,25 @@
-
 {% extends "layout.html" %}
+
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Path",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
 
 {% block content %}
 
 <script type="text/javascript">
 window.onload = function() {getParam()};
 </script>
-
-{{ govukBackLink({
-  text: "Back",
-  href: "#"
-}) }}
 
 <div class="govuk-!-margin-top-4"></div>
 

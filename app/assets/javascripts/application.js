@@ -17,6 +17,14 @@ function getParam() {
   return txt;
 }
 
+// function getParam() {
+//   const queryString = window.location.search;
+//   const urlParams = new URLSearchParams(queryString);
+//   const firstName = urlParams.get('txt');
+//
+//   document.getElementById("more-detail").innerHTML = firstName;
+// }
+
 // Add a the prison in the form on the prisons page
   // $(".addAnother").click(function(e){
   //   e.preventDefault();
