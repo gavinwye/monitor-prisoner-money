@@ -75,25 +75,7 @@ value: "joe.bloggs@dgitial.justice.gov.uk"
 value: "ABC123D"
     }) }}
 
-    {{ govukInput({
-      label: {
-        text: "The user's manager's email"
-      },
-      id: "example-3",
-      name: "example-3",
-value: "manager.name@digital.justice.gov.uk"
-    }) }}
 
-    {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
-
-    {{ govukTextarea({
-      name: "more-detail",
-      id: "more-detail",
-value: "Lorem ipsum",
-      label: {
-        text: "Reason for needing an account"
-      }
-    }) }}
   </div>
 </div>
 
