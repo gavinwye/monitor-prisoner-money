@@ -2,9 +2,21 @@
 
 {% set nav = 'help' %}
 
-{% block pageTitle %}
-Credits
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Path",
+      href: "#"
+    }
+  ]
+}) }}
 {% endblock %}
+
 
 {% block content %}
 

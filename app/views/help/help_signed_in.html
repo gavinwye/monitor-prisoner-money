@@ -6,6 +6,22 @@
 Credits
 {% endblock %}
 
+{% block beforeContent %}
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Home",
+      href: "#"
+    },
+    {
+      text: "Path",
+      href: "#"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
 {% block content %}
 
 <div class="govuk-grid-row">
