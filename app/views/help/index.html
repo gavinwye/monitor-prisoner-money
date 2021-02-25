@@ -5,14 +5,14 @@
 {% block beforeContent %}
 {{ govukBreadcrumbs({
   items: [
-    {
-      text: "Home",
-      href: "#"
-    },
-    {
-      text: "Path",
-      href: "#"
-    }
+  {
+    text: "Home",
+    href: "#"
+  },
+  {
+    text: "Path",
+    href: "#"
+  }
   ]
 }) }}
 {% endblock %}
@@ -23,31 +23,23 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        What do you need help with?
-      </h1>
-      <h2 class="govuk-heading-m">I’m locked out</h2>
-      <p class="govuk-body">If you mis-type your password too many times, you'll be locked out. Try again in about half an hour.</p>
-      <h2 class="govuk-heading-m">I may already have an account</h2>
-      <p class="govuk-body">Try resetting your password. If you have an account, you'll get an email with a link. If not, <a href="request_access">get an account</a>.</p>
-      <h2 class="govuk-heading-m">I want a digital cashbook account to process money in and out of prison</h2>
-      <p class="govuk-body">You can only have an intelligence tool account OR a digital cashbook account, not both. If this is a problem, <a href="request_access">let us know</a>.</p>
-      <p class="govuk-body"><a href="help/contact_us?txt=My new username (usually your Quantum ID) is [please fill in]">I've forgotten or need to change my username</a></p>
-      <p class="govuk-body"><a href="help/contact_us?txt=My new name is [please fill in]">I need to change my name</a></p>
-      <p class="govuk-body"><a href="help/contact_us?txt=My new password [please fill in] ">Reset password isn’t working</a></p>
-      <p class="govuk-body"><a href="contact_us">I want to raise an issue or have a question for the [HMPPS Financial Investigation Unit](link? contact us?)
-</a></p>
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          What do you need help with?
+        </h1>
+        <h2 class="govuk-heading-m">I’m locked out</h2>
+        <p class="govuk-body">If you mis-type your password too many times, you'll be locked out. Try again in about half an hour.</p>
+        <h2 class="govuk-heading-m">I may already have an account</h2>
+        <p class="govuk-body">Try resetting your password. If you have an account, you'll get an email with a link. If not, <a href="request_access">get an account</a>.</p>
+        <h2 class="govuk-heading-m">I want a digital cashbook account to process money in and out of prison</h2>
+        <p class="govuk-body">You can only have one account - intelligence tool OR digital cashbook. </br>If you need a cashbook account, instead of an intelligence tool one, go directly to the <a href="https://hmpps-manage-prisoner-money.herokuapp.com/home">digital cashbook</a> and request it.</p>
+        <p class="govuk-body"><a href="help/contact_us?txt=My new username (usually your Quantum ID) is [please fill in]">I've forgotten or need to change my username</a></p>
+        <p class="govuk-body"><a href="help/contact_us?txt=My new password [please fill in] ">Reset password isn’t working</a></p>
+        <p class="govuk-body"><a href="help/contact_us">I want to raise an issue or have a question for the [HMPPS Financial Investigation Unit](link? contact us? Zendesk or FIU?)
+        </a></p>
+      </div>
     </div>
-
-
-
-
-
-
-
-
-
+  </div>
 </div>
 
 {% endblock %}

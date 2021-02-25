@@ -6,14 +6,14 @@
 {% block beforeContent %}
 {{ govukBreadcrumbs({
   items: [
-    {
-      text: "Home",
-      href: "#"
-    },
-    {
-      text: "Path",
-      href: "#"
-    }
+  {
+    text: "Home",
+    href: "#"
+  },
+  {
+    text: "Path",
+    href: "#"
+  }
   ]
 }) }}
 {% endblock %}
@@ -31,35 +31,35 @@
     </p>
 
     <div style="margin-right:50px; display:inline-block !important"><span class="govuk-caption-m">Name</span>
-    <h3 class="govuk-heading-s">Joe Bloggs</h3></div>
-    <div style="margin-right:50px; display:inline-block !important"><span class="govuk-caption-m">Email</span>
-    <h3 class="govuk-heading-s">joe.bloggs@digital.justice.gov.uk</h3></div>
-    <div style="margin-right:50px; display:inline-block !important"><span class="govuk-caption-m">Username</span>
-    <h3 class="govuk-heading-s">ABC12D</h3></div>
-    <span class="govuk-caption-m">Manager's email</span>
-    <h3 class="govuk-heading-s">steve.manager@digital.justice.gov.uk</h3>
-    <span class="govuk-caption-m">Reason for access</span>
-    <h3 class="govuk-heading-s">Lorem ipsum</h3>
+      <h3 class="govuk-heading-s">Joe Bloggs</h3></div>
+      <div style="margin-right:50px; display:inline-block !important"><span class="govuk-caption-m">Email</span>
+        <h3 class="govuk-heading-s">joe.bloggs@digital.justice.gov.uk</h3></div>
+        <div style="margin-right:50px; display:inline-block !important"><span class="govuk-caption-m">Username</span>
+          <h3 class="govuk-heading-s">ABC12D</h3></div>
+          <span class="govuk-caption-m">Manager's email</span>
+          <h3 class="govuk-heading-s">steve.manager@digital.justice.gov.uk</h3>
+          <span class="govuk-caption-m">Reason for access</span>
+          <h3 class="govuk-heading-s">Lorem ipsum</h3>
 
-    <div class="govuk-form-group">
-      <div class="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-            This account is for an FIU user</br>(FIU users will be able to manage other users's accounts)
-          </label>
+          <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                  This account is for an FIU user</br>(FIU users will be able to manage other user accounts)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <a class="govuk-button" href="manage_accounts?txt=approve" style="margin-right:20px">
+            Approve request
+          </a>
+          <a href="manage_accounts?txt=decline" style="font-size:19px; position:relative; top:8px;">
+            Decline request
+          </a>
+
         </div>
       </div>
-    </div>
 
-    <a class="govuk-button" href="manage_accounts?txt=approve" style="margin-right:20px">
-      Approve request
-    </a>
-    <a href="manage_accounts?txt=decline" style="font-size:19px; position:relative; top:8px;">
-      Decline request
-    </a>
-
-  </div>
-</div>
-
-{% endblock %}
+      {% endblock %}

@@ -9,14 +9,14 @@ Prisoner money intelligence
 {% block beforeContent %}
 {{ govukBreadcrumbs({
   items: [
-    {
-      text: "Home",
-      href: "#"
-    },
-    {
-      text: "Path",
-      href: "#"
-    }
+  {
+    text: "Home",
+    href: "#"
+  },
+  {
+    text: "Path",
+    href: "#"
+  }
   ]
 }) }}
 {% endblock %}
@@ -42,7 +42,7 @@ Prisoner money intelligence
       },
       id: "example",
       name: "example",
-value: "Joe"
+      value: "Joe"
     }) }}
 
     {{ govukInput({
@@ -51,7 +51,7 @@ value: "Joe"
       },
       id: "example-2",
       name: "example-2",
-value: "Bloggs"
+      value: "Bloggs"
     }) }}
 
     {{ govukInput({
@@ -60,7 +60,7 @@ value: "Bloggs"
       },
       id: "example-4",
       name: "example-4",
-value: "joe.bloggs@dgitial.justice.gov.uk"
+      value: "joe.bloggs@dgitial.justice.gov.uk"
     }) }}
 
     {{ govukInput({
@@ -72,23 +72,23 @@ value: "joe.bloggs@dgitial.justice.gov.uk"
       },
       id: "example-5",
       name: "example-5",
-value: "ABC123D"
+      value: "ABC123D"
     }) }}
 
 
   </div>
 </div>
 
-    <div class="govuk-form-group">
-      <div class="govuk-checkboxes">
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-            This account is for an FIU user</br>(FIU users will be able to manage other users's accounts)
-          </label>
-        </div>
-      </div>
+<div class="govuk-form-group">
+  <div class="govuk-checkboxes">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses" checked>
+      <label class="govuk-label govuk-checkboxes__label" for="waste">
+        This account is for an FIU user</br>(FIU users will be able to manage other user accounts)
+      </label>
     </div>
+  </div>
+</div>
 <a class="govuk-button" href="new_account_confirmation" style="margin-right:20px">
   Save changes
 </a>

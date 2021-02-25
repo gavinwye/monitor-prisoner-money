@@ -9,14 +9,14 @@ Credits
 {% block beforeContent %}
 {{ govukBreadcrumbs({
   items: [
-    {
-      text: "Home",
-      href: "#"
-    },
-    {
-      text: "Path",
-      href: "#"
-    }
+  {
+    text: "Home",
+    href: "#"
+  },
+  {
+    text: "Path",
+    href: "#"
+  }
   ]
 }) }}
 {% endblock %}
@@ -27,29 +27,30 @@ Credits
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        What do you need help with?
-      </h1>
-      <h2 class="govuk-heading-m">I need to change my password / email address</h2>
-      <p class="govuk-body">Click your name in the top-right corner, and go to 'Settings' where you can:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>update your password, click 'Change password'</li>
-        <li>update your email address, click 'Change email'</li>
-      </ul>
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+          What do you need help with?
+        </h1>
+        <h2 class="govuk-heading-m">I need to change my password / email address</h2>
+        <p class="govuk-body">Click your name in the top-right corner, and go to 'Settings' where you can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>update your password, click 'Change password'</li>
+          <li>update your email address, click 'Change email'</li>
+        </ul>
 
-      <p class="govuk-body"><a href="contact_us">I want to raise an issue or have a question for the [HMPPS Financial Investigation Unit](link? contact us?)
-</a></p>
+        <p class="govuk-body"><a href="help/contact_us?txt=My new name is [please fill in]">I need to change my name</a></p>
+
+        <p class="govuk-body"><a href="contact_us">I want to raise an issue or have a question for the [HMPPS Financial Investigation Unit](link? contact us? Zendesk or FIU?)</a></p>
+      </div>
+
+
+
+
+
+
+
+
+
     </div>
 
-
-
-
-
-
-
-
-
-</div>
-
-{% endblock %}
+    {% endblock %}
